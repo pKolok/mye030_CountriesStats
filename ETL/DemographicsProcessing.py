@@ -6,40 +6,91 @@ Username:   cse94914
 
 import pandas as pd
 
-# Files
-countriesFile = "../../Data/countries.csv"
-fertilyFile = "../../Data/age_specific_fertility_rates.csv"
-birthDeathFile = "../../Data/birth_death_growth_rates.csv"
-areaFile = "../../Data/country_names_area.csv"
-midyearPopulationFile = "../../Data/midyear_population.csv"
-midyearPopulation5YearFile = "../../Data/midyear_population_5yr_age_sex.csv"
-midyearPopulationAgeFile = "../../Data/midyear_population_age_sex.csv"
-mortalityFile = "../../Data/mortality_life_expectancy.csv"
-incomeByCountryFile = "../../Data/Income by Country.xlsx"
+def readDemographicsFiles():
+    """
+    Read demographics files and return one dataframe for each file.
+
+    Returns
+    -------
+    countries : Dataframe 
+    fertility : Dataframe 
+    birthDeath : Dataframe 
+    area : Dataframe 
+    midYearPopulation : Dataframe 
+    midYearPopulation5Year : Dataframe 
+    midYearPopulationAge : Dataframe 
+    mortality : Dataframe 
+    """
+    
+    countriesFile = "../../Data/countries.csv"
+    fertilyFile = "../../Data/age_specific_fertility_rates.csv"
+    birthDeathFile = "../../Data/birth_death_growth_rates.csv"
+    areaFile = "../../Data/country_names_area.csv"
+    midyearPopulationFile = "../../Data/midyear_population.csv"
+    midyearPopulation5YearFile = "../../Data/midyear_population_5yr_age_sex.csv"
+    midyearPopulationAgeFile = "../../Data/midyear_population_age_sex.csv"
+    mortalityFile = "../../Data/mortality_life_expectancy.csv"
+    
+    countries = pd.read_csv(countriesFile, encoding='latin-1')
+    fertility = pd.read_csv(fertilyFile)
+    birthDeath = pd.read_csv(birthDeathFile)
+    area = pd.read_csv(areaFile)
+    midYearPopulation = pd.read_csv(midyearPopulationFile)
+    midYearPopulation5Year = pd.read_csv(midyearPopulation5YearFile)
+    midYearPopulationAge = pd.read_csv(midyearPopulationAgeFile)
+    mortality = pd.read_csv(mortalityFile)
+    
+    return countries, fertility, birthDeath, area, midYearPopulation, \
+            midYearPopulation5Year, midYearPopulationAge, mortality
+
+def readIncomeFiles():
+    """
+    Read income spreadsheet, sheet by sheet and return one dataframe 
+    for each sheet.
+
+    Returns
+    -------
+    incomeIndex : Dataframe 
+    gdpLabourShare : Dataframe 
+    grossFixedCapitalFormation : Dataframe 
+    gdpTotal : Dataframe 
+    gdpPerCapita : Dataframe 
+    gniPerCapita : Dataframe 
+    estimatedGniMale : Dataframe 
+    estimatedGniFemale : Dataframe 
+    domesticCredits : Dataframe 
+
+    """
+    incomeByCountryFile = "../../Data/Income by Country.xlsx"
+    
+    incomeByCountry = pd.ExcelFile(incomeByCountryFile)
+    incomeIndex = incomeByCountry.parse("Income Index")
+    gdpLabourShare = incomeByCountry.parse("Labour share of GDP")
+    grossFixedCapitalFormation = incomeByCountry.parse(
+        "Gross fixed capital formation")
+    gdpTotal = incomeByCountry.parse("GDP total")
+    gdpPerCapita = incomeByCountry.parse("GDP per capita")
+    gniPerCapita = incomeByCountry.parse("GNI per capita")
+    estimatedGniMale = incomeByCountry.parse("Estimated GNI male")
+    estimatedGniFemale = incomeByCountry.parse("Estimated GNI female")
+    domesticCredits = incomeByCountry.parse("Domestic credits")
+    
+    return incomeIndex, gdpLabourShare, grossFixedCapitalFormation, \
+            gdpTotal, gdpPerCapita, gniPerCapita, estimatedGniMale, \
+            estimatedGniFemale, domesticCredits
 
 # Read demographics files
-countries = pd.read_csv(countriesFile, encoding='latin-1')
-fertility = pd.read_csv(fertilyFile)
-birthDeath = pd.read_csv(birthDeathFile)
-area = pd.read_csv(areaFile)
-midYearPopulation = pd.read_csv(midyearPopulationFile)
-midYearPopulation5Year = pd.read_csv(midyearPopulation5YearFile)
-midYearPopulationAge = pd.read_csv(midyearPopulationAgeFile)
-mortality = pd.read_csv(mortalityFile)
+countries, fertility, birthDeath, area, midYearPopulation, \
+    midYearPopulation5Year, midYearPopulationAge, mortality =\
+            readDemographicsFiles()
 
-# Read income spreadsheet
-incomeByCountry = pd.ExcelFile(incomeByCountryFile)
-incomeIndex = incomeByCountry.parse("Income Index")
-gdpLabourShare = incomeByCountry.parse("Labour share of GDP")
-grossFixedCapitalFormation = incomeByCountry.parse(
-    "Gross fixed capital formation")
-gdpTotal = incomeByCountry.parse("GDP total")
-gdpPerCapita = incomeByCountry.parse("GDP per capita")
-gniPerCapita = incomeByCountry.parse("GNI per capita")
-estimatedGniMale = incomeByCountry.parse("Estimated GNI male")
-estimatedGniFemale = incomeByCountry.parse("Estimated GNI female")
-domesticCredits = incomeByCountry.parse("Domestic credits")
+# Read income files
+incomeIndex, gdpLabourShare, grossFixedCapitalFormation, gdpTotal, \
+    gdpPerCapita, gniPerCapita, estimatedGniMale, estimatedGniFemale, \
+    domesticCredits = readIncomeFiles()
 
+
+# Build lists with demographics and income data frames
 demographicsDfs = [fertility, birthDeath, area, midYearPopulation, 
                    midYearPopulation5Year, midYearPopulationAge, mortality]
 incomeDfs = [incomeIndex, gdpLabourShare, grossFixedCapitalFormation, 
@@ -47,9 +98,9 @@ incomeDfs = [incomeIndex, gdpLabourShare, grossFixedCapitalFormation,
              estimatedGniFemale, domesticCredits]
 
 # Clean up variables
-del countriesFile, fertilyFile, birthDeathFile, areaFile, midyearPopulationFile
-del midyearPopulation5YearFile, midyearPopulationAgeFile, mortalityFile
-del incomeByCountryFile, incomeByCountry
+# del countriesFile, fertilyFile, birthDeathFile, areaFile, midyearPopulationFile
+# del midyearPopulation5YearFile, midyearPopulationAgeFile, mortalityFile
+# del incomeByCountryFile, incomeByCountry
 
 countryDict = pd.DataFrame([
     ["Bahamas The", "Bahamas"],
@@ -98,36 +149,47 @@ excludeRows = ['Human Development', 'Very high human development',
                'Organization for Economic Co-operation and Development',
                'World']
 
-# countries.csv   
-uniqueCountries = countries['Display_Name'].drop_duplicates()
-
-# Search all demographics data for unique countries
-for df in demographicsDfs:
-    temp = df["country_name"].drop_duplicates()
-    for i in range(len(countryDict)):
-        temp.loc[temp == countryDict.loc[i,"Old Name"]] =\
-            countryDict.loc[i,"New Name"]
-
-    uniqueCountries = pd.concat([uniqueCountries, temp]).drop_duplicates()
-    uniqueCountries = uniqueCountries.rename("Name")
+def getUniqueCountries():
+    """
+    Searches all data provided and puts unique countries in a list. 
+    Then assigns unique index.
     
-# Search all income data for unique countries
-for df in incomeDfs:
-    temp = df["Country"].drop_duplicates()
-    temp = temp[~temp.isin(excludeRows)]
-    for i in range(len(countryDict)):
-        temp.loc[temp == countryDict.loc[i,"Old Name"]] =\
-            countryDict.loc[i,"New Name"]
+    Returns
+    -------
+    uniqueCountries : Dataframe
+        ["country_index", "country_name"]
+    """
+    uniqueCountries = countries['Display_Name'].drop_duplicates()
+    
+    # Search all demographics data for unique countries
+    for df in demographicsDfs:
+        temp = df["country_name"].drop_duplicates()
+        for i in range(len(countryDict)):
+            temp.loc[temp == countryDict.loc[i,"Old Name"]] =\
+                countryDict.loc[i,"New Name"]
+    
+        uniqueCountries = pd.concat([uniqueCountries, temp]).drop_duplicates()
+        uniqueCountries = uniqueCountries.rename("Name")
+        
+    # Search all income data for unique countries
+    for df in incomeDfs:
+        temp = df["Country"].drop_duplicates()
+        temp = temp[~temp.isin(excludeRows)]
+        for i in range(len(countryDict)):
+            temp.loc[temp == countryDict.loc[i,"Old Name"]] =\
+                countryDict.loc[i,"New Name"]
+    
+        uniqueCountries = pd.concat([uniqueCountries, temp]).drop_duplicates()
+        uniqueCountries = uniqueCountries.rename("Name")
+    
+    uniqueCountries = uniqueCountries.sort_values()
+    uniqueCountries = uniqueCountries.reset_index()["Name"]
+    uniqueCountries = uniqueCountries.reset_index()
+    uniqueCountries.columns = ["country_index", "country_name"]
+    
+    return uniqueCountries
 
-    uniqueCountries = pd.concat([uniqueCountries, temp]).drop_duplicates()
-    uniqueCountries = uniqueCountries.rename("Name")
-
-del i, temp, df
-
-uniqueCountries = uniqueCountries.sort_values()
-uniqueCountries = uniqueCountries.reset_index()["Name"]
-uniqueCountries = uniqueCountries.reset_index()
-uniqueCountries.columns = ["country_index", "country_name"]
+uniqueCountries = getUniqueCountries();
 
 # Make demographics
 def alignDemographicsCountryNames(df):
