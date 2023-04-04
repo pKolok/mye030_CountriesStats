@@ -129,6 +129,17 @@ uniqueCountries = uniqueCountries.reset_index()["Name"]
 uniqueCountries = uniqueCountries.reset_index()
 uniqueCountries.columns = ["country_index", "country_name"]
 
+# Make demographics
+def alignDemographicsCountryNames(df):
+    for i in range(len(countryDict)):
+        df.loc[df.country_name == countryDict.loc[i,"Old Name"],
+               "country_name"] = countryDict.loc[i,"New Name"]
+        
+for df in demographicsDfs:
+    alignDemographicsCountryNames(df)
+    
+del df
+
 # Add country index into dataframes
 def addPrimaryKey(df, joinName, joinMode='inner'):
     df = df.merge(uniqueCountries, how=joinMode, left_on=joinName,
