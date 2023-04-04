@@ -17,7 +17,7 @@ midyearPopulationAgeFile = "../../Data/midyear_population_age_sex.csv"
 mortalityFile = "../../Data/mortality_life_expectancy.csv"
 incomeByCountryFile = "../../Data/Income by Country.xlsx"
 
-# Read files
+# Read demographics files
 countries = pd.read_csv(countriesFile, encoding='latin-1')
 fertility = pd.read_csv(fertilyFile)
 birthDeath = pd.read_csv(birthDeathFile)
@@ -27,6 +27,7 @@ midYearPopulation5Year = pd.read_csv(midyearPopulation5YearFile)
 midYearPopulationAge = pd.read_csv(midyearPopulationAgeFile)
 mortality = pd.read_csv(mortalityFile)
 
+# Read income spreadsheet
 incomeByCountry = pd.ExcelFile(incomeByCountryFile)
 incomeIndex = incomeByCountry.parse("Income Index")
 gdpLabourShare = incomeByCountry.parse("Labour share of GDP")
@@ -121,10 +122,28 @@ for df in incomeDfs:
     uniqueCountries = pd.concat([uniqueCountries, temp]).drop_duplicates()
     uniqueCountries = uniqueCountries.rename("Name")
 
-uniqueCountries = uniqueCountries.sort_values()
-uniqueCountries = uniqueCountries.reset_index()["Name"]
-
 del i, temp, df
 
+uniqueCountries = uniqueCountries.sort_values()
+uniqueCountries = uniqueCountries.reset_index()["Name"]
 uniqueCountries = uniqueCountries.reset_index()
 uniqueCountries.columns = ["country_index", "country_name"]
+
+# Add country index into dataframes
+def addPrimaryKey(df, joinName, joinMode='inner'):
+    df = df.merge(uniqueCountries, how=joinMode, left_on=joinName,
+                      right_on="country_name")
+    df.insert(0, "country_index", df.pop("country_index"))
+    return df
+
+fertility = addPrimaryKey(fertility, "country_name")
+birthDeath = addPrimaryKey(birthDeath, "country_name")
+area = addPrimaryKey(area, "country_name")
+midYearPopulation  = addPrimaryKey(midYearPopulation, "country_name")
+midYearPopulation5Year = addPrimaryKey(midYearPopulation5Year, "country_name")
+midYearPopulationAge = addPrimaryKey(midYearPopulationAge, "country_name")
+mortality = addPrimaryKey(mortality, "country_name")
+
+
+# countries = addPrimaryKey(countries, "Display_Name", "outer")
+
