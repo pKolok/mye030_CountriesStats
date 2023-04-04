@@ -144,6 +144,11 @@ midYearPopulation5Year = addPrimaryKey(midYearPopulation5Year, "country_name")
 midYearPopulationAge = addPrimaryKey(midYearPopulationAge, "country_name")
 mortality = addPrimaryKey(mortality, "country_name")
 
-
-# countries = addPrimaryKey(countries, "Display_Name", "outer")
+# Add country index into countries table
+countries = addPrimaryKey(countries, "Display_Name", "outer")
+countries.loc[countries['Display_Name'].isnull(), 'Display_Name'] =\
+    countries.loc[countries['Display_Name'].isnull(), 'country_name']
+countries.loc[countries['Official_Name'].isnull(), 'Official_Name'] =\
+    countries.loc[countries['Official_Name'].isnull(), 'country_name']
+countries.drop(['country_name'], axis=1, inplace=True)
 
