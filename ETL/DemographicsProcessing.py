@@ -6,13 +6,27 @@ Username:   cse94914
 
 import pandas as pd
 
-def readDemographicsFiles():
+def readCountriesFile():
     """
-    Read demographics files and return one dataframe for each file.
+    Reads countries data file and returns one dataframe
 
     Returns
     -------
-    countries : Dataframe 
+    countries : Dataframe
+
+    """
+    countriesFile = "../../Data/countries/countries.csv"
+    
+    countries = pd.read_csv(countriesFile, encoding='latin-1')
+    
+    return countries
+
+def readDemographicsFiles():
+    """
+    Reads demographics data files and returns one dataframe for each file.
+
+    Returns
+    -------
     fertility : Dataframe 
     birthDeath : Dataframe 
     area : Dataframe 
@@ -22,16 +36,16 @@ def readDemographicsFiles():
     mortality : Dataframe 
     """
     
-    countriesFile = "../../Data/countries.csv"
-    fertilyFile = "../../Data/age_specific_fertility_rates.csv"
-    birthDeathFile = "../../Data/birth_death_growth_rates.csv"
-    areaFile = "../../Data/country_names_area.csv"
-    midyearPopulationFile = "../../Data/midyear_population.csv"
-    midyearPopulation5YearFile = "../../Data/midyear_population_5yr_age_sex.csv"
-    midyearPopulationAgeFile = "../../Data/midyear_population_age_sex.csv"
-    mortalityFile = "../../Data/mortality_life_expectancy.csv"
+    fertilyFile = "../../Data/international/age_specific_fertility_rates.csv"
+    birthDeathFile = "../../Data/international/birth_death_growth_rates.csv"
+    areaFile = "../../Data/international/country_names_area.csv"
+    midyearPopulationFile = "../../Data/international/midyear_population.csv"
+    midyearPopulation5YearFile = "../../Data/international/" +\
+        "midyear_population_5yr_age_sex.csv"
+    midyearPopulationAgeFile = "../../Data/international/" +\
+        "midyear_population_age_sex.csv"
+    mortalityFile = "../../Data/international/mortality_life_expectancy.csv"
     
-    countries = pd.read_csv(countriesFile, encoding='latin-1')
     fertility = pd.read_csv(fertilyFile)
     birthDeath = pd.read_csv(birthDeathFile)
     area = pd.read_csv(areaFile)
@@ -40,7 +54,7 @@ def readDemographicsFiles():
     midYearPopulationAge = pd.read_csv(midyearPopulationAgeFile)
     mortality = pd.read_csv(mortalityFile)
     
-    return countries, fertility, birthDeath, area, midYearPopulation, \
+    return fertility, birthDeath, area, midYearPopulation, \
             midYearPopulation5Year, midYearPopulationAge, mortality
 
 def readIncomeFiles():
@@ -61,7 +75,7 @@ def readIncomeFiles():
     domesticCredits : Dataframe 
 
     """
-    incomeByCountryFile = "../../Data/Income by Country.xlsx"
+    incomeByCountryFile = "../../Data/income/Income by Country.xlsx"
     
     incomeByCountry = pd.ExcelFile(incomeByCountryFile)
     incomeIndex = incomeByCountry.parse("Income Index")
@@ -79,8 +93,11 @@ def readIncomeFiles():
             gdpTotal, gdpPerCapita, gniPerCapita, estimatedGniMale, \
             estimatedGniFemale, domesticCredits
 
+# Read countries file
+countries = readCountriesFile()
+
 # Read demographics files
-countries, fertility, birthDeath, area, midYearPopulation, \
+fertility, birthDeath, area, midYearPopulation, \
     midYearPopulation5Year, midYearPopulationAge, mortality =\
             readDemographicsFiles()
 
@@ -96,11 +113,6 @@ demographicsDfs = [fertility, birthDeath, area, midYearPopulation,
 incomeDfs = [incomeIndex, gdpLabourShare, grossFixedCapitalFormation, 
              gdpTotal, gdpPerCapita, gniPerCapita, estimatedGniMale, 
              estimatedGniFemale, domesticCredits]
-
-# Clean up variables
-# del countriesFile, fertilyFile, birthDeathFile, areaFile, midyearPopulationFile
-# del midyearPopulation5YearFile, midyearPopulationAgeFile, mortalityFile
-# del incomeByCountryFile, incomeByCountry
 
 countryDict = pd.DataFrame([
     ["Bahamas The", "Bahamas"],
