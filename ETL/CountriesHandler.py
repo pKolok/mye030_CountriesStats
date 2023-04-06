@@ -17,16 +17,43 @@ class CountriesHandler(DataHandler):
     def readCountriesFile(self):
         """
         Reads countries data file and strores one dataframe
+
+        Returns
+        -------
+        None.
+
         """
+        
         countriesFile = "../../Data/countries/countries.csv"
         
         self.countries = pd.read_csv(countriesFile, encoding='latin-1')
-        
     
     def getUniqueCountries(self):
+        """
+        Returns unique country names from countries table.
+
+        Returns
+        -------
+        Series
+            Pandas Series of unique country names.
+
+        """
         return self.countries['Display_Name'].drop_duplicates()
     
     def addPrimaryKey(self, uniqueCountries):
+        """
+        Adds primary key column to countries table.
+
+        Parameters
+        ----------
+        uniqueCountries : Dataframe
+            Dataframe of ["country_index", "country_name"]
+
+        Returns
+        -------
+        None.
+
+        """
         self.countries = super()._addPrimaryKey(uniqueCountries,
             self.countries, "Display_Name", "outer")
         self.countries.loc[self.countries['Display_Name'].isnull(),

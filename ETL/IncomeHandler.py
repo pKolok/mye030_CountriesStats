@@ -27,12 +27,12 @@ class IncomeHandler(DataHandler):
             'Human Development', 'Very high human development',
             'High human development', 'Medium human development',
             'Low human development', 'Developing Countries', 'Regions',
-             'Arab States', 'East Asia and the Pacific',
-             'Europe and Central Asia', 'Latin America and the Caribbean',
-             'South Asia', 'Sub-Saharan Africa', 'Least Developed Countries',
-             'Small Island Developing States',
-             'Organization for Economic Co-operation and Development',
-             'World']
+            'Arab States', 'East Asia and the Pacific',
+            'Europe and Central Asia', 'Latin America and the Caribbean',
+            'South Asia', 'Sub-Saharan Africa', 'Least Developed Countries',
+            'Small Island Developing States',
+            'Organization for Economic Co-operation and Development',
+            'World']
         
         self.incomeDfs = []
     
@@ -40,8 +40,15 @@ class IncomeHandler(DataHandler):
         """
         Reads income spreadsheet, sheet by sheet and stores one dataframe 
         for each sheet.
-    
+        Also aligns country names with ones in countries.csv based on an
+        name correspondence list
+
+        Returns
+        -------
+        None.
+
         """
+
         incomeByCountryFile = "../../Data/income/Income by Country.xlsx"
         incomeByCountry = pd.ExcelFile(incomeByCountryFile)
         
@@ -62,10 +69,18 @@ class IncomeHandler(DataHandler):
             self.gniPerCapita, self.estimatedGniMale, self.estimatedGniFemale, 
             self.domesticCredits]
         
+        # Align countries names with countries.csv[Display_Name]
+        for df in self.incomeDfs:
+            super()._alignCountryNames(df, "Country")
+        
+        # Remove rows with summary stats
+        for df in self.incomeDfs:
+            df.drop(index=df[df.Country.isin(self.excludeRows) == True].index\
+                    .tolist(), inplace=True)
+        
     def getUniqueCountries(self):
         """
-        Searches all data provided and puts unique countries in a list. 
-        Then assigns unique index.
+        Searches all income data and puts unique countries in a Series. 
         
         Returns
         -------
@@ -73,17 +88,24 @@ class IncomeHandler(DataHandler):
             ["country_index", "country_name"]
         """
         
-        uniqueCountries = pd.Series()
-                    
-        # Search all income data for unique countries
+        uniqueCountries = pd.Series(dtype = 'object')
+
         for df in self.incomeDfs:
-            temp = df["Country"].drop_duplicates()
-            temp = temp[~temp.isin(self.excludeRows)]
-            for i in range(len(self.countryDict)):
-                temp.loc[temp == self.countryDict.loc[i,"Old Name"]] =\
-                    self.countryDict.loc[i,"New Name"]
-        
-            uniqueCountries = pd.concat([uniqueCountries, temp]).drop_duplicates()
-            # uniqueCountries = uniqueCountries.rename("Name")
-        
+            temp = df["Country"].drop_duplicates()       
+            uniqueCountries = pd.concat([uniqueCountries,
+                                         temp]).drop_duplicates()
+            
         return uniqueCountries
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

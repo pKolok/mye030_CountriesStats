@@ -45,8 +45,12 @@ class DataHandler:
             ["Viet Nam", "Vietnam"]
             ],
             columns = ["Old Name", "New Name"])
-        
     
+    def _alignCountryNames(self, df, columnName):
+        for i in range(len(self.countryDict)):
+            df.loc[df[columnName] == self.countryDict.loc[i,"Old Name"],
+                   columnName] = self.countryDict.loc[i,"New Name"]
+            
     def _addPrimaryKey(self, uniqueCountries, df, joinName, joinMode='inner'):
         df = df.merge(uniqueCountries, how=joinMode, left_on=joinName,
                           right_on="country_name")
