@@ -33,8 +33,8 @@ if __name__ == "__main__":
     uniqueCountries.columns = ["country_index", "country_name"]
     
     # Assign primary keys to all tables of data
-    countriesHandler.addPrimaryKey(uniqueCountries)
-    demographicsHandler.addPrimaryKey(uniqueCountries)
-    
+    countriesHandler.setupPrimaryKeys(uniqueCountries)
+    demographicsHandler.setupPrimaryKeys(uniqueCountries)
+    incomeHandler.setupPrimaryKeys(uniqueCountries)
     
 

@@ -23,7 +23,6 @@ class CountriesHandler(DataHandler):
         None.
 
         """
-        
         countriesFile = "../../Data/countries/countries.csv"
         
         self.countries = pd.read_csv(countriesFile, encoding='latin-1')
@@ -40,7 +39,7 @@ class CountriesHandler(DataHandler):
         """
         return self.countries['Display_Name'].drop_duplicates()
     
-    def addPrimaryKey(self, uniqueCountries):
+    def setupPrimaryKeys(self, uniqueCountries):
         """
         Adds primary key column to countries table.
 
@@ -54,8 +53,8 @@ class CountriesHandler(DataHandler):
         None.
 
         """
-        self.countries = super()._addPrimaryKey(uniqueCountries,
-            self.countries, "Display_Name", "outer")
+        self._addPrimaryKey(uniqueCountries)
+        
         self.countries.loc[self.countries['Display_Name'].isnull(),
            'Display_Name'] = self.countries.loc[
                self.countries['Display_Name'].isnull(), 'country_name']
@@ -63,3 +62,17 @@ class CountriesHandler(DataHandler):
            'Official_Name'] = self.countries.loc[self.countries[
                'Official_Name'].isnull(), 'country_name']
         self.countries.drop(['country_name'], axis=1, inplace=True)
+        
+    def _addPrimaryKey(self, uniqueCountries):
+        self.countries = self.countries.merge(uniqueCountries, how="outer",
+                                              left_on="Display_Name",
+                                              right_on="country_name")
+        self.countries.insert(0, "country_index",
+                              self.countries.pop("country_index"))
+        
+        
+        
+        
+        
+        
+        

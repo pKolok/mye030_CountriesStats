@@ -12,7 +12,6 @@ class IncomeHandler(DataHandler):
     
     def __init__(self):
         super().__init__()
-        self.incomeByCountry = pd.DataFrame()
         self.incomeIndex = pd.DataFrame()
         self.gdpLabourShare = pd.DataFrame()
         self.grossFixedCapitalFormation = pd.DataFrame()
@@ -46,7 +45,6 @@ class IncomeHandler(DataHandler):
         None.
 
         """
-
         incomeByCountryFile = "../../Data/income/Income by Country.xlsx"
         incomeByCountry = pd.ExcelFile(incomeByCountryFile)
         
@@ -61,12 +59,6 @@ class IncomeHandler(DataHandler):
         self.estimatedGniFemale = incomeByCountry.parse("Estimated GNI female")
         self.domesticCredits = incomeByCountry.parse("Domestic credits")
         
-        self.incomeDfs = [
-            self.incomeIndex, self.gdpLabourShare, 
-            self.grossFixedCapitalFormation, self.gdpTotal, self.gdpPerCapita,
-            self.gniPerCapita, self.estimatedGniMale, self.estimatedGniFemale, 
-            self.domesticCredits]
-        
         self._cleanUp()
         
     def getUniqueCountries(self):
@@ -78,7 +70,6 @@ class IncomeHandler(DataHandler):
         uniqueCountries : Dataframe
             ["country_index", "country_name"]
         """
-        
         uniqueCountries = pd.Series(dtype = 'object')
 
         for df in self.incomeDfs:
@@ -88,6 +79,48 @@ class IncomeHandler(DataHandler):
             
         return uniqueCountries
     
+    def setupPrimaryKeys(self, uniqueCountries):
+        """
+        Adds primary key column to all demographics tables.
+
+        Parameters
+        ----------
+        uniqueCountries : Dataframe
+            Dataframe of ["country_index", "country_name"]
+
+        Returns
+        -------
+        None.
+
+        """
+        self.incomeIndex = self._addPrimaryKey(
+            uniqueCountries, self.incomeIndex)
+        self.gdpLabourShare = self._addPrimaryKey(
+            uniqueCountries, self.gdpLabourShare)
+        self.grossFixedCapitalFormation = self._addPrimaryKey(
+            uniqueCountries, self.grossFixedCapitalFormation)
+        self.gdpTotal = self._addPrimaryKey(
+            uniqueCountries, self.gdpTotal)
+        self.gdpPerCapita = self._addPrimaryKey(
+            uniqueCountries, self.gdpPerCapita)
+        self.gniPerCapita = self._addPrimaryKey(
+            uniqueCountries, self.gniPerCapita)
+        self.estimatedGniMale = self._addPrimaryKey(
+            uniqueCountries, self.estimatedGniMale)
+        self.estimatedGniFemale = self._addPrimaryKey(
+            uniqueCountries, self.estimatedGniFemale)
+        self.domesticCredits = self._addPrimaryKey(
+            uniqueCountries, self.domesticCredits)
+        
+        # self.incomeDfs = [
+        #     self.incomeIndex, self.gdpLabourShare, 
+        #     self.grossFixedCapitalFormation, self.gdpTotal, self.gdpPerCapita,
+        #     self.gniPerCapita, self.estimatedGniMale, self.estimatedGniFemale, 
+        #     self.domesticCredits]
+        
+        # for df in self.incomeDfs:
+        #     df.drop(["country_name"], axis=1, inplace=True)
+        
     def _cleanUp(self):
         """
         Undertake initial data cleaning/tidying up in terms of:
@@ -100,6 +133,12 @@ class IncomeHandler(DataHandler):
         None.
 
         """
+        self.incomeDfs = [
+            self.incomeIndex, self.gdpLabourShare, 
+            self.grossFixedCapitalFormation, self.gdpTotal, self.gdpPerCapita,
+            self.gniPerCapita, self.estimatedGniMale, self.estimatedGniFemale, 
+            self.domesticCredits]
+        
         # Align countries names with countries.csv[Display_Name]
         for df in self.incomeDfs:
             super()._alignCountryNames(df, "Country")
@@ -115,6 +154,13 @@ class IncomeHandler(DataHandler):
         self.gniPerCapita.drop(['Info'], axis=1, inplace=True)
         self.estimatedGniMale.drop(['Info'], axis=1, inplace=True)
         self.estimatedGniFemale.drop(['Info'], axis=1, inplace=True)
+        
+    def _addPrimaryKey(self, uniqueCountries, df):
+        df = df.merge(uniqueCountries, how="inner", left_on="Country",
+                          right_on="country_name")
+        df.insert(0, "country_index", df.pop("country_index"))
+        df.drop(["country_name"], axis=1, inplace=True)
+        return df
     
     
     

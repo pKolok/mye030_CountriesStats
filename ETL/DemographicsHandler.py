@@ -68,8 +68,7 @@ class DemographicsHandler(DataHandler):
         -------
         uniqueCountries : Dataframe
             ["country_index", "country_name"]
-        """
-        
+        """ 
         uniqueCountries = pd.Series(dtype = 'object')
         
         for df in self.demographicsDfs:
@@ -79,7 +78,7 @@ class DemographicsHandler(DataHandler):
             
         return uniqueCountries
             
-    def addPrimaryKey(self, uniqueCountries):
+    def setupPrimaryKeys(self, uniqueCountries):
         """
         Adds primary key column to all demographics tables.
 
@@ -93,23 +92,26 @@ class DemographicsHandler(DataHandler):
         None.
 
         """
-        self.fertility = super()._addPrimaryKey(
-            uniqueCountries, self.fertility, "country_name")
-        self.birthDeath = super()._addPrimaryKey(
-            uniqueCountries, self.birthDeath,"country_name")
-        self.area = super()._addPrimaryKey(
-            uniqueCountries, self.area, "country_name")
-        self.midYearPopulation  = super()._addPrimaryKey(
-            uniqueCountries, self.midYearPopulation, "country_name")
-        self.midYearPopulation5Year = super()._addPrimaryKey(
-            uniqueCountries, self.midYearPopulation5Year, "country_name")
-        self.midYearPopulationAge = super()._addPrimaryKey(
-            uniqueCountries, self.midYearPopulationAge, "country_name")
-        self.mortality = super()._addPrimaryKey(
-            uniqueCountries, self.mortality, "country_name")
+        self.fertility = self._addPrimaryKey(
+            uniqueCountries, self.fertility)
+        self.birthDeath = self._addPrimaryKey(
+            uniqueCountries, self.birthDeath)
+        self.area = self._addPrimaryKey(
+            uniqueCountries, self.area)
+        self.midYearPopulation = self._addPrimaryKey(
+            uniqueCountries, self.midYearPopulation)
+        self.midYearPopulation5Year = self._addPrimaryKey(
+            uniqueCountries, self.midYearPopulation5Year)
+        self.midYearPopulationAge = self._addPrimaryKey(
+            uniqueCountries, self.midYearPopulationAge)
+        self.mortality = self._addPrimaryKey(
+            uniqueCountries, self.mortality)
             
-            
-            
+    def _addPrimaryKey(self, uniqueCountries, df):
+        df = df.merge(uniqueCountries, how="inner", left_on="country_name",
+                          right_on="country_name")
+        df.insert(0, "country_index", df.pop("country_index"))
+        return df
             
             
             
