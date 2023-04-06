@@ -36,4 +36,5 @@ if __name__ == "__main__":
     countriesHandler.addPrimaryKey(uniqueCountries)
     demographicsHandler.addPrimaryKey(uniqueCountries)
     
+    
 

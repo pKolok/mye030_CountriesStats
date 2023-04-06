@@ -40,8 +40,6 @@ class IncomeHandler(DataHandler):
         """
         Reads income spreadsheet, sheet by sheet and stores one dataframe 
         for each sheet.
-        Also aligns country names with ones in countries.csv based on an
-        name correspondence list
 
         Returns
         -------
@@ -69,14 +67,7 @@ class IncomeHandler(DataHandler):
             self.gniPerCapita, self.estimatedGniMale, self.estimatedGniFemale, 
             self.domesticCredits]
         
-        # Align countries names with countries.csv[Display_Name]
-        for df in self.incomeDfs:
-            super()._alignCountryNames(df, "Country")
-        
-        # Remove rows with summary stats
-        for df in self.incomeDfs:
-            df.drop(index=df[df.Country.isin(self.excludeRows) == True].index\
-                    .tolist(), inplace=True)
+        self._cleanUp()
         
     def getUniqueCountries(self):
         """
@@ -97,11 +88,33 @@ class IncomeHandler(DataHandler):
             
         return uniqueCountries
     
+    def _cleanUp(self):
+        """
+        Undertake initial data cleaning/tidying up in terms of:
+            - Aligns country names with ones in countries.csv based on an
+            name correspondence list
+            - Remove rows with summary stats
+            - Remove unnecessary columns if any
+        Returns
+        -------
+        None.
+
+        """
+        # Align countries names with countries.csv[Display_Name]
+        for df in self.incomeDfs:
+            super()._alignCountryNames(df, "Country")
+        
+        # Remove rows with summary stats
+        for df in self.incomeDfs:
+            df.drop(index=df[df.Country.isin(self.excludeRows) == True].index\
+                    .tolist(), inplace=True)
     
-    
-    
-    
-    
+        # Remove uncessary colums in certain tables
+        self.gdpTotal.drop(['Info'], axis=1, inplace=True)
+        self.gdpPerCapita.drop(['Info'], axis=1, inplace=True)
+        self.gniPerCapita.drop(['Info'], axis=1, inplace=True)
+        self.estimatedGniMale.drop(['Info'], axis=1, inplace=True)
+        self.estimatedGniFemale.drop(['Info'], axis=1, inplace=True)
     
     
     
