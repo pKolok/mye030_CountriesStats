@@ -22,6 +22,8 @@ class IncomeHandler(DataHandler):
         self.estimatedGniFemale = pd.DataFrame()
         self.domesticCredits = pd.DataFrame()
         
+        self.incomeCombined = pd.DataFrame()
+        
         self.excludeRows = [
             'Human Development', 'Very high human development',
             'High human development', 'Medium human development',
@@ -111,16 +113,47 @@ class IncomeHandler(DataHandler):
             uniqueCountries, self.estimatedGniFemale)
         self.domesticCredits = self._addPrimaryKey(
             uniqueCountries, self.domesticCredits)
+    
+    def interpolateMissingYears(self):
+        """
+        For those tables which are missing years, interpolate between the 
+        existing years. E.g. if 2000 and 2005 exist, interpolate to get values
+        for years 2001, 2002, 2003, 2004.
+
+        Returns
+        -------
+        None.
+
+        """
         
-        # self.incomeDfs = [
-        #     self.incomeIndex, self.gdpLabourShare, 
-        #     self.grossFixedCapitalFormation, self.gdpTotal, self.gdpPerCapita,
-        #     self.gniPerCapita, self.estimatedGniMale, self.estimatedGniFemale, 
-        #     self.domesticCredits]
+        self._addMissingYearColumns();
+        self._fillInInterpolationColumns()
+    
+    # TODO
+    def restructureData(self):
+        """
+        Restuctures tables so that columns of years turn into new rows for
+        each year.
+
+        Returns
+        -------
+        None.
+
+        """
         
-        # for df in self.incomeDfs:
-        #     df.drop(["country_name"], axis=1, inplace=True)
+        keys=["country_index", "Country"]
+        incomeIndex = self.incomeIndex.melt(id_vars=keys,
+           var_name="Year", value_name="income_index")\
+            .sort_values(["country_index", "Year"])
+        gdpLabourShare = self.gdpLabourShare.melt(id_vars=keys,
+            var_name="Year", value_name="labour_share_of_gdp")\
+            .sort_values(["country_index", "Year"])
         
+        # maybe not a good idea...
+        self.incomeCombined = incomeIndex.merge(gdpLabourShare, how="outer",
+            left_on=["country_index", "Country", "Year"], 
+            right_on=["country_index", "Country", "Year"], sort=True)
+    
     def _cleanUp(self):
         """
         Undertake initial data cleaning/tidying up in terms of:
@@ -133,6 +166,7 @@ class IncomeHandler(DataHandler):
         None.
 
         """
+        
         self.incomeDfs = [
             self.incomeIndex, self.gdpLabourShare, 
             self.grossFixedCapitalFormation, self.gdpTotal, self.gdpPerCapita,
@@ -155,6 +189,10 @@ class IncomeHandler(DataHandler):
         self.estimatedGniMale.drop(['Info'], axis=1, inplace=True)
         self.estimatedGniFemale.drop(['Info'], axis=1, inplace=True)
         
+        # Remove non numerical elements
+        for df in self.incomeDfs:
+            df.replace("..", pd.NA, inplace=True)
+        
     def _addPrimaryKey(self, uniqueCountries, df):
         df = df.merge(uniqueCountries, how="inner", left_on="Country",
                           right_on="country_name")
@@ -162,9 +200,69 @@ class IncomeHandler(DataHandler):
         df.drop(["country_name"], axis=1, inplace=True)
         return df
     
+    def _addMissingYearColumns(self):
+        
+        # Labour share of GDP
+        for year in [2000, 2005]:
+            index = self.gdpLabourShare.columns.get_loc(year)
+            for newYear in range(year + 1, year + 5):
+                index += 1
+                self.gdpLabourShare.insert(index, newYear, "")
+        
+        # Similar tables
+        dfs = [self.grossFixedCapitalFormation, self.gdpTotal,
+               self.gdpPerCapita, self.domesticCredits]
+        for df in dfs:
+            for year in [1990, 1995, 2000, 2005]:
+                index = df.columns.get_loc(year)
+                for newYear in range(year + 1, year + 5):
+                    index += 1
+                    df.insert(index, newYear, "")
+        
+        # Similar tables
+        dfs = [self.estimatedGniMale, self.estimatedGniFemale]
+        for df in dfs:
+            for year in [1995, 2000, 2005]:
+                index = df.columns.get_loc(year)
+                for newYear in range(year + 1, year + 5):
+                    index += 1
+                    df.insert(index, newYear, "")
     
+    def _fillInInterpolationColumns(self):
+        
+        # Labour share of GDP
+        for years in [(2000,2005), (2005,2010)]:
+            validLoc = self.gdpLabourShare[years[0]].notnull() &\
+                        self.gdpLabourShare[years[1]].notnull()
+            i = 1
+            for newYear in range(years[0] + 1, years[0] + 5):
+                diff = (self.gdpLabourShare[years[1]] -
+                 self.gdpLabourShare[years[0]]) / 5
+                self.gdpLabourShare.loc[validLoc, newYear] =\
+                    self.gdpLabourShare[years[0]] + i * diff
+                i += 1
     
+        # Similar tables
+        dfs = [self.grossFixedCapitalFormation, self.gdpTotal,
+               self.gdpPerCapita, self.domesticCredits]
+        for df in dfs:
+            for years in [(1990,1995), (1995,2000), (2000,2005), (2005,2010)]:
+                validLoc = df[years[0]].notnull() & df[years[1]].notnull()
+                i = 1
+                for newYear in range(years[0] + 1, years[0] + 5):
+                    diff = (df[years[1]] - df[years[0]]) / 5
+                    df.loc[validLoc, newYear] = df[years[0]] + i * diff
+                    i += 1
     
-    
+        # Similar tables
+        dfs = [self.estimatedGniMale, self.estimatedGniFemale]
+        for df in dfs:
+            for years in [(1995,2000), (2000,2005), (2005,2010)]:
+                validLoc = df[years[0]].notnull() & df[years[1]].notnull()
+                i = 1
+                for newYear in range(years[0] + 1, years[0] + 5):
+                    diff = (df[years[1]] - df[years[0]]) / 5
+                    df.loc[validLoc, newYear] = df[years[0]] + i * diff
+                    i += 1            
     
     

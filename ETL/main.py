@@ -37,4 +37,10 @@ if __name__ == "__main__":
     demographicsHandler.setupPrimaryKeys(uniqueCountries)
     incomeHandler.setupPrimaryKeys(uniqueCountries)
     
+    
+    incomeHandler.interpolateMissingYears();
+    
+    # Years from columns to rows
+    #incomeHandler.restructureData()
+    
 
