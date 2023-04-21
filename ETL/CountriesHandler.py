@@ -63,6 +63,10 @@ class CountriesHandler(DataHandler):
                'Official_Name'].isnull(), 'country_name']
         self.countries.drop(['country_name'], axis=1, inplace=True)
         
+    def save(self):
+        countriesFile = "../../Data/countries/countriesFinal.csv"
+        self.countries.to_csv(countriesFile, index=False)
+        
     def _addPrimaryKey(self, uniqueCountries):
         self.countries = self.countries.merge(uniqueCountries, how="outer",
                                               left_on="Display_Name",

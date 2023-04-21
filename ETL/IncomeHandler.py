@@ -22,8 +22,6 @@ class IncomeHandler(DataHandler):
         self.estimatedGniFemale = pd.DataFrame()
         self.domesticCredits = pd.DataFrame()
         
-        self.incomeCombined = pd.DataFrame()
-        
         self.excludeRows = [
             'Human Development', 'Very high human development',
             'High human development', 'Medium human development',
@@ -35,7 +33,15 @@ class IncomeHandler(DataHandler):
             'Organization for Economic Co-operation and Development',
             'World']
         
-        self.incomeDfs = []
+        self.incomeIndexFinal = pd.DataFrame()
+        self.gdpLabourShareFinal = pd.DataFrame()
+        self.grossFixedCapitalFormationFinal = pd.DataFrame()
+        self.gdpTotalFinal = pd.DataFrame()
+        self.gdpPerCapitaFinal = pd.DataFrame()
+        self.gniPerCapitaFinal = pd.DataFrame()
+        self.estimatedGniMaleFinal = pd.DataFrame()
+        self.estimatedGniFemaleFinal = pd.DataFrame()
+        self.domesticCreditsFinal = pd.DataFrame()
     
     def readIncomeFiles(self):
         """
@@ -72,9 +78,16 @@ class IncomeHandler(DataHandler):
         uniqueCountries : Dataframe
             ["country_index", "country_name"]
         """
+        
+        incomeDfs = [
+            self.incomeIndex, self.gdpLabourShare, 
+            self.grossFixedCapitalFormation, self.gdpTotal, self.gdpPerCapita,
+            self.gniPerCapita, self.estimatedGniMale, self.estimatedGniFemale, 
+            self.domesticCredits]
+        
         uniqueCountries = pd.Series(dtype = 'object')
 
-        for df in self.incomeDfs:
+        for df in incomeDfs:
             temp = df["Country"].drop_duplicates()       
             uniqueCountries = pd.concat([uniqueCountries,
                                          temp]).drop_duplicates()
@@ -129,11 +142,10 @@ class IncomeHandler(DataHandler):
         self._addMissingYearColumns();
         self._fillInInterpolationColumns()
     
-    # TODO
     def restructureData(self):
         """
-        Restuctures tables so that columns of years turn into new rows for
-        each year.
+        Restuctures tables (Unpivot from wide to long format) 
+        so that columns of years turn into new rows for each year.
 
         Returns
         -------
@@ -142,18 +154,62 @@ class IncomeHandler(DataHandler):
         """
         
         keys=["country_index", "Country"]
-        incomeIndex = self.incomeIndex.melt(id_vars=keys,
+        
+        self.incomeIndexFinal = self.incomeIndex.melt(id_vars=keys,
            var_name="Year", value_name="income_index")\
             .sort_values(["country_index", "Year"])
-        gdpLabourShare = self.gdpLabourShare.melt(id_vars=keys,
+        self.gdpLabourShareFinal = self.gdpLabourShare.melt(id_vars=keys,
             var_name="Year", value_name="labour_share_of_gdp")\
             .sort_values(["country_index", "Year"])
+        self.grossFixedCapitalFormationFinal = \
+            self.grossFixedCapitalFormation.melt(id_vars=keys,
+            var_name="Year", value_name="Gross_fixed_capital_formation")\
+            .sort_values(["country_index", "Year"])
+        self.gdpTotalFinal = self.gdpTotal.melt(id_vars=keys,
+            var_name="Year", value_name="GDP_total")\
+            .sort_values(["country_index", "Year"])
+        self.gdpPerCapitaFinal = self.gdpPerCapita.melt(id_vars=keys,
+            var_name="Year", value_name="GDP_per_capita")\
+            .sort_values(["country_index", "Year"])
+        self.gniPerCapitaFinal = self.gniPerCapita.melt(id_vars=keys,
+            var_name="Year", value_name="GNI_per_capita")\
+            .sort_values(["country_index", "Year"]) 
+        self.estimatedGniMaleFinal = self.estimatedGniMale.melt(
+            id_vars=keys, var_name="Year", value_name="Estimated_GNI_male")\
+            .sort_values(["country_index", "Year"]) 
+        self.estimatedGniFemaleFinal = self.estimatedGniFemale.melt(
+            id_vars=keys, var_name="Year", value_name="Estimated GNI female")\
+            .sort_values(["country_index", "Year"])      
+        self.domesticCreditsFinal = self.domesticCredits.melt(
+            id_vars=keys, var_name="Year", value_name="Domestic credits")\
+            .sort_values(["country_index", "Year"])            
         
-        # maybe not a good idea...
-        self.incomeCombined = incomeIndex.merge(gdpLabourShare, how="outer",
-            left_on=["country_index", "Country", "Year"], 
-            right_on=["country_index", "Country", "Year"], sort=True)
-    
+    def save(self):
+        incomeIndexFile = "../../Data/income/income_index_final.csv"
+        gdpLabourShareFile = "../../Data/income/labour_share_of_gdp_final.csv"
+        grossFixedCapitalFormationFile = "../../Data/income/" \
+            "gross_fixed_capital_formation_final.csv"
+        gdpTotalFile = "../../Data/income/gdp_total_final.csv"
+        gdpPerCapitaFile = "../../Data/income/gdp_per_capita_final.csv"
+        gniPerCapitaFile = "../../Data/income/gni_per_capita_final.csv"
+        estimatedGniMaleFile = "../../Data/income/estimated_gni_male_final.csv"
+        estimatedGniFemaleFile = "../../Data/income/" \
+            "estimated_gni_female_final.csv"
+        domesticCreditsFile = "../../Data/income/domestic_credits_final.csv"
+            
+        self.incomeIndexFinal.to_csv(incomeIndexFile, index=False)
+        self.gdpLabourShareFinal.to_csv(gdpLabourShareFile, index=False)
+        self.grossFixedCapitalFormationFinal.to_csv(
+            grossFixedCapitalFormationFile, index=False)
+        self.gdpTotalFinal.to_csv(gdpTotalFile, index=False)
+        self.gdpPerCapitaFinal.to_csv(gdpPerCapitaFile, index=False)
+        self.gniPerCapitaFinal.to_csv(gniPerCapitaFile, index=False)
+        self.estimatedGniMaleFinal.to_csv(estimatedGniMaleFile, index=False)
+        self.estimatedGniFemaleFinal.to_csv(estimatedGniFemaleFile,
+                                            index=False)
+        self.domesticCreditsFinal.to_csv(domesticCreditsFile, index=False)
+        
+        
     def _cleanUp(self):
         """
         Undertake initial data cleaning/tidying up in terms of:
@@ -167,18 +223,18 @@ class IncomeHandler(DataHandler):
 
         """
         
-        self.incomeDfs = [
+        incomeDfs = [
             self.incomeIndex, self.gdpLabourShare, 
             self.grossFixedCapitalFormation, self.gdpTotal, self.gdpPerCapita,
             self.gniPerCapita, self.estimatedGniMale, self.estimatedGniFemale, 
             self.domesticCredits]
         
         # Align countries names with countries.csv[Display_Name]
-        for df in self.incomeDfs:
+        for df in incomeDfs:
             super()._alignCountryNames(df, "Country")
         
         # Remove rows with summary stats
-        for df in self.incomeDfs:
+        for df in incomeDfs:
             df.drop(index=df[df.Country.isin(self.excludeRows) == True].index\
                     .tolist(), inplace=True)
     
@@ -190,7 +246,7 @@ class IncomeHandler(DataHandler):
         self.estimatedGniFemale.drop(['Info'], axis=1, inplace=True)
         
         # Remove non numerical elements
-        for df in self.incomeDfs:
+        for df in incomeDfs:
             df.replace("..", pd.NA, inplace=True)
         
     def _addPrimaryKey(self, uniqueCountries, df):

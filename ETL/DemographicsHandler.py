@@ -107,6 +107,30 @@ class DemographicsHandler(DataHandler):
         self.mortality = self._addPrimaryKey(
             uniqueCountries, self.mortality)
             
+    def save(self):
+        fertilyFile = "../../Data/international/"\
+            "age_specific_fertility_rates_final.csv"
+        birthDeathFile = "../../Data/international/"\
+            "birth_death_growth_rates_final.csv"
+        areaFile = "../../Data/international/country_names_area_final.csv"
+        midyearPopulationFile = "../../Data/international/"\
+            "midyear_population_final.csv"
+        midyearPopulation5YearFile = "../../Data/international/"\
+            "midyear_population_5yr_age_sex_final.csv"
+        midyearPopulationAgeFile = "../../Data/international/"\
+            "midyear_population_age_sex_final.csv"
+        mortalityFile = "../../Data/international/"\
+            "mortality_life_expectancy_final.csv"
+            
+        self.fertility.to_csv(fertilyFile, index=False)
+        self.birthDeath.to_csv(birthDeathFile, index=False)
+        self.area.to_csv(areaFile, index=False)
+        self.midYearPopulation.to_csv(midyearPopulationFile, index=False)
+        self.midYearPopulation5Year.to_csv(midyearPopulation5YearFile,
+                                           index=False)
+        self.midYearPopulationAge.to_csv(midyearPopulationAgeFile, index=False)
+        self.mortality.to_csv(mortalityFile, index=False)  
+        
     def _addPrimaryKey(self, uniqueCountries, df):
         df = df.merge(uniqueCountries, how="inner", left_on="country_name",
                           right_on="country_name")

@@ -37,10 +37,16 @@ if __name__ == "__main__":
     demographicsHandler.setupPrimaryKeys(uniqueCountries)
     incomeHandler.setupPrimaryKeys(uniqueCountries)
     
-    
+    # Income data have numerous years missing (5 year intervals)
     incomeHandler.interpolateMissingYears();
     
     # Years from columns to rows
-    #incomeHandler.restructureData()
+    incomeHandler.restructureData()
     
+    # Export data
+    countriesHandler.save();
+    demographicsHandler.save()
+    incomeHandler.save()
+    
+    print("ETL Complete!")
 
