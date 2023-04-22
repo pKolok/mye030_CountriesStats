@@ -185,6 +185,8 @@ class IncomeHandler(DataHandler):
             .sort_values(["country_index", "Year"])            
         
     def save(self):
+        self._renameColumns()
+        
         incomeIndexFile = "../../Data/income/income_index_final.csv"
         gdpLabourShareFile = "../../Data/income/labour_share_of_gdp_final.csv"
         grossFixedCapitalFormationFile = "../../Data/income/" \
@@ -321,4 +323,37 @@ class IncomeHandler(DataHandler):
                     df.loc[validLoc, newYear] = df[years[0]] + i * diff
                     i += 1            
     
-    
+    def _renameColumns(self):
+        commonColDict = {"Country": "country", "Year": "year"}
+        grossFixedCapitaLFormColDict = {"Country": "country", "Year": "year",
+                               "Gross_fixed_capital_formation":\
+                                   "gross_fixed_capital_formation"}
+        gdpTotalColDict = {"Country": "country", "Year": "year",
+                               "GDP_total": "gdp_total"}
+        gdpPerCapitaColDict = {"Country": "country", "Year": "year",
+                               "GDP_per_capita": "gdp_per_capita"}
+        gniPerCapitaColDict = {"Country": "country", "Year": "year",
+                               "GNI_per_capita": "gni_per_capita"}
+        gniMaleColDict = {"Country": "country", "Year": "year",
+                          "Estimated_GNI_male": "estimated_gni_male"}
+        gniFemaleColDict = {"Country": "country", "Year": "year",
+                          "Estimated GNI female": "estimated_gni_female"}
+        domesticCreditsColDict = {"Country": "country", "Year": "year",
+                          "Domestic credits": "domestic_credits"}
+        
+        self.incomeIndexFinal.rename(columns=commonColDict, inplace=True)
+        self.gdpLabourShareFinal.rename(columns=commonColDict,
+                                        inplace=True)
+        self.grossFixedCapitalFormationFinal.rename(
+            columns=grossFixedCapitaLFormColDict, inplace=True)
+        self.gdpTotalFinal.rename(columns=gdpTotalColDict, inplace=True)
+        self.gdpPerCapitaFinal.rename(columns=gdpPerCapitaColDict,
+                                      inplace=True)
+        self.gniPerCapitaFinal.rename(columns=gniPerCapitaColDict,
+                                      inplace=True)
+        self.estimatedGniMaleFinal.rename(columns=gniMaleColDict, inplace=True)
+        self.estimatedGniFemaleFinal.rename(columns=gniFemaleColDict,
+                                            inplace=True)
+        self.domesticCreditsFinal.rename(columns=domesticCreditsColDict,
+                                         inplace=True)
+        

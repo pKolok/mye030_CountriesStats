@@ -64,6 +64,8 @@ class CountriesHandler(DataHandler):
         self.countries.drop(['country_name'], axis=1, inplace=True)
         
     def save(self):
+        self._renameColumns()
+        
         countriesFile = "../../Data/countries/countriesFinal.csv"
         self.countries.to_csv(countriesFile, index=False)
         
@@ -74,8 +76,34 @@ class CountriesHandler(DataHandler):
         self.countries.insert(0, "country_index",
                               self.countries.pop("country_index"))
         
-        
-        
+    def _renameColumns(self):
+        columnDictionary = {"ISO": "iso", "ISO3": "iso3",
+                            "ISO_Code": "iso_code", "FIPS": "fips",
+                            "Display_Name": "display_name",
+                            "Official_Name": "official_name",
+                            "Capital": "capital", "Continent": "continent",
+                            "CurrencyCode": "currency_code",
+                            "CurrencyName": "currency_name", "Phone": "phone",
+                            "Region Code": "region_code",
+                            "Region Name": "region_name",
+                            "Sub-region Code": "sub-region_code",
+                            "Sub-region Name": "sub-region_name",
+                            "Intermediate Region Code": \
+                                "intermediate_region_code",
+                            "Intermediate Region Name": \
+                                "intermediate_region_name",                                
+                            "Status": "status",
+                            "Developed or Developing": \
+                                "developed_or_developing",
+                            "Small Island Developing States (SIDS)":\
+                                "small_island_developing_states_sids",
+                            "Land Locked Developing Countries (LLDC)":\
+                                "land_locked_developing_countries_lldc",
+                            "Least Developed Countries (LDC)": \
+                                "least_developed_countries_ldc",
+                            "Area_SqKm": "area_sqkm",
+                            "Population": "population"}
+        self.countries.rename(columns=columnDictionary, inplace=True)
         
         
         
