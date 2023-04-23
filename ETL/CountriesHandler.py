@@ -64,6 +64,7 @@ class CountriesHandler(DataHandler):
         self.countries.drop(['country_name'], axis=1, inplace=True)
         
     def save(self):
+        self._setNullForSQL()
         self._renameColumns()
         
         countriesFile = "../../Data/countries/countriesFinal.csv"
@@ -86,8 +87,8 @@ class CountriesHandler(DataHandler):
                             "CurrencyName": "currency_name", "Phone": "phone",
                             "Region Code": "region_code",
                             "Region Name": "region_name",
-                            "Sub-region Code": "sub-region_code",
-                            "Sub-region Name": "sub-region_name",
+                            "Sub-region Code": "sub_region_code",
+                            "Sub-region Name": "sub_region_name",
                             "Intermediate Region Code": \
                                 "intermediate_region_code",
                             "Intermediate Region Name": \
@@ -104,7 +105,6 @@ class CountriesHandler(DataHandler):
                             "Area_SqKm": "area_sqkm",
                             "Population": "population"}
         self.countries.rename(columns=columnDictionary, inplace=True)
-        
-        
-        
-        
+
+    def _setNullForSQL(self):
+        self.countries.fillna("\\N", inplace=True)

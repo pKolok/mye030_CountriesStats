@@ -107,7 +107,7 @@ class DemographicsHandler(DataHandler):
         self.mortality = self._addPrimaryKey(
             uniqueCountries, self.mortality)
             
-    def save(self):        
+    def save(self):
         fertilyFile = "../../Data/international/"\
             "age_specific_fertility_rates_final.csv"
         birthDeathFile = "../../Data/international/"\

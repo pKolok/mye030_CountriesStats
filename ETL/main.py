@@ -49,4 +49,3 @@ if __name__ == "__main__":
     incomeHandler.save()
     
     print("ETL Complete!")
-
