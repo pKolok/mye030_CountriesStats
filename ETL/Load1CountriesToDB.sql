@@ -1,11 +1,13 @@
 -- To run sql scripts from cmd:
--- source C:/Users/panou/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/mye030_CountriesStats/ETL/LoadToDB.sql;
--- source C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/mye030_CountriesStats/ETL/LoadToDB.sql;
+-- source C:/Users/panou/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/mye030_CountriesStats/ETL/Load1CountriesToDB.sql;
+-- source C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/mye030_CountriesStats/ETL/Load1CountriesToDB.sql;
 
 drop database if exists mye030_countries_stats;
 create database mye030_countries_stats;
 use mye030_countries_stats;
 
+select "----- Create table countries -----";
+drop table if exists countries;
 create table countries (
 	country_index int not null,
 	iso varchar(5),
@@ -46,6 +48,7 @@ describe countries;
 -- reconnect: mysql --local-infile=1 -u username -p
 
 -- Load Countries data
+select "----- Load table countries -----";
 load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/countries/countriesFinal.csv'
 into table countries
 fields terminated by ','
@@ -54,6 +57,4 @@ lines terminated by '\r\n'
 IGNORE 1 LINES;
 
 show warnings;
-select * from countries limit 10;
-
--- Load international DATABASE
+-- select * from countries limit 10;
