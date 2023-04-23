@@ -185,6 +185,7 @@ class IncomeHandler(DataHandler):
             .sort_values(["country_index", "Year"])            
         
     def save(self):
+        self._setNullForSQL()
         self._renameColumns()
         
         incomeIndexFile = "../../Data/income/income_index_final.csv"
@@ -265,7 +266,7 @@ class IncomeHandler(DataHandler):
             index = self.gdpLabourShare.columns.get_loc(year)
             for newYear in range(year + 1, year + 5):
                 index += 1
-                self.gdpLabourShare.insert(index, newYear, "")
+                self.gdpLabourShare.insert(index, newYear, pd.NA)
         
         # Similar tables
         dfs = [self.grossFixedCapitalFormation, self.gdpTotal,
@@ -275,7 +276,7 @@ class IncomeHandler(DataHandler):
                 index = df.columns.get_loc(year)
                 for newYear in range(year + 1, year + 5):
                     index += 1
-                    df.insert(index, newYear, "")
+                    df.insert(index, newYear, pd.NA)
         
         # Similar tables
         dfs = [self.estimatedGniMale, self.estimatedGniFemale]
@@ -284,7 +285,7 @@ class IncomeHandler(DataHandler):
                 index = df.columns.get_loc(year)
                 for newYear in range(year + 1, year + 5):
                     index += 1
-                    df.insert(index, newYear, "")
+                    df.insert(index, newYear, pd.NA)
     
     def _fillInInterpolationColumns(self):
         
@@ -322,6 +323,17 @@ class IncomeHandler(DataHandler):
                     diff = (df[years[1]] - df[years[0]]) / 5
                     df.loc[validLoc, newYear] = df[years[0]] + i * diff
                     i += 1            
+    
+    def _setNullForSQL(self):
+        self.incomeIndexFinal.fillna("\\N", inplace=True)
+        self.gdpLabourShareFinal.fillna("\\N", inplace=True)
+        self.grossFixedCapitalFormationFinal.fillna("\\N", inplace=True)
+        self.gdpTotalFinal.fillna("\\N", inplace=True)
+        self.gdpPerCapitaFinal.fillna("\\N", inplace=True)
+        self.gniPerCapitaFinal.fillna("\\N", inplace=True)
+        self.estimatedGniMaleFinal.fillna("\\N", inplace=True)
+        self.estimatedGniFemaleFinal.fillna("\\N", inplace=True)
+        self.domesticCreditsFinal.fillna("\\N", inplace=True)
     
     def _renameColumns(self):
         commonColDict = {"Country": "country", "Year": "year"}
