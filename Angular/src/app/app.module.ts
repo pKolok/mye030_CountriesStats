@@ -9,12 +9,12 @@ import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.componen
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeScreenComponent
+    WelcomeScreenComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
