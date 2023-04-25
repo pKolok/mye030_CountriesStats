@@ -13,7 +13,7 @@ export class WelcomeScreenComponent {
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   onEmerge(): void {
-    this.router.navigate(["./home"]);
+    this.router.navigate(["./home/timelines"]);
   }
 
 }
