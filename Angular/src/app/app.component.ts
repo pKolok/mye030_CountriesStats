@@ -24,18 +24,6 @@ export class AppComponent {
         );
     }
 
-    onCountries(): void {
-        this.items = [];
-        this.http.get("http://127.0.0.1:3000/api/v1/countries").subscribe(
-            (data: any) => {
-                for(let i = 0; i < data.data.countries.length; i++) {
-                    this.items.push(data.data.countries[i].Name);
-                }
-                console.log(data);
-            }
-        );
-    }
-
     onLanguages(): void {
         this.items = [];
         this.http.get("http://127.0.0.1:3000/api/v1/countryLanguages").subscribe(

@@ -1,1 +1,39 @@
-<p>timelines works!</p>
+<div class="row">
+    <div class="col sx-12">
+        <form [formGroup]="timelineForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <!-- Country -->
+                <div class="col-xs-5">
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select class="form-control" formControlName="country"
+                            (change)="onCountrySelected($event)">
+                            <option>Choose a Country</option>
+                            <option *ngFor="let country of countries">
+                                {{ country }}
+                            </option>
+                        </select>   
+                    </div>
+                </div>
+                <!-- Statistic -->
+                <div class="col-xs-5">
+                    <div class="form-group">
+                        <label for="statistic">Statistic</label>
+                        <select class="form-control" formControlName="statistic"
+                            (change)="onStatisticSelected($event)">
+                            <option>Choose a Statistic</option>
+                            <option *ngFor="let statistic of statistics">
+                                {{ statistic }}
+                            </option>
+                        </select>   
+                    </div>
+                </div>
+                <!-- Submit button -->
+                <div class="col-xs-2">
+                    <br>
+                    <button class="btn btn-success" type="submit">Go</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
