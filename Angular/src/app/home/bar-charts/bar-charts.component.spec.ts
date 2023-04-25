@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { BarChartsComponent } from './bar-charts.component';
+import { BarChartsComponent } from "./bar-charts.component";
 
-describe('BarChartsComponent', () => {
+describe("BarChartsComponent", () => {
   let component: BarChartsComponent;
   let fixture: ComponentFixture<BarChartsComponent>;
 
@@ -10,14 +10,14 @@ describe('BarChartsComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ BarChartsComponent ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(BarChartsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

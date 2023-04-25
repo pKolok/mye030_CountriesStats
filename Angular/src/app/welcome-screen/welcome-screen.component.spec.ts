@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { WelcomeScreenComponent } from './welcome-screen.component';
+import { WelcomeScreenComponent } from "./welcome-screen.component";
 
-describe('WelcomeScreenComponent', () => {
+describe("WelcomeScreenComponent", () => {
   let component: WelcomeScreenComponent;
   let fixture: ComponentFixture<WelcomeScreenComponent>;
 
@@ -10,14 +10,14 @@ describe('WelcomeScreenComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ WelcomeScreenComponent ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(WelcomeScreenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

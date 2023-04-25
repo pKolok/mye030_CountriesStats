@@ -6,15 +6,15 @@ import { BarChartsComponent } from "./bar-charts/bar-charts.component";
 import { ScatterPlotsComponent } from "./scatter-plots/scatter-plots.component";
 
 const routes: Routes = [
-    { path: '', component: HomeComponent, children: [
-        { path: 'timelines', component: TimelinesComponent },
-        { path: 'bar-charts', component: BarChartsComponent },
-        { path: 'scatter-plots', component: ScatterPlotsComponent}
-    ] },
+  { path: "", component: HomeComponent, children: [
+    { path: "timelines", component: TimelinesComponent },
+    { path: "bar-charts", component: BarChartsComponent },
+    { path: "scatter-plots", component: ScatterPlotsComponent}
+  ] },
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class HomeRoutingModule {}

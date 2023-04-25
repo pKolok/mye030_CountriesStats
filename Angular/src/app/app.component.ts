@@ -1,20 +1,20 @@
 import { HttpClient } from "@angular/common/http";
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title: String = 'Angular';
-  items: String[] = [];
+  title = "Angular";
+  items: string[] = [];
 
   constructor(private http: HttpClient) {}
 
   onCities() {
     this.items = [];
-    this.http.get('http://127.0.0.1:3000/api/v1/cities').subscribe(
+    this.http.get("http://127.0.0.1:3000/api/v1/cities").subscribe(
       (data: any) => {
         for(let i = 0; i < data.data.cities.length; i++) {
           this.items.push(data.data.cities[i].Name);
@@ -26,7 +26,7 @@ export class AppComponent {
 
   onCountries() {
     this.items = [];
-    this.http.get('http://127.0.0.1:3000/api/v1/countries').subscribe(
+    this.http.get("http://127.0.0.1:3000/api/v1/countries").subscribe(
       (data: any) => {
         for(let i = 0; i < data.data.countries.length; i++) {
           this.items.push(data.data.countries[i].Name);
@@ -38,7 +38,7 @@ export class AppComponent {
 
   onLanguages() {
     this.items = [];
-    this.http.get('http://127.0.0.1:3000/api/v1/countryLanguages').subscribe(
+    this.http.get("http://127.0.0.1:3000/api/v1/countryLanguages").subscribe(
       (data: any) => {
         for(let i = 0; i < data.data.languages.length; i++) {
           this.items.push(data.data.languages[i].Language);
