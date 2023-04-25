@@ -7,16 +7,16 @@ import { AppRoutingModule } from "./app-routing.module";
 import { WelcomeScreenComponent } from "./welcome-screen/welcome-screen.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WelcomeScreenComponent,
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        WelcomeScreenComponent,
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

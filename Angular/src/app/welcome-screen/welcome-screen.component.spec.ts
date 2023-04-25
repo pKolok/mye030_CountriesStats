@@ -3,21 +3,21 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { WelcomeScreenComponent } from "./welcome-screen.component";
 
 describe("WelcomeScreenComponent", () => {
-  let component: WelcomeScreenComponent;
-  let fixture: ComponentFixture<WelcomeScreenComponent>;
+    let component: WelcomeScreenComponent;
+    let fixture: ComponentFixture<WelcomeScreenComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ WelcomeScreenComponent ]
-    })
-      .compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [ WelcomeScreenComponent ]
+        })
+            .compileComponents();
 
-    fixture = TestBed.createComponent(WelcomeScreenComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(WelcomeScreenComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it("should create", () => {
-    expect(component).toBeTruthy();
-  });
+    it("should create", () => {
+        expect(component).toBeTruthy();
+    });
 });

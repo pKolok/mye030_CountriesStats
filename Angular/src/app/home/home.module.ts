@@ -9,17 +9,17 @@ import { ScatterPlotsComponent } from "./scatter-plots/scatter-plots.component";
 import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    HeaderComponent,
-    TimelinesComponent,
-    BarChartsComponent,
-    ScatterPlotsComponent
-  ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    ReactiveFormsModule
-  ]
+    declarations: [
+        HomeComponent,
+        HeaderComponent,
+        TimelinesComponent,
+        BarChartsComponent,
+        ScatterPlotsComponent
+    ],
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        ReactiveFormsModule
+    ]
 })
 export class HomeModule {}
