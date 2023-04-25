@@ -1,4 +1,3 @@
-import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
 
 @Component({
@@ -8,32 +7,4 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
     title = "Angular";
-    items: string[] = [];
-
-    constructor(private http: HttpClient) {}
-
-    onCities(): void {
-        this.items = [];
-        this.http.get("http://127.0.0.1:3000/api/v1/cities").subscribe(
-            (data: any) => {
-                for(let i = 0; i < data.data.cities.length; i++) {
-                    this.items.push(data.data.cities[i].Name);
-                }
-                console.log(data);
-            }
-        );
-    }
-
-    onLanguages(): void {
-        this.items = [];
-        this.http.get("http://127.0.0.1:3000/api/v1/countryLanguages").subscribe(
-            (data: any) => {
-                for(let i = 0; i < data.data.languages.length; i++) {
-                    this.items.push(data.data.languages[i].Language);
-                }
-                console.log(data);
-            }
-        );
-    }
-    
 }

@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col sx-12">
+    <div class="col-sx-12">
         <form [formGroup]="timelineForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <!-- Country -->
@@ -35,5 +35,9 @@
                 </div>
             </div>
         </form>
+        <hr>
+        <!-- <app-line-chart2 [data]="selectedData" *ngIf="isChartReady"></app-line-chart2> -->
+        <!-- <figure id="timeline"></figure> -->
+        <app-line-chart [data]="selectedData" *ngIf="isChartReady"></app-line-chart>
     </div>
 </div>
