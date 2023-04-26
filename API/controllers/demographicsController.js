@@ -17,6 +17,8 @@ exports.getCountryStatistic = (req, res) => {
 
         res.status(200).json({
             status: 'success',
+            country: country,
+            statistic: statistic,
             results: rows.length,
             data: JSON.parse(JSON.stringify(rows))
         });
