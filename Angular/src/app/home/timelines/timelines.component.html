@@ -28,16 +28,22 @@
                         </select>   
                     </div>
                 </div>
-                <!-- Submit button -->
-                <div class="col-xs-2">
-                    <br>
-                    <button class="btn btn-success" type="submit">Go</button>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- Submit button -->
+                    <button class="btn btn-primary" type="submit"
+                        [disabled]="!canSubmit">Go</button>
+                    <!-- Clear Button -->
+                    <button class="btn btn-secondary" type="button"
+                        (click)="onClear()" style="margin-left: 12px">Clear
+                    </button>
                 </div>
             </div>
         </form>
         <hr>
-        <!-- <app-line-chart2 [data]="selectedData" *ngIf="isChartReady"></app-line-chart2> -->
-        <!-- <figure id="timeline"></figure> -->
-        <app-line-chart [data]="selectedData" *ngIf="isChartReady"></app-line-chart>
+        <p *ngIf="noDataAvailable" style="color: red">No data available!</p>
+        <app-line-chart [data]="selectedData" *ngIf="canDrawChart">
+        </app-line-chart>
     </div>
 </div>

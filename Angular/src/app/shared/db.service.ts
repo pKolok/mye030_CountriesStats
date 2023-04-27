@@ -19,12 +19,7 @@ export class DBService {
     }
 
     getCountryStatistic(_country: string, _statistic: string): any {
-        let statistic = _statistic;
-        if (_statistic === "Mid-Year Population") {
-            statistic = "midyear_population";
-        }
-
-        const url = this.url + "/demographics/" + _country + "/" + statistic;
+        const url = this.url + "/demographics/" + _country + "/" + _statistic;
         return this.http.get(url);
     }
 

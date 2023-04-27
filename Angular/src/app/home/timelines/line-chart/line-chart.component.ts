@@ -1,95 +1,125 @@
-import { Component, ElementRef, Input, OnChanges, OnInit } from "@angular/core";
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from "@angular/core";
 import * as d3 from "d3";
+
+import { ApiData } from "src/app/shared/api-data.model";
 
 @Component({
     selector: "app-line-chart",
     templateUrl: "./line-chart.component.html",
     styleUrls: ["./line-chart.component.css"]
 })
-export class LineChartComponent implements OnChanges {
-    @Input() public data: { midyear_population: number, year: number }[] = [];
+export class LineChartComponent implements OnInit, OnChanges {
+    @Input() public data: ApiData;
 
-    private width = 700;
-    private height = 700;
-    private margin = 50;
     public svg: any;
-    public svgInner: any;
-    public yScale: any;
-    public xScale: any;
-    public xAxis: any;
-    public yAxis: any;
-    public lineGroup: any;
+    private margin = { left: 100, right: 10, bottom: 50, top: 10 };
+    private totalWidth = 1100;
+    private totalHeight = 600;
     
-    public constructor(public chartElem: ElementRef) {}
-
-    ngOnChanges(changes: any): void {
-        if (changes.hasOwnProperty("data") && this.data) {
-            this.initialiseChart();
-            this.drawChart();
-
-            window.addEventListener("resize", () => this.drawChart());
-        }
+    ngOnInit(): void {
+        this.initChart();
+        this.createChart();
     }
 
-    private initialiseChart(): void {
+    ngOnChanges(changes: SimpleChanges): void {
+        this.clearChart();
+        this.createChart();
+    }
+
+    private initChart(): void {
+        // Create svg
         this.svg = d3
-            // .select(this.chartElem.nativeElement)
             .select(".linechart")
             .append("svg")
-            .attr("height", this.height);
-        
-        this.svgInner = this.svg
+            .attr("viewBox", `0 0 ${this.totalWidth} ${this.totalHeight}`)
             .append("g")
-            .style("transform", "translate(" + this.margin + "px, " + 
-                this.margin + "px)");
-        
-        this.yScale = d3
-            .scaleLinear()
-            .domain([d3.max(this.data, (d) => d.midyear_population) + 1,
-                d3.min(this.data, (d) => d.midyear_population) - 1])
-            .range([0, this.height - 2 * this.margin]);
-
-        this.yAxis = this.svgInner
-            .append("g")
-            .attr("id", "y-axis")
-            .style("transform", "translate(" + this.margin + "px, 0)");
-
-        this.xScale = d3
-            .scaleTime()
-            .domain(d3.extent(this.data, (d) => new Date(d.year, 6, 0)));
-
-        this.xAxis = this.svgInner
-            .append("g")
-            .attr("id", "x-axis")
-            .style("transform", "translate(0, " +
-                (this.height - 2 * this.margin) + "px)");
-
-        this.lineGroup = this.svgInner
-            .append("g")
-            .append("path")
-            .attr("id", "line")
-            .style("fill", "none")
-            .style("stroke", "blue")
-            .style("stroke-width", "2px");
+            .attr("transform", "translate(" + this.margin.left + "," + 
+                this.margin.right + ")");
     }
 
-    private drawChart(): void {
-        this.width = this.chartElem.nativeElement.getBoundingClientRect().width;
-        this.svg
-            .attr("width", this.width)
+    private createChart(): void {
 
-        this.xScale.range([this.margin, this.width - 2 * this.margin]);
+        // Width/height after subtracting x/y width/height
+        const innerWidth = this.totalWidth - this.margin.left 
+            - this.margin.right;
+        const innerHeight = this.totalHeight - this.margin.top 
+            - this.margin.bottom;
 
-        const noTicks = this.width < 700 ? 10 : 20;
+        // First clear possible pre-existing chart
+        this.clearChart();
+
+        // Set the scales
+        const xScale = d3
+            .scaleTime()
+            .range([0, innerWidth])
+            .domain(d3.extent(this.data.data, (d) => new Date(d.year, 6, 0)));
+
+        const yScale = d3
+            .scaleLinear()
+            .range([innerHeight, 0])
+            .domain([0, d3.max(this.data.data, (d) => d.stat)]);
+
+        // Set X axis
         const xAxis = d3
-            .axisBottom(this.xScale)
-            .ticks(noTicks)
-            .tickFormat(d3.timeFormat("%Y"));
-        this.xAxis.call(xAxis);
-        
+            .axisBottom(xScale)
+            .tickSizeOuter(0);
+        // Set Y axis
         const yAxis = d3
-            .axisLeft(this.yScale);
-        this.yAxis.call(yAxis);
+            .axisLeft(yScale)
+            .tickSizeOuter(0)
+            .scale(yScale.nice());
+
+        // Add X Axis
+        this.svg
+            .append("g")
+            .attr("class", "xAxis")
+            .attr("transform", "translate(0," + innerHeight + ")")
+            .call(xAxis);
+        // Add X Axis Label
+        this.svg
+            .append("text")
+            .attr("x", innerWidth / 2)
+            .attr("y", innerHeight + this.margin.bottom)
+            .style("text-anchor", "middle")
+            // .attr("font-family", "ibm-plex-sans")
+            .text("Years");
+
+        // Add Y axis
+        this.svg
+            .append("g")
+            .attr("class", "yAxis")
+            .call(yAxis);
+        // Add Y Axis Label
+        this.svg
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - this.margin.left)
+            .attr("x", 0 - (innerHeight / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text(this.data.statistic);
+
+        // X Gridlines
+        d3.selectAll("g.xAxis g.tick")
+            .append("line")
+            .attr("class", "gridline")
+            .attr("x1", 0)
+            .attr("y1", -innerHeight)
+            .attr("x2", 0)
+            .attr("y2", 0)
+            .attr("stroke", "#9ca5aecf") // line color
+            .attr("stroke-dasharray","4") // make it dashed;
+
+        // Y Gridlines
+        d3.selectAll("g.yAxis g.tick")
+            .append("line")
+            .attr("class", "gridline")
+            .attr("x1", 0)
+            .attr("y1", 0)
+            .attr("x2", innerWidth)
+            .attr("y2", 0)
+            .attr("stroke", "#9ca5aecf") // line color
+            .attr("stroke-dasharray","4") // make it dashed;;
 
         const line = d3
             .line()
@@ -97,11 +127,24 @@ export class LineChartComponent implements OnChanges {
             .y((d) => d[1])
             .curve(d3.curveMonotoneX);
 
-        const points: [number, number][] = this.data.map(
-            (d) => [this.xScale(new Date(d.year, 6, 0)), 
-                this.yScale(d.midyear_population)]
+        const points: [number, number][] = this.data.data.map(
+            (d) => [xScale(new Date(d.year, 6, 0)), 
+                yScale(d.stat)]
         );
 
-        this.lineGroup.attr("d", line(points));
+        this.svg
+            .append("g")
+            .append("path")
+            .attr("id", "line")
+            .style("fill", "none")
+            .style("stroke", "blue")
+            .style("stroke-width", "2px")
+            .attr("d", line(points));
+    }
+
+    private clearChart(): void {
+        this.svg.selectAll("g").remove();
+        this.svg.selectAll("path").remove();
+        this.svg.selectAll("text").remove();
     }
 }
