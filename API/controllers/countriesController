@@ -1,4 +1,4 @@
-var connection = require('../db-connection');
+var connection = require('../db/db-connection');
 
 exports.getAllCountries = (req, res) => {
 

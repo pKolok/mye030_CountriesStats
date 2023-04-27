@@ -1,1 +1,1 @@
-var connection = require('../db-connection');
+var connection = require('../db/db-connection');
