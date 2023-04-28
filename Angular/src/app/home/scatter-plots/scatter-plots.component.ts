@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { OneStat, TwoStats } from "src/app/shared/api-data.model";
 import { DBService } from "src/app/shared/db.service";
+import { ScatterPlotsService } from "./scatter-plots.service";
 
 @Component({
     selector: "app-scatter-plots",
@@ -11,16 +12,14 @@ import { DBService } from "src/app/shared/db.service";
 export class ScatterPlotsComponent {
     public timelineForm: FormGroup = new FormGroup({});
     public countries: string[] = [];
-    public statistics: string[] = ["Mid-Year Population", "Total GDP"];
-    public selectedData: TwoStats = null;
+    public statistics: string[] = ["Mid-Year Population", "Total GDP"]; // TODO
     public canSubmit: boolean = false;
-    public canDrawChart: boolean = false;
-    public noDataAvailable: boolean = false;
     private selectedCountry: string = "";
     private selectedStatistic1: string = "";
     private selectedStatistic2: string = "";
 
-    constructor(private dbService: DBService) {}
+    constructor(private dbService: DBService, 
+        private scatterPlotService: ScatterPlotsService) {}
 
     ngOnInit(): void {
         this.countries = this.dbService.getAllCountries();
@@ -85,20 +84,12 @@ export class ScatterPlotsComponent {
 
             console.log(data);
 
-            if (data.results > 0) {
-                this.selectedData = data;
-                this.noDataAvailable = false;
-                this.canDrawChart = true;
-            } else {
-                this.noDataAvailable = true;
-                this.canDrawChart = false;
-            }
+            this.scatterPlotService.setData([data]);
         });
     }
 
     onClear(): void {
-        this.noDataAvailable = false;
-        this.canDrawChart = false;
+        this.scatterPlotService.clearGraph();
     }
 
     private initForm(): void {

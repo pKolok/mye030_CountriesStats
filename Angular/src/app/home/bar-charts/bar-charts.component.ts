@@ -97,7 +97,7 @@ export class BarChartsComponent {
             .attr("viewBox", `0 0 ${this.totalWidth} ${this.totalHeight}`)
             .append("g")
             .attr("transform", "translate(" + this.margin.left + "," + 
-                this.margin.right + ")");
+                this.margin.top + ")");
     }
 
     private createChart(data: any[]): void {
@@ -120,7 +120,6 @@ export class BarChartsComponent {
         const yScale = d3
             .scaleLinear()
             .range([innerHeight, 0])
-            // .domain(d3.extent(data, (d) => d.midyear_population));
             .domain([0, d3.max(data, (d) => d.stat)]);
 
         // Set X axis

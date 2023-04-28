@@ -61,7 +61,7 @@ export class LineChartComponent implements OnInit, OnDestroy {
             .attr("viewBox", `0 0 ${this.totalWidth} ${this.totalHeight}`)
             .append("g")
             .attr("transform", "translate(" + this.margin.left + "," + 
-                this.margin.right + ")");
+                this.margin.top + ")");
     }
 
     private createChart(): void {

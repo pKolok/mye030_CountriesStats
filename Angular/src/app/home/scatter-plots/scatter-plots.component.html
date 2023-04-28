@@ -55,8 +55,6 @@
             </div>
         </form>
         <hr>
-        <p *ngIf="noDataAvailable" style="color: red">No data available!</p>
-        <app-scatter-plot [data]="selectedData" *ngIf="canDrawChart">
-        </app-scatter-plot>
+        <app-scatter-plot></app-scatter-plot>
     </div>
 </div>

@@ -1,40 +1,67 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import * as d3 from "d3";
+import { Subscription } from 'rxjs';
 
 import { TwoStats } from 'src/app/shared/api-data.model';
+import { ScatterPlotsService } from '../scatter-plots.service';
 
 @Component({
     selector: 'app-scatter-plot',
     templateUrl: './scatter-plot.component.html',
     styleUrls: ['./scatter-plot.component.css']
 })
-export class ScatterPlotComponent {
+export class ScatterPlotComponent implements OnInit, OnDestroy{
     @Input() public data: TwoStats;
 
     public svg: any;
+    public noDataAvailable: boolean = false;
     private margin = { left: 100, right: 35, bottom: 50, top: 10 };
     private totalWidth = 1100;
     private totalHeight = 600;
+    private dataSubscription: Subscription;
+    private clearSubscription: Subscription;
     
+    constructor(private scatterPlotService: ScatterPlotsService) {}
+
     ngOnInit(): void {
         this.initChart();
-        this.createChart();
+        
+        this.dataSubscription = this.scatterPlotService.dataChanged.subscribe(
+            (data: TwoStats[]) => {
+                this.data = data[0];    // TODO - [0]: temp
+
+                this.clearChart();
+                if ( this.data.results > 0 ) {
+                    this.noDataAvailable = false;
+                    this.createChart();
+                } else {
+                    this.noDataAvailable = true;
+                }
+            }
+        );
+
+        this.clearSubscription = this.scatterPlotService.graphCleared.subscribe(
+            () => {
+                this.clearChart();
+                this.noDataAvailable = false;
+            }
+        );
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
-        this.clearChart();
-        this.createChart();
+    ngOnDestroy(): void {
+        this.dataSubscription.unsubscribe();
+        this.clearSubscription.unsubscribe();
     }
 
     private initChart(): void {
         // Create svg
         this.svg = d3
-            .select(".chart")
+            .select("figure#chart")
             .append("svg")
             .attr("viewBox", `0 0 ${this.totalWidth} ${this.totalHeight}`)
             .append("g")
             .attr("transform", "translate(" + this.margin.left + "," + 
-                this.margin.right + ")");
+                this.margin.top + ")");
     }
 
     private createChart(): void {
@@ -44,9 +71,6 @@ export class ScatterPlotComponent {
             - this.margin.right;
         const innerHeight = this.totalHeight - this.margin.top 
             - this.margin.bottom;
-
-        // First clear possible pre-existing chart
-        this.clearChart();
 
         // Set the scales
         const xScale = d3
@@ -78,7 +102,7 @@ export class ScatterPlotComponent {
         this.svg
             .append("text")
             .attr("x", innerWidth / 2)
-            .attr("y", innerHeight + this.margin.bottom / 2)
+            .attr("y", innerHeight + this.margin.bottom)
             .style("text-anchor", "middle")
             // .attr("font-family", "ibm-plex-sans")
             .text(this.data.statistic1);
