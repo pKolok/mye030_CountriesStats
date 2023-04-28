@@ -1,11 +1,11 @@
 const express = require('express')
 
-const countriesController = require('../controllers/countriesController');
+const incomeController = require('../controllers/incomeController');
 
 const router = express.Router();
 
-// router
-//     .route('/')
-//     .get(countriesController.getAllCountries);
+router
+    .route('/:country/:statistic')
+    .get(incomeController.getCountryStatistic);
 
 module.exports = router;
