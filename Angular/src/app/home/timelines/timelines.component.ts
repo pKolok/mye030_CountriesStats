@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 
 import { DBService } from "src/app/shared/db.service";
-import { ApiData } from "src/app/shared/api-data.model";
+import { ApiResponseData, OneStat } from "src/app/shared/api-data.model";
 
 @Component({
     selector: "app-timelines",
@@ -13,7 +13,7 @@ export class TimelinesComponent implements OnInit {
     public timelineForm: FormGroup = new FormGroup({});
     public countries: string[] = [];
     public statistics: string[] = ["Mid-Year Population", "Area"];
-    public selectedData: ApiData = null;
+    public selectedData: OneStat = null;
     public canSubmit: boolean = false;
     public canDrawChart: boolean = false;
     public noDataAvailable: boolean = false;
@@ -57,11 +57,12 @@ export class TimelinesComponent implements OnInit {
 
     onSubmit(): void {
         this.dbService.getCountryStatistic(this.selectedCountry,
-            this.selectedStatistic).subscribe((data: any) => {
+            this.selectedStatistic).subscribe((data: ApiResponseData) => {
                 
             console.log(data);
-
+            
             if (data.results > 0) {
+                delete data.status;
                 this.selectedData = data;
                 this.noDataAvailable = false;
                 this.canDrawChart = true;
@@ -70,7 +71,6 @@ export class TimelinesComponent implements OnInit {
                 this.canDrawChart = false;
             }
       });
-        
     }
 
     onClear(): void {

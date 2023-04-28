@@ -9,6 +9,7 @@ import { ScatterPlotsComponent } from "./scatter-plots/scatter-plots.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { LineChartComponent } from "./timelines/line-chart/line-chart.component";
 import { LineChart2Component } from "./timelines/line-chart2/line-chart2.component";
+import { ScatterPlotComponent } from './scatter-plots/scatter-plot/scatter-plot.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { LineChart2Component } from "./timelines/line-chart2/line-chart2.compone
         BarChartsComponent,
         ScatterPlotsComponent,
         LineChartComponent,
-        LineChart2Component
+        LineChart2Component,
+        ScatterPlotComponent
     ],
     imports: [
         CommonModule,

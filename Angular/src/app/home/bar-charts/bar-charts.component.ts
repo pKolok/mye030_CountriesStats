@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from "@angular/forms";
 import * as d3 from "d3";
 
 import { DBService } from "src/app/shared/db.service";
-import { ApiData } from "src/app/shared/api-data.model";
+import { ApiResponseData } from "src/app/shared/api-data.model";
 
 @Component({
     selector: "app-bar-charts",
@@ -18,7 +18,6 @@ export class BarChartsComponent {
     public noDataAvailable: boolean = false;
     private selectedCountry = "";
     private selectedStatistic = "";
-    private selectedData: ApiData;
     
     // Chart specific
     private svg: any;
@@ -64,14 +63,13 @@ export class BarChartsComponent {
 
     onSubmit(): void {
         this.dbService.getCountryStatistic(this.selectedCountry,
-            this.selectedStatistic).subscribe((data: ApiData) => {
+            this.selectedStatistic).subscribe((data: ApiResponseData) => {
 
             console.log(data);
             
             if (data.results > 0) {
-                this.selectedData = data;
                 this.noDataAvailable = false;
-                this.createChart(this.selectedData.data);
+                this.createChart(data.data);
             } else {
                 this.noDataAvailable = true;
                 this.clearChart();
@@ -193,7 +191,7 @@ export class BarChartsComponent {
             .attr("width", xScale.bandwidth())
             .attr("height", (d: any) => innerHeight 
                 - yScale(d.stat))
-            .attr("fill", "#00A78F")
+            .attr("fill", "#328CC8")
             // .transition()
             // .duration(250)
             // .delay((d, i) => i * 50)

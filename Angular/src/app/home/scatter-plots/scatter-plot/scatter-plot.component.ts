@@ -1,18 +1,18 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from "@angular/core";
+import { Component, Input, SimpleChanges } from '@angular/core';
 import * as d3 from "d3";
 
-import { OneStat } from "src/app/shared/api-data.model";
+import { TwoStats } from 'src/app/shared/api-data.model';
 
 @Component({
-    selector: "app-line-chart",
-    templateUrl: "./line-chart.component.html",
-    styleUrls: ["./line-chart.component.css"]
+    selector: 'app-scatter-plot',
+    templateUrl: './scatter-plot.component.html',
+    styleUrls: ['./scatter-plot.component.css']
 })
-export class LineChartComponent implements OnInit, OnChanges {
-    @Input() public data: OneStat;
+export class ScatterPlotComponent {
+    @Input() public data: TwoStats;
 
     public svg: any;
-    private margin = { left: 100, right: 10, bottom: 50, top: 10 };
+    private margin = { left: 100, right: 35, bottom: 50, top: 10 };
     private totalWidth = 1100;
     private totalHeight = 600;
     
@@ -22,16 +22,14 @@ export class LineChartComponent implements OnInit, OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        if (changes["data"].firstChange == false) {
-            this.clearChart();
-        }
+        this.clearChart();
         this.createChart();
     }
 
     private initChart(): void {
         // Create svg
         this.svg = d3
-            .select(".linechart")
+            .select(".chart")
             .append("svg")
             .attr("viewBox", `0 0 ${this.totalWidth} ${this.totalHeight}`)
             .append("g")
@@ -48,27 +46,26 @@ export class LineChartComponent implements OnInit, OnChanges {
             - this.margin.bottom;
 
         // First clear possible pre-existing chart
-        // this.clearChart();
+        this.clearChart();
 
         // Set the scales
         const xScale = d3
-            .scaleTime()
+            .scaleLinear()
             .range([0, innerWidth])
-            .domain(d3.extent(this.data.data, (d) => new Date(d.year, 6, 0)));
+            .domain(d3.extent(this.data.data, (d) => d.stat1));
 
         const yScale = d3
             .scaleLinear()
             .range([innerHeight, 0])
-            .domain([0, d3.max(this.data.data, (d) => d.stat)]);
+            .domain([0, d3.max(this.data.data, (d) => d.stat2)]);
 
         // Set X axis
         const xAxis = d3
             .axisBottom(xScale)
-            .tickSizeOuter(0);
+            .scale(xScale.nice());
         // Set Y axis
         const yAxis = d3
             .axisLeft(yScale)
-            .tickSizeOuter(0)
             .scale(yScale.nice());
 
         // Add X Axis
@@ -81,10 +78,10 @@ export class LineChartComponent implements OnInit, OnChanges {
         this.svg
             .append("text")
             .attr("x", innerWidth / 2)
-            .attr("y", innerHeight + this.margin.bottom)
+            .attr("y", innerHeight + this.margin.bottom / 2)
             .style("text-anchor", "middle")
             // .attr("font-family", "ibm-plex-sans")
-            .text("Years");
+            .text(this.data.statistic1);
 
         // Add Y axis
         this.svg
@@ -99,7 +96,7 @@ export class LineChartComponent implements OnInit, OnChanges {
             .attr("x", 0 - (innerHeight / 2))
             .attr("dy", "1em")
             .style("text-anchor", "middle")
-            .text(this.data.statistic);
+            .text(this.data.statistic2);
 
         // X Gridlines
         d3.selectAll("g.xAxis g.tick")
@@ -123,33 +120,36 @@ export class LineChartComponent implements OnInit, OnChanges {
             .attr("stroke", "#9ca5aecf") // line color
             .attr("stroke-dasharray","4") // make it dashed;;
 
-        const line = d3
-            .line()
-            .x((d) => d[0])
-            .y((d) => d[1])
-            .curve(d3.curveMonotoneX);
+        // Add dots
+        const dots = this.svg.append('g');
+        dots
+            .selectAll("dot")
+            .data(this.data.data)
+            .enter()
+            .append("circle")
+            .attr("cx", (d: any) => xScale(d.stat1))
+            .attr("cy",  (d: any) => yScale(d.stat2))
+            .attr("r", 5)
+            // .style("opacity", .8)
+            .style("fill", "#328CC8");
 
-        const points: [number, number][] = this.data.data.map(
-            (d) => [xScale(new Date(d.year, 6, 0)), 
-                yScale(d.stat)]
-        );
-
-        this.svg
-            .append("g")
-            .append("path")
-            .attr("id", "line")
-            .style("fill", "none")
-            .style("stroke", "#328CC8")
-            .style("stroke-width", "2px")
-            .attr("d", line(points));
+        // Add labels
+        dots
+            .selectAll("text")
+            .data(this.data.data)
+            .enter()
+            .append("text")
+            .text( (d: any) => d.year)
+            .attr("x", (d: any) => xScale(d.stat1))
+            .attr("y", (d: any)  => yScale(d.stat2))
+            .attr("transform", "translate(5,-2)")
+            .style("opacity", .5)
+            .style("font", "10px times");
     }
 
-    // TODO - gives error in console
     private clearChart(): void {
-        // if (this.svg && !this.svg.empty()) {
-            this.svg.selectAll("g").remove();
-            this.svg.selectAll("path").remove();
-            this.svg.selectAll("text").remove();
-        // }
+        this.svg.selectAll("g").remove();
+        this.svg.selectAll("path").remove();
+        this.svg.selectAll("text").remove();
     }
 }

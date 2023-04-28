@@ -1,1 +1,62 @@
-<p>scatter-plots works!</p>
+<div class="row">
+    <div class="col-sx-12">
+        <form [formGroup]="timelineForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <!-- Country -->
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select class="form-control" formControlName="country"
+                            (change)="onCountrySelected($event)">
+                            <option>Choose a Country</option>
+                            <option *ngFor="let country of countries">
+                                {{ country }}
+                            </option>
+                        </select>   
+                    </div>
+                </div>
+                <!-- Statistic 1 -->
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label for="statistic1">Statistic 1</label>
+                        <select class="form-control" formControlName="statistic1"
+                            (change)="onStatistic1Selected($event)">
+                            <option>Choose a Statistic</option>
+                            <option *ngFor="let statistic of statistics">
+                                {{ statistic }}
+                            </option>
+                        </select>   
+                    </div>
+                </div>
+                <!-- Statistic 2 -->
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label for="statistic2">Statistic 2</label>
+                        <select class="form-control" formControlName="statistic2"
+                            (change)="onStatistic2Selected($event)">
+                            <option>Choose a Statistic</option>
+                            <option *ngFor="let statistic of statistics">
+                                {{ statistic }}
+                            </option>
+                        </select>   
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- Submit button -->
+                    <button class="btn btn-primary" type="submit"
+                        [disabled]="!canSubmit">Go</button>
+                    <!-- Clear Button -->
+                    <button class="btn btn-secondary" type="button"
+                        (click)="onClear()" style="margin-left: 12px">Clear
+                    </button>
+                </div>
+            </div>
+        </form>
+        <hr>
+        <p *ngIf="noDataAvailable" style="color: red">No data available!</p>
+        <app-scatter-plot [data]="selectedData" *ngIf="canDrawChart">
+        </app-scatter-plot>
+    </div>
+</div>
