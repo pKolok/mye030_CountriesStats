@@ -153,9 +153,12 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
             .append("circle")
             .attr("cx", (d: any) => xScale(d.stat1))
             .attr("cy",  (d: any) => yScale(d.stat2))
-            .attr("r", 5)
-            // .style("opacity", .8)
-            .style("fill", "#328CC8");
+            .attr("r", 0)
+            .style("fill", "#328CC8")
+            .transition()
+            .delay((d, i) => i * 60)
+            .attr("r", 5);
+
 
         // Add labels
         dots
@@ -167,6 +170,10 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
             .attr("x", (d: any) => xScale(d.stat1))
             .attr("y", (d: any)  => yScale(d.stat2))
             .attr("transform", "translate(5,-2)")
+            .style("opacity", .0)   // transition opacity from 0 to 0.5
+            .transition()
+            .delay(500)
+            .duration(3500)
             .style("opacity", .5)
             .style("font", "10px times");
     }

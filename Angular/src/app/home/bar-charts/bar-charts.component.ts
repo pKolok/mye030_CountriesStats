@@ -181,21 +181,23 @@ export class BarChartsComponent {
             .attr("stroke-dasharray","4") // make it dashed;;
 
         // Create and fill the bars
-        this.svg.selectAll("bars")
+        this.svg
+            .append("g")
+            .attr("class", "bar-container")
+            .selectAll("rect")
             .data(data)
             .enter()
             .append("rect")
+            .attr("class", "bar")
             .attr("x", (d: any) => xScale(d.year))
-            .attr("y", (d: any) => yScale(d.stat))
+            .attr("y", (d: any) => innerHeight)
             .attr("width", xScale.bandwidth())
-            .attr("height", (d: any) => innerHeight 
-                - yScale(d.stat))
+            .attr("height", 0)
             .attr("fill", "#328CC8")
-            // .transition()
-            // .duration(250)
-            // .delay((d, i) => i * 50)
+            .transition()
+            .delay((d, i) => i * 20)    // 20ms delay for each bar
             .attr("height", d => innerHeight - yScale(d.stat))
-            .attr("y", d => yScale(d.stat));   
+            .attr("y", d => yScale(d.stat));
     }
 
     private clearChart(): void {

@@ -156,14 +156,23 @@ export class LineChartComponent implements OnInit, OnDestroy {
                 yScale(d.stat)]
         );
 
-        this.svg
-            .append("g")
+        const path = this.svg
             .append("path")
-            .attr("id", "line")
-            .style("fill", "none")
-            .style("stroke", "#328CC8")
+            .attr("d", line(points))
             .style("stroke-width", "2px")
-            .attr("d", line(points));
+            .style("fill", "none")
+            .style("stroke", "#328CC8");
+
+        const length = path.node().getTotalLength(); // Get line length
+
+        path
+            .attr("stroke-dasharray", length + " " + length)
+            .attr("stroke-dashoffset", length)
+            .transition()
+            .ease(d3.easeLinear)
+            .attr("stroke-dashoffset", 0)
+            .delay(100)         // delay to start drawing i.e 0.1s
+            .duration(2000)     // duration of animation i.e. 2.0s
     }
 
     private clearChart(): void {
