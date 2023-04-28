@@ -42,8 +42,6 @@
             </div>
         </form>
         <hr>
-        <p *ngIf="noDataAvailable" style="color: red">No data available!</p>
-        <app-line-chart [data]="selectedData" *ngIf="canDrawChart">
-        </app-line-chart>
+        <app-line-chart></app-line-chart>
     </div>
 </div>

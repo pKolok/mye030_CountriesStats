@@ -2,36 +2,61 @@ import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from "@
 import * as d3 from "d3";
 
 import { OneStat } from "src/app/shared/api-data.model";
+import { TimelinesService } from "../timelines.service";
+import { Subscription } from "rxjs";
 
 @Component({
     selector: "app-line-chart",
     templateUrl: "./line-chart.component.html",
     styleUrls: ["./line-chart.component.css"]
 })
-export class LineChartComponent implements OnInit, OnChanges {
-    @Input() public data: OneStat;
+export class LineChartComponent implements OnInit, OnDestroy {
+    private data: OneStat;
 
     public svg: any;
+    public noDataAvailable: boolean = false;
     private margin = { left: 100, right: 10, bottom: 50, top: 10 };
     private totalWidth = 1100;
     private totalHeight = 600;
+    private dataSubscription: Subscription;
+    private clearSubscription: Subscription;
     
+    constructor(private timelineService: TimelinesService) {}
+
     ngOnInit(): void {
         this.initChart();
-        this.createChart();
+
+        this.dataSubscription = this.timelineService.dataChanged.subscribe(
+            (data: OneStat[]) => {
+                this.data = data[0];    // TODO - [0]: temp
+
+                this.clearChart();
+                if ( this.data.results > 0 ) {
+                    this.noDataAvailable = false;
+                    this.createChart();
+                } else {
+                    this.noDataAvailable = true;
+                }
+            }
+        );
+
+        this.clearSubscription = this.timelineService.graphCleared.subscribe(
+            () => {
+                this.clearChart();
+                this.noDataAvailable = false;
+            }
+        );
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
-        if (changes["data"].firstChange == false) {
-            this.clearChart();
-        }
-        this.createChart();
+    ngOnDestroy(): void {
+        this.dataSubscription.unsubscribe();
+        this.clearSubscription.unsubscribe();
     }
 
     private initChart(): void {
         // Create svg
         this.svg = d3
-            .select(".linechart")
+            .select("figure#chart")
             .append("svg")
             .attr("viewBox", `0 0 ${this.totalWidth} ${this.totalHeight}`)
             .append("g")
@@ -46,9 +71,6 @@ export class LineChartComponent implements OnInit, OnChanges {
             - this.margin.right;
         const innerHeight = this.totalHeight - this.margin.top 
             - this.margin.bottom;
-
-        // First clear possible pre-existing chart
-        // this.clearChart();
 
         // Set the scales
         const xScale = d3
@@ -144,12 +166,9 @@ export class LineChartComponent implements OnInit, OnChanges {
             .attr("d", line(points));
     }
 
-    // TODO - gives error in console
     private clearChart(): void {
-        // if (this.svg && !this.svg.empty()) {
-            this.svg.selectAll("g").remove();
-            this.svg.selectAll("path").remove();
-            this.svg.selectAll("text").remove();
-        // }
+        this.svg.selectAll("g").remove();
+        this.svg.selectAll("path").remove();
+        this.svg.selectAll("text").remove();
     }
 }

@@ -2,7 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 
 import { DBService } from "src/app/shared/db.service";
-import { ApiResponseData, OneStat } from "src/app/shared/api-data.model";
+import { ApiResponseData } from "src/app/shared/api-data.model";
+import { TimelinesService } from "./timelines.service";
 
 @Component({
     selector: "app-timelines",
@@ -12,15 +13,13 @@ import { ApiResponseData, OneStat } from "src/app/shared/api-data.model";
 export class TimelinesComponent implements OnInit {
     public timelineForm: FormGroup = new FormGroup({});
     public countries: string[] = [];
-    public statistics: string[] = ["Mid-Year Population", "Area"];
-    public selectedData: OneStat = null;
+    public statistics: string[] = ["Mid-Year Population", "Area"];  // TODO
     public canSubmit: boolean = false;
-    public canDrawChart: boolean = false;
-    public noDataAvailable: boolean = false;
     private selectedCountry: string = "";
     private selectedStatistic: string = "";
 
-    constructor(private dbService: DBService) {}
+    constructor(private dbService: DBService, 
+        private timelineService: TimelinesService) {}
 
     ngOnInit(): void {
         this.countries = this.dbService.getAllCountries();
@@ -60,22 +59,14 @@ export class TimelinesComponent implements OnInit {
             this.selectedStatistic).subscribe((data: ApiResponseData) => {
                 
             console.log(data);
-            
-            if (data.results > 0) {
-                delete data.status;
-                this.selectedData = data;
-                this.noDataAvailable = false;
-                this.canDrawChart = true;
-            } else {
-                this.noDataAvailable = true;
-                this.canDrawChart = false;
-            }
+
+            delete data.status;
+            this.timelineService.setData([data]);
       });
     }
 
     onClear(): void {
-        this.noDataAvailable = false;
-        this.canDrawChart = false;
+        this.timelineService.clearGraph();
     }
 
     private initForm(): void {
