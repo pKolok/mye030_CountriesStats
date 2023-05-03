@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { zip  } from 'rxjs';
+import { Observable, filter, map, zip  } from 'rxjs';
+import { ApiResponseData, OneStat } from "./api-data.model";
 
 @Injectable({providedIn: "root"})
 export class DBService {
@@ -19,9 +20,17 @@ export class DBService {
         return countries;
     }
 
-    getCountryStatistic(_country: string, _statistic: string): any {
+    // TODO - direct to demographics/income accordingly
+    getCountryStatistic(_country: string, _statistic: string): Observable<any> {
         const url = this.url + "/demographics/" + _country + "/" + _statistic;
-        return this.http.get(url);
+        // return this.http.get(url);
+        return this.http.get(url).pipe(
+            map((response: ApiResponseData) => {
+                response.data = this.filterNull(response.data);
+                response.results = response.data.length;
+                return response;
+            })
+        );
     }
 
     getCountryStatistics(_country: string, _statistic1: string,
@@ -36,4 +45,15 @@ export class DBService {
         return zip(stat1Data$, stat2Data$);
     }
 
+    private filterNull(data: { year: number, stat: number }[]): any {
+        
+        let filteredData: { year: number, stat: number }[] = [];
+
+        for (let i = 0; i < data.length; ++i) {
+            if (data[i].stat !== null) {
+                filteredData.push(data[i]);
+            }
+        }
+        return filteredData;
+    }
 }

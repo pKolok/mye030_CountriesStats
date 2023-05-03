@@ -1,5 +1,5 @@
 var connection = require('../db/db-connection');
-const dict = require("../db/dictionary");
+const dict = require("../db/dataDictionary");
 
 function renameKey ( obj, oldKey, newKey ) {
     obj[newKey] = obj[oldKey];
@@ -11,10 +11,12 @@ exports.getCountryStatistic = (req, res) => {
     const country = req.params.country;
     const statistic = req.params.statistic;
     const dbStatistic = dict.dataBaseName(statistic);
+    const dbTable = dict.dataBaseTable(dbStatistic);
+    const displayStatistic = dict.FormalName(dbStatistic);
 
     const query = 
         "select year, " + dbStatistic + " " +
-        "from " + dbStatistic + " " + 
+        "from " + dbTable + " " + 
         "where country_name='" + country + "' " + 
         "order by year;";
 
@@ -28,7 +30,7 @@ exports.getCountryStatistic = (req, res) => {
         res.status(200).json({
             status: 'success',
             country: country,
-            statistic: dict.FormalName(dbStatistic),
+            statistic: displayStatistic,
             results: rows.length,
             data: data
         });

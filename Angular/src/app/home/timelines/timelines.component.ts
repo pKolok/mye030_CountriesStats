@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from "@angular/forms";
 import { DBService } from "src/app/shared/db.service";
 import { ApiResponseData } from "src/app/shared/api-data.model";
 import { TimelinesService } from "./timelines.service";
+import { Statistics } from "src/app/shared/statisticsList"
 
 @Component({
     selector: "app-timelines",
@@ -13,7 +14,7 @@ import { TimelinesService } from "./timelines.service";
 export class TimelinesComponent implements OnInit {
     public timelineForm: FormGroup = new FormGroup({});
     public countries: string[] = [];
-    public statistics: string[] = ["Mid-Year Population", "Area"];  // TODO
+    public statistics: string[] = Statistics;
     public canSubmit: boolean = false;
     private selectedCountry: string = "";
     private selectedStatistic: string = "";

@@ -4,6 +4,8 @@ import * as d3 from "d3";
 
 import { DBService } from "src/app/shared/db.service";
 import { ApiResponseData } from "src/app/shared/api-data.model";
+import { Statistics } from "src/app/shared/statisticsList";
+import { OneStat } from "src/app/shared/api-data.model";
 
 @Component({
     selector: "app-bar-charts",
@@ -13,7 +15,7 @@ import { ApiResponseData } from "src/app/shared/api-data.model";
 export class BarChartsComponent {
     public barChartForm: FormGroup = new FormGroup({});
     public countries: string[] = [];
-    public statistics: string[] = ["Mid-Year Population", "Area"];
+    public statistics: string[] = Statistics;
     public canSubmit: boolean = false;
     public noDataAvailable: boolean = false;
     private selectedCountry = "";
@@ -22,8 +24,8 @@ export class BarChartsComponent {
     // Chart specific
     private svg: any;
     private margin = { left: 100, right: 10, bottom: 50, top: 10 };
-    private totalWidth = 1100;
-    private totalHeight = 600;
+    private totalWidth: number = 1100;
+    private totalHeight: number = 600;
 
     constructor(private dbService: DBService) {}
 
@@ -69,7 +71,7 @@ export class BarChartsComponent {
             
             if (data.results > 0) {
                 this.noDataAvailable = false;
-                this.createChart(data.data);
+                this.createChart(data);
             } else {
                 this.noDataAvailable = true;
                 this.clearChart();
@@ -100,7 +102,9 @@ export class BarChartsComponent {
                 this.margin.top + ")");
     }
 
-    private createChart(data: any[]): void {
+    private createChart(data: OneStat): void {
+
+        const dataArray: any[] = data.data;
 
         // Width/height after subtracting x/y width/height
         const innerWidth = this.totalWidth - this.margin.left 
@@ -115,16 +119,19 @@ export class BarChartsComponent {
         const xScale = d3
             .scaleBand()
             .range([0, innerWidth])
-            .domain(data.map((d) => d.year))
+            .domain(dataArray.map((d) => d.year))
             .padding(0.3);
         const yScale = d3
             .scaleLinear()
             .range([innerHeight, 0])
-            .domain([0, d3.max(data, (d) => d.stat)]);
+            .domain([Math.min(d3.min(dataArray, (d) => d.stat), 0),
+                d3.max(data.data, (d) => d.stat)]);
 
         // Set X axis
-        const ticks = data
-            .map((d, i) => i % 5 == 0 ? d.year : undefined)
+        const ticks = dataArray
+            .map((d, i) => 
+                (i == 1 || i % 5 == 0 || i == dataArray.length - 1) ? 
+                    d.year : undefined )
             .filter(item => item)
         const xAxis = d3
             .axisBottom(xScale)
@@ -167,7 +174,7 @@ export class BarChartsComponent {
             .attr("x", 0 - (innerHeight / 2))
             .attr("dy", "1em")
             .style("text-anchor", "middle")
-            .text(this.selectedStatistic);
+            .text(data.statistic);
 
         // Y Gridlines
         d3.selectAll("g.yAxis g.tick")
@@ -185,7 +192,7 @@ export class BarChartsComponent {
             .append("g")
             .attr("class", "bar-container")
             .selectAll("rect")
-            .data(data)
+            .data(dataArray)
             .enter()
             .append("rect")
             .attr("class", "bar")

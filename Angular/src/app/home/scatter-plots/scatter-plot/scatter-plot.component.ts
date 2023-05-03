@@ -16,8 +16,8 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
     public svg: any;
     public noDataAvailable: boolean = false;
     private margin = { left: 100, right: 35, bottom: 50, top: 10 };
-    private totalWidth = 1100;
-    private totalHeight = 600;
+    private totalWidth: number = 1100;
+    private totalHeight: number = 600;
     private dataSubscription: Subscription;
     private clearSubscription: Subscription;
     

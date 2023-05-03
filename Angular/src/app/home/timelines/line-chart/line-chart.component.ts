@@ -1,9 +1,9 @@
 import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from "@angular/core";
 import * as d3 from "d3";
+import { Subscription } from "rxjs";
 
 import { OneStat } from "src/app/shared/api-data.model";
 import { TimelinesService } from "../timelines.service";
-import { Subscription } from "rxjs";
 
 @Component({
     selector: "app-line-chart",
@@ -15,9 +15,9 @@ export class LineChartComponent implements OnInit, OnDestroy {
 
     public svg: any;
     public noDataAvailable: boolean = false;
-    private margin = { left: 100, right: 10, bottom: 50, top: 10 };
-    private totalWidth = 1100;
-    private totalHeight = 600;
+    private margin = { left: 100, right: 20, bottom: 50, top: 10 };
+    private totalWidth: number = 1100;
+    private totalHeight: number = 600;
     private dataSubscription: Subscription;
     private clearSubscription: Subscription;
     
@@ -76,17 +76,18 @@ export class LineChartComponent implements OnInit, OnDestroy {
         const xScale = d3
             .scaleTime()
             .range([0, innerWidth])
-            .domain(d3.extent(this.data.data, (d) => new Date(d.year, 6, 0)));
-
+            .domain(d3.extent(this.data.data, (d) => new Date(d.year, 0, 0)));
         const yScale = d3
             .scaleLinear()
             .range([innerHeight, 0])
-            .domain([0, d3.max(this.data.data, (d) => d.stat)]);
+            .domain([Math.min(d3.min(this.data.data, (d) => d.stat), 0), 
+                d3.max(this.data.data, (d) => d.stat)]);
 
         // Set X axis
         const xAxis = d3
             .axisBottom(xScale)
-            .tickSizeOuter(0);
+            // .tickSizeOuter(0)
+            .scale(xScale.nice());
         // Set Y axis
         const yAxis = d3
             .axisLeft(yScale)
@@ -152,7 +153,7 @@ export class LineChartComponent implements OnInit, OnDestroy {
             .curve(d3.curveMonotoneX);
 
         const points: [number, number][] = this.data.data.map(
-            (d) => [xScale(new Date(d.year, 6, 0)), 
+            (d) => [xScale(new Date(d.year, 0, 0)), 
                 yScale(d.stat)]
         );
 
