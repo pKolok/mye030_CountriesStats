@@ -3,7 +3,7 @@
         <form [formGroup]="timelineForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <!-- Country -->
-                <div class="col-xs-6">
+                <div class="col-xs-4">
                     <div class="form-group">
                         <label for="country">Country</label>
                         <select class="form-control" formControlName="country"
@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <!-- Statistic -->
-                <div class="col-xs-6">
+                <div class="col-xs-4">
                     <div class="form-group">
                         <label for="statistic">Statistic</label>
                         <select class="form-control" formControlName="statistic"
@@ -27,6 +27,60 @@
                             </option>
                         </select>   
                     </div>
+                </div>
+                <!-- Sex -->
+                <div class="col-xs-4" *ngIf="mustSelectSex">
+                    <div class="form-group">
+                        <label for="sex">Sex</label>
+                        <select class="form-control" formControlName="sex"
+                            (change)="onSexSelected($event)">
+                            <option *ngFor="let sex of sexes">
+                                {{ sex }}
+                            </option>                            
+                        </select>   
+                    </div>   
+                </div>
+                <!-- Fertility Age group -->
+                <div class="col-xs-4" *ngIf="mustSelectFertilityAgeGroup">
+                    <div class="form-group">
+                        <label for="fertilityAgeGroup">Age Group</label>
+                        <select class="form-control"
+                            formControlName="fertilityAgeGroup"
+                            (change)="onFertilityAgeGroupSelected($event)">
+                            <option *ngFor="let ageGroup of fertilityAgeGroups">
+                                {{ ageGroup }}
+                            </option>
+                        </select>   
+                    </div>   
+                </div>                     
+            </div>
+            <div class="row">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4"></div>
+                <!-- Age -->
+                <div class="col-xs-4" *ngIf="mustSelectAge">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <select class="form-control" formControlName="age"
+                            (change)="onAgeSelected($event)">
+                            <option *ngFor="let age of ages">
+                                {{ age }}
+                            </option>
+                        </select>   
+                    </div>   
+                </div>                
+                <!-- Age group -->
+                <div class="col-xs-4" *ngIf="mustSelectAgeGroup">
+                    <div class="form-group">
+                        <label for="ageGroup">Age Group</label>
+                        <select class="form-control" formControlName="ageGroup"
+                            (change)="onAgeGroupSelected($event)">
+                            <option>All Ages</option>
+                            <option *ngFor="let ageGroup of ageGroups">
+                                {{ ageGroup }}
+                            </option>
+                        </select>   
+                    </div>   
                 </div>
             </div>
             <div class="row">

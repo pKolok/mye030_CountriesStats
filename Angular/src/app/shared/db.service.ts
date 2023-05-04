@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, filter, map, zip  } from 'rxjs';
-import { ApiResponseData, OneStat } from "./api-data.model";
+import { Observable, map, zip  } from 'rxjs';
+import { ApiResponseData } from "./api-data.model";
 
 @Injectable({providedIn: "root"})
 export class DBService {
@@ -23,6 +23,33 @@ export class DBService {
     // TODO - direct to demographics/income accordingly
     getCountryStatistic(_country: string, _statistic: string): Observable<any> {
         const url = this.url + "/demographics/" + _country + "/" + _statistic;
+        // return this.http.get(url);
+        return this.http.get(url).pipe(
+            map((response: ApiResponseData) => {
+                response.data = this.filterNull(response.data);
+                response.results = response.data.length;
+                return response;
+            })
+        );
+    }
+
+    getCountryStatisticBySex(_country: string, _statistic: string, _sex: string)
+    : Observable<any> {
+        const url = this.url + "/demographics/" + _country + "/" + _statistic +
+            "/" + _sex;
+        return this.http.get(url).pipe(
+            map((response: ApiResponseData) => {
+                response.data = this.filterNull(response.data);
+                response.results = response.data.length;
+                return response;
+            })
+        );
+    }
+
+    getCountryStatisticByAgeGroup(_country: string, _statistic: string, 
+        _startingAge: string): Observable<any> {
+        const url = this.url + "/demographics/" + _country + "/" + _statistic +
+            "/starting-age/" + _startingAge;
         // return this.http.get(url);
         return this.http.get(url).pipe(
             map((response: ApiResponseData) => {
