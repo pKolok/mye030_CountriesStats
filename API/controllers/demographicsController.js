@@ -22,8 +22,13 @@ exports.getCountryStatistic = (req, res) => {
 
     connection.query(query, (err, rows) => {
 
-        if (err)
-            throw err;
+        if (err) {
+            res.status(404).json({
+                status: "fail",
+                message: err.message
+            });
+            return;
+        }
 
         const data = JSON.parse(JSON.stringify(rows));
         data.forEach( obj => renameKey( obj, dbStatistic, "stat" ) );
@@ -66,8 +71,13 @@ exports.getCountryStatisticByAgeGroup = (req, res) => {
 
     connection.query(query, (err, rows) => {
 
-        if (err)
-            throw err;
+        if (err) {
+            res.status(404).json({
+                status: "fail",
+                message: err.message
+            });
+            return;
+        }
 
         const data = JSON.parse(JSON.stringify(rows));
         data.forEach( obj => renameKey( obj, dbStatistic, "stat" ) );
@@ -99,8 +109,13 @@ exports.getCountryStatisticBySex = (req, res) => {
 
     connection.query(query, (err, rows) => {
 
-        if (err) 
-            throw err;
+        if (err) {
+            res.status(404).json({
+                status: "fail",
+                message: err.message
+            });
+            return;
+        }
 
         const data = JSON.parse(JSON.stringify(rows));
         data.forEach( obj => renameKey( obj, dbStatistic, "stat" ) );
