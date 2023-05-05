@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 
+const AppError = require('./shared/appError');
+const glabalErrorHandler = require('./controllers/errorControllers');
 const countriesRouter = require('./routes/countriesRoutes');
 const demographicsRouter = require('./routes/demographicsRoutes');
 const incomeRouter = require('./routes/incomeRoutes');
@@ -26,8 +28,12 @@ app.use('/api/v1/countries', countriesRouter);
 app.use('/api/v1/demographics', demographicsRouter);
 app.use('/api/v1/income', incomeRouter);
 
+// Handler for all routes not handled before/above
 app.all('*', (req, res, next) => {
-    console.log(req.originalUrl);
-})
+    next(new AppError(`Can not find ${req.originalUrl} on the server!`, 404));
+});
+
+// Global error handling middleware (errors other than wrong routes)
+app.use(glabalErrorHandler);
 
 module.exports = app;

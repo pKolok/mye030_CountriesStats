@@ -1,5 +1,6 @@
 const connection = require('../db/db-connection');
 const dict = require("../db/dataDictionary");
+const AppError = require('../shared/appError');
 
 function renameKey ( obj, oldKey, newKey ) {
     obj[newKey] = obj[oldKey];
@@ -28,6 +29,7 @@ exports.getCountryStatistic = (req, res) => {
                 message: err.message
             });
             return;
+            // return next(new AppError(err.message, 404));
         }
 
         const data = JSON.parse(JSON.stringify(rows));
@@ -115,6 +117,7 @@ exports.getCountryStatisticBySex = (req, res) => {
                 message: err.message
             });
             return;
+            // return next(new AppError(err.message, 404));
         }
 
         const data = JSON.parse(JSON.stringify(rows));
