@@ -8,7 +8,6 @@ import { BarChartsComponent } from "./bar-charts/bar-charts.component";
 import { ScatterPlotsComponent } from "./scatter-plots/scatter-plots.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { LineChartComponent } from "./timelines/line-chart/line-chart.component";
-import { LineChart2Component } from "./timelines/line-chart2/line-chart2.component";
 import { ScatterPlotComponent } from './scatter-plots/scatter-plot/scatter-plot.component';
 import { ChooseStatisticComponent } from "./choose-statistic/choose-statistic.component";
 
@@ -20,7 +19,6 @@ import { ChooseStatisticComponent } from "./choose-statistic/choose-statistic.co
         BarChartsComponent,
         ScatterPlotsComponent,
         LineChartComponent,
-        LineChart2Component,
         ScatterPlotComponent,
         ChooseStatisticComponent
     ],
