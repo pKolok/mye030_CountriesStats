@@ -23,7 +23,6 @@ export class DBService {
     // TODO - direct to demographics/income accordingly
     getCountryStatistic(_country: string, _statistic: string): Observable<any> {
         const url = this.url + "/demographics/" + _country + "/" + _statistic;
-        // return this.http.get(url);
         return this.http.get(url).pipe(
             map((response: ApiResponseData) => {
                 response.data = this.filterNull(response.data);
@@ -50,7 +49,6 @@ export class DBService {
         _startingAge: string): Observable<any> {
         const url = this.url + "/demographics/" + _country + "/" + _statistic +
             "/starting-age/" + _startingAge;
-        // return this.http.get(url);
         return this.http.get(url).pipe(
             map((response: ApiResponseData) => {
                 response.data = this.filterNull(response.data);

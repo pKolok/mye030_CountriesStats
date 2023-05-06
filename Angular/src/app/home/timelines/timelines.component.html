@@ -1,100 +1,17 @@
 <div class="row">
     <div class="col-sx-12">
-        <form [formGroup]="timelineForm" (ngSubmit)="onSubmit()">
-            <div class="row">
-                <!-- Country -->
-                <div class="col-xs-4">
-                    <div class="form-group">
-                        <label for="country">Country</label>
-                        <select class="form-control" formControlName="country"
-                            (change)="onCountrySelected($event)">
-                            <option>Choose a Country</option>
-                            <option *ngFor="let country of countries">
-                                {{ country }}
-                            </option>
-                        </select>   
-                    </div>
-                </div>
-                <!-- Statistic -->
-                <div class="col-xs-4">
-                    <div class="form-group">
-                        <label for="statistic">Statistic</label>
-                        <select class="form-control" formControlName="statistic"
-                            (change)="onStatisticSelected($event)">
-                            <option>Choose a Statistic</option>
-                            <option *ngFor="let statistic of statistics">
-                                {{ statistic }}
-                            </option>
-                        </select>   
-                    </div>
-                </div>
-                <!-- Sex -->
-                <div class="col-xs-4" *ngIf="mustSelectSex">
-                    <div class="form-group">
-                        <label for="sex">Sex</label>
-                        <select class="form-control" formControlName="sex"
-                            (change)="onSexSelected($event)">
-                            <option *ngFor="let sex of sexes">
-                                {{ sex }}
-                            </option>                            
-                        </select>   
-                    </div>   
-                </div>
-                <!-- Fertility Age group -->
-                <div class="col-xs-4" *ngIf="mustSelectFertilityAgeGroup">
-                    <div class="form-group">
-                        <label for="fertilityAgeGroup">Age Group</label>
-                        <select class="form-control"
-                            formControlName="fertilityAgeGroup"
-                            (change)="onFertilityAgeGroupSelected($event)">
-                            <option *ngFor="let ageGroup of fertilityAgeGroups">
-                                {{ ageGroup }}
-                            </option>
-                        </select>   
-                    </div>   
-                </div>                     
+        <app-choose-statistic></app-choose-statistic>
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- Submit button -->
+                <button class="btn btn-primary" type="button"
+                    [disabled]="!canSubmit" (click)="onSubmit()">Go</button>
+                <!-- Clear Button -->
+                <button class="btn btn-secondary" type="button"
+                    (click)="onClear()" style="margin-left: 12px">Clear
+                </button>
             </div>
-            <div class="row">
-                <div class="col-xs-4"></div>
-                <div class="col-xs-4"></div>
-                <!-- Age -->
-                <div class="col-xs-4" *ngIf="mustSelectAge">
-                    <div class="form-group">
-                        <label for="age">Age</label>
-                        <select class="form-control" formControlName="age"
-                            (change)="onAgeSelected($event)">
-                            <option *ngFor="let age of ages">
-                                {{ age }}
-                            </option>
-                        </select>   
-                    </div>   
-                </div>                
-                <!-- Age group -->
-                <div class="col-xs-4" *ngIf="mustSelectAgeGroup">
-                    <div class="form-group">
-                        <label for="ageGroup">Age Group</label>
-                        <select class="form-control" formControlName="ageGroup"
-                            (change)="onAgeGroupSelected($event)">
-                            <option>All Ages</option>
-                            <option *ngFor="let ageGroup of ageGroups">
-                                {{ ageGroup }}
-                            </option>
-                        </select>   
-                    </div>   
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <!-- Submit button -->
-                    <button class="btn btn-primary" type="submit"
-                        [disabled]="!canSubmit">Go</button>
-                    <!-- Clear Button -->
-                    <button class="btn btn-secondary" type="button"
-                        (click)="onClear()" style="margin-left: 12px">Clear
-                    </button>
-                </div>
-            </div>
-        </form>
+        </div>
         <hr>
         <app-line-chart></app-line-chart>
     </div>

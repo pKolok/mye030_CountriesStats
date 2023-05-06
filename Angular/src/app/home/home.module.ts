@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { LineChartComponent } from "./timelines/line-chart/line-chart.component";
 import { LineChart2Component } from "./timelines/line-chart2/line-chart2.component";
 import { ScatterPlotComponent } from './scatter-plots/scatter-plot/scatter-plot.component';
+import { ChooseStatisticComponent } from "./choose-statistic/choose-statistic.component";
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { ScatterPlotComponent } from './scatter-plots/scatter-plot/scatter-plot.
         ScatterPlotsComponent,
         LineChartComponent,
         LineChart2Component,
-        ScatterPlotComponent
+        ScatterPlotComponent,
+        ChooseStatisticComponent
     ],
     imports: [
         CommonModule,
