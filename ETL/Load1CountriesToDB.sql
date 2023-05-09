@@ -36,7 +36,7 @@ create table countries (
 	population int,
 	primary key (country_index)
 );
-
+show warnings;
 show tables;
 describe countries;
 
@@ -49,7 +49,8 @@ describe countries;
 
 -- Load Countries data
 select "----- Load table countries -----";
-load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/countries/countriesFinal.csv'
+-- load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/countries/countriesFinal.csv'
+load data local infile 'C:/Users/panou/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/countries/countriesFinal.csv'
 into table countries
 fields terminated by ','
 optionally enclosed by '"'

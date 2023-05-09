@@ -6,7 +6,7 @@ use mye030_countries_stats;
 
 -- Load age specific fertility rates:
 select "----- Create table fertility_rates -----";
-drop table if exists fertility_rates;
+drop table if exists fertility_rates; show warnings;
 create table fertility_rates (
 	country_index int not null,
 	country_code varchar(5),
@@ -26,9 +26,11 @@ create table fertility_rates (
 	foreign key (country_index) references countries(country_index)
 	on delete cascade
 );
+show warnings;
 describe fertility_rates;
 
-load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/age_specific_fertility_rates_final.csv'
+-- load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/age_specific_fertility_rates_final.csv'
+load data local infile 'C:/Users/panou/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/age_specific_fertility_rates_final.csv'
 into table fertility_rates
 fields terminated by ','
 lines terminated by '\r\n'
@@ -40,7 +42,7 @@ select * from fertility_rates limit 10;
 
 -- Load birth date growth rates:
 select "----- Create table birth_death_rates -----";
-drop table if exists birth_death_rates;
+drop table if exists birth_death_rates; show warnings;
 create table birth_death_rates (
 	country_index int not null,
 	country_code varchar(5),
@@ -55,9 +57,11 @@ create table birth_death_rates (
 	foreign key (country_index) references countries(country_index)
 	on delete cascade
 );
+show warnings;
 describe birth_death_rates;
 
-load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/birth_death_growth_rates_final.csv'
+-- load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/birth_death_growth_rates_final.csv'
+load data local infile 'C:/Users/panou/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/birth_death_growth_rates_final.csv'
 into table birth_death_rates
 fields terminated by ','
 lines terminated by '\r\n'
@@ -69,7 +73,7 @@ select * from birth_death_rates limit 10;
 
 -- Load country areas:
 select "----- Create table country_areas -----";
-drop table if exists country_areas;
+drop table if exists country_areas; show warnings;
 create table country_areas (
 	country_index int not null,
 	country_code varchar(5),
@@ -79,9 +83,11 @@ create table country_areas (
 	foreign key (country_index) references countries(country_index)
 	on delete cascade
 );
+show warnings;
 describe country_areas;
 
-load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/country_names_area_final.csv'
+-- load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/country_names_area_final.csv'
+load data local infile 'C:/Users/panou/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/country_names_area_final.csv'
 into table country_areas
 fields terminated by ','
 lines terminated by '\r\n'
@@ -93,7 +99,7 @@ select * from country_areas limit 10;
 
 -- Load midyear population (/5 years):
 select "----- Create table midyear_population_5yr -----";
-drop table if exists midyear_population_5yr;
+drop table if exists midyear_population_5yr; show warnings;
 create table midyear_population_5yr (
 	country_index int not null,
 	country_code varchar(5),
@@ -110,9 +116,11 @@ create table midyear_population_5yr (
 	foreign key (country_index) references countries(country_index)
 	on delete cascade
 );
+show warnings;
 describe midyear_population_5yr;
 
-load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/midyear_population_5yr_age_sex_final.csv'
+-- load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/midyear_population_5yr_age_sex_final.csv'
+load data local infile 'C:/Users/panou/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/midyear_population_5yr_age_sex_final.csv'
 into table midyear_population_5yr
 fields terminated by ','
 lines terminated by '\r\n'
@@ -124,7 +132,7 @@ select * from midyear_population_5yr limit 10;
 
 -- Load midyear population:
 select "----- Create table midyear_population_1yr-----";
-drop table if exists midyear_population_1yr;
+drop table if exists midyear_population_1yr; show warnings;
 create table midyear_population_1yr (
 	country_index int not null,
 	country_code varchar(5),
@@ -237,9 +245,11 @@ create table midyear_population_1yr (
 	foreign key (country_index) references countries(country_index)
 	on delete cascade
 );
+show warnings;
 describe midyear_population_1yr;
 
-load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/midyear_population_age_sex_final.csv'
+-- load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/midyear_population_age_sex_final.csv'
+load data local infile 'C:/Users/panou/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/midyear_population_age_sex_final.csv'
 into table midyear_population_1yr
 fields terminated by ','
 lines terminated by '\r\n'
@@ -251,7 +261,7 @@ show warnings;
 
 -- Load midyear population:
 select "----- Create table midyear_population -----";
-drop table if exists midyear_population;
+drop table if exists midyear_population; show warnings;
 create table midyear_population (
 	country_index int not null,
 	country_code varchar(5),
@@ -262,9 +272,11 @@ create table midyear_population (
 	foreign key (country_index) references countries(country_index)
 	on delete cascade
 );
+show warnings;
 describe midyear_population;
 
-load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/midyear_population_final.csv'
+-- load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/midyear_population_final.csv'
+load data local infile 'C:/Users/panou/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/midyear_population_final.csv'
 into table midyear_population
 fields terminated by ','
 lines terminated by '\r\n'
@@ -276,7 +288,7 @@ select * from midyear_population limit 10;
 
 -- Load life expectancy:
 select "----- Create table life_expectancy -----";
-drop table if exists life_expectancy;
+drop table if exists life_expectancy; show warnings;
 create table life_expectancy (
 	country_index int not null,
 	country_code varchar(5),
@@ -298,9 +310,11 @@ create table life_expectancy (
 	foreign key (country_index) references countries(country_index)
 	on delete cascade
 );
+show warnings;
 describe life_expectancy;
 
-load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/mortality_life_expectancy_final.csv'
+-- load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/mortality_life_expectancy_final.csv'
+load data local infile 'C:/Users/panou/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/Data/international/mortality_life_expectancy_final.csv'
 into table life_expectancy
 fields terminated by ','
 lines terminated by '\r\n'
