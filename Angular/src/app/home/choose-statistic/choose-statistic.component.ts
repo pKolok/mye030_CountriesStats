@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Statistics } from '../../shared/statisticsList';
 import { DBService } from '../../shared/db.service';
@@ -11,6 +11,7 @@ import { StatisticChoice } from './statistic-choice.model';
     styleUrls: ['./choose-statistic.component.css']
 })
 export class ChooseStatisticComponent implements OnInit {
+    @Input() public index: number;
     public timelineForm: FormGroup = new FormGroup({});     // TODO rename
     public countries: string[] = [];
     public statistics: string[] = Statistics;
@@ -75,7 +76,9 @@ export class ChooseStatisticComponent implements OnInit {
         this.selectedCountry = event.target.value;
 
         if (this.selectedCountry === "Choose a Country") {
-            this.selectedCountry = "";
+            this.selectedCountry = null;
+            this.clearStatistic();
+            return;
         }
 
         if (this.selectedCountry && this.selectedStatistic) {
@@ -96,6 +99,7 @@ export class ChooseStatisticComponent implements OnInit {
 
         if (this.selectedStatistic === "Choose a Statistic") {
             this.selectedStatistic = null;
+            this.clearStatistic();
             return;
         }
 
@@ -190,7 +194,7 @@ export class ChooseStatisticComponent implements OnInit {
     }
 
     private omitStatistic(): void {
-        this.statChoiceService.setStatistic(
+        this.statChoiceService.setStatistic(this.index,
             new StatisticChoice(
                 this.selectedCountry,
                 this.selectedStatistic,
@@ -201,6 +205,6 @@ export class ChooseStatisticComponent implements OnInit {
     }
 
     private clearStatistic(): void {
-        this.statChoiceService.clearStatistic();
+        this.statChoiceService.clearStatistic(this.index);
     }
 }
