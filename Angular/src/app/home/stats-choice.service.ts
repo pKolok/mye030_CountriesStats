@@ -8,7 +8,7 @@ export class StatsChoiceService{
         = new Subject<StatisticChoice[]>();
     public statisticNotSelected: Subject<boolean> = new Subject<boolean>();
 
-    private statistics: StatisticChoice[] = new Array<StatisticChoice>();
+    private statistics: StatisticChoice[] = [];
 
     setStatistic(index: number, newStatistic: StatisticChoice) {
         if (this.statistics.length <= index) {
@@ -19,7 +19,16 @@ export class StatsChoiceService{
         this.statisticsSelected.next(this.statistics.slice());
     }
 
+    resetStatistic(): void {
+        this.statisticNotSelected.next(true);
+    }
+
     clearStatistic(index: number) {
         this.statisticNotSelected.next(true);
+    }
+
+    deleteStatistic(index: number) {
+        this.statistics.splice(index, 1);
+        this.statisticsSelected.next(this.statistics.slice());
     }
 }

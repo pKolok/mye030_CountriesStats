@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Statistics } from '../../shared/statisticsList';
 import { DBService } from '../../shared/db.service';
@@ -10,7 +10,7 @@ import { StatisticChoice } from './statistic-choice.model';
     templateUrl: './choose-statistic.component.html',
     styleUrls: ['./choose-statistic.component.css']
 })
-export class ChooseStatisticComponent implements OnInit {
+export class ChooseStatisticComponent implements OnInit, OnDestroy {
     @Input() public index: number;
     public timelineForm: FormGroup = new FormGroup({});     // TODO rename
     public countries: string[] = [];
@@ -77,14 +77,14 @@ export class ChooseStatisticComponent implements OnInit {
 
         if (this.selectedCountry === "Choose a Country") {
             this.selectedCountry = null;
-            this.clearStatistic();
+            this.resetStatistic();
             return;
         }
 
         if (this.selectedCountry && this.selectedStatistic) {
             this.omitStatistic();
         } else {
-            this.clearStatistic();
+            this.resetStatistic();
         }
     }
 
@@ -99,7 +99,7 @@ export class ChooseStatisticComponent implements OnInit {
 
         if (this.selectedStatistic === "Choose a Statistic") {
             this.selectedStatistic = null;
-            this.clearStatistic();
+            this.resetStatistic();
             return;
         }
 
@@ -138,7 +138,7 @@ export class ChooseStatisticComponent implements OnInit {
         if (this.selectedCountry && this.selectedStatistic) {
             this.omitStatistic();
         } else {
-            this.clearStatistic();
+            this.resetStatistic();
         }
     }
 
@@ -148,7 +148,7 @@ export class ChooseStatisticComponent implements OnInit {
         if (this.selectedCountry && this.selectedStatistic) {
             this.omitStatistic();
         } else {
-            this.clearStatistic();
+            this.resetStatistic();
         }
     }
 
@@ -158,7 +158,7 @@ export class ChooseStatisticComponent implements OnInit {
         if (this.selectedCountry && this.selectedStatistic) {
             this.omitStatistic();
         } else {
-            this.clearStatistic();
+            this.resetStatistic();
         }
     }
 
@@ -168,7 +168,7 @@ export class ChooseStatisticComponent implements OnInit {
         if (this.selectedCountry && this.selectedStatistic) {
             this.omitStatistic();
         } else {
-            this.clearStatistic();
+            this.resetStatistic();
         }
     }
 
@@ -178,8 +178,12 @@ export class ChooseStatisticComponent implements OnInit {
         if (this.selectedCountry && this.selectedStatistic) {
             this.omitStatistic();
         } else {
-            this.clearStatistic();
+            this.resetStatistic();
         }
+    }
+
+    ngOnDestroy(): void {
+        this.statChoiceService.deleteStatistic(this.index);
     }
 
     private initForm(): void {
@@ -204,7 +208,7 @@ export class ChooseStatisticComponent implements OnInit {
                 this.selectedFertilityAgeGroup));
     }
 
-    private clearStatistic(): void {
-        this.statChoiceService.clearStatistic(this.index);
+    private resetStatistic(): void {
+        this.statChoiceService.resetStatistic();
     }
 }

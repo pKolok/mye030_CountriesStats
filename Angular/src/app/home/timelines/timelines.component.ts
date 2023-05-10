@@ -51,9 +51,9 @@ export class TimelinesComponent implements OnInit, OnDestroy {
         const requests = {};
 
         // Put all requests in an array
-        for (let selectedStatistic of this.selectedStatistics) {
-            const statistic: string = selectedStatistic.statistic;
-            requests[statistic] = this.chooseRequest(selectedStatistic);
+        for (let i = 0; i < this.selectedStatistics.length; ++i) {
+            const statistic: string = this.selectedStatistics[i].statistic;
+            requests[i] = this.chooseRequest(this.selectedStatistics[i]);
         };
 
         // Wait for all requests to complete

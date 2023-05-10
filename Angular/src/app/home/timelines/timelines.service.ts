@@ -11,10 +11,12 @@ export class TimelinesService {
 
     setData(data: OneStat[]) {
         this.data = data;
-        this.dataChanged.next(this.data.slice());
+        this.dataChanged.next(this.data);
+        console.log(this.data);
     }
 
     clearGraph() {
         this.graphCleared.next(0);
     }
+
 }
