@@ -1,21 +1,21 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 
 import { DBService } from "src/app/shared/db.service";
 import { ApiResponseData } from "src/app/shared/api-data.model";
-import { TimelinesService } from "./timelines.service";
-import { StatsChoiceService } from "../stats-choice.service";
-import { StatisticChoice } from "../choose-statistic/statistic-choice.model";
 import { Subscription, forkJoin } from "rxjs";
+import { StatisticChoice } from "../choose-statistic/statistic-choice.model";
+import { TimelinesService } from "../timelines/timelines.service";
+import { StatsChoiceService } from "../stats-choice.service";
 
 @Component({
-    selector: "app-timelines",
-    templateUrl: "./timelines.component.html",
-    styleUrls: ["./timelines.component.css"]
+    selector: "app-bar-charts-page",
+    templateUrl: "./bar-charts-page.component.html",
+    styleUrls: ["./bar-charts-page.component.css"]
 })
-export class TimelinesComponent implements OnInit, OnDestroy {
+export class BarChartsPageComponent {
     public canSubmit: boolean = false;
     public noCountries: number = 1;
-    public maxCountries: number = 50;
+    public maxCountries: number = 5;
 
     private statisticSelectionSubscription: Subscription;
     private statisticDeselectionSubscription: Subscription;
@@ -30,7 +30,7 @@ export class TimelinesComponent implements OnInit, OnDestroy {
             .statisticsSelected.subscribe((statistics: StatisticChoice[]) => {
                 this.selectedStatistics = statistics;
                 this.canSubmit = true;
-            });
+        });
 
         this.statisticDeselectionSubscription =  this.statChoiceService
             .statisticNotSelected.subscribe(() => {
@@ -86,7 +86,6 @@ export class TimelinesComponent implements OnInit, OnDestroy {
         this.statisticDeselectionSubscription.unsubscribe();
     }
 
-    // TODO: Common with bar chart
     private chooseRequest(selectedStatistic: StatisticChoice) {
         var statistic: string = selectedStatistic.statistic;
         const country: string = selectedStatistic.country;
