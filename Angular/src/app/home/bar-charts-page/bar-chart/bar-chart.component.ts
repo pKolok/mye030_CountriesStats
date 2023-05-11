@@ -27,12 +27,12 @@ export class BarChartComponent implements OnInit, OnDestroy {
     private yAxisLabel: string = "";
     private title: string = "";
     
-    constructor(private timelineService: ChartsService) {}
+    constructor(private chartsService: ChartsService) {}
 
     ngOnInit(): void {
         this.initChart();
 
-        this.dataSubscription = this.timelineService.dataChanged.subscribe(
+        this.dataSubscription = this.chartsService.dataChanged.subscribe(
             (data: OneStat[]) => {
                 this.data = data;
                 
@@ -56,7 +56,7 @@ export class BarChartComponent implements OnInit, OnDestroy {
             }
         );
 
-        this.clearSubscription = this.timelineService.graphCleared.subscribe(
+        this.clearSubscription = this.chartsService.graphCleared.subscribe(
             () => {
                 this.clearChart();
                 this.noDataAvailable = false;

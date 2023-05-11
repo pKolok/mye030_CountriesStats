@@ -22,7 +22,7 @@ export class BarChartsPageComponent {
     private selectedStatistics: Statistic[];
 
     constructor(private dbService: DBService, 
-        private timelineService: ChartsService,
+        private chartsService: ChartsService,
         private statChoiceService: ChooseStatisticService) {}
 
     ngOnInit(): void {
@@ -73,12 +73,12 @@ export class BarChartsPageComponent {
                 apiData.push(apiResponse);
             });
             console.log(apiData);
-            this.timelineService.setData(apiData);
+            this.chartsService.setData(apiData);
         });
     }
 
     onClear(): void {
-        this.timelineService.clearGraph();
+        this.chartsService.clearGraph();
     }
 
     ngOnDestroy(): void {

@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./home.component";
-import { LineChartsPageComponent } from "./timelines/line-charts-page.component";
+import { LineChartsPageComponent } from "./line-charts-page/line-charts-page.component";
 import { BarChartsPageComponent } from "./bar-charts-page/bar-charts-page.component";
-import { ScatterPlotsPageComponent } from "./scatter-plots/scatter-plots-page.component";
+import { ScatterPlotsPageComponent } from "./scatter-plots-page/scatter-plots-page.component";
 
 const routes: Routes = [
     { path: "", component: HomeComponent, children: [
