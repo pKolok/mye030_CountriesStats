@@ -15,6 +15,7 @@ import { Subscription, forkJoin } from "rxjs";
 export class TimelinesComponent implements OnInit, OnDestroy {
     public canSubmit: boolean = false;
     public noCountries: number = 1;
+    public maxCountries: number = 50;
 
     private statisticSelectionSubscription: Subscription;
     private statisticDeselectionSubscription: Subscription;
@@ -38,11 +39,16 @@ export class TimelinesComponent implements OnInit, OnDestroy {
     }
 
     onAddCountry() {
-        this.noCountries++;
-        this.canSubmit = false;
+        if (this.noCountries < this.maxCountries) {
+            this.noCountries++;
+            this.canSubmit = false;
+        }
     }
 
     onRemoveLastCountry() {
+        if (this.noCountries === 1) {
+            return;
+        } 
         this.noCountries--;
     }
 

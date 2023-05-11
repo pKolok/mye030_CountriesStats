@@ -2,7 +2,8 @@
     <div class="col-sx-12">
         <!-- Add New Statistic button -->
         <button class="btn btn-success" type="button"
-            (click)="onAddCountry()">Add Statistic</button>
+            [disabled]="noCountries===maxCountries" (click)="onAddCountry()">
+            Add Statistic</button>
         <!-- Remove Last Statistic button -->
         <button class="btn btn-danger" type="button"
             [disabled]="noCountries===1" (click)="onRemoveLastCountry()" 
@@ -10,10 +11,8 @@
         <br>
         <br>
         <!-- Choose Statistic Component(s) -->
-        <app-choose-statistic 
-            *ngFor="let _ of [].constructor(noCountries); let i = index"
-            [index]="i">
-        </app-choose-statistic>
+        <app-choose-statistic *ngFor="let _ of [].constructor(noCountries);
+            let i = index" [index]="i"></app-choose-statistic>
         <!-- Submit button -->
         <button class="btn btn-primary" type="button"
             [disabled]="!canSubmit" (click)="onSubmit()">Create Graph</button>
