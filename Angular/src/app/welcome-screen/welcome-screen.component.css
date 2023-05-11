@@ -1,7 +1,7 @@
 .bg {
-  background-image: url(/assets/images/Globe.jpg);
-  background-size: cover;
-  background-repeat:repeat; 
+    background-image: url(/assets/images/Globe.jpg);
+    background-size: cover;
+    background-repeat:repeat; 
 }
 
 .container {
@@ -10,4 +10,4 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-  }
+}

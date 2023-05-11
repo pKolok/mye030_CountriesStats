@@ -2,8 +2,8 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Statistics } from '../../shared/statisticsList';
 import { DBService } from '../../shared/db.service';
-import { StatsChoiceService } from '../stats-choice.service';
-import { StatisticChoice } from './statistic-choice.model';
+import { ChooseStatisticService } from './choose-statistic.service';
+import { Statistic } from './statistic.model';
 
 @Component({
     selector: 'app-choose-statistic',
@@ -32,7 +32,7 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
     private statFertility: string = "";
 
     constructor(private dbService: DBService, 
-        private statChoiceService: StatsChoiceService) {}
+        private statChoiceService: ChooseStatisticService) {}
 
     ngOnInit(): void {
         this.countries = this.dbService.getAllCountries();
@@ -199,7 +199,7 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
 
     private omitStatistic(): void {
         this.statChoiceService.setStatistic(this.index,
-            new StatisticChoice(
+            new Statistic(
                 this.selectedCountry,
                 this.selectedStatistic,
                 this.selectedSex,

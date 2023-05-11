@@ -1,4 +1,4 @@
-export class StatisticChoice {
+export class Statistic {
     public country: string;
     public statistic: string;
     public sex: string;
@@ -13,6 +13,6 @@ export class StatisticChoice {
             this.sex = _sex;
             this.age = _age;
             this.ageGroup = _ageGroup;
-            this.fertilityAgeGroup = _fertilityAgeGroup; 
-        }
+            this.fertilityAgeGroup = _fertilityAgeGroup;
+    }
 }

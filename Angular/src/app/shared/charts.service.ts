@@ -4,7 +4,7 @@ import { Subject } from "rxjs";
 import { OneStat } from "src/app/shared/api-data.model";
 
 @Injectable({ providedIn: 'root' })
-export class TimelinesService {
+export class ChartsService {
     public dataChanged = new Subject<OneStat[]>();
     public graphCleared = new Subject();
     private data: OneStat[] = [];

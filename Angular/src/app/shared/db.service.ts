@@ -20,7 +20,7 @@ export class DBService {
         return countries;
     }
 
-    // TODO - direct to demographics/income accordingly
+    // TODO: - direct to demographics/income accordingly
     getCountryStatistic(_country: string, _statistic: string): Observable<any> {
         const url = this.url + "/demographics/" + _country + "/" + _statistic;
         return this.http.get(url).pipe(

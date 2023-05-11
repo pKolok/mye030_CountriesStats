@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import { Subscription } from 'rxjs';
 
 import { OneStat } from 'src/app/shared/api-data.model';
-import { TimelinesService } from '../../timelines/timelines.service';
+import { ChartsService } from '../../../shared/charts.service';
 import { Colors } from 'src/app/shared/colors';
 
 @Component({
@@ -27,7 +27,7 @@ export class BarChartComponent implements OnInit, OnDestroy {
     private yAxisLabel: string = "";
     private title: string = "";
     
-    constructor(private timelineService: TimelinesService) {}
+    constructor(private timelineService: ChartsService) {}
 
     ngOnInit(): void {
         this.initChart();

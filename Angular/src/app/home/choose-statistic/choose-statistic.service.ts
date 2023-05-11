@@ -1,16 +1,14 @@
 import { Injectable } from "@angular/core";
-import { StatisticChoice } from "./choose-statistic/statistic-choice.model";
+import { Statistic } from "./statistic.model";
 import { Subject } from "rxjs";
 
 @Injectable({ providedIn: "root" })
-export class StatsChoiceService{
-    public statisticsSelected: Subject<StatisticChoice[]> 
-        = new Subject<StatisticChoice[]>();
+export class ChooseStatisticService {
+    public statisticsSelected: Subject<Statistic[]> = new Subject<Statistic[]>();
     public statisticNotSelected: Subject<boolean> = new Subject<boolean>();
+    private statistics: Statistic[] = [];
 
-    private statistics: StatisticChoice[] = [];
-
-    setStatistic(index: number, newStatistic: StatisticChoice) {
+    setStatistic(index: number, newStatistic: Statistic) {
         if (this.statistics.length <= index) {
             this.statistics.push(newStatistic);
         } else {

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ScatterPlotsComponent } from "./scatter-plots.component";
+import { LineChartsPageComponent } from "./line-charts-page.component";
 
-describe("ScatterPlotsComponent", () => {
-    let component: ScatterPlotsComponent;
-    let fixture: ComponentFixture<ScatterPlotsComponent>;
+describe("TimelinesComponent", () => {
+    let component: LineChartsPageComponent;
+    let fixture: ComponentFixture<LineChartsPageComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ ScatterPlotsComponent ]
+            declarations: [ LineChartsPageComponent ]
         })
             .compileComponents();
 
-        fixture = TestBed.createComponent(ScatterPlotsComponent);
+        fixture = TestBed.createComponent(LineChartsPageComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

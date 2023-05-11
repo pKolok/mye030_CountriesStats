@@ -3,9 +3,9 @@ import { HomeComponent } from "./home.component";
 import { HeaderComponent } from "../header/header.component";
 import { HomeRoutingModule } from "./home-routing.module";
 import { CommonModule } from "@angular/common";
-import { TimelinesComponent } from "./timelines/timelines.component";
+import { LineChartsPageComponent } from "./timelines/line-charts-page.component";
 import { BarChartsPageComponent } from "./bar-charts-page/bar-charts-page.component";
-import { ScatterPlotsComponent } from "./scatter-plots/scatter-plots.component";
+import { ScatterPlotsPageComponent } from "./scatter-plots/scatter-plots-page.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { LineChartComponent } from "./timelines/line-chart/line-chart.component";
 import { ScatterPlotComponent } from './scatter-plots/scatter-plot/scatter-plot.component';
@@ -16,9 +16,9 @@ import { BarChartComponent } from './bar-charts-page/bar-chart/bar-chart.compone
     declarations: [
         HomeComponent,
         HeaderComponent,
-        TimelinesComponent,
+        LineChartsPageComponent,
         BarChartsPageComponent,
-        ScatterPlotsComponent,
+        ScatterPlotsPageComponent,
         LineChartComponent,
         ScatterPlotComponent,
         ChooseStatisticComponent,

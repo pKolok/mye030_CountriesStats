@@ -6,10 +6,10 @@ import { ScatterPlotsService } from "./scatter-plots.service";
 
 @Component({
     selector: "app-scatter-plots",
-    templateUrl: "./scatter-plots.component.html",
-    styleUrls: ["./scatter-plots.component.css"]
+    templateUrl: "./scatter-plots-page.component.html",
+    styleUrls: ["./scatter-plots-page.component.css"]
 })
-export class ScatterPlotsComponent {
+export class ScatterPlotsPageComponent {
     public timelineForm: FormGroup = new FormGroup({});
     public countries: string[] = [];
     public statistics: string[] = ["Mid-Year Population", "Total GDP"]; // TODO

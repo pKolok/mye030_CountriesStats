@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class WelcomeScreenComponent {
 
-    // TODO Save background image in a server and load it from there
+    // TODO: Save background image in a server and load it from there
 
     constructor(private router: Router, private route: ActivatedRoute) {}
 

@@ -2,32 +2,32 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 
 import { DBService } from "src/app/shared/db.service";
 import { ApiResponseData } from "src/app/shared/api-data.model";
-import { TimelinesService } from "./timelines.service";
-import { StatsChoiceService } from "../stats-choice.service";
-import { StatisticChoice } from "../choose-statistic/statistic-choice.model";
+import { ChartsService } from "../../shared/charts.service";
+import { ChooseStatisticService } from "../choose-statistic/choose-statistic.service";
+import { Statistic } from "../choose-statistic/statistic.model";
 import { Subscription, forkJoin } from "rxjs";
 
 @Component({
     selector: "app-timelines",
-    templateUrl: "./timelines.component.html",
-    styleUrls: ["./timelines.component.css"]
+    templateUrl: "./line-charts-page.component.html",
+    styleUrls: ["./line-charts-page.component.css"]
 })
-export class TimelinesComponent implements OnInit, OnDestroy {
+export class LineChartsPageComponent implements OnInit, OnDestroy {
     public canSubmit: boolean = false;
     public noCountries: number = 1;
     public maxCountries: number = 50;
 
     private statisticSelectionSubscription: Subscription;
     private statisticDeselectionSubscription: Subscription;
-    private selectedStatistics: StatisticChoice[];
+    private selectedStatistics: Statistic[];
 
     constructor(private dbService: DBService, 
-        private timelineService: TimelinesService,
-        private statChoiceService: StatsChoiceService) {}
+        private timelineService: ChartsService,
+        private statChoiceService: ChooseStatisticService) {}
 
     ngOnInit(): void {
         this.statisticSelectionSubscription =  this.statChoiceService
-            .statisticsSelected.subscribe((statistics: StatisticChoice[]) => {
+            .statisticsSelected.subscribe((statistics: Statistic[]) => {
                 this.selectedStatistics = statistics;
                 this.canSubmit = true;
             });
@@ -87,7 +87,7 @@ export class TimelinesComponent implements OnInit, OnDestroy {
     }
 
     // TODO: Common with bar chart
-    private chooseRequest(selectedStatistic: StatisticChoice) {
+    private chooseRequest(selectedStatistic: Statistic) {
         var statistic: string = selectedStatistic.statistic;
         const country: string = selectedStatistic.country;
         const age: string = selectedStatistic.age;
