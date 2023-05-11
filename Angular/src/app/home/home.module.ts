@@ -1,16 +1,17 @@
 import { NgModule } from "@angular/core";
-import { HomeComponent } from "./home.component";
-import { HeaderComponent } from "../header/header.component";
-import { HomeRoutingModule } from "./home-routing.module";
-import { CommonModule } from "@angular/common";
-import { LineChartsPageComponent } from "./timelines/line-charts-page.component";
-import { BarChartsPageComponent } from "./bar-charts-page/bar-charts-page.component";
-import { ScatterPlotsPageComponent } from "./scatter-plots/scatter-plots-page.component";
 import { ReactiveFormsModule } from "@angular/forms";
-import { LineChartComponent } from "./timelines/line-chart/line-chart.component";
-import { ScatterPlotComponent } from './scatter-plots/scatter-plot/scatter-plot.component';
+import { CommonModule } from "@angular/common";
+
+import { HeaderComponent } from "../header/header.component";
+import { HomeComponent } from "./home.component";
+import { HomeRoutingModule } from "./home-routing.module";
 import { ChooseStatisticComponent } from "./choose-statistic/choose-statistic.component";
+import { LineChartsPageComponent } from "./line-charts-page/line-charts-page.component";
+import { LineChartComponent } from "./line-charts-page/line-chart/line-chart.component";
+import { BarChartsPageComponent } from "./bar-charts-page/bar-charts-page.component";
 import { BarChartComponent } from './bar-charts-page/bar-chart/bar-chart.component';
+import { ScatterPlotsPageComponent } from "./scatter-plots-page/scatter-plots-page.component";
+import { ScatterPlotComponent } from './scatter-plots-page/scatter-plot/scatter-plot.component';
 
 @NgModule({
     declarations: [
