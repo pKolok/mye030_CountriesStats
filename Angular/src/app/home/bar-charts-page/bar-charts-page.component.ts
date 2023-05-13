@@ -72,7 +72,6 @@ export class BarChartsPageComponent {
                 delete apiResponse.status;
                 apiData.push(apiResponse);
             });
-            console.log(apiData);
             this.chartsService.setData(apiData);
         });
     }

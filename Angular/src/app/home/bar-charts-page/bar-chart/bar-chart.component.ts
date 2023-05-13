@@ -16,6 +16,7 @@ export class BarChartComponent implements OnInit, OnDestroy {
     public noDataAvailable: boolean = false;
 
     private data: OneStat[];
+    private groupedData: any[] = [];
     private margin = { left: 100, right: 20, bottom: 50, top: 40 };
     private totalWidth: number = 1100;
     private totalHeight: number = 600;
@@ -49,7 +50,8 @@ export class BarChartComponent implements OnInit, OnDestroy {
                 this.setUpXAxis();
                 this.setUpYAxis();
                 this.setUpYLabelAndTitle();
-
+                this.groupData();
+                
                 if ( !this.noDataAvailable ) {
                     this.createChart();
                 }
@@ -83,6 +85,8 @@ export class BarChartComponent implements OnInit, OnDestroy {
 
         const variableHeight = this.totalHeight + 30 * this.data.length;
         const variableTopMargin = this.margin.top + 30 * this.data.length;
+        const statistics = Array.from(this.data.map(
+            d => d.country + ": " + d.statistic));
 
         // Width/height after subtracting x/y width/height
         const innerWidth = this.totalWidth - this.margin.left 
@@ -103,11 +107,11 @@ export class BarChartComponent implements OnInit, OnDestroy {
             .scaleBand()
             .range([0, innerWidth])
             .domain(this.allYears.map((d) => d.toString()))
-            .padding(0.3);
+            .padding(0.2);
         const yScale = d3
             .scaleLinear()
             .range([innerHeight, 0])
-            .domain([Math.min(this.yRange[0], 0), this.yRange[1]]);
+            .domain(this.yRange);
 
         // Set X axis
         const ticks = this.allYears
@@ -174,24 +178,68 @@ export class BarChartComponent implements OnInit, OnDestroy {
             .attr("stroke", "#9ca5aecf") // line color
             .attr("stroke-dasharray","4") // make it dashed;
 
-        // Create and fill the bars
-        this.svg
+        // Another scale for subgroup position
+        const xSubgroup = d3
+            .scaleBand()
+            .domain(statistics)
+            .range([0, xScale.bandwidth()])
+            .padding(0.05);
+
+        const color = d3
+            .scaleOrdinal()
+            .domain(statistics)
+            .range(this.colors);
+
+        // Bars for positive values
+        this.svg.append("g")
+            .selectAll("g")
+            .data(this.groupedData)
+            .enter()
             .append("g")
-            .attr("class", "bar-container")
-            .selectAll("rect")
-            .data(this.data[0].data)
+            .attr("transform", d => `translate(${xScale(d.year.toString())},0)`)
+            .selectAll("rect")  // binding statistics to rectangles
+            .data((d: any) => statistics.map(function(key) {
+                    return { key: key, value: d[key] > 0 ? d[key] : 0 }; }))
             .enter()
             .append("rect")
-            .attr("class", "bar")
-            .attr("x", (d: any) => xScale(d.year.toString()))
-            .attr("y", (d: any) => innerHeight)
-            .attr("width", xScale.bandwidth())
-            .attr("height", 0)
-            .attr("fill", this.colors[0])
+            .attr("x", (d: any) =>  xSubgroup(d.key))
+            .attr("width", xSubgroup.bandwidth())
+            // setting up y coordinates and height position to 0 for transition
+            .attr("y", (d: any) => yScale(0))
+            .attr("height", (d: any) => 0)
+            .attr("fill", (d: any) => color(d.key))
+            // setting up transition, delay and duration
             .transition()
-            .delay((d, i) => i * 20)    // 20ms delay for each bar
-            .attr("height", d => innerHeight - yScale(d.stat))
-            .attr("y", d => yScale(d.stat));
+            .delay((d: any) => Math.random() * 250)
+            .duration(1000)
+            // setting up normal values for y and height
+            .attr("y", (d: any) => yScale(d.value))
+            .attr("height", (d: any) => yScale(0) - yScale(d.value));
+
+        // Bars for negative values
+        this.svg.append("g")
+            .selectAll("g")
+            .data(this.groupedData)
+            .enter()
+            .append("g")
+            .attr("transform", d => `translate(${xScale(d.year.toString())},0)`)
+            .selectAll("rect")  // binding statistics to rectangles
+            .data((d: any) => statistics.map(function(key) {
+                    return { key: key, value: d[key] < 0 ? d[key] : 0 }; }))
+            .enter()
+            .append("rect")
+            .attr("x", (d: any) =>  xSubgroup(d.key))
+            .attr("width", xSubgroup.bandwidth())
+            // setting up y coordinates and height position to 0 for transition
+            .attr("y", (d: any) => yScale(0))
+            .attr("fill", (d: any) => color(d.key))
+            // setting up transition, delay and duration
+            .transition()
+            .delay((d: any) => Math.random() * 250)
+            .duration(1000)
+            // setting up normal values for y and height
+            .attr("y", (d: any) => yScale(0))
+            .attr("height", (d: any) => yScale(0) - yScale(-d.value));  
 
         //append legends
         var legend = this.svg
@@ -258,7 +306,20 @@ export class BarChartComponent implements OnInit, OnDestroy {
             });
         });
 
-        this.yRange = [min, max];
+        // All values are negative
+        if (min < 0 && max <= 0) {
+            this.yRange = [min, 0];
+
+        } 
+        // Values range from negative to positive
+        else if (min < 0 && max > 0) {
+            const absMax: number = Math.max(Math.abs(max), Math.abs(min));
+            this.yRange = [-absMax, absMax];
+        } 
+        // All values are positive
+        else {
+            this.yRange = [0, max];
+        }
     }
 
     private setUpYLabelAndTitle(): void {
@@ -298,6 +359,33 @@ export class BarChartComponent implements OnInit, OnDestroy {
                 this.yAxisLabel = units;
             }
         }
+    }
+
+    private groupData(): any[] {
+
+        this.groupedData = [];
+
+        // Loop through statistics
+        for (let year of this.allYears) {
+
+            // const records: {year: number, stat: number}[] = [];
+            var newRecord = { year: year };
+
+            for (let stat of this.data) {
+                const record = stat.data.find(item => item.year === year);
+                
+                if (record) {
+                    newRecord[stat.country + ": " + stat.statistic] 
+                        = record.stat;
+                }
+            };
+            
+           this.groupedData.push(newRecord);
+        }
+
+        console.log(this.groupedData);
+
+        return this.groupedData;
     }
 
 }
