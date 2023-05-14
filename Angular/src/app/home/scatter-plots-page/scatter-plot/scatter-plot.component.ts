@@ -1,9 +1,9 @@
-import { Component, Input, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as d3 from "d3";
 import { Subscription } from 'rxjs';
 
-import { TwoStats } from 'src/app/shared/api-data.model';
-import { ScatterPlotsService } from '../scatter-plots.service';
+import { OneStat, TwoStats } from 'src/app/shared/api-data.model';
+import { ChartsService } from 'src/app/shared/charts.service';
 
 @Component({
     selector: 'app-scatter-plot',
@@ -11,36 +11,45 @@ import { ScatterPlotsService } from '../scatter-plots.service';
     styleUrls: ['./scatter-plot.component.css']
 })
 export class ScatterPlotComponent implements OnInit, OnDestroy{
-    @Input() public data: TwoStats;
-
     public svg: any;
     public noDataAvailable: boolean = false;
-    private margin = { left: 100, right: 35, bottom: 50, top: 10 };
+
+    private data: TwoStats;
+    private margin = { left: 100, right: 35, bottom: 50, top: 40 };
     private totalWidth: number = 1100;
     private totalHeight: number = 600;
     private dataSubscription: Subscription;
     private clearSubscription: Subscription;
+    private title: string = "";
     
-    constructor(private scatterPlotService: ScatterPlotsService) {}
+    constructor(private chartsService: ChartsService) {}
 
     ngOnInit(): void {
         this.initChart();
         
-        this.dataSubscription = this.scatterPlotService.dataChanged.subscribe(
-            (data: TwoStats[]) => {
-                this.data = data[0];    // TODO - [0]: temp
+        this.dataSubscription = this.chartsService.dataChanged.subscribe(
+            (data: OneStat[]) => {
 
                 this.clearChart();
-                if ( this.data.results > 0 ) {
-                    this.noDataAvailable = false;
+
+                this.noDataAvailable = false;
+                for (let stat of data) {
+                    if (stat.results === 0) {
+                        this.noDataAvailable = true;
+                        break;
+                    }
+                }
+
+                this.data = this.saveCommonYears(data[0], data[1]);
+                this.setUpTitle();
+
+                if ( !this.noDataAvailable ) {
                     this.createChart();
-                } else {
-                    this.noDataAvailable = true;
                 }
             }
         );
 
-        this.clearSubscription = this.scatterPlotService.graphCleared.subscribe(
+        this.clearSubscription = this.chartsService.graphCleared.subscribe(
             () => {
                 this.clearChart();
                 this.noDataAvailable = false;
@@ -81,7 +90,7 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
         const yScale = d3
             .scaleLinear()
             .range([innerHeight, 0])
-            .domain([0, d3.max(this.data.data, (d) => d.stat2)]);
+            .domain(d3.extent(this.data.data, (d) => d.stat2));
 
         // Set X axis
         const xAxis = d3
@@ -102,10 +111,12 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
         this.svg
             .append("text")
             .attr("x", innerWidth / 2)
-            .attr("y", innerHeight + this.margin.bottom)
+            .attr("y", innerHeight + this.margin.bottom * 3 / 4)
             .style("text-anchor", "middle")
-            // .attr("font-family", "ibm-plex-sans")
-            .text(this.data.statistic1);
+            .text(this.data.country1 + ": " + this.data.statistic1)
+            .style("fill", "black")
+            .style("font-size", 15)
+            .style("font-family", "Arial Black");     
 
         // Add Y axis
         this.svg
@@ -120,7 +131,10 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
             .attr("x", 0 - (innerHeight / 2))
             .attr("dy", "1em")
             .style("text-anchor", "middle")
-            .text(this.data.statistic2);
+            .text(this.data.country2 + ": " + this.data.statistic2)
+            .style("fill", "black")
+            .style("font-size", 15)
+            .style("font-family", "Arial Black");  
 
         // X Gridlines
         d3.selectAll("g.xAxis g.tick")
@@ -159,7 +173,6 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
             .delay((d, i) => i * 60)
             .attr("r", 5);
 
-
         // Add labels
         dots
             .selectAll("text")
@@ -176,6 +189,17 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
             .duration(3500)
             .style("opacity", .5)
             .style("font", "10px times");
+
+        //append title
+        this.svg
+            .append("text")
+            .attr("x", innerWidth / 2)
+            .attr("y", - this.margin.top + 15)
+            .attr("text-anchor", "middle")
+            .text(this.title)
+            .style("fill", "black")
+            .style("font-size", 20)
+            .style("font-family", "Arial Black");
     }
 
     private clearChart(): void {
@@ -183,4 +207,53 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
         this.svg.selectAll("path").remove();
         this.svg.selectAll("text").remove();
     }
+
+    private setUpTitle(): void {
+        const statistic1: string = this.data.statistic1
+            .replace("(Both Sexes) ", "")
+            .replace("(Male) ", "")
+            .replace("(Female) ", "");
+        const cutOffIndex1: number = statistic1.indexOf('[');
+        const xDescription = statistic1.substring(0, cutOffIndex1 - 1);
+
+        const statistic2: string = this.data.statistic2
+            .replace("(Both Sexes) ", "")
+            .replace("(Male) ", "")
+            .replace("(Female) ", "");
+        const cutOffIndex2: number = statistic2.indexOf('[');
+        const yDescription = statistic2.substring(0, cutOffIndex2 - 1);
+
+        this.title = this.data.country1 + ": " + xDescription + " vs " 
+            + this.data.country2 + ": " + yDescription;
+    }
+
+    private saveCommonYears(data1: OneStat, data2: OneStat): TwoStats {
+
+        let records: { year: number, stat1: number, stat2: number }[] = [];
+
+        for (let i = 0; i < data1.data.length; ++i) {
+            const record1 = data1.data[i];
+
+            const record2 = data2.data.find(
+                item => item.year === record1.year);
+            
+            if (record2 && record1.stat && record2.stat) {
+                records.push({ 
+                    year: record1.year, 
+                    stat1: record1.stat,
+                    stat2: record2.stat
+                });
+            }
+        }
+        const data: TwoStats = {
+            country1: data1.country,
+            country2: data2.country,
+            statistic1: data1.statistic,
+            statistic2: data2.statistic,
+            results: records.length,
+            data: records
+        };
+        return data;
+    }
+
 }

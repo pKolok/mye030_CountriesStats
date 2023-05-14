@@ -275,6 +275,7 @@ export class LineChartComponent implements OnInit, OnDestroy {
         this.yRange = [min, max];
     }
 
+    // TODO: common in all 3
     private setUpYLabelAndTitle(): void {
         var statistic: string = this.data[0].statistic
             .replace("(Both Sexes) ", "")

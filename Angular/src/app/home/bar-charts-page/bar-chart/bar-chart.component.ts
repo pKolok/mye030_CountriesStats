@@ -322,6 +322,7 @@ export class BarChartComponent implements OnInit, OnDestroy {
         }
     }
 
+    // TODO: common in all 3
     private setUpYLabelAndTitle(): void {
         var statistic: string = this.data[0].statistic
             .replace("(Both Sexes) ", "")

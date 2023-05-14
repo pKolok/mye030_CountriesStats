@@ -14,7 +14,8 @@ export interface OneStat {
 }
 
 export interface TwoStats {
-    country: string;
+    country1: string;
+    country2: string;
     statistic1: string;
     statistic2: string;
     results: number;

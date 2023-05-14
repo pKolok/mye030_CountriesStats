@@ -58,18 +58,6 @@ export class DBService {
         );
     }
 
-    getCountryStatistics(_country: string, _statistic1: string,
-        _statistic2: string) {
-
-        const url1 = this.url + "/demographics/" + _country + "/" + _statistic1;   
-        const url2 = this.url + "/income/" + _country + "/" + _statistic2;   
-
-        const stat1Data$ = this.http.get(url1);
-        const stat2Data$ = this.http.get(url2);
-
-        return zip(stat1Data$, stat2Data$);
-    }
-
     private filterNull(data: { year: number, stat: number }[]): any {
         
         let filteredData: { year: number, stat: number }[] = [];
