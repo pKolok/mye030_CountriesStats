@@ -25,12 +25,13 @@ export class LineChartsPageComponent implements OnInit, OnDestroy {
         private chartsService: ChartsService,
         private statChoiceService: ChooseStatisticService) {}
 
+    // TODO: Common code - Inheritance?
     ngOnInit(): void {
         this.statisticSelectionSubscription =  this.statChoiceService
             .statisticsSelected.subscribe((statistics: Statistic[]) => {
                 this.selectedStatistics = statistics;
                 this.canSubmit = true;
-            });
+        });
 
         this.statisticDeselectionSubscription =  this.statChoiceService
             .statisticNotSelected.subscribe(() => {
@@ -52,6 +53,7 @@ export class LineChartsPageComponent implements OnInit, OnDestroy {
         this.noCountries--;
     }
 
+    // TODO: Common code - Inheritance?
     onSubmit(): void {
 
         const requests = {};
@@ -77,16 +79,18 @@ export class LineChartsPageComponent implements OnInit, OnDestroy {
         });
     }
 
+    // TODO: Common code - Inheritance?
     onClear(): void {
         this.chartsService.clearGraph();
     }
 
+    // TODO: Common code - Inheritance?
     ngOnDestroy(): void {
         this.statisticSelectionSubscription.unsubscribe();
         this.statisticDeselectionSubscription.unsubscribe();
     }
 
-    // TODO: Common with bar chart
+    // TODO: Common code - Inheritance?
     private chooseRequest(selectedStatistic: Statistic) {
         var statistic: string = selectedStatistic.statistic;
         const country: string = selectedStatistic.country;
@@ -121,4 +125,5 @@ export class LineChartsPageComponent implements OnInit, OnDestroy {
             return this.dbService.getCountryStatistic(country, statistic);
         }
     }
+    
 }

@@ -12,7 +12,7 @@ import { Statistic } from './statistic.model';
 })
 export class ChooseStatisticComponent implements OnInit, OnDestroy {
     @Input() public index: number;
-    public timelineForm: FormGroup = new FormGroup({});     // TODO rename
+    public statisticForm: FormGroup = new FormGroup({});
     public countries: string[] = [];
     public statistics: string[] = Statistics;
     public ages: number[] = [];
@@ -106,32 +106,32 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
         // Check if user must be prompted to select between two sexes
         if (this.statsRequiringTwoSexes.includes(this.selectedStatistic)) {
             this.sexes = ["Male", "Female"];
-            this.timelineForm.patchValue({"sex": "Male"});
+            this.statisticForm.patchValue({"sex": "Male"});
             this.selectedSex = "Male";
         }
 
         // Check if user must be prompted to select between three sexes
         if (this.statsRequiringThreeSexes.includes(this.selectedStatistic)) {
             this.sexes = ["Both Sexes", "Male", "Female"];
-            this.timelineForm.patchValue({"sex": "Both Sexes"});
+            this.statisticForm.patchValue({"sex": "Both Sexes"});
             this.selectedSex = "Both Sexes";
         }
 
         // Check if user must be prompted to select age
         if (this.selectedStatistic === this.statRequiringAge) {
-            this.timelineForm.patchValue({"age": "0"});
+            this.statisticForm.patchValue({"age": "0"});
             this.selectedAge = "0";
         }
         
         // Check if user must be prompted to select age group
         if (this.selectedStatistic === this.statRequiringAgeGroup) {
-            this.timelineForm.patchValue({"ageGroup": "All Ages"});
+            this.statisticForm.patchValue({"ageGroup": "All Ages"});
             this.selectedAgeGroup = "All Ages";
         }
 
         // Check if user must be prompted to select fertility age group
         if (this.selectedStatistic === this.statFertility) {
-            this.timelineForm.patchValue({"fertilityAgeGroup": "Total"});
+            this.statisticForm.patchValue({"fertilityAgeGroup": "Total"});
             this.selectedFertilityAgeGroup = "Total";
         }
 
@@ -187,7 +187,7 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
     }
 
     private initForm(): void {
-        this.timelineForm = new FormGroup({
+        this.statisticForm = new FormGroup({
             "country": new FormControl(this.selectedCountry),
             "statistic": new FormControl(this.selectedStatistic),
             "sex": new FormControl(this.selectedSex),

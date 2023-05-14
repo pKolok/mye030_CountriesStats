@@ -21,6 +21,10 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
     private dataSubscription: Subscription;
     private clearSubscription: Subscription;
     private title: string = "";
+    private xScale: any;
+    private yScale: any;
+    private innerWidth: number;
+    private innerHeight: number;
     
     constructor(private chartsService: ChartsService) {}
 
@@ -41,7 +45,6 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
                 }
 
                 this.data = this.saveCommonYears(data[0], data[1]);
-                this.setUpTitle();
 
                 if ( !this.noDataAvailable ) {
                     this.createChart();
@@ -75,131 +78,16 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
 
     private createChart(): void {
 
-        // Width/height after subtracting x/y width/height
-        const innerWidth = this.totalWidth - this.margin.left 
+        this.innerWidth = this.totalWidth - this.margin.left 
             - this.margin.right;
-        const innerHeight = this.totalHeight - this.margin.top 
+        this.innerHeight = this.totalHeight - this.margin.top 
             - this.margin.bottom;
 
-        // Set the scales
-        const xScale = d3
-            .scaleLinear()
-            .range([0, innerWidth])
-            .domain(d3.extent(this.data.data, (d) => d.stat1));
-
-        const yScale = d3
-            .scaleLinear()
-            .range([innerHeight, 0])
-            .domain(d3.extent(this.data.data, (d) => d.stat2));
-
-        // Set X axis
-        const xAxis = d3
-            .axisBottom(xScale)
-            .scale(xScale.nice());
-        // Set Y axis
-        const yAxis = d3
-            .axisLeft(yScale)
-            .scale(yScale.nice());
-
-        // Add X Axis
-        this.svg
-            .append("g")
-            .attr("class", "xAxis")
-            .attr("transform", "translate(0," + innerHeight + ")")
-            .call(xAxis);
-        // Add X Axis Label
-        this.svg
-            .append("text")
-            .attr("x", innerWidth / 2)
-            .attr("y", innerHeight + this.margin.bottom * 3 / 4)
-            .style("text-anchor", "middle")
-            .text(this.data.country1 + ": " + this.data.statistic1)
-            .style("fill", "black")
-            .style("font-size", 15)
-            .style("font-family", "Arial Black");     
-
-        // Add Y axis
-        this.svg
-            .append("g")
-            .attr("class", "yAxis")
-            .call(yAxis);
-        // Add Y Axis Label
-        this.svg
-            .append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 0 - this.margin.left)
-            .attr("x", 0 - (innerHeight / 2))
-            .attr("dy", "1em")
-            .style("text-anchor", "middle")
-            .text(this.data.country2 + ": " + this.data.statistic2)
-            .style("fill", "black")
-            .style("font-size", 15)
-            .style("font-family", "Arial Black");  
-
-        // X Gridlines
-        d3.selectAll("g.xAxis g.tick")
-            .append("line")
-            .attr("class", "gridline")
-            .attr("x1", 0)
-            .attr("y1", -innerHeight)
-            .attr("x2", 0)
-            .attr("y2", 0)
-            .attr("stroke", "#9ca5aecf") // line color
-            .attr("stroke-dasharray","4") // make it dashed;
-
-        // Y Gridlines
-        d3.selectAll("g.yAxis g.tick")
-            .append("line")
-            .attr("class", "gridline")
-            .attr("x1", 0)
-            .attr("y1", 0)
-            .attr("x2", innerWidth)
-            .attr("y2", 0)
-            .attr("stroke", "#9ca5aecf") // line color
-            .attr("stroke-dasharray","4") // make it dashed;;
-
-        // Add dots
-        const dots = this.svg.append('g');
-        dots
-            .selectAll("dot")
-            .data(this.data.data)
-            .enter()
-            .append("circle")
-            .attr("cx", (d: any) => xScale(d.stat1))
-            .attr("cy",  (d: any) => yScale(d.stat2))
-            .attr("r", 0)
-            .style("fill", "#328CC8")
-            .transition()
-            .delay((d, i) => i * 60)
-            .attr("r", 5);
-
-        // Add labels
-        dots
-            .selectAll("text")
-            .data(this.data.data)
-            .enter()
-            .append("text")
-            .text( (d: any) => d.year)
-            .attr("x", (d: any) => xScale(d.stat1))
-            .attr("y", (d: any)  => yScale(d.stat2))
-            .attr("transform", "translate(5,-2)")
-            .style("opacity", .0)   // transition opacity from 0 to 0.5
-            .transition()
-            .delay(500)
-            .duration(3500)
-            .style("opacity", .5)
-            .style("font", "10px times");
-
-        //append title
-        this.svg
-            .append("text")
-            .attr("x", innerWidth / 2)
-            .attr("y", - this.margin.top + 15)
-            .attr("text-anchor", "middle")
-            .text(this.title)
-            .style("fill", "black")
-            .style("font-size", 20)
-            .style("font-family", "Arial Black");
+        this.specifyTitle();
+        this.setUpXAxis();
+        this.setUpYAxis();
+        this.setUpDots();
+        this.setUpTitle();
     }
 
     private clearChart(): void {
@@ -207,26 +95,7 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
         this.svg.selectAll("path").remove();
         this.svg.selectAll("text").remove();
     }
-
-    private setUpTitle(): void {
-        const statistic1: string = this.data.statistic1
-            .replace("(Both Sexes) ", "")
-            .replace("(Male) ", "")
-            .replace("(Female) ", "");
-        const cutOffIndex1: number = statistic1.indexOf('[');
-        const xDescription = statistic1.substring(0, cutOffIndex1 - 1);
-
-        const statistic2: string = this.data.statistic2
-            .replace("(Both Sexes) ", "")
-            .replace("(Male) ", "")
-            .replace("(Female) ", "");
-        const cutOffIndex2: number = statistic2.indexOf('[');
-        const yDescription = statistic2.substring(0, cutOffIndex2 - 1);
-
-        this.title = this.data.country1 + ": " + xDescription + " vs " 
-            + this.data.country2 + ": " + yDescription;
-    }
-
+    
     private saveCommonYears(data1: OneStat, data2: OneStat): TwoStats {
 
         let records: { year: number, stat1: number, stat2: number }[] = [];
@@ -254,6 +123,161 @@ export class ScatterPlotComponent implements OnInit, OnDestroy{
             data: records
         };
         return data;
+    }
+
+    private specifyTitle(): void {
+        const statistic1: string = this.data.statistic1
+            .replace("(Both Sexes) ", "")
+            .replace("(Male) ", "")
+            .replace("(Female) ", "");
+        const cutOffIndex1: number = statistic1.indexOf('[');
+        const xDescription = statistic1.substring(0, cutOffIndex1 - 1);
+
+        const statistic2: string = this.data.statistic2
+            .replace("(Both Sexes) ", "")
+            .replace("(Male) ", "")
+            .replace("(Female) ", "");
+        const cutOffIndex2: number = statistic2.indexOf('[');
+        const yDescription = statistic2.substring(0, cutOffIndex2 - 1);
+
+        this.title = this.data.country1 + ": " + xDescription + " vs " 
+            + this.data.country2 + ": " + yDescription;
+    }
+
+    private setUpXAxis(): void {
+        
+        // Set the scales
+        this.xScale = d3
+            .scaleLinear()
+            .range([0, this.innerWidth])
+            .domain(d3.extent(this.data.data, (d) => d.stat1));
+
+        // Set X axis
+        const xAxis = d3
+            .axisBottom(this.xScale)
+            .scale(this.xScale.nice());
+
+        // Add X Axis
+        this.svg
+            .append("g")
+            .attr("class", "xAxis")
+            .attr("transform", "translate(0," + this.innerHeight + ")")
+            .call(xAxis);
+
+        // Add X Axis Label
+        this.svg
+            .append("text")
+            .attr("x", this.innerWidth / 2)
+            .attr("y", this.innerHeight + this.margin.bottom * 3 / 4)
+            .style("text-anchor", "middle")
+            .text(this.data.country1 + ": " + this.data.statistic1)
+            .style("fill", "black")
+            .style("font-size", 15)
+            .style("font-family", "Arial Black");     
+
+        // X Gridlines
+        d3.selectAll("g.xAxis g.tick")
+            .append("line")
+            .attr("class", "gridline")
+            .attr("x1", 0)
+            .attr("y1", -this.innerHeight)
+            .attr("x2", 0)
+            .attr("y2", 0)
+            .attr("stroke", "#9ca5aecf") // line color
+            .attr("stroke-dasharray","4") // make it dashed;
+    }
+
+    private setUpYAxis(): void {
+        
+        // Set the scale
+        this.yScale = d3
+            .scaleLinear()
+            .range([this.innerHeight, 0])
+            .domain(d3.extent(this.data.data, (d) => d.stat2));
+
+        // Set Y axis
+        const yAxis = d3
+            .axisLeft(this.yScale)
+            .scale(this.yScale.nice());
+
+        // Add Y axis
+        this.svg
+            .append("g")
+            .attr("class", "yAxis")
+            .call(yAxis);
+
+        // Add Y Axis Label
+        this.svg
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - this.margin.left)
+            .attr("x", 0 - (this.innerHeight / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text(this.data.country2 + ": " + this.data.statistic2)
+            .style("fill", "black")
+            .style("font-size", 15)
+            .style("font-family", "Arial Black");  
+
+        // Y Gridlines
+        d3.selectAll("g.yAxis g.tick")
+            .append("line")
+            .attr("class", "gridline")
+            .attr("x1", 0)
+            .attr("y1", 0)
+            .attr("x2", this.innerWidth)
+            .attr("y2", 0)
+            .attr("stroke", "#9ca5aecf") // line color
+            .attr("stroke-dasharray","4") // make it dashed;;
+    }
+
+    private setUpDots(): void {
+        
+        // Add dots
+        const dots = this.svg
+            .append('g');
+        
+        dots
+            .selectAll("dot")
+            .data(this.data.data)
+            .enter()
+            .append("circle")
+            .attr("cx", (d: any) => this.xScale(d.stat1))
+            .attr("cy",  (d: any) => this.yScale(d.stat2))
+            .attr("r", 0)
+            .style("fill", "#328CC8")
+            .transition()
+            .delay((d, i) => i * 60)
+            .attr("r", 5);
+
+        // Add labels
+        dots
+            .selectAll("text")
+            .data(this.data.data)
+            .enter()
+            .append("text")
+            .text( (d: any) => d.year)
+            .attr("x", (d: any) => this.xScale(d.stat1))
+            .attr("y", (d: any)  => this.yScale(d.stat2))
+            .attr("transform", "translate(5,-2)")
+            .style("opacity", .0)   // transition opacity from 0 to 0.5
+            .transition()
+            .delay(500)
+            .duration(3500)
+            .style("opacity", .5)
+            .style("font", "10px times");
+    }
+
+    private setUpTitle(): void {
+        this.svg
+            .append("text")
+            .attr("x", this.innerWidth / 2)
+            .attr("y", - this.margin.top + 15)
+            .attr("text-anchor", "middle")
+            .text(this.title)
+            .style("fill", "black")
+            .style("font-size", 20)
+            .style("font-family", "Arial Black");
     }
 
 }

@@ -27,6 +27,13 @@ export class BarChartComponent implements OnInit, OnDestroy {
     private yRange: number[] = [];
     private yAxisLabel: string = "";
     private title: string = "";
+    private xScale: any;
+    private xSubgroup: any;
+    private yScale: any;
+    private innerWidth: number;
+    private innerHeight: number;
+    private variableTopMargin: number;
+    private statistics: string[] = [];
     
     constructor(private chartsService: ChartsService) {}
 
@@ -47,11 +54,6 @@ export class BarChartComponent implements OnInit, OnDestroy {
                     }
                 }
 
-                this.setUpXAxis();
-                this.setUpYAxis();
-                this.setUpYLabelAndTitle();
-                this.groupData();
-                
                 if ( !this.noDataAvailable ) {
                     this.createChart();
                 }
@@ -83,192 +85,19 @@ export class BarChartComponent implements OnInit, OnDestroy {
 
     private createChart(): void {
 
-        const variableHeight = this.totalHeight + 30 * this.data.length;
-        const variableTopMargin = this.margin.top + 30 * this.data.length;
-        const statistics = Array.from(this.data.map(
+        this.statistics = Array.from(this.data.map(
             d => d.country + ": " + d.statistic));
 
-        // Width/height after subtracting x/y width/height
-        const innerWidth = this.totalWidth - this.margin.left 
-            - this.margin.right;
-        const innerHeight = variableHeight - variableTopMargin 
-            - this.margin.bottom;
-
-        // Move the inner chart lower to account for number of lines
-        this.svg = d3
-            .select("svg")
-            .attr("viewBox", `0 0 ${this.totalWidth} ${variableHeight}`)
-            .select("g")
-            .attr("transform", "translate(" + this.margin.left + "," + 
-                variableTopMargin + ")");
-
-        // Set the scales
-        const xScale = d3
-            .scaleBand()
-            .range([0, innerWidth])
-            .domain(this.allYears.map((d) => d.toString()))
-            .padding(0.2);
-        const yScale = d3
-            .scaleLinear()
-            .range([innerHeight, 0])
-            .domain(this.yRange);
-
-        // Set X axis
-        const ticks = this.allYears
-            .map((d, i) => 
-                (i == 1 || i % 5 == 0 || i == this.allYears.length - 1) ? 
-                    d.toString() : undefined )
-            .filter(item => item)
-        const xAxis = d3
-            .axisBottom(xScale)
-            .tickSizeOuter(0)
-            .tickValues(ticks);
-        // Set Y axis
-        const yAxis = d3
-            .axisLeft(yScale)
-            .tickSizeOuter(0)
-            .scale(yScale.nice());     
-
-        // Add X Axis
-        this.svg
-            .append("g")
-            .attr("class", "xAxis")
-            .attr("transform", "translate(0," + innerHeight + ")")
-            .call(xAxis)
-            .selectAll("text")
-            .attr("transform", "translate(-12,10)rotate(-90)")
-            .style("text-anchor", "end");
-        // Add X Axis Label
-        this.svg
-            .append("text")
-            .attr("x", innerWidth / 2)
-            .attr("y", innerHeight + this.margin.bottom)
-            .style("text-anchor", "middle")
-            .text("Year")
-            .style("fill", "black")
-            .style("font-size", 15)
-            .style("font-family", "Arial Black");              
-
-        // Add Y axis
-        this.svg
-            .append("g")
-            .attr("class", "yAxis")
-            .call(yAxis);
-        // Add Y Axis Label
-        this.svg
-            .append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 0 - this.margin.left)
-            .attr("x", 0 - (innerHeight / 2))
-            .attr("dy", "1em")
-            .style("text-anchor", "middle")
-            .text(this.yAxisLabel)
-            .style("fill", "black")
-            .style("font-size", 15)
-            .style("font-family", "Arial Black");            
-
-        // Y Gridlines
-        d3.selectAll("g.yAxis g.tick")
-            .append("line")
-            .attr("class", "gridline")
-            .attr("x1", 0)
-            .attr("y1", 0)
-            .attr("x2", innerWidth)
-            .attr("y2", 0)
-            .attr("stroke", "#9ca5aecf") // line color
-            .attr("stroke-dasharray","4") // make it dashed;
-
-        // Another scale for subgroup position
-        const xSubgroup = d3
-            .scaleBand()
-            .domain(statistics)
-            .range([0, xScale.bandwidth()])
-            .padding(0.05);
-
-        const color = d3
-            .scaleOrdinal()
-            .domain(statistics)
-            .range(this.colors);
-
-        // Bars for positive values
-        this.svg.append("g")
-            .selectAll("g")
-            .data(this.groupedData)
-            .enter()
-            .append("g")
-            .attr("transform", d => `translate(${xScale(d.year.toString())},0)`)
-            .selectAll("rect")  // binding statistics to rectangles
-            .data((d: any) => statistics.map(function(key) {
-                    return { key: key, value: d[key] > 0 ? d[key] : 0 }; }))
-            .enter()
-            .append("rect")
-            .attr("x", (d: any) =>  xSubgroup(d.key))
-            .attr("width", xSubgroup.bandwidth())
-            // setting up y coordinates and height position to 0 for transition
-            .attr("y", (d: any) => yScale(0))
-            .attr("height", (d: any) => 0)
-            .attr("fill", (d: any) => color(d.key))
-            // setting up transition, delay and duration
-            .transition()
-            .delay((d: any) => Math.random() * 250)
-            .duration(1000)
-            // setting up normal values for y and height
-            .attr("y", (d: any) => yScale(d.value))
-            .attr("height", (d: any) => yScale(0) - yScale(d.value));
-
-        // Bars for negative values
-        this.svg.append("g")
-            .selectAll("g")
-            .data(this.groupedData)
-            .enter()
-            .append("g")
-            .attr("transform", d => `translate(${xScale(d.year.toString())},0)`)
-            .selectAll("rect")  // binding statistics to rectangles
-            .data((d: any) => statistics.map(function(key) {
-                    return { key: key, value: d[key] < 0 ? d[key] : 0 }; }))
-            .enter()
-            .append("rect")
-            .attr("x", (d: any) =>  xSubgroup(d.key))
-            .attr("width", xSubgroup.bandwidth())
-            // setting up y coordinates and height position to 0 for transition
-            .attr("y", (d: any) => yScale(0))
-            .attr("fill", (d: any) => color(d.key))
-            // setting up transition, delay and duration
-            .transition()
-            .delay((d: any) => Math.random() * 250)
-            .duration(1000)
-            // setting up normal values for y and height
-            .attr("y", (d: any) => yScale(0))
-            .attr("height", (d: any) => yScale(0) - yScale(-d.value));  
-
-        //append legends
-        var legend = this.svg
-            .selectAll('g.legend')
-            .data(this.data)
-            .enter()
-            .append("g");
-
-        legend.append("circle")
-            .attr("cx", 0)
-            .attr('cy', (d, i) => - variableTopMargin + 50 + i * 30)
-            .attr("r", 6)
-            .style("fill", (d, i) => this.colors[i]);
-
-        legend.append("text")
-            .attr("x", 20)
-            .attr("y", (d, i) => - variableTopMargin + 55 + i * 30)
-            .text(d => d.country + ": " + d.statistic)
-
-        //append title
-        this.svg
-            .append("text")
-            .attr("x", innerWidth / 2)
-            .attr("y", - variableTopMargin + 15)
-            .attr("text-anchor", "middle")
-            .text(this.title)
-            .style("fill", "black")
-            .style("font-size", 20)
-            .style("font-family", "Arial Black");
+        this.calculateXAxisDomain();
+        this.calculateYAxisRange();
+        this.specifyYLabelAndTitle();
+        this.groupData();
+        this.positionChartAccordingToData();
+        this.setUpXAxis();
+        this.setUpYAxis();
+        this.setUpBars();
+        this.setUpLegend();
+        this.setUpTitle();
     }
 
     private clearChart(): void {
@@ -277,7 +106,7 @@ export class BarChartComponent implements OnInit, OnDestroy {
         this.svg.selectAll("text").remove();
     }
 
-    private setUpXAxis(): void {
+    private calculateXAxisDomain(): void {
 
         const yearsSet: Set<number> = new Set();
 
@@ -290,7 +119,7 @@ export class BarChartComponent implements OnInit, OnDestroy {
         this.allYears = Array.from(yearsSet).sort();
     }
 
-    private setUpYAxis(): void {
+    private calculateYAxisRange(): void {
 
         var min: number = 99999999;
         var max: number = -99999999;
@@ -322,8 +151,8 @@ export class BarChartComponent implements OnInit, OnDestroy {
         }
     }
 
-    // TODO: common in all 3
-    private setUpYLabelAndTitle(): void {
+    // TODO: Common in 2. Inheritance?
+    private specifyYLabelAndTitle(): void {
         var statistic: string = this.data[0].statistic
             .replace("(Both Sexes) ", "")
             .replace("(Male) ", "")
@@ -369,7 +198,6 @@ export class BarChartComponent implements OnInit, OnDestroy {
         // Loop through statistics
         for (let year of this.allYears) {
 
-            // const records: {year: number, stat: number}[] = [];
             var newRecord = { year: year };
 
             for (let stat of this.data) {
@@ -387,6 +215,222 @@ export class BarChartComponent implements OnInit, OnDestroy {
         console.log(this.groupedData);
 
         return this.groupedData;
+    }
+    
+    private positionChartAccordingToData(): void {
+
+        const variableHeight = this.totalHeight + 30 * this.data.length;
+        this.variableTopMargin = this.margin.top + 30 * this.data.length;
+
+        // Width/height after subtracting x/y width/height
+        this.innerWidth = this.totalWidth - this.margin.left 
+            - this.margin.right;
+        this.innerHeight = variableHeight - this.variableTopMargin 
+            - this.margin.bottom;
+
+        // Move the inner chart lower to account for number of lines
+        this.svg = d3
+            .select("svg")
+            .attr("viewBox", `0 0 ${this.totalWidth} ${variableHeight}`)
+            .select("g")
+            .attr("transform", "translate(" + this.margin.left + "," + 
+                this.variableTopMargin + ")");
+    }
+
+    private setUpXAxis(): void {
+       
+        // Set the scale
+        this.xScale = d3
+            .scaleBand()
+            .range([0, this.innerWidth])
+            .domain(this.allYears.map((d) => d.toString()))
+            .padding(0.2);
+
+        // Set X axis
+        const ticks = this.allYears
+            .map((d, i) => 
+                (i == 1 || i % 5 == 0 || i == this.allYears.length - 1) ? 
+                    d.toString() : undefined )
+            .filter(item => item)
+        const xAxis = d3
+            .axisBottom(this.xScale)
+            .tickSizeOuter(0)
+            .tickValues(ticks);
+
+        // Add X Axis
+        this.svg
+            .append("g")
+            .attr("class", "xAxis")
+            .attr("transform", "translate(0," + this.innerHeight + ")")
+            .call(xAxis)
+            .selectAll("text")
+            .attr("transform", "translate(-12,10)rotate(-90)")
+            .style("text-anchor", "end");
+        
+        // Add X Axis Label
+        this.svg
+            .append("text")
+            .attr("x", this.innerWidth / 2)
+            .attr("y", this.innerHeight + this.margin.bottom)
+            .style("text-anchor", "middle")
+            .text("Year")
+            .style("fill", "black")
+            .style("font-size", 15)
+            .style("font-family", "Arial Black");              
+        
+        // Add Y Axis Label
+        this.svg
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - this.margin.left)
+            .attr("x", 0 - (this.innerHeight / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text(this.yAxisLabel)
+            .style("fill", "black")
+            .style("font-size", 15)
+            .style("font-family", "Arial Black");            
+
+        // Another scale for subgroup position
+        this.xSubgroup = d3
+            .scaleBand()
+            .domain(this.statistics)
+            .range([0, this.xScale.bandwidth()])
+            .padding(0.05);
+    }
+
+    private setUpYAxis(): void {
+        
+        // Set the scale
+        this.yScale = d3
+            .scaleLinear()
+            .range([this.innerHeight, 0])
+            .domain(this.yRange);
+
+        // Set Y axis
+        const yAxis = d3
+            .axisLeft(this.yScale)
+            .tickSizeOuter(0)
+            .scale(this.yScale.nice());                 
+
+        // Add Y axis
+        this.svg
+            .append("g")
+            .attr("class", "yAxis")
+            .call(yAxis);
+        
+            // Add Y Axis Label
+        this.svg
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - this.margin.left)
+            .attr("x", 0 - (this.innerHeight / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text(this.yAxisLabel)
+            .style("fill", "black")
+            .style("font-size", 15)
+            .style("font-family", "Arial Black");            
+
+        // Y Gridlines
+        d3.selectAll("g.yAxis g.tick")
+            .append("line")
+            .attr("class", "gridline")
+            .attr("x1", 0)
+            .attr("y1", 0)
+            .attr("x2", this.innerWidth)
+            .attr("y2", 0)
+            .attr("stroke", "#9ca5aecf") // line color
+            .attr("stroke-dasharray","4") // make it dashed;
+    }
+
+    private setUpBars(): void {
+
+        // Bars for positive values
+        this.svg.append("g")
+            .selectAll("g")
+            .data(this.groupedData)
+            .enter()
+            .append("g")
+            .attr("transform", d => 
+                `translate(${this.xScale(d.year.toString())},0)`)
+            .selectAll("rect")  // binding statistics to rectangles
+            .data((d: any) => this.statistics.map(function(key) {
+                    return { key: key, value: d[key] > 0 ? d[key] : 0 }; }))
+            .enter()
+            .append("rect")
+            .attr("x", (d: any) => this.xSubgroup(d.key))
+            .attr("width", this.xSubgroup.bandwidth())
+            // setting up y coordinates and height position to 0 for transition
+            .attr("y", (d: any) => this.yScale(0))
+            .attr("height", (d: any) => 0)
+            .attr("fill", (d: any, i: any) => this.colors[i])
+            // setting up transition, delay and duration
+            .transition()
+            .delay((d: any) => Math.random() * 250)
+            .duration(1000)
+            // setting up normal values for y and height
+            .attr("y", (d: any) => this.yScale(d.value))
+            .attr("height", (d: any) => this.yScale(0) - this.yScale(d.value));
+
+        // Bars for negative values
+        this.svg.append("g")
+            .selectAll("g")
+            .data(this.groupedData)
+            .enter()
+            .append("g")
+            .attr("transform", d => 
+                `translate(${this.xScale(d.year.toString())},0)`)
+            .selectAll("rect")  // binding statistics to rectangles
+            .data((d: any) => this.statistics.map(function(key) {
+                    return { key: key, value: d[key] < 0 ? d[key] : 0 }; }))
+            .enter()
+            .append("rect")
+            .attr("x", (d: any) => this.xSubgroup(d.key))
+            .attr("width", this.xSubgroup.bandwidth())
+            // setting up y coordinates and height position to 0 for transition
+            .attr("y", (d: any) => this.yScale(0))
+            .attr("fill", (d: any, i: any) => this.colors[i])
+            // setting up transition, delay and duration
+            .transition()
+            .delay((d: any) => Math.random() * 250)
+            .duration(1000)
+            // setting up normal values for y and height
+            .attr("y", (d: any) => this.yScale(0))
+            .attr("height", (d: any) => this.yScale(0) - this.yScale(-d.value));  
+    }
+
+    private setUpLegend(): void {
+
+        //append legends
+        var legend = this.svg
+            .selectAll('g.legend')
+            .data(this.data)
+            .enter()
+            .append("g");
+
+        legend.append("circle")
+            .attr("cx", 0)
+            .attr('cy', (d, i) => - this.variableTopMargin + 50 + i * 30)
+            .attr("r", 6)
+            .style("fill", (d, i) => this.colors[i]);
+
+        legend.append("text")
+            .attr("x", 20)
+            .attr("y", (d, i) => - this.variableTopMargin + 55 + i * 30)
+            .text(d => d.country + ": " + d.statistic)
+    }
+
+    private setUpTitle(): void {
+        this.svg
+            .append("text")
+            .attr("x", this.innerWidth / 2)
+            .attr("y", - this.variableTopMargin + 15)
+            .attr("text-anchor", "middle")
+            .text(this.title)
+            .style("fill", "black")
+            .style("font-size", 20)
+            .style("font-family", "Arial Black");
     }
 
 }
