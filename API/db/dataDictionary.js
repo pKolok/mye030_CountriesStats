@@ -440,7 +440,7 @@ statToTable_mortality= [
 ];
 
 dbToFormal_income = [
-    ["income_index", "Income Index"],        // TODO more explanation maybe
+    ["income_index", "Income Index [GNI per capita (2011 PPP $) expressed as Index]"],
     ["domestic_credits", "Domestic Credit Provided by Financial Sector [% of GDP]"],
     ["estimated_gni_female", "Estimated Gross National Income per Capita (Female) [2011 PPP $]"],
     ["estimated_gni_male", "Estimated Gross National Income per Capita (Male) [2011 PPP $]"],
