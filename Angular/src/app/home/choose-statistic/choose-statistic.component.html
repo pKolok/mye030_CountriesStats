@@ -19,6 +19,7 @@
                 <label for="statistic">Statistic</label>
                 <select class="form-control" formControlName="statistic"
                     (change)="onStatisticSelected($event)">
+                    <!-- <option value="" selected disabled>Choose a Statistic</option> -->
                     <option>Choose a Statistic</option>
                     <option *ngFor="let statistic of statistics">
                         {{ statistic }}
@@ -26,6 +27,33 @@
                 </select>   
             </div>
         </div>
+        <!-- From Year -->
+        <div class="col-xs-2" *ngIf="selectedCountry&&selectedStatistic">
+            <div class="form-group">
+                <label for="fromYear">From Year</label>
+                <select class="form-control" formControlName="fromYear"
+                    (change)="onFromYearSelected($event)">
+                    <option *ngFor="let year of availableYears">
+                        {{ year }}
+                    </option>                            
+                </select>   
+            </div>   
+        </div>
+        <!-- To Year -->
+        <div class="col-xs-2" *ngIf="selectedCountry&&selectedStatistic">
+            <div class="form-group">
+                <label for="toYear">To Year</label>
+                <select class="form-control" formControlName="toYear"
+                    (change)="onToYearSelected($event)">
+                    <option *ngFor="let year of availableYears">
+                        {{ year }}
+                    </option>                            
+                </select>   
+            </div>   
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-xs-8"></div>
         <!-- Sex -->
         <div class="col-xs-2" *ngIf="selectedSex">
             <div class="form-group">
@@ -75,6 +103,12 @@
                     </option>
                 </select>   
             </div>   
-        </div>                   
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <p *ngIf="fromYear>=toYear" style="color: red">
+                Please choose valid years!</p>
+        </div>
     </div>
 </form>

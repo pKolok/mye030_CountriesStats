@@ -5,3 +5,8 @@ ETL/__pycache__
 API/node_modules
 
 # Angular
+
+# General
+*.pdf
+*.png
+dB-Schema-Code.txt

@@ -5,7 +5,7 @@ const demographicsController = require('../controllers/demographicsController');
 const router = express.Router();
 
 router
-    .route('/:country/:statistic')
+    .route('/:country/:statistic/:fromyear/:toyear')
     .get(demographicsController.getCountryStatistic);
 
 router

@@ -508,6 +508,7 @@ dbToFormal = new Map(dbToFormal_All);
 // Dictionary mapping from a formal name to a database name
 formalToDb = new Map(formalToDb_All);
 
+// Dictionary mapping from a db statistic name to a db table
 statToTable = new Map(statToTable_All);
 
 exports.FormalName = (name) => dbToFormal.get(name);

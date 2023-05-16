@@ -4,6 +4,7 @@ import { Statistics } from '../../shared/statisticsList';
 import { DBService } from '../../shared/db.service';
 import { ChooseStatisticService } from './choose-statistic.service';
 import { Statistic } from './statistic.model';
+import { ApiResponseData } from 'src/app/shared/api-data.model';
 
 @Component({
     selector: 'app-choose-statistic',
@@ -25,6 +26,10 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
     public selectedAge: string = null;
     public selectedAgeGroup: string = null;
     public selectedFertilityAgeGroup: string = null;
+    public availableYears: number[] = [];
+    public fromYear: number;
+    public toYear: number;
+
     private statsRequiringTwoSexes: string[] = [];
     private statsRequiringThreeSexes: string[] = [];
     private statRequiringAge: string = "";
@@ -81,7 +86,23 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
             return;
         }
 
-        if (this.selectedCountry && this.selectedStatistic) {
+        if (this.selectedStatistic) {
+            this.availableYears = [];
+            this.dbService.getYearsByCountryAndStatistic(
+                this.selectedCountry, this.selectedStatistic).subscribe(
+                    (data: ApiResponseData) => {
+                        data.data.forEach(el => {
+                            this.availableYears.push(el.year);
+                        });
+                    }
+            );
+            // const lastYear = this.availableYears[
+            //     this.availableYears.length - 1];
+            // this.statisticForm.patchValue({"toYear": lastYear});
+        } 
+
+        if (this.selectedCountry && this.selectedStatistic 
+            && this.fromYear < this.toYear) {
             this.omitStatistic();
         } else {
             this.resetStatistic();
@@ -102,6 +123,21 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
             this.resetStatistic();
             return;
         }
+
+        // Get available years for country and statistic
+        if (this.selectedCountry) {
+            this.availableYears = [];
+            this.dbService.getYearsByCountryAndStatistic(
+                this.selectedCountry, this.selectedStatistic).subscribe(
+                    (data: ApiResponseData) => {
+                        data.data.forEach(el => {
+                            this.availableYears.push(el.year);
+                        });
+                        this.fromYear = this.availableYears[0];
+                        this.toYear = this.availableYears[0];
+                    }
+            );
+        } 
 
         // Check if user must be prompted to select between two sexes
         if (this.statsRequiringTwoSexes.includes(this.selectedStatistic)) {
@@ -135,7 +171,28 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
             this.selectedFertilityAgeGroup = "Total";
         }
 
-        if (this.selectedCountry && this.selectedStatistic) {
+        if (this.selectedCountry && this.selectedStatistic 
+            && this.fromYear < this.toYear) {
+            this.omitStatistic();
+        } else {
+            this.resetStatistic();
+        }
+    }
+
+    onFromYearSelected(event: any): void {
+        this.fromYear = event.target.value;
+
+        if (this.fromYear < this.toYear) {
+            this.omitStatistic();
+        } else {
+            this.resetStatistic();
+        }
+    }
+
+    onToYearSelected(event: any): void {
+        this.toYear = event.target.value;
+
+        if (this.fromYear < this.toYear) {
             this.omitStatistic();
         } else {
             this.resetStatistic();
@@ -191,6 +248,8 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
             "country": new FormControl(this.selectedCountry),
             "statistic": new FormControl(this.selectedStatistic),
             "sex": new FormControl(this.selectedSex),
+            "fromYear": new FormControl(this.fromYear),
+            "toYear": new FormControl(this.toYear),
             "age": new FormControl(this.selectedAge),
             "ageGroup": new FormControl(this.selectedAgeGroup),
             "fertilityAgeGroup": new FormControl(this.selectedAgeGroup)
@@ -202,6 +261,8 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
             new Statistic(
                 this.selectedCountry,
                 this.selectedStatistic,
+                this.fromYear,
+                this.toYear,
                 this.selectedSex,
                 this.selectedAge,
                 this.selectedAgeGroup,

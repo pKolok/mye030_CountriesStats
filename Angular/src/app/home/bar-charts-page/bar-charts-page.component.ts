@@ -74,7 +74,6 @@ export class BarChartsPageComponent {
                 delete apiResponse.status;
                 apiData.push(apiResponse);
             });
-            console.log(apiData);
             this.chartsService.setData(apiData);
         });
     }
@@ -94,6 +93,8 @@ export class BarChartsPageComponent {
     private chooseRequest(selectedStatistic: Statistic) {
         var statistic: string = selectedStatistic.statistic;
         const country: string = selectedStatistic.country;
+        const fromYear: number = selectedStatistic.fromYear;
+        const toYear: number = selectedStatistic.toYear;
         const age: string = selectedStatistic.age;
         const sex: string = selectedStatistic.sex;
         const ageGroup: string = selectedStatistic.ageGroup;
@@ -122,7 +123,8 @@ export class BarChartsPageComponent {
             if (fertilityAgeGroup) {
                 statistic += " " + fertilityAgeGroup;
             }
-            return this.dbService.getCountryStatistic(country, statistic);
+            return this.dbService.getCountryStatistic(
+                country, statistic, fromYear, toYear);
         }
     }
     

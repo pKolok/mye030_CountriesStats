@@ -11,6 +11,8 @@ exports.getCountryStatistic = (req, res) => {
 
     const country = req.params.country;
     const statistic = req.params.statistic;
+    const fromYear = req.params.fromyear;
+    const toYear = req.params.toyear;
     const dbStatistic = dict.dataBaseName(statistic);
     const dbTable = dict.dataBaseTable(dbStatistic);
     const displayStatistic = dict.FormalName(dbStatistic);
@@ -18,7 +20,8 @@ exports.getCountryStatistic = (req, res) => {
     const query = 
         "select year, " + dbStatistic + " " +
         "from " + dbTable + " " + 
-        "where country_name='" + country + "' " + 
+        "where country_name='" + country + "' " +
+        "and year between " + fromYear + " and " + toYear + " " +
         "order by year;";
 
     connection.query(query, (err, rows) => {
