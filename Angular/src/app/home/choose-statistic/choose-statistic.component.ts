@@ -29,7 +29,8 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
     public availableYears: number[] = [];
     public fromYear: number;
     public toYear: number;
-
+    public noDataAvailable: boolean = false;
+    
     private statsRequiringTwoSexes: string[] = [];
     private statsRequiringThreeSexes: string[] = [];
     private statRequiringAge: string = "";
@@ -87,26 +88,42 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
         }
 
         if (this.selectedStatistic) {
-            this.availableYears = [];
-            this.dbService.getYearsByCountryAndStatistic(
-                this.selectedCountry, this.selectedStatistic).subscribe(
-                    (data: ApiResponseData) => {
+            const statistic: Statistic = new Statistic(
+                this.selectedCountry,
+                this.selectedStatistic,
+                this.fromYear,
+                this.toYear,
+                this.selectedSex,
+                this.selectedAge,
+                this.selectedAgeGroup,
+                this.selectedFertilityAgeGroup);
+
+            this.dbService.getAvailableYears(statistic).subscribe(                
+                (data: ApiResponseData) => {
+                    this.availableYears = [];
+
+                    if (data.results > 0) {
                         data.data.forEach(el => {
                             this.availableYears.push(el.year);
                         });
+                        this.noDataAvailable = false;
+                        this.fromYear = this.availableYears[0];
+                        this.toYear = this.availableYears[
+                            this.availableYears.length - 1];
+                        this.statisticForm.patchValue(
+                            {"fromYear": this.fromYear, "toYear": this.toYear});
+                    } else {
+                        this.noDataAvailable = true;
                     }
-            );
-            // const lastYear = this.availableYears[
-            //     this.availableYears.length - 1];
-            // this.statisticForm.patchValue({"toYear": lastYear});
-        } 
 
-        if (this.selectedCountry && this.selectedStatistic 
-            && this.fromYear < this.toYear) {
-            this.omitStatistic();
-        } else {
-            this.resetStatistic();
-        }
+                    if (this.fromYear < this.toYear) {
+                        this.omitStatistic();
+                    } else {
+                        this.resetStatistic();
+                    }
+                }
+            );
+        } 
     }
 
     onStatisticSelected(event: any): void {
@@ -123,21 +140,6 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
             this.resetStatistic();
             return;
         }
-
-        // Get available years for country and statistic
-        if (this.selectedCountry) {
-            this.availableYears = [];
-            this.dbService.getYearsByCountryAndStatistic(
-                this.selectedCountry, this.selectedStatistic).subscribe(
-                    (data: ApiResponseData) => {
-                        data.data.forEach(el => {
-                            this.availableYears.push(el.year);
-                        });
-                        this.fromYear = this.availableYears[0];
-                        this.toYear = this.availableYears[0];
-                    }
-            );
-        } 
 
         // Check if user must be prompted to select between two sexes
         if (this.statsRequiringTwoSexes.includes(this.selectedStatistic)) {
@@ -171,12 +173,43 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
             this.selectedFertilityAgeGroup = "Total";
         }
 
-        if (this.selectedCountry && this.selectedStatistic 
-            && this.fromYear < this.toYear) {
-            this.omitStatistic();
-        } else {
-            this.resetStatistic();
-        }
+        // Get available years for country and statistic
+        if (this.selectedCountry) {
+            const statistic: Statistic = new Statistic(
+                this.selectedCountry,
+                this.selectedStatistic,
+                this.fromYear,
+                this.toYear,
+                this.selectedSex,
+                this.selectedAge,
+                this.selectedAgeGroup,
+                this.selectedFertilityAgeGroup);
+
+            this.dbService.getAvailableYears(statistic).subscribe(                
+                (data: ApiResponseData) => {
+                    this.availableYears = [];
+                    if (data.results > 0) {
+                        data.data.forEach(el => {
+                            this.availableYears.push(el.year);
+                        });
+                        this.noDataAvailable = false;
+                        this.fromYear = this.availableYears[0];
+                        this.toYear = this.availableYears[
+                            this.availableYears.length - 1];
+                        this.statisticForm.patchValue(
+                            {"fromYear": this.fromYear, "toYear": this.toYear});
+                    } else {
+                        this.noDataAvailable = true;
+                    }
+                    
+                    if (this.fromYear < this.toYear) {
+                        this.omitStatistic();
+                    } else {
+                        this.resetStatistic();
+                    }
+                }
+            );
+        } 
     }
 
     onFromYearSelected(event: any): void {

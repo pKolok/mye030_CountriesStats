@@ -10,7 +10,7 @@ exports.getYears = (req, res) => {
     const displayStatistic = dict.FormalName(dbStatistic);
 
     const query = 
-        "select year " +
+        "select distinct year " +
         "from " + dbTable + " " + 
         "where country_name='" + country + "' " + 
         "order by year;";

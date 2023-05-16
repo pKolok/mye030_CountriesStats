@@ -60,8 +60,8 @@ export class BarChartsPageComponent {
 
         // Put all requests in an array
         for (let i = 0; i < this.selectedStatistics.length; ++i) {
-            const statistic: string = this.selectedStatistics[i].statistic;
-            requests[i] = this.chooseRequest(this.selectedStatistics[i]);
+            requests[i] = this.dbService.getStatistic(
+                this.selectedStatistics[i]);
         };
 
         // Wait for all requests to complete
@@ -87,45 +87,6 @@ export class BarChartsPageComponent {
     ngOnDestroy(): void {
         this.statisticSelectionSubscription.unsubscribe();
         this.statisticDeselectionSubscription.unsubscribe();
-    }
-
-    // TODO: Common code - Inheritance?
-    private chooseRequest(selectedStatistic: Statistic) {
-        var statistic: string = selectedStatistic.statistic;
-        const country: string = selectedStatistic.country;
-        const fromYear: number = selectedStatistic.fromYear;
-        const toYear: number = selectedStatistic.toYear;
-        const age: string = selectedStatistic.age;
-        const sex: string = selectedStatistic.sex;
-        const ageGroup: string = selectedStatistic.ageGroup;
-        const fertilityAgeGroup: string = selectedStatistic.fertilityAgeGroup;
-
-        if (age) {
-            statistic = statistic.replace(" (by Age)", " at Age " + age);
-            return this.dbService.getCountryStatisticBySex(country,
-                statistic, sex);           
-        } else if (ageGroup) {
-            // Case: Mid-Year Population by Age Group
-            statistic = statistic.replace(" (by Age Group)", " (" + sex + ")");
-            var startingAge: string = "";
-            if (ageGroup === "All Ages") {
-                startingAge = "all";
-            } else {
-                startingAge = ageGroup.replace("[", "").replace("]", "")
-                    .split(",")[0];
-            }
-            return this.dbService.getCountryStatisticByAgeGroup(country,
-                statistic, startingAge);
-        } else {
-            if (sex) {
-                statistic += " (" + sex + ")";
-            }
-            if (fertilityAgeGroup) {
-                statistic += " " + fertilityAgeGroup;
-            }
-            return this.dbService.getCountryStatistic(
-                country, statistic, fromYear, toYear);
-        }
     }
     
 }

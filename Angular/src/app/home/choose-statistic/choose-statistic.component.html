@@ -1,3 +1,4 @@
+<hr *ngIf="index>0" style="border-top: dashed 1px; color: lightgray;" />
 <form [formGroup]="statisticForm">
     <div class="row">
         <!-- Country -->
@@ -28,7 +29,7 @@
             </div>
         </div>
         <!-- From Year -->
-        <div class="col-xs-2" *ngIf="selectedCountry&&selectedStatistic">
+        <div class="col-xs-2" *ngIf="selectedStatistic">
             <div class="form-group">
                 <label for="fromYear">From Year</label>
                 <select class="form-control" formControlName="fromYear"
@@ -40,12 +41,13 @@
             </div>   
         </div>
         <!-- To Year -->
-        <div class="col-xs-2" *ngIf="selectedCountry&&selectedStatistic">
+        <div class="col-xs-2" *ngIf="selectedStatistic">
             <div class="form-group">
                 <label for="toYear">To Year</label>
                 <select class="form-control" formControlName="toYear"
                     (change)="onToYearSelected($event)">
-                    <option *ngFor="let year of availableYears">
+                    <option *ngFor="let year of availableYears"
+                        [selected]="availableYears[availableYears.length-1]">
                         {{ year }}
                     </option>                            
                 </select>   
@@ -109,6 +111,8 @@
         <div class="col-xs-12">
             <p *ngIf="fromYear>=toYear" style="color: red">
                 Please choose valid years!</p>
+            <p *ngIf="noDataAvailable" style="color: red">
+                No data available!</p>
         </div>
     </div>
 </form>

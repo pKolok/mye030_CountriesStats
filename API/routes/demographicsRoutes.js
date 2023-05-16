@@ -9,11 +9,11 @@ router
     .get(demographicsController.getCountryStatistic);
 
 router
-    .route('/:country/:statistic/starting-age/:age')
+    .route('/:country/:statistic/:fromyear/:toyear/starting-age/:age')
     .get(demographicsController.getCountryStatisticByAgeGroup);
 
 router
-    .route('/:country/:statistic/:sex')
+    .route('/:country/:statistic/:fromyear/:toyear/:sex')
     .get(demographicsController.getCountryStatisticBySex);
 
 
