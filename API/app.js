@@ -6,8 +6,7 @@ const AppError = require('./shared/appError');
 const glabalErrorHandler = require('./controllers/errorControllers');
 const countriesRouter = require('./routes/countriesRoutes');
 const yearsRouter = require('./routes/yearsRoutes');
-const demographicsRouter = require('./routes/demographicsRoutes');
-const incomeRouter = require('./routes/incomeRoutes');
+const statisticsRouter = require('./routes/statisticsRoutes');
 
 const app = express();
 
@@ -27,8 +26,7 @@ app.get('/', (req, res) => {
 // Mounting routers by route
 app.use('/api/v1/countries', countriesRouter);
 app.use('/api/v1/years', yearsRouter);
-app.use('/api/v1/demographics', demographicsRouter);
-app.use('/api/v1/income', incomeRouter);
+app.use('/api/v1/statistics', statisticsRouter);
 
 // Handler for all routes not handled before/above
 app.all('*', (req, res, next) => {

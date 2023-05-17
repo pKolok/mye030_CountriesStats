@@ -1,19 +1,27 @@
-var connection = require('../db/db-connection');
+const connection = require('../db/db-connection');
 const dict = require("../db/dataDictionary");
+const AppError = require('../shared/appError');
 
-exports.getYears = (req, res) => {
+function renameKey ( obj, oldKey, newKey ) {
+    obj[newKey] = obj[oldKey];
+    delete obj[oldKey];
+  }
+
+exports.getStatistic = (req, res) => {
 
     const country = req.params.country;
     const statistic = req.params.statistic;
+    const fromYear = req.params.fromyear;
+    const toYear = req.params.toyear;
     const dbStatistic = dict.dataBaseName(statistic);
     const dbTable = dict.dataBaseTable(dbStatistic);
     const displayStatistic = dict.FormalName(dbStatistic);
 
     const query = 
-        "select distinct year " +
+        "select year, " + dbStatistic + " " +
         "from " + dbTable + " " + 
-        "where country_name='" + country + "' " + 
-        "and " + dbStatistic + " is not null " +  
+        "where country_name='" + country + "' " +
+        "and year between " + fromYear + " and " + toYear + " " +
         "order by year;";
 
     connection.query(query, (err, rows) => {
@@ -24,9 +32,11 @@ exports.getYears = (req, res) => {
                 message: err.message
             });
             return;
+            // return next(new AppError(err.message, 404));
         }
 
         const data = JSON.parse(JSON.stringify(rows));
+        data.forEach( obj => renameKey( obj, dbStatistic, "stat" ) );
 
         res.status(200).json({
             status: 'success',
@@ -36,15 +46,16 @@ exports.getYears = (req, res) => {
             data: data
         });
     });
-
 };
 
-exports.getYearsBySex = (req, res) => {
+exports.getStatisticBySex = (req, res) => {
 
     /* This queries db table life_expectancy */
 
     const country = req.params.country;
     const statistic = req.params.statistic;
+    const fromYear = req.params.fromyear;
+    const toYear = req.params.toyear;
     const sex = req.params.sex;
     
     var dbStatistic = dict.dataBaseName(statistic);
@@ -61,10 +72,10 @@ exports.getYearsBySex = (req, res) => {
     const displayStatistic = dict.FormalName(dbStatistic);
 
     const query = 
-        "select distinct year " +
+        "select year, " + dbStatistic + " " +
         "from " + dbTable + " " + 
-        "where country_name='" + country + "' "+ 
-        "and " + dbStatistic + " is not null " +  
+        "where country_name='" + country + "' " +
+        "and year between " + fromYear + " and " + toYear + " " +
         "order by year;";
 
     connection.query(query, (err, rows) => {
@@ -78,6 +89,7 @@ exports.getYearsBySex = (req, res) => {
         }
 
         const data = JSON.parse(JSON.stringify(rows));
+        data.forEach( obj => renameKey( obj, dbStatistic, "stat" ) );
 
         res.status(200).json({
             status: 'success',
@@ -89,12 +101,14 @@ exports.getYearsBySex = (req, res) => {
     });
 }
 
-exports.getYearsByAgeGroup = (req, res) => {
+exports.getStatisticByAgeGroup = (req, res) => {
 
     /* This queries db table fertility_rates */
 
     const country = req.params.country;
     const statistic = req.params.statistic;
+    const fromYear = req.params.fromyear;
+    const toYear = req.params.toyear;
     const ageGroup = req.params.ageGroup;
     var dbStatistic = dict.dataBaseName(statistic);
 
@@ -112,11 +126,11 @@ exports.getYearsByAgeGroup = (req, res) => {
     const displayStatistic = dict.FormalName(dbStatistic);
 
     const query = 
-        "select distinct year " +
+        "select year, " + dbStatistic + " " +
         "from " + dbTable + " " + 
-        "where country_name='" + country + "' "+ 
-        "and " + dbStatistic + " is not null " +  
-        "order by year;";        
+        "where country_name='" + country + "' " +
+        "and year between " + fromYear + " and " + toYear + " " +
+        "order by year;";
 
     connection.query(query, (err, rows) => {
 
@@ -129,6 +143,7 @@ exports.getYearsByAgeGroup = (req, res) => {
         }
 
         const data = JSON.parse(JSON.stringify(rows));
+        data.forEach( obj => renameKey( obj, dbStatistic, "stat" ) );
 
         res.status(200).json({
             status: 'success',
@@ -140,12 +155,14 @@ exports.getYearsByAgeGroup = (req, res) => {
     });
 }
 
-exports.getyearsBySexAndAgeGroup = (req, res) => {
+exports.getStatisticBySexAndAgeGroup = (req, res) => {
 
     /* This queries db table midyear_population_5yr */
 
     const country = req.params.country;
     const statistic = req.params.statistic;
+    const fromYear = req.params.fromyear;
+    const toYear = req.params.toyear;
     const sex = req.params.sex;
     const startingAge = req.params.ageGroup;
     var dbStatistic = dict.dataBaseName(statistic);
@@ -170,29 +187,22 @@ exports.getyearsBySexAndAgeGroup = (req, res) => {
         "0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55",
         "60", "65", "70", "75", "80", "85", "90", "95", "100"
     ];
-
-    // const query = 
-    //     "select distinct year " +
-    //     "from " + dbTable + " " + 
-    //     "where country_name='" + country + "' " + 
-    //     "and " + dbStatistic + " is not null " +  
-    //     "order by year;";  
-
+        
     var query = "";
     if (startingAge === "all") {
         query = 
-        "select distinct year " +
+        "select year, " + dbStatistic + " " +
         "from " + dbTable + " " + 
         "where country_name='" + country + "' and total_flag='*' " +
-        "and " + dbStatistic + " is not null " + 
+        "and year between " + fromYear + " and " + toYear + " " +
         "order by year;";
     } else if (ageGroups.includes(startingAge)) {
         query = 
-            "select distinct year " +
+            "select year, " + dbStatistic + " " +
             "from " + dbTable + " " + 
             "where country_name='" + country + "' and total_flag='A' and " + 
             "starting_age='" + startingAge + "' " +
-            "and " + dbStatistic + " is not null " +
+            "and year between " + fromYear + " and " + toYear + " " +
             "order by year;";
     } else {
         query = "unknown";
@@ -209,6 +219,7 @@ exports.getyearsBySexAndAgeGroup = (req, res) => {
         }
 
         const data = JSON.parse(JSON.stringify(rows));
+        data.forEach( obj => renameKey( obj, dbStatistic, "stat" ) );
 
         res.status(200).json({
             status: 'success',
@@ -220,12 +231,14 @@ exports.getyearsBySexAndAgeGroup = (req, res) => {
     });
 };
 
-exports.getYearsBySexAndAge = (req, res) => {
+exports.getStatisticBySexAndAge = (req, res) => {
 
     /* This queries db table midyear_population_1yr */
 
     const country = req.params.country;
     const statistic = req.params.statistic;
+    const fromYear = req.params.fromyear;
+    const toYear = req.params.toyear;
     const sex = req.params.sex;
     const age = req.params.age;
     var dbStatistic = dict.dataBaseName(statistic);
@@ -238,7 +251,7 @@ exports.getYearsBySexAndAge = (req, res) => {
 
     dbStatistic += "_" + age;
     displayStatistic = displayStatistic.replace("at Age", "at Age " + age);
-
+    
     if (sex === "Male") {
         displayStatistic = displayStatistic.replace(
             "[Population]", "[Male Population]");
@@ -248,11 +261,11 @@ exports.getYearsBySexAndAge = (req, res) => {
     }
 
     const query = 
-        "select distinct year " +
+        "select year, " + dbStatistic + " " +
         "from " + dbTable + " " + 
         "where country_name='" + country + "' and sex='" + sex + "'" + 
-        "and " + dbStatistic + " is not null " +  
-        "order by year;";         
+        "and year between " + fromYear + " and " + toYear + " " +
+        "order by year;";
 
     connection.query(query, (err, rows) => {
 
@@ -265,6 +278,7 @@ exports.getYearsBySexAndAge = (req, res) => {
         }
 
         const data = JSON.parse(JSON.stringify(rows));
+        data.forEach( obj => renameKey( obj, dbStatistic, "stat" ) );
 
         res.status(200).json({
             status: 'success',

@@ -1,8 +1,15 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, map, zip  } from 'rxjs';
+import { Observable, map  } from 'rxjs';
+
 import { ApiResponseData } from "./api-data.model";
 import { Statistic } from "../home/choose-statistic/statistic.model";
+import { 
+    statsBySex, 
+    statsBySexAndAge, 
+    statsBySexAndAgeGroup, 
+    statsByAgeGroup 
+} from './statisticCategories';
 
 @Injectable({providedIn: "root"})
 export class DBService {
@@ -23,38 +30,93 @@ export class DBService {
     }
 
     public getAvailableYears(_statistic: Statistic): Observable<any> {    
+        if (statsBySex.includes(_statistic.statistic)) {
+            return this.getYearsBySex(_statistic);
+        } else if (statsBySexAndAge.includes(_statistic.statistic)) {
+            return this.getYearsBySexAndAge(_statistic);
+        } else if (statsBySexAndAgeGroup.includes(_statistic.statistic)) {
+            return this.getYearsBySexAndAgeGroup(_statistic);
+        } else if (statsByAgeGroup.includes(_statistic.statistic)) {
+            return this.getYearsByAgeGroup(_statistic);
+        } else {
+            return this.getYears(_statistic);
+        }
+    }
 
-        const modifiedStatistic: Statistic = this.transformStatistic(_statistic);
-        const country: string = modifiedStatistic.country;
-        const statistic: string = modifiedStatistic.statistic;
+    
+    public getStatistic(_statistic: Statistic): Observable<any> {
+        if (statsBySex.includes(_statistic.statistic)) {
+            return this.getStatisticBySex(_statistic);
+        } else if (statsBySexAndAge.includes(_statistic.statistic)) {
+            return this.getStatisticBySexAndAge(_statistic);
+        } else if (statsBySexAndAgeGroup.includes(_statistic.statistic)) {
+            return this.getStatisticBySexAndAgeGroup(_statistic);
+        } else if (statsByAgeGroup.includes(_statistic.statistic)) {
+            return this.getStatisticByAgeGroup(_statistic);
+        } else {
+            return this.getCountryStatistic(_statistic);
+        }
+    }
+
+    private getYears(_statistic: Statistic): Observable<any> {  
+        const country: string = _statistic.country;
+        const statistic: string = _statistic.statistic;
 
         const url = this.url + "/years/" + country + "/" + statistic;
         return this.http.get(url);
     }
 
-    getStatistic(_statistic: Statistic): Observable<any> {
+    private getYearsBySex(_statistic: Statistic): Observable<any> {        
+        const country: string = _statistic.country;
+        const statistic: string = _statistic.statistic;
+        const sex: string = _statistic.sex;
 
-        const modifiedStatistic: Statistic = this.transformStatistic(_statistic);
-
-        if (modifiedStatistic.age) {
-            // Case: Mid-Year Population by specific age
-            return this.getStatisticBySex(modifiedStatistic);
-        } else if (modifiedStatistic.ageGroup) {
-            // Case: Mid-Year Population by Age Group
-            return this.getStatisticByAgeGroup(modifiedStatistic);                
-        } else {
-            return this.getCountryStatistic(modifiedStatistic);
-        }
+        const url = this.url + "/years/" + country + "/" + statistic +
+            "/" + sex;
+        return this.http.get(url);
     }
 
-    // TODO: - direct to demographics/income accordingly & rename method
-        private getCountryStatistic(_statistic: Statistic): Observable<any> {  
+    private getYearsByAgeGroup(_statistic: Statistic): Observable<any> {  
+        const country: string = _statistic.country;
+        const statistic: string = _statistic.statistic;
+        var fertilityAgeGroup: string = _statistic.fertilityAgeGroup;
+        fertilityAgeGroup = fertilityAgeGroup.replace("[", "")
+            .replace("]", "").split(",")[0];
+
+        const url = this.url + "/years/" + country + "/" + statistic +
+            "/age-group/" + fertilityAgeGroup;
+        return this.http.get(url);
+    }
+
+    private getYearsBySexAndAge(_statistic: Statistic): Observable<any> {  
+        const country: string = _statistic.country;
+        const statistic: string = _statistic.statistic;
+        const sex: string = _statistic.sex;
+        const age: string = _statistic.age;
+
+        const url = this.url + "/years/" + country + "/" + statistic +
+            "/" + sex + "/age/" + age;
+        return this.http.get(url);
+    }
+
+    private getYearsBySexAndAgeGroup(_statistic: Statistic): Observable<any> {  
+        const country: string = _statistic.country;
+        const statistic: string = _statistic.statistic;
+        const sex: string = _statistic.sex;
+        const ageGroup: string = _statistic.ageGroup;
+
+        const url = this.url + "/years/" + country + "/" + statistic +
+            "/" + sex +"/age-group/" + ageGroup;
+        return this.http.get(url);
+    }
+
+    private getCountryStatistic(_statistic: Statistic): Observable<any> {  
         const country: string = _statistic.country;
         const statistic: string = _statistic.statistic;
         const fromYear: number = _statistic.fromYear;
         const toYear: number = _statistic.toYear;
 
-        const url = this.url + "/demographics/" + country + "/" + statistic 
+        const url = this.url + "/statistics/" + country + "/" + statistic 
             + "/" + fromYear + "/" + toYear;
         return this.http.get(url).pipe(
             map((response: ApiResponseData) => {
@@ -72,7 +134,7 @@ export class DBService {
         const toYear: number = _statistic.toYear;
         const sex: string = _statistic.sex;
 
-        const url = this.url + "/demographics/" + country + "/" + statistic +
+        const url = this.url + "/statistics/" + country + "/" + statistic +
             "/" + fromYear + "/" + toYear + "/" + sex;
         return this.http.get(url).pipe(
             map((response: ApiResponseData) => {
@@ -88,10 +150,12 @@ export class DBService {
         const statistic: string = _statistic.statistic;
         const fromYear: number = _statistic.fromYear;
         const toYear: number = _statistic.toYear;
-        const ageGroup: string = _statistic.ageGroup;
+        var fertilityAgeGroup: string = _statistic.fertilityAgeGroup;
+        fertilityAgeGroup = fertilityAgeGroup.replace("[", "")
+            .replace("]", "").split("-")[0];
 
-        const url = this.url + "/demographics/" + country + "/" + statistic +
-            "/" + fromYear + "/" + toYear + "/starting-age/" + ageGroup;
+        const url = this.url + "/statistics/" + country + "/" + statistic +
+            "/" + fromYear + "/" + toYear + "/age-group/" + fertilityAgeGroup;
         return this.http.get(url).pipe(
             map((response: ApiResponseData) => {
                 response.data = this.filterNull(response.data);
@@ -101,35 +165,44 @@ export class DBService {
         );
     }
 
-    private transformStatistic(_statistic: Statistic): Statistic {
-        var newStatistic: Statistic = _statistic.clone();
-        
-        if (newStatistic.age) {
-            // Case: Mid-Year Population by specific age
-            newStatistic.statistic = newStatistic.statistic.replace(
-                " (by Age)", " at Age " + newStatistic.age);
-            return newStatistic;
-        } else if (newStatistic.ageGroup) {
-            // Case: Mid-Year Population by Age Group
-            newStatistic.statistic = newStatistic.statistic.replace(
-                " (by Age Group)", " (" + newStatistic.sex + ")");
-            if (newStatistic.ageGroup === "All Ages") {
-                newStatistic.ageGroup = "all";
-            } else {
-                // Replace with starting age
-                newStatistic.ageGroup = newStatistic.ageGroup.replace("[", "")
-                    .replace("]", "").split(",")[0];
-            }
-            return newStatistic;           
-        } else {
-            if (newStatistic.sex) {
-                newStatistic.statistic += " (" + newStatistic.sex + ")";
-            }
-            if (newStatistic.fertilityAgeGroup) {
-                newStatistic.statistic += " " + newStatistic.fertilityAgeGroup;
-            }
-            return newStatistic;
-        }
+    private getStatisticBySexAndAge(_statistic: Statistic): Observable<any> {  
+        const country: string = _statistic.country;
+        const statistic: string = _statistic.statistic;
+        const fromYear: number = _statistic.fromYear;
+        const toYear: number = _statistic.toYear;
+        const sex: string = _statistic.sex;
+        const age: string = _statistic.age;
+
+        const url = this.url + "/statistics/" + country + "/" + statistic +
+            "/" + fromYear + "/" + toYear + "/" + sex + "/age/" + age;
+        return this.http.get(url).pipe(
+            map((response: ApiResponseData) => {
+                response.data = this.filterNull(response.data);
+                response.results = response.data.length;
+                return response;
+            })
+        );
+    }
+
+    private getStatisticBySexAndAgeGroup(_statistic: Statistic)
+    : Observable<any> {  
+        const country: string = _statistic.country;
+        const statistic: string = _statistic.statistic;
+        const fromYear: number = _statistic.fromYear;
+        const toYear: number = _statistic.toYear;
+        const sex: string = _statistic.sex;
+        var ageGroup: string = _statistic.ageGroup;
+        ageGroup = ageGroup.replace("[", "").replace("]", "").split("-")[0];
+
+        const url = this.url + "/statistics/" + country + "/" + statistic +
+            "/" + fromYear + "/" + toYear + "/" + sex +"/age-group/" + ageGroup;
+        return this.http.get(url).pipe(
+            map((response: ApiResponseData) => {
+                response.data = this.filterNull(response.data);
+                response.results = response.data.length;
+                return response;
+            })
+        );
     }
 
     private filterNull(data: { year: number, stat: number }[]): any {
@@ -143,4 +216,5 @@ export class DBService {
         }
         return filteredData;
     }
+    
 }
