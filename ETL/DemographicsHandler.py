@@ -19,6 +19,7 @@ class DemographicsHandler(DataHandler):
         self.midYearPopulation5Year = pd.DataFrame()
         self.midYearPopulationAge = pd.DataFrame()
         self.mortality = pd.DataFrame()
+        self.midYearPopulationBig = pd.DataFrame()
         
         self.demographicsDfs = []
     
@@ -39,6 +40,8 @@ class DemographicsHandler(DataHandler):
             "midyear_population_5yr_age_sex.csv"
         midyearPopulationAgeFile = path + "midyear_population_age_sex.csv"
         mortalityFile = path + "mortality_life_expectancy.csv"
+        midyearPopulationBigFile = path + \
+            "midyear_population_age_country_code.csv"
         
         self.fertility = pd.read_csv(fertilyFile)
         self.birthDeath = pd.read_csv(birthDeathFile)
@@ -46,12 +49,14 @@ class DemographicsHandler(DataHandler):
         self.midYearPopulation = pd.read_csv(midyearPopulationFile)
         self.midYearPopulation5Year = pd.read_csv(midyearPopulation5YearFile)
         self.midYearPopulationAge = pd.read_csv(midyearPopulationAgeFile)
-        self.mortality = pd.read_csv(mortalityFile)        
+        self.mortality = pd.read_csv(mortalityFile)  
+        self.midYearPopulationBig = pd.read_csv(midyearPopulationBigFile)
 
         self.demographicsDfs = [
               self.fertility,  self.birthDeath,  self.area,  
-              self.midYearPopulation,  self.midYearPopulation5Year, 
-              self.midYearPopulationAge,  self.mortality]  
+              self.midYearPopulation, self.midYearPopulation5Year, 
+              self.midYearPopulationAge, self.mortality, 
+              self.midYearPopulationBig]  
 
         # Align countries names with countries.csv[Display_Name]
         for df in self.demographicsDfs:
@@ -103,7 +108,9 @@ class DemographicsHandler(DataHandler):
             uniqueCountries, self.midYearPopulationAge)
         self.mortality = self._addPrimaryKey(
             uniqueCountries, self.mortality)
-            
+        self.midYearPopulationBig = self._addPrimaryKey(
+            uniqueCountries, self.midYearPopulationBig)   
+        
     def save(self):
         
         path = "../Data/processed/international/"
@@ -117,6 +124,8 @@ class DemographicsHandler(DataHandler):
         midyearPopulationAgeFile = path + \
             "midyear_population_age_sex_final.csv"
         mortalityFile = path + "mortality_life_expectancy_final.csv"
+        midyearPopulationBigFile = path + \
+            "midyear_population_age_country_code_final.csv"
             
         self.fertility.to_csv(fertilyFile, index=False)
         self.birthDeath.to_csv(birthDeathFile, index=False)
@@ -125,7 +134,8 @@ class DemographicsHandler(DataHandler):
         self.midYearPopulation5Year.to_csv(midyearPopulation5YearFile,
                                            index=False)
         self.midYearPopulationAge.to_csv(midyearPopulationAgeFile, index=False)
-        self.mortality.to_csv(mortalityFile, index=False)  
+        self.mortality.to_csv(mortalityFile, index=False) 
+        self.midYearPopulationBig.to_csv(midyearPopulationBigFile, index=False) 
         
     def _addPrimaryKey(self, uniqueCountries, df):
         df = df.merge(uniqueCountries, how="inner", left_on="country_name",

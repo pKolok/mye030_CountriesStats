@@ -286,6 +286,137 @@ show warnings;
 select * from midyear_population limit 10;
 
 
+-- Load midyear population big:
+select "----- Create table midyear_population_1yr_big-----";
+drop table if exists midyear_population_1yr_big; show warnings;
+create table midyear_population_1yr_big (
+	country_index int not null,
+	country_code varchar(5),
+	country_name varchar(255),
+	year int not null,
+	sex varchar(10) not null,
+	max_age smallint,
+	population_age_0 int,
+	population_age_1 int,
+	population_age_2 int,
+	population_age_3 int,
+	population_age_4 int,
+	population_age_5 int,
+	population_age_6 int,
+	population_age_7 int,
+	population_age_8 int,
+	population_age_9 int,
+	population_age_10 int,
+	population_age_11 int,
+	population_age_12 int,
+	population_age_13 int,
+	population_age_14 int,
+	population_age_15 int,
+	population_age_16 int,
+	population_age_17 int,
+	population_age_18 int,
+	population_age_19 int,
+	population_age_20 int,
+	population_age_21 int,
+	population_age_22 int,
+	population_age_23 int,
+	population_age_24 int,
+	population_age_25 int,
+	population_age_26 int,
+	population_age_27 int,
+	population_age_28 int,
+	population_age_29 int,
+	population_age_30 int,
+	population_age_31 int,
+	population_age_32 int,
+	population_age_33 int,
+	population_age_34 int,
+	population_age_35 int,
+	population_age_36 int,
+	population_age_37 int,
+	population_age_38 int,
+	population_age_39 int,
+	population_age_40 int,
+	population_age_41 int,
+	population_age_42 int,
+	population_age_43 int,
+	population_age_44 int,
+	population_age_45 int,
+	population_age_46 int,
+	population_age_47 int,
+	population_age_48 int,
+	population_age_49 int,
+	population_age_50 int,
+	population_age_51 int,
+	population_age_52 int,
+	population_age_53 int,
+	population_age_54 int,
+	population_age_55 int,
+	population_age_56 int,
+	population_age_57 int,
+	population_age_58 int,
+	population_age_59 int,
+	population_age_60 int,
+	population_age_61 int,
+	population_age_62 int,
+	population_age_63 int,
+	population_age_64 int,
+	population_age_65 int,
+	population_age_66 int,
+	population_age_67 int,
+	population_age_68 int,
+	population_age_69 int,
+	population_age_70 int,
+	population_age_71 int,
+	population_age_72 int,
+	population_age_73 int,
+	population_age_74 int,
+	population_age_75 int,
+	population_age_76 int,
+	population_age_77 int,
+	population_age_78 int,
+	population_age_79 int,
+	population_age_80 int,
+	population_age_81 int,
+	population_age_82 int,
+	population_age_83 int,
+	population_age_84 int,
+	population_age_85 int,
+	population_age_86 int,
+	population_age_87 int,
+	population_age_88 int,
+	population_age_89 int,
+	population_age_90 int,
+	population_age_91 int,
+	population_age_92 int,
+	population_age_93 int,
+	population_age_94 int,
+	population_age_95 int,
+	population_age_96 int,
+	population_age_97 int,
+	population_age_98 int,
+	population_age_99 int,
+	population_age_100 int,
+	age int,
+	permutation_role varchar(255),
+	population int,
+	primary key (country_index, year, sex, age),
+	foreign key (country_index) references countries(country_index)
+	on delete cascade
+);
+show warnings;
+describe midyear_population_1yr_big;
+
+load data local infile 'C:/Users/panousias/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/mye030_CountriesStats/Data/processed/international/midyear_population_age_country_code_final.csv'
+-- load data local infile 'C:/Users/panou/Dropbox/02_Edu/01_Uni/06_UoI/04_Courses/MYE030/Project/mye030_CountriesStats/Data/processed/international/midyear_population_age_country_code_final.csv'
+into table midyear_population_1yr_big
+fields terminated by ','
+lines terminated by '\r\n'
+IGNORE 1 LINES;
+
+show warnings;
+-- select * from midyear_population_1yr limit 10;
+
 -- Load life expectancy:
 select "----- Create table life_expectancy -----";
 drop table if exists life_expectancy; show warnings;
