@@ -42,7 +42,6 @@ export class DBService {
             return this.getYears(_statistic);
         }
     }
-
     
     public getStatistic(_statistic: Statistic): Observable<any> {
         if (statsBySex.includes(_statistic.statistic)) {
