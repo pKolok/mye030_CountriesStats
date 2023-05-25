@@ -103,7 +103,13 @@ export class DBService {
         const country: string = _statistic.country;
         const statistic: string = _statistic.statistic;
         const sex: string = _statistic.sex;
-        const ageGroup: string = _statistic.ageGroup;
+        var ageGroup: string = _statistic.ageGroup;
+
+        if (ageGroup === "All Ages") {
+            ageGroup = "all";
+        } else {
+            ageGroup = ageGroup.replace("[", "").replace("]", "").split("-")[0];
+        }
 
         const url = this.url + "/years/" + country + "/" + statistic +
             "/" + sex +"/age-group/" + ageGroup;
@@ -192,7 +198,12 @@ export class DBService {
         const toYear: number = _statistic.toYear;
         const sex: string = _statistic.sex;
         var ageGroup: string = _statistic.ageGroup;
-        ageGroup = ageGroup.replace("[", "").replace("]", "").split("-")[0];
+
+        if (ageGroup === "All Ages") {
+            ageGroup = "all";
+        } else {
+            ageGroup = ageGroup.replace("[", "").replace("]", "").split("-")[0];
+        }
 
         const url = this.url + "/statistics/" + country + "/" + statistic +
             "/" + fromYear + "/" + toYear + "/" + sex +"/age-group/" + ageGroup;

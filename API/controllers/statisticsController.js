@@ -178,8 +178,13 @@ exports.getStatisticBySexAndAgeGroup = (req, res) => {
     const dbTable = dict.dataBaseTable(dbStatistic);
     var displayStatistic = dict.FormalName(dbStatistic);
 
-    const endingAge = startingAge === "100" ? "" : +startingAge + 4;
-    const ageGroup = startingAge + "-" + endingAge;
+    var ageGroup;
+    if (startingAge === "all"){
+        ageGroup = "-All-";
+    } else {
+        const endingAge = startingAge === "100" ? "" : +startingAge + 4;
+        ageGroup = startingAge + "-" + endingAge;
+    }
     displayStatistic = displayStatistic.replace(
         "Mid-Year Population", "Mid-Year Population at Ages " + ageGroup)
 

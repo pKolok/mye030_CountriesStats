@@ -50,6 +50,7 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
         this.ages = Array.from(Array(101).keys());
 
         // Build age group' options
+        this.ageGroups.push("All Ages");
         for (let i = 0; i < 100; i = i + 5) {
             this.ageGroups.push("[" + i + "-" + (i + 4) + "]");
         }
@@ -164,7 +165,7 @@ export class ChooseStatisticComponent implements OnInit, OnDestroy {
         // Check if user must be prompted to select age group
         if (this.selectedStatistic === this.statRequiringAgeGroup) {
             this.statisticForm.patchValue({"ageGroup": "All Ages"});
-            this.selectedAgeGroup = "all";
+            this.selectedAgeGroup = "All Ages";
         }
 
         // Check if user must be prompted to select fertility age group

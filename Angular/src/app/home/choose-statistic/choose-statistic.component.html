@@ -99,7 +99,6 @@
                 <label for="ageGroup">Age Group</label>
                 <select class="form-control" formControlName="ageGroup"
                     (change)="onAgeGroupSelected($event)">
-                    <option>All Ages</option>
                     <option *ngFor="let ageGroup of ageGroups">
                         {{ ageGroup }}
                     </option>
