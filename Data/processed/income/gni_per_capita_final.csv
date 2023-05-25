@@ -1,0 +1,5540 @@
+country_index,country,year,gni_per_capita
+0,Afghanistan,1990,2193
+0,Afghanistan,1991,1841
+0,Afghanistan,1992,1739
+0,Afghanistan,1993,1208
+0,Afghanistan,1994,877
+0,Afghanistan,1995,1244
+0,Afghanistan,1996,1130
+0,Afghanistan,1997,1039
+0,Afghanistan,1998,967
+0,Afghanistan,1999,894
+0,Afghanistan,2000,817
+0,Afghanistan,2001,738
+0,Afghanistan,2002,1159
+0,Afghanistan,2003,1176
+0,Afghanistan,2004,1126
+0,Afghanistan,2005,1198
+0,Afghanistan,2006,1244
+0,Afghanistan,2007,1361
+0,Afghanistan,2008,1358
+0,Afghanistan,2009,1498
+0,Afghanistan,2010,1675
+0,Afghanistan,2011,1625
+0,Afghanistan,2012,1776
+0,Afghanistan,2013,1814
+0,Afghanistan,2014,1796
+0,Afghanistan,2015,1783
+0,Afghanistan,2016,1766
+0,Afghanistan,2017,1767
+0,Afghanistan,2018,1746
+2,Albania,1990,4415
+2,Albania,1991,3138
+2,Albania,1992,2857
+2,Albania,1993,3261
+2,Albania,1994,3600
+2,Albania,1995,4168
+2,Albania,1996,4594
+2,Albania,1997,4112
+2,Albania,1998,4530
+2,Albania,1999,5141
+2,Albania,2000,5562
+2,Albania,2001,6093
+2,Albania,2002,6358
+2,Albania,2003,6760
+2,Albania,2004,7147
+2,Albania,2005,7557
+2,Albania,2006,8125
+2,Albania,2007,8671
+2,Albania,2008,9199
+2,Albania,2009,9376
+2,Albania,2010,9828
+2,Albania,2011,10210
+2,Albania,2012,10293
+2,Albania,2013,10669
+2,Albania,2014,10797
+2,Albania,2015,11098
+2,Albania,2016,11534
+2,Albania,2017,11831
+2,Albania,2018,12300
+3,Algeria,1990,9989
+3,Algeria,1991,9457
+3,Algeria,1992,9462
+3,Algeria,1993,9171
+3,Algeria,1994,8847
+3,Algeria,1995,8904
+3,Algeria,1996,9069
+3,Algeria,1997,9099
+3,Algeria,1998,9502
+3,Algeria,1999,9596
+3,Algeria,2000,9700
+3,Algeria,2001,10130
+3,Algeria,2002,10447
+3,Algeria,2003,11068
+3,Algeria,2004,11305
+3,Algeria,2005,11595
+3,Algeria,2006,11734
+3,Algeria,2007,12419
+3,Algeria,2008,12640
+3,Algeria,2009,12602
+3,Algeria,2010,12946
+3,Algeria,2011,12908
+3,Algeria,2012,12910
+3,Algeria,2013,12946
+3,Algeria,2014,13169
+3,Algeria,2015,13330
+3,Algeria,2016,13832
+3,Algeria,2017,13656
+3,Algeria,2018,13639
+5,Andorra,1990,49062
+5,Andorra,1991,48391
+5,Andorra,1992,47002
+5,Andorra,1993,44928
+5,Andorra,1994,44747
+5,Andorra,1995,45136
+5,Andorra,1996,46861
+5,Andorra,1997,51136
+5,Andorra,1998,52922
+5,Andorra,1999,54896
+5,Andorra,2000,44215
+5,Andorra,2001,44886
+5,Andorra,2002,45943
+5,Andorra,2003,49328
+5,Andorra,2004,50968
+5,Andorra,2005,52917
+5,Andorra,2006,53867
+5,Andorra,2007,52786
+5,Andorra,2008,47574
+5,Andorra,2009,45492
+5,Andorra,2010,43061
+5,Andorra,2011,41402
+5,Andorra,2012,41386
+5,Andorra,2013,42376
+5,Andorra,2014,44197
+5,Andorra,2015,45260
+5,Andorra,2016,46553
+5,Andorra,2017,47550
+5,Andorra,2018,48641
+6,Angola,1990,4139
+6,Angola,1991,4528
+6,Angola,1992,1737
+6,Angola,1993,1704
+6,Angola,1994,1304
+6,Angola,1995,2858
+6,Angola,1996,2826
+6,Angola,1997,3335
+6,Angola,1998,3269
+6,Angola,1999,2952
+6,Angola,2000,3092
+6,Angola,2001,3268
+6,Angola,2002,3904
+6,Angola,2003,3924
+6,Angola,2004,4130
+6,Angola,2005,4516
+6,Angola,2006,4751
+6,Angola,2007,5327
+6,Angola,2008,5437
+6,Angola,2009,5863
+6,Angola,2010,5818
+6,Angola,2011,5796
+6,Angola,2012,6128
+6,Angola,2013,6294
+6,Angola,2014,6484
+6,Angola,2015,6440
+6,Angola,2016,6051
+6,Angola,2017,5950
+6,Angola,2018,5555
+9,Antigua and Barbuda,1990,15749
+9,Antigua and Barbuda,1991,16439
+9,Antigua and Barbuda,1992,16475
+9,Antigua and Barbuda,1993,17300
+9,Antigua and Barbuda,1994,18021
+9,Antigua and Barbuda,1995,16842
+9,Antigua and Barbuda,1996,17665
+9,Antigua and Barbuda,1997,18401
+9,Antigua and Barbuda,1998,18943
+9,Antigua and Barbuda,1999,19230
+9,Antigua and Barbuda,2000,19676
+9,Antigua and Barbuda,2001,18853
+9,Antigua and Barbuda,2002,18396
+9,Antigua and Barbuda,2003,19378
+9,Antigua and Barbuda,2004,20145
+9,Antigua and Barbuda,2005,21315
+9,Antigua and Barbuda,2006,23686
+9,Antigua and Barbuda,2007,25479
+9,Antigua and Barbuda,2008,24945
+9,Antigua and Barbuda,2009,21655
+9,Antigua and Barbuda,2010,20096
+9,Antigua and Barbuda,2011,19264
+9,Antigua and Barbuda,2012,19529
+9,Antigua and Barbuda,2013,19276
+9,Antigua and Barbuda,2014,19780
+9,Antigua and Barbuda,2015,20279
+9,Antigua and Barbuda,2016,20909
+9,Antigua and Barbuda,2017,21349
+9,Antigua and Barbuda,2018,22201
+10,Argentina,1990,10932
+10,Argentina,1991,11902
+10,Argentina,1992,12816
+10,Argentina,1993,13774
+10,Argentina,1994,14371
+10,Argentina,1995,13742
+10,Argentina,1996,14297
+10,Argentina,1997,15263
+10,Argentina,1998,15619
+10,Argentina,1999,14903
+10,Argentina,2000,14617
+10,Argentina,2001,13791
+10,Argentina,2002,11841
+10,Argentina,2003,12910
+10,Argentina,2004,12911
+10,Argentina,2005,13886
+10,Argentina,2006,16185
+10,Argentina,2007,17586
+10,Argentina,2008,18137
+10,Argentina,2009,16791
+10,Argentina,2010,18279
+10,Argentina,2011,19251
+10,Argentina,2012,18940
+10,Argentina,2013,19228
+10,Argentina,2014,18562
+10,Argentina,2015,18901
+10,Argentina,2016,18249
+10,Argentina,2017,18462
+10,Argentina,2018,17611
+11,Armenia,1990,3600
+11,Armenia,1991,3327
+11,Armenia,1992,1649
+11,Armenia,1993,1691
+11,Armenia,1994,1988
+11,Armenia,1995,2167
+11,Armenia,1996,2403
+11,Armenia,1997,2595
+11,Armenia,1998,2725
+11,Armenia,1999,2827
+11,Armenia,2000,3006
+11,Armenia,2001,3325
+11,Armenia,2002,3814
+11,Armenia,2003,4358
+11,Armenia,2004,4822
+11,Armenia,2005,5600
+11,Armenia,2006,6426
+11,Armenia,2007,7425
+11,Armenia,2008,8045
+11,Armenia,2009,6811
+11,Armenia,2010,7061
+11,Armenia,2011,7269
+11,Armenia,2012,7793
+11,Armenia,2013,8169
+11,Armenia,2014,8301
+11,Armenia,2015,8482
+11,Armenia,2016,8310
+11,Armenia,2017,9064
+11,Armenia,2018,9277
+13,Australia,1990,27679
+13,Australia,1991,27203
+13,Australia,1992,27159
+13,Australia,1993,28112
+13,Australia,1994,28942
+13,Australia,1995,29524
+13,Australia,1996,30234
+13,Australia,1997,31130
+13,Australia,1998,32284
+13,Australia,1999,33555
+13,Australia,2000,34533
+13,Australia,2001,34748
+13,Australia,2002,35729
+13,Australia,2003,36308
+13,Australia,2004,37314
+13,Australia,2005,37669
+13,Australia,2006,38060
+13,Australia,2007,39025
+13,Australia,2008,39780
+13,Australia,2009,39939
+13,Australia,2010,39982
+13,Australia,2011,40281
+13,Australia,2012,41566
+13,Australia,2013,42201
+13,Australia,2014,42594
+13,Australia,2015,43246
+13,Australia,2016,43653
+13,Australia,2017,43756
+13,Australia,2018,44097
+14,Austria,1990,31587
+14,Austria,1991,32192
+14,Austria,1992,32442
+14,Austria,1993,32368
+14,Austria,1994,32951
+14,Austria,1995,33659
+14,Austria,1996,34520
+14,Austria,1997,35057
+14,Austria,1998,36218
+14,Austria,1999,37059
+14,Austria,2000,38502
+14,Austria,2001,38644
+14,Austria,2002,39405
+14,Austria,2003,39716
+14,Austria,2004,40597
+14,Austria,2005,41196
+14,Austria,2006,42600
+14,Austria,2007,43896
+14,Austria,2008,44815
+14,Austria,2009,42640
+14,Austria,2010,43700
+14,Austria,2011,44603
+14,Austria,2012,44597
+14,Austria,2013,44420
+14,Austria,2014,44306
+14,Austria,2015,43822
+14,Austria,2016,44621
+14,Austria,2017,45375
+14,Austria,2018,46231
+15,Azerbaijan,1990,8710
+15,Azerbaijan,1991,8514
+15,Azerbaijan,1992,6489
+15,Azerbaijan,1993,4975
+15,Azerbaijan,1994,3940
+15,Azerbaijan,1995,3430
+15,Azerbaijan,1996,3415
+15,Azerbaijan,1997,3606
+15,Azerbaijan,1998,3928
+15,Azerbaijan,1999,4162
+15,Azerbaijan,2000,4426
+15,Azerbaijan,2001,4816
+15,Azerbaijan,2002,5209
+15,Azerbaijan,2003,5689
+15,Azerbaijan,2004,6028
+15,Azerbaijan,2005,7184
+15,Azerbaijan,2006,9329
+15,Azerbaijan,2007,11155
+15,Azerbaijan,2008,12858
+15,Azerbaijan,2009,14628
+15,Azerbaijan,2010,15425
+15,Azerbaijan,2011,14676
+15,Azerbaijan,2012,15056
+15,Azerbaijan,2013,15846
+15,Azerbaijan,2014,16444
+15,Azerbaijan,2015,16259
+15,Azerbaijan,2016,15146
+15,Azerbaijan,2017,15312
+15,Azerbaijan,2018,15240
+16,Bahamas,1990,29469
+16,Bahamas,1991,27683
+16,Bahamas,1992,26858
+16,Bahamas,1993,26089
+16,Bahamas,1994,26432
+16,Bahamas,1995,31405
+16,Bahamas,1996,34558
+16,Bahamas,1997,28504
+16,Bahamas,1998,29326
+16,Bahamas,1999,31477
+16,Bahamas,2000,32303
+16,Bahamas,2001,32448
+16,Bahamas,2002,32837
+16,Bahamas,2003,31999
+16,Bahamas,2004,31779
+16,Bahamas,2005,32139
+16,Bahamas,2006,32259
+16,Bahamas,2007,32076
+16,Bahamas,2008,31323
+16,Bahamas,2009,29258
+16,Bahamas,2010,29085
+16,Bahamas,2011,28953
+16,Bahamas,2012,29753
+16,Bahamas,2013,29372
+16,Bahamas,2014,28661
+16,Bahamas,2015,28763
+16,Bahamas,2016,27791
+16,Bahamas,2017,28067
+16,Bahamas,2018,28395
+17,Bahrain,1990,29850
+17,Bahrain,1991,40166
+17,Bahrain,1992,40370
+17,Bahrain,1993,42512
+17,Bahrain,1994,41106
+17,Bahrain,1995,43105
+17,Bahrain,1996,43978
+17,Bahrain,1997,42635
+17,Bahrain,1998,43808
+17,Bahrain,1999,43385
+17,Bahrain,2000,44495
+17,Bahrain,2001,43081
+17,Bahrain,2002,41877
+17,Bahrain,2003,42112
+17,Bahrain,2004,42161
+17,Bahrain,2005,42760
+17,Bahrain,2006,42375
+17,Bahrain,2007,42696
+17,Bahrain,2008,41154
+17,Bahrain,2009,37214
+17,Bahrain,2010,37246
+17,Bahrain,2011,35445
+17,Bahrain,2012,36153
+17,Bahrain,2013,37643
+17,Bahrain,2014,36619
+17,Bahrain,2015,42125
+17,Bahrain,2016,41499
+17,Bahrain,2017,41645
+17,Bahrain,2018,40399
+18,Bangladesh,1990,1358
+18,Bangladesh,1991,1374
+18,Bangladesh,1992,1420
+18,Bangladesh,1993,1458
+18,Bangladesh,1994,1490
+18,Bangladesh,1995,1531
+18,Bangladesh,1996,1559
+18,Bangladesh,1997,1598
+18,Bangladesh,1998,1646
+18,Bangladesh,1999,1691
+18,Bangladesh,2000,1750
+18,Bangladesh,2001,1801
+18,Bangladesh,2002,1852
+18,Bangladesh,2003,1907
+18,Bangladesh,2004,1982
+18,Bangladesh,2005,2082
+18,Bangladesh,2006,2218
+18,Bangladesh,2007,2362
+18,Bangladesh,2008,2501
+18,Bangladesh,2009,2603
+18,Bangladesh,2010,2723
+18,Bangladesh,2011,2861
+18,Bangladesh,2012,3025
+18,Bangladesh,2013,3158
+18,Bangladesh,2014,3270
+18,Bangladesh,2015,3439
+18,Bangladesh,2016,3620
+18,Bangladesh,2017,3792
+18,Bangladesh,2018,4057
+19,Barbados,1990,13806
+19,Barbados,1991,13255
+19,Barbados,1992,12347
+19,Barbados,1993,12389
+19,Barbados,1994,12786
+19,Barbados,1995,12930
+19,Barbados,1996,13344
+19,Barbados,1997,13992
+19,Barbados,1998,14457
+19,Barbados,1999,14372
+19,Barbados,2000,14922
+19,Barbados,2001,14445
+19,Barbados,2002,14476
+19,Barbados,2003,14688
+19,Barbados,2004,14962
+19,Barbados,2005,15311
+19,Barbados,2006,15834
+19,Barbados,2007,16405
+19,Barbados,2008,16160
+19,Barbados,2009,15601
+19,Barbados,2010,15874
+19,Barbados,2011,15281
+19,Barbados,2012,15733
+19,Barbados,2013,15617
+19,Barbados,2014,15580
+19,Barbados,2015,15635
+19,Barbados,2016,15881
+19,Barbados,2017,16033
+19,Barbados,2018,15912
+20,Belarus,1990,8360
+20,Belarus,1991,8255
+20,Belarus,1992,7447
+20,Belarus,1993,6865
+20,Belarus,1994,6062
+20,Belarus,1995,5443
+20,Belarus,1996,5620
+20,Belarus,1997,6271
+20,Belarus,1998,6829
+20,Belarus,1999,7103
+20,Belarus,2000,7549
+20,Belarus,2001,7943
+20,Belarus,2002,8410
+20,Belarus,2003,9088
+20,Belarus,2004,10195
+20,Belarus,2005,11237
+20,Belarus,2006,12387
+20,Belarus,2007,13446
+20,Belarus,2008,14809
+20,Belarus,2009,14764
+20,Belarus,2010,15978
+20,Belarus,2011,16815
+20,Belarus,2012,17069
+20,Belarus,2013,17006
+20,Belarus,2014,17370
+20,Belarus,2015,16450
+20,Belarus,2016,15997
+20,Belarus,2017,16542
+20,Belarus,2018,17039
+21,Belgium,1990,30781
+21,Belgium,1991,31342
+21,Belgium,1992,31688
+21,Belgium,1993,31564
+21,Belgium,1994,32720
+21,Belgium,1995,33350
+21,Belgium,1996,33854
+21,Belgium,1997,35061
+21,Belgium,1998,35678
+21,Belgium,1999,36822
+21,Belgium,2000,38152
+21,Belgium,2001,38062
+21,Belgium,2002,38510
+21,Belgium,2003,38714
+21,Belgium,2004,39735
+21,Belgium,2005,40281
+21,Belgium,2006,41091
+21,Belgium,2007,42179
+21,Belgium,2008,42589
+21,Belgium,2009,40410
+21,Belgium,2010,42385
+21,Belgium,2011,41700
+21,Belgium,2012,42125
+21,Belgium,2013,41688
+21,Belgium,2014,41632
+21,Belgium,2015,41598
+21,Belgium,2016,42260
+21,Belgium,2017,43300
+21,Belgium,2018,43821
+22,Belize,1990,4977
+22,Belize,1991,5441
+22,Belize,1992,5953
+22,Belize,1993,6195
+22,Belize,1994,6004
+22,Belize,1995,5932
+22,Belize,1996,5802
+22,Belize,1997,5834
+22,Belize,1998,5755
+22,Belize,1999,5984
+22,Belize,2000,6476
+22,Belize,2001,6502
+22,Belize,2002,6675
+22,Belize,2003,7000
+22,Belize,2004,7000
+22,Belize,2005,7054
+22,Belize,2006,7188
+22,Belize,2007,6916
+22,Belize,2008,7002
+22,Belize,2009,7266
+22,Belize,2010,7109
+22,Belize,2011,7318
+22,Belize,2012,7274
+22,Belize,2013,7185
+22,Belize,2014,7235
+22,Belize,2015,7523
+22,Belize,2016,7272
+22,Belize,2017,7059
+22,Belize,2018,7136
+23,Benin,1990,1432
+23,Benin,1991,1449
+23,Benin,1992,1409
+23,Benin,1993,1470
+23,Benin,1994,1443
+23,Benin,1995,1482
+23,Benin,1996,1500
+23,Benin,1997,1549
+23,Benin,1998,1577
+23,Benin,1999,1615
+23,Benin,2000,1659
+23,Benin,2001,1694
+23,Benin,2002,1713
+23,Benin,2003,1718
+23,Benin,2004,1743
+23,Benin,2005,1730
+23,Benin,2006,1743
+23,Benin,2007,1791
+23,Benin,2008,1838
+23,Benin,2009,1823
+23,Benin,2010,1805
+23,Benin,2011,1817
+23,Benin,2012,1840
+23,Benin,2013,1919
+23,Benin,2014,1988
+23,Benin,2015,1971
+23,Benin,2016,2001
+23,Benin,2017,2055
+23,Benin,2018,2135
+25,Bhutan,1990,2207
+25,Bhutan,1991,2126
+25,Bhutan,1992,2160
+25,Bhutan,1993,2237
+25,Bhutan,1994,2423
+25,Bhutan,1995,2447
+25,Bhutan,1996,2584
+25,Bhutan,1997,2749
+25,Bhutan,1998,2648
+25,Bhutan,1999,2723
+25,Bhutan,2000,3429
+25,Bhutan,2001,3635
+25,Bhutan,2002,3887
+25,Bhutan,2003,4075
+25,Bhutan,2004,4239
+25,Bhutan,2005,4511
+25,Bhutan,2006,4807
+25,Bhutan,2007,5552
+25,Bhutan,2008,5678
+25,Bhutan,2009,5917
+25,Bhutan,2010,6435
+25,Bhutan,2011,6814
+25,Bhutan,2012,6961
+25,Bhutan,2013,7096
+25,Bhutan,2014,7410
+25,Bhutan,2015,7807
+25,Bhutan,2016,8202
+25,Bhutan,2017,8472
+25,Bhutan,2018,8609
+26,Bolivia,1990,3530
+26,Bolivia,1991,3662
+26,Bolivia,1992,3688
+26,Bolivia,1993,3764
+26,Bolivia,1994,3879
+26,Bolivia,1995,3976
+26,Bolivia,1996,4075
+26,Bolivia,1997,4205
+26,Bolivia,1998,4354
+26,Bolivia,1999,4268
+26,Bolivia,2000,4279
+26,Bolivia,2001,4273
+26,Bolivia,2002,4296
+26,Bolivia,2003,4280
+26,Bolivia,2004,4344
+26,Bolivia,2005,4476
+26,Bolivia,2006,4626
+26,Bolivia,2007,4743
+26,Bolivia,2008,4975
+26,Bolivia,2009,5028
+26,Bolivia,2010,5111
+26,Bolivia,2011,5257
+26,Bolivia,2012,5360
+26,Bolivia,2013,5627
+26,Bolivia,2014,5932
+26,Bolivia,2015,6260
+26,Bolivia,2016,6535
+26,Bolivia,2017,6640
+26,Bolivia,2018,6849
+28,Bosnia and Herzegovina,1990,1343
+28,Bosnia and Herzegovina,1991,1243
+28,Bosnia and Herzegovina,1992,1199
+28,Bosnia and Herzegovina,1993,1216
+28,Bosnia and Herzegovina,1994,1281
+28,Bosnia and Herzegovina,1995,1594
+28,Bosnia and Herzegovina,1996,3239
+28,Bosnia and Herzegovina,1997,4469
+28,Bosnia and Herzegovina,1998,6595
+28,Bosnia and Herzegovina,1999,6962
+28,Bosnia and Herzegovina,2000,7024
+28,Bosnia and Herzegovina,2001,7235
+28,Bosnia and Herzegovina,2002,7491
+28,Bosnia and Herzegovina,2003,7692
+28,Bosnia and Herzegovina,2004,8035
+28,Bosnia and Herzegovina,2005,8686
+28,Bosnia and Herzegovina,2006,9057
+28,Bosnia and Herzegovina,2007,9599
+28,Bosnia and Herzegovina,2008,10214
+28,Bosnia and Herzegovina,2009,9969
+28,Bosnia and Herzegovina,2010,9923
+28,Bosnia and Herzegovina,2011,10057
+28,Bosnia and Herzegovina,2012,10127
+28,Bosnia and Herzegovina,2013,10603
+28,Bosnia and Herzegovina,2014,10858
+28,Bosnia and Herzegovina,2015,11351
+28,Bosnia and Herzegovina,2016,11810
+28,Bosnia and Herzegovina,2017,12220
+28,Bosnia and Herzegovina,2018,12690
+29,Botswana,1990,8270
+29,Botswana,1991,8989
+29,Botswana,1992,9082
+29,Botswana,1993,9371
+29,Botswana,1994,8495
+29,Botswana,1995,9249
+29,Botswana,1996,9131
+29,Botswana,1997,9897
+29,Botswana,1998,10223
+29,Botswana,1999,10225
+29,Botswana,2000,10056
+29,Botswana,2001,10283
+29,Botswana,2002,9663
+29,Botswana,2003,10319
+29,Botswana,2004,10266
+29,Botswana,2005,10725
+29,Botswana,2006,11468
+29,Botswana,2007,12293
+29,Botswana,2008,12834
+29,Botswana,2009,12128
+29,Botswana,2010,12673
+29,Botswana,2011,14036
+29,Botswana,2012,14576
+29,Botswana,2013,15326
+29,Botswana,2014,15817
+29,Botswana,2015,15414
+29,Botswana,2016,15353
+29,Botswana,2017,15596
+29,Botswana,2018,15951
+31,Brazil,1990,10082
+31,Brazil,1991,10089
+31,Brazil,1992,9905
+31,Brazil,1993,10142
+31,Brazil,1994,10368
+31,Brazil,1995,10901
+31,Brazil,1996,10835
+31,Brazil,1997,10973
+31,Brazil,1998,10707
+31,Brazil,1999,10518
+31,Brazil,2000,11090
+31,Brazil,2001,11051
+31,Brazil,2002,11223
+31,Brazil,2003,11232
+31,Brazil,2004,11762
+31,Brazil,2005,12007
+31,Brazil,2006,12394
+31,Brazil,2007,13061
+31,Brazil,2008,13547
+31,Brazil,2009,13424
+31,Brazil,2010,14194
+31,Brazil,2011,14670
+31,Brazil,2012,14892
+31,Brazil,2013,15351
+31,Brazil,2014,15177
+31,Brazil,2015,14490
+31,Brazil,2016,13907
+31,Brazil,2017,13975
+31,Brazil,2018,14068
+34,Brunei,1990,85147
+34,Brunei,1991,85355
+34,Brunei,1992,86908
+34,Brunei,1993,84763
+34,Brunei,1994,85081
+34,Brunei,1995,86600
+34,Brunei,1996,86896
+34,Brunei,1997,83605
+34,Brunei,1998,81266
+34,Brunei,1999,81932
+34,Brunei,2000,82508
+34,Brunei,2001,83059
+34,Brunei,2002,84596
+34,Brunei,2003,85449
+34,Brunei,2004,84413
+34,Brunei,2005,83421
+34,Brunei,2006,85879
+34,Brunei,2007,85361
+34,Brunei,2008,82688
+34,Brunei,2009,80279
+34,Brunei,2010,80394
+34,Brunei,2011,80283
+34,Brunei,2012,80203
+34,Brunei,2013,78725
+34,Brunei,2014,76778
+34,Brunei,2015,79110
+34,Brunei,2016,77492
+34,Brunei,2017,77188
+34,Brunei,2018,76389
+35,Bulgaria,1990,8518
+35,Bulgaria,1991,7743
+35,Bulgaria,1992,7940
+35,Bulgaria,1993,7880
+35,Bulgaria,1994,8035
+35,Bulgaria,1995,8271
+35,Bulgaria,1996,8307
+35,Bulgaria,1997,8282
+35,Bulgaria,1998,8964
+35,Bulgaria,1999,8293
+35,Bulgaria,2000,8642
+35,Bulgaria,2001,9372
+35,Bulgaria,2002,10327
+35,Bulgaria,2003,10901
+35,Bulgaria,2004,11643
+35,Bulgaria,2005,12461
+35,Bulgaria,2006,13065
+35,Bulgaria,2007,13447
+35,Bulgaria,2008,14811
+35,Bulgaria,2009,14715
+35,Bulgaria,2010,14975
+35,Bulgaria,2011,15184
+35,Bulgaria,2012,15570
+35,Bulgaria,2013,15596
+35,Bulgaria,2014,16193
+35,Bulgaria,2015,16662
+35,Bulgaria,2016,17757
+35,Bulgaria,2017,18874
+35,Bulgaria,2018,19646
+36,Burkina Faso,1990,845
+36,Burkina Faso,1991,897
+36,Burkina Faso,1992,875
+36,Burkina Faso,1993,879
+36,Burkina Faso,1994,865
+36,Burkina Faso,1995,893
+36,Burkina Faso,1996,971
+36,Burkina Faso,1997,1000
+36,Burkina Faso,1998,1044
+36,Burkina Faso,1999,1089
+36,Burkina Faso,2000,1069
+36,Burkina Faso,2001,1109
+36,Burkina Faso,2002,1127
+36,Burkina Faso,2003,1180
+36,Burkina Faso,2004,1197
+36,Burkina Faso,2005,1266
+36,Burkina Faso,2006,1310
+36,Burkina Faso,2007,1340
+36,Burkina Faso,2008,1395
+36,Burkina Faso,2009,1393
+36,Burkina Faso,2010,1389
+36,Burkina Faso,2011,1418
+36,Burkina Faso,2012,1494
+36,Burkina Faso,2013,1538
+36,Burkina Faso,2014,1538
+36,Burkina Faso,2015,1545
+36,Burkina Faso,2016,1582
+36,Burkina Faso,2017,1640
+36,Burkina Faso,2018,1705
+37,Burundi,1990,1014
+37,Burundi,1991,1045
+37,Burundi,1992,1030
+37,Burundi,1993,949
+37,Burundi,1994,895
+37,Burundi,1995,812
+37,Burundi,1996,735
+37,Burundi,1997,719
+37,Burundi,1998,748
+37,Burundi,1999,727
+37,Burundi,2000,729
+37,Burundi,2001,707
+37,Burundi,2002,717
+37,Burundi,2003,683
+37,Burundi,2004,689
+37,Burundi,2005,682
+37,Burundi,2006,702
+37,Burundi,2007,704
+37,Burundi,2008,716
+37,Burundi,2009,714
+37,Burundi,2010,730
+37,Burundi,2011,733
+37,Burundi,2012,746
+37,Burundi,2013,761
+37,Burundi,2014,767
+37,Burundi,2015,715
+37,Burundi,2016,689
+37,Burundi,2017,670
+37,Burundi,2018,660
+38,Cambodia,1990,1381
+38,Cambodia,1991,1428
+38,Cambodia,1992,1480
+38,Cambodia,1993,1502
+38,Cambodia,1994,915
+38,Cambodia,1995,1084
+38,Cambodia,1996,1106
+38,Cambodia,1997,1133
+38,Cambodia,1998,1148
+38,Cambodia,1999,1250
+38,Cambodia,2000,1338
+38,Cambodia,2001,1414
+38,Cambodia,2002,1466
+38,Cambodia,2003,1573
+38,Cambodia,2004,1704
+38,Cambodia,2005,1888
+38,Cambodia,2006,2062
+38,Cambodia,2007,2255
+38,Cambodia,2008,2354
+38,Cambodia,2009,2313
+38,Cambodia,2010,2410
+38,Cambodia,2011,2534
+38,Cambodia,2012,2657
+38,Cambodia,2013,2836
+38,Cambodia,2014,2959
+38,Cambodia,2015,3085
+38,Cambodia,2016,3248
+38,Cambodia,2017,3418
+38,Cambodia,2018,3597
+39,Cameroon,1990,2889
+39,Cameroon,1991,2642
+39,Cameroon,1992,2517
+39,Cameroon,1993,2255
+39,Cameroon,1994,2226
+39,Cameroon,1995,2237
+39,Cameroon,1996,2271
+39,Cameroon,1997,2324
+39,Cameroon,1998,2396
+39,Cameroon,1999,2440
+39,Cameroon,2000,2413
+39,Cameroon,2001,2432
+39,Cameroon,2002,2492
+39,Cameroon,2003,2599
+39,Cameroon,2004,2735
+39,Cameroon,2005,2704
+39,Cameroon,2006,2762
+39,Cameroon,2007,2792
+39,Cameroon,2008,2830
+39,Cameroon,2009,2847
+39,Cameroon,2010,2848
+39,Cameroon,2011,2884
+39,Cameroon,2012,2919
+39,Cameroon,2013,2982
+39,Cameroon,2014,3108
+39,Cameroon,2015,3178
+39,Cameroon,2016,3229
+39,Cameroon,2017,3250
+39,Cameroon,2018,3291
+40,Canada,1990,30384
+40,Canada,1991,29469
+40,Canada,1992,29310
+40,Canada,1993,29820
+40,Canada,1994,30767
+40,Canada,1995,31302
+40,Canada,1996,31510
+40,Canada,1997,32608
+40,Canada,1998,33524
+40,Canada,1999,34963
+40,Canada,2000,36681
+40,Canada,2001,36862
+40,Canada,2002,37676
+40,Canada,2003,38021
+40,Canada,2004,38934
+40,Canada,2005,39837
+40,Canada,2006,40655
+40,Canada,2007,41136
+40,Canada,2008,41093
+40,Canada,2009,39347
+40,Canada,2010,39996
+40,Canada,2011,40880
+40,Canada,2012,41199
+40,Canada,2013,41818
+40,Canada,2014,42546
+40,Canada,2015,42567
+40,Canada,2016,42691
+40,Canada,2017,43496
+40,Canada,2018,43602
+41,Cape Verde,1990,1688
+41,Cape Verde,1991,1665
+41,Cape Verde,1992,1797
+41,Cape Verde,1993,1896
+41,Cape Verde,1994,2191
+41,Cape Verde,1995,2428
+41,Cape Verde,1996,2631
+41,Cape Verde,1997,2864
+41,Cape Verde,1998,3148
+41,Cape Verde,1999,3420
+41,Cape Verde,2000,3795
+41,Cape Verde,2001,3872
+41,Cape Verde,2002,3956
+41,Cape Verde,2003,4082
+41,Cape Verde,2004,4424
+41,Cape Verde,2005,4593
+41,Cape Verde,2006,4865
+41,Cape Verde,2007,5648
+41,Cape Verde,2008,5918
+41,Cape Verde,2009,5776
+41,Cape Verde,2010,5680
+41,Cape Verde,2011,5863
+41,Cape Verde,2012,5832
+41,Cape Verde,2013,5850
+41,Cape Verde,2014,5721
+41,Cape Verde,2015,5782
+41,Cape Verde,2016,5989
+41,Cape Verde,2017,6164
+41,Cape Verde,2018,6513
+43,Central African Republic,1990,968
+43,Central African Republic,1991,942
+43,Central African Republic,1992,858
+43,Central African Republic,1993,833
+43,Central African Republic,1994,841
+43,Central African Republic,1995,882
+43,Central African Republic,1996,823
+43,Central African Republic,1997,849
+43,Central African Republic,1998,865
+43,Central African Republic,1999,885
+43,Central African Republic,2000,839
+43,Central African Republic,2001,862
+43,Central African Republic,2002,874
+43,Central African Republic,2003,815
+43,Central African Republic,2004,840
+43,Central African Republic,2005,834
+43,Central African Republic,2006,856
+43,Central African Republic,2007,880
+43,Central African Republic,2008,878
+43,Central African Republic,2009,947
+43,Central African Republic,2010,987
+43,Central African Republic,2011,1020
+43,Central African Republic,2012,1068
+43,Central African Republic,2013,681
+43,Central African Republic,2014,679
+43,Central African Republic,2015,706
+43,Central African Republic,2016,732
+43,Central African Republic,2017,756
+43,Central African Republic,2018,777
+44,Chad,1990,1096
+44,Chad,1991,1165
+44,Chad,1992,1224
+44,Chad,1993,962
+44,Chad,1994,1055
+44,Chad,1995,1036
+44,Chad,1996,1021
+44,Chad,1997,1037
+44,Chad,1998,1084
+44,Chad,1999,1038
+44,Chad,2000,978
+44,Chad,2001,1050
+44,Chad,2002,1074
+44,Chad,2003,976
+44,Chad,2004,1334
+44,Chad,2005,1514
+44,Chad,2006,1453
+44,Chad,2007,1493
+44,Chad,2008,1444
+44,Chad,2009,1669
+44,Chad,2010,1850
+44,Chad,2011,1805
+44,Chad,2012,1902
+44,Chad,2013,1899
+44,Chad,2014,1971
+44,Chad,2015,1999
+44,Chad,2016,1836
+44,Chad,2017,1736
+44,Chad,2018,1716
+45,Chile,1990,8611
+45,Chile,1991,9141
+45,Chile,1992,10081
+45,Chile,1993,10638
+45,Chile,1994,10890
+45,Chile,1995,11736
+45,Chile,1996,12421
+45,Chile,1997,13182
+45,Chile,1998,13675
+45,Chile,1999,13379
+45,Chile,2000,13844
+45,Chile,2001,14168
+45,Chile,2002,14383
+45,Chile,2003,14514
+45,Chile,2004,15033
+45,Chile,2005,15611
+45,Chile,2006,15642
+45,Chile,2007,16410
+45,Chile,2008,17598
+45,Chile,2009,17299
+45,Chile,2010,17989
+45,Chile,2011,19112
+45,Chile,2012,20247
+45,Chile,2013,20960
+45,Chile,2014,21300
+45,Chile,2015,21653
+45,Chile,2016,21776
+45,Chile,2017,21415
+45,Chile,2018,21972
+46,China,1990,1530
+46,China,1991,1649
+46,China,1992,1857
+46,China,1993,2085
+46,China,1994,2331
+46,China,1995,2522
+46,China,1996,2747
+46,China,1997,2978
+46,China,1998,3167
+46,China,1999,3389
+46,China,2000,3651
+46,China,2001,3918
+46,China,2002,4263
+46,China,2003,4678
+46,China,2004,5137
+46,China,2005,5665
+46,China,2006,6381
+46,China,2007,7281
+46,China,2008,7974
+46,China,2009,8613
+46,China,2010,9458
+46,China,2011,10259
+46,China,2012,11090
+46,China,2013,11823
+46,China,2014,12742
+46,China,2015,13485
+46,China,2016,14311
+46,China,2017,15212
+46,China,2018,16127
+49,Colombia,1990,7392
+49,Colombia,1991,7434
+49,Colombia,1992,7617
+49,Colombia,1993,7945
+49,Colombia,1994,8331
+49,Colombia,1995,8613
+49,Colombia,1996,8601
+49,Colombia,1997,8737
+49,Colombia,1998,8683
+49,Colombia,1999,8193
+49,Colombia,2000,8254
+49,Colombia,2001,8239
+49,Colombia,2002,8300
+49,Colombia,2003,8439
+49,Colombia,2004,8756
+49,Colombia,2005,9131
+49,Colombia,2006,9612
+49,Colombia,2007,10100
+49,Colombia,2008,10254
+49,Colombia,2009,10305
+49,Colombia,2010,10567
+49,Colombia,2011,11151
+49,Colombia,2012,11538
+49,Colombia,2013,11996
+49,Colombia,2014,12513
+49,Colombia,2015,12951
+49,Colombia,2016,13087
+49,Colombia,2017,12963
+49,Colombia,2018,12896
+50,Comoros,1990,2576
+50,Comoros,1991,2368
+50,Comoros,1992,2520
+50,Comoros,1993,2510
+50,Comoros,1994,2305
+50,Comoros,1995,2325
+50,Comoros,1996,2229
+50,Comoros,1997,2257
+50,Comoros,1998,2222
+50,Comoros,1999,2211
+50,Comoros,2000,2391
+50,Comoros,2001,2389
+50,Comoros,2002,2378
+50,Comoros,2003,2369
+50,Comoros,2004,2355
+50,Comoros,2005,2367
+50,Comoros,2006,2374
+50,Comoros,2007,2345
+50,Comoros,2008,2372
+50,Comoros,2009,2391
+50,Comoros,2010,2424
+50,Comoros,2011,2463
+50,Comoros,2012,2479
+50,Comoros,2013,2534
+50,Comoros,2014,2529
+50,Comoros,2015,2504
+50,Comoros,2016,2504
+50,Comoros,2017,2515
+50,Comoros,2018,2426
+52,Costa Rica,1990,7377
+52,Costa Rica,1991,7509
+52,Costa Rica,1992,8009
+52,Costa Rica,1993,8372
+52,Costa Rica,1994,8645
+52,Costa Rica,1995,8742
+52,Costa Rica,1996,8681
+52,Costa Rica,1997,8942
+52,Costa Rica,1998,9246
+52,Costa Rica,1999,9239
+52,Costa Rica,2000,9313
+52,Costa Rica,2001,9467
+52,Costa Rica,2002,9626
+52,Costa Rica,2003,9888
+52,Costa Rica,2004,10217
+52,Costa Rica,2005,10520
+52,Costa Rica,2006,11226
+52,Costa Rica,2007,12022
+52,Costa Rica,2008,12502
+52,Costa Rica,2009,12049
+52,Costa Rica,2010,12485
+52,Costa Rica,2011,12850
+52,Costa Rica,2012,13339
+52,Costa Rica,2013,13408
+52,Costa Rica,2014,13648
+52,Costa Rica,2015,13952
+52,Costa Rica,2016,14393
+52,Costa Rica,2017,14619
+52,Costa Rica,2018,14790
+53,Croatia,1990,14413
+53,Croatia,1991,11436
+53,Croatia,1992,10042
+53,Croatia,1993,9329
+53,Croatia,1994,9979
+53,Croatia,1995,12742
+53,Croatia,1996,13650
+53,Croatia,1997,14668
+53,Croatia,1998,14861
+53,Croatia,1999,14585
+53,Croatia,2000,15316
+53,Croatia,2001,16477
+53,Croatia,2002,17372
+53,Croatia,2003,18032
+53,Croatia,2004,19033
+53,Croatia,2005,19692
+53,Croatia,2006,20598
+53,Croatia,2007,21755
+53,Croatia,2008,22037
+53,Croatia,2009,20348
+53,Croatia,2010,20177
+53,Croatia,2011,20192
+53,Croatia,2012,19737
+53,Croatia,2013,19888
+53,Croatia,2014,19960
+53,Croatia,2015,20890
+53,Croatia,2016,21216
+53,Croatia,2017,22426
+53,Croatia,2018,23061
+54,Cuba,1990,4920
+54,Cuba,1991,4372
+54,Cuba,1992,3856
+54,Cuba,1993,3261
+54,Cuba,1994,3266
+54,Cuba,1995,3308
+54,Cuba,1996,3558
+54,Cuba,1997,3642
+54,Cuba,1998,3637
+54,Cuba,1999,3844
+54,Cuba,2000,4047
+54,Cuba,2001,4182
+54,Cuba,2002,4233
+54,Cuba,2003,4381
+54,Cuba,2004,4618
+54,Cuba,2005,5138
+54,Cuba,2006,5770
+54,Cuba,2007,6156
+54,Cuba,2008,6400
+54,Cuba,2009,6428
+54,Cuba,2010,6601
+54,Cuba,2011,6821
+54,Cuba,2012,7022
+54,Cuba,2013,7208
+54,Cuba,2014,7258
+54,Cuba,2015,7567
+54,Cuba,2016,7597
+54,Cuba,2017,7726
+54,Cuba,2018,7811
+56,Cyprus,1990,22853
+56,Cyprus,1991,22430
+56,Cyprus,1992,23807
+56,Cyprus,1993,23422
+56,Cyprus,1994,24226
+56,Cyprus,1995,24254
+56,Cyprus,1996,24222
+56,Cyprus,1997,24348
+56,Cyprus,1998,27786
+56,Cyprus,1999,26406
+56,Cyprus,2000,26855
+56,Cyprus,2001,28026
+56,Cyprus,2002,29381
+56,Cyprus,2003,30101
+56,Cyprus,2004,30670
+56,Cyprus,2005,31873
+56,Cyprus,2006,32716
+56,Cyprus,2007,33342
+56,Cyprus,2008,35274
+56,Cyprus,2009,32678
+56,Cyprus,2010,32881
+56,Cyprus,2011,33145
+56,Cyprus,2012,30718
+56,Cyprus,2013,28727
+56,Cyprus,2014,28908
+56,Cyprus,2015,31057
+56,Cyprus,2016,31358
+56,Cyprus,2017,32219
+56,Cyprus,2018,33100
+57,Czechia,1990,20121
+57,Czechia,1991,17774
+57,Czechia,1992,17803
+57,Czechia,1993,17759
+57,Czechia,1994,18272
+57,Czechia,1995,19080
+57,Czechia,1996,19789
+57,Czechia,1997,19701
+57,Czechia,1998,19644
+57,Czechia,1999,19865
+57,Czechia,2000,20752
+57,Czechia,2001,21241
+57,Czechia,2002,21468
+57,Czechia,2003,22284
+57,Czechia,2004,23059
+57,Czechia,2005,24572
+57,Czechia,2006,25777
+57,Czechia,2007,26958
+57,Czechia,2008,27441
+57,Czechia,2009,25796
+57,Czechia,2010,26237
+57,Czechia,2011,26617
+57,Czechia,2012,26761
+57,Czechia,2013,26672
+57,Czechia,2014,27119
+57,Czechia,2015,28498
+57,Czechia,2016,29211
+57,Czechia,2017,30530
+57,Czechia,2018,31597
+58,Democratic Republic of the Congo,1990,2054
+58,Democratic Republic of the Congo,1991,1684
+58,Democratic Republic of the Congo,1992,1550
+58,Democratic Republic of the Congo,1993,1330
+58,Democratic Republic of the Congo,1994,729
+58,Democratic Republic of the Congo,1995,696
+58,Democratic Republic of the Congo,1996,725
+58,Democratic Republic of the Congo,1997,664
+58,Democratic Republic of the Congo,1998,642
+58,Democratic Republic of the Congo,1999,579
+58,Democratic Republic of the Congo,2000,565
+58,Democratic Republic of the Congo,2001,522
+58,Democratic Republic of the Congo,2002,531
+58,Democratic Republic of the Congo,2003,548
+58,Democratic Republic of the Congo,2004,564
+58,Democratic Republic of the Congo,2005,572
+58,Democratic Republic of the Congo,2006,589
+58,Democratic Republic of the Congo,2007,602
+58,Democratic Republic of the Congo,2008,602
+58,Democratic Republic of the Congo,2009,614
+58,Democratic Republic of the Congo,2010,634
+58,Democratic Republic of the Congo,2011,648
+58,Democratic Republic of the Congo,2012,665
+58,Democratic Republic of the Congo,2013,669
+58,Democratic Republic of the Congo,2014,712
+58,Democratic Republic of the Congo,2015,749
+58,Democratic Republic of the Congo,2016,794
+58,Democratic Republic of the Congo,2017,787
+58,Democratic Republic of the Congo,2018,800
+59,Denmark,1990,32832
+59,Denmark,1991,33151
+59,Denmark,1992,33764
+59,Denmark,1993,33822
+59,Denmark,1994,35550
+59,Denmark,1995,36598
+59,Denmark,1996,37386
+59,Denmark,1997,38503
+59,Denmark,1998,39365
+59,Denmark,1999,40538
+59,Denmark,2000,41414
+59,Denmark,2001,41935
+59,Denmark,2002,42090
+59,Denmark,2003,42283
+59,Denmark,2004,43731
+59,Denmark,2005,44929
+59,Denmark,2006,46716
+59,Denmark,2007,46609
+59,Denmark,2008,46379
+59,Denmark,2009,43817
+59,Denmark,2010,44726
+59,Denmark,2011,45340
+59,Denmark,2012,45340
+59,Denmark,2013,45983
+59,Denmark,2014,46714
+59,Denmark,2015,47213
+59,Denmark,2016,47729
+59,Denmark,2017,48338
+59,Denmark,2018,48836
+60,Djibouti,1990,1919
+60,Djibouti,1991,1819
+60,Djibouti,1992,1877
+60,Djibouti,1993,1970
+60,Djibouti,1994,1881
+60,Djibouti,1995,1969
+60,Djibouti,1996,1824
+60,Djibouti,1997,1858
+60,Djibouti,1998,1801
+60,Djibouti,1999,1845
+60,Djibouti,2000,1822
+60,Djibouti,2001,1805
+60,Djibouti,2002,1837
+60,Djibouti,2003,1966
+60,Djibouti,2004,2022
+60,Djibouti,2005,2048
+60,Djibouti,2006,2303
+60,Djibouti,2007,2365
+60,Djibouti,2008,2415
+60,Djibouti,2009,2451
+60,Djibouti,2010,2494
+60,Djibouti,2011,2562
+60,Djibouti,2012,2638
+60,Djibouti,2013,2823
+60,Djibouti,2014,3003
+60,Djibouti,2015,3231
+60,Djibouti,2016,3431
+60,Djibouti,2017,3469
+60,Djibouti,2018,3601
+61,Dominica,1990,6484
+61,Dominica,1991,6505
+61,Dominica,1992,6648
+61,Dominica,1993,6801
+61,Dominica,1994,6674
+61,Dominica,1995,6823
+61,Dominica,1996,6933
+61,Dominica,1997,7184
+61,Dominica,1998,7568
+61,Dominica,1999,7394
+61,Dominica,2000,7251
+61,Dominica,2001,7608
+61,Dominica,2002,7294
+61,Dominica,2003,7772
+61,Dominica,2004,7873
+61,Dominica,2005,7999
+61,Dominica,2006,8730
+61,Dominica,2007,9197
+61,Dominica,2008,9916
+61,Dominica,2009,9921
+61,Dominica,2010,10074
+61,Dominica,2011,10027
+61,Dominica,2012,9746
+61,Dominica,2013,9777
+61,Dominica,2014,10163
+61,Dominica,2015,9804
+61,Dominica,2016,10179
+61,Dominica,2017,9218
+61,Dominica,2018,9245
+62,Dominican Republic,1990,5278
+62,Dominican Republic,1991,5204
+62,Dominican Republic,1992,5734
+62,Dominican Republic,1993,5946
+62,Dominican Republic,1994,6033
+62,Dominican Republic,1995,6263
+62,Dominican Republic,1996,6572
+62,Dominican Republic,1997,7037
+62,Dominican Republic,1998,7381
+62,Dominican Republic,1999,7683
+62,Dominican Republic,2000,7930
+62,Dominican Republic,2001,8007
+62,Dominican Republic,2002,8251
+62,Dominican Republic,2003,7829
+62,Dominican Republic,2004,7776
+62,Dominican Republic,2005,8665
+62,Dominican Republic,2006,9373
+62,Dominican Republic,2007,9927
+62,Dominican Republic,2008,10265
+62,Dominican Republic,2009,10233
+62,Dominican Republic,2010,10955
+62,Dominican Republic,2011,11137
+62,Dominican Republic,2012,11290
+62,Dominican Republic,2013,11613
+62,Dominican Republic,2014,12334
+62,Dominican Republic,2015,13127
+62,Dominican Republic,2016,13801
+62,Dominican Republic,2017,14197
+62,Dominican Republic,2018,15074
+63,Ecuador,1990,6878
+63,Ecuador,1991,7110
+63,Ecuador,1992,7193
+63,Ecuador,1993,7249
+63,Ecuador,1994,7420
+63,Ecuador,1995,7450
+63,Ecuador,1996,7395
+63,Ecuador,1997,7584
+63,Ecuador,1998,7641
+63,Ecuador,1999,6969
+63,Ecuador,2000,6897
+63,Ecuador,2001,7170
+63,Ecuador,2002,7372
+63,Ecuador,2003,7425
+63,Ecuador,2004,7873
+63,Ecuador,2005,8197
+63,Ecuador,2006,8447
+63,Ecuador,2007,8485
+63,Ecuador,2008,9013
+63,Ecuador,2009,8951
+63,Ecuador,2010,9168
+63,Ecuador,2011,9727
+63,Ecuador,2012,10136
+63,Ecuador,2013,10482
+63,Ecuador,2014,10702
+63,Ecuador,2015,10524
+63,Ecuador,2016,10208
+63,Ecuador,2017,10220
+63,Ecuador,2018,10141
+64,Egypt,1990,5750
+64,Egypt,1991,5874
+64,Egypt,1992,5999
+64,Egypt,1993,6045
+64,Egypt,1994,6156
+64,Egypt,1995,6322
+64,Egypt,1996,6512
+64,Egypt,1997,6733
+64,Egypt,1998,6991
+64,Egypt,1999,7238
+64,Egypt,2000,7545
+64,Egypt,2001,7676
+64,Egypt,2002,7725
+64,Egypt,2003,7809
+64,Egypt,2004,7986
+64,Egypt,2005,8119
+64,Egypt,2006,8590
+64,Egypt,2007,9076
+64,Egypt,2008,9547
+64,Egypt,2009,9734
+64,Egypt,2010,9828
+64,Egypt,2011,9727
+64,Egypt,2012,9750
+64,Egypt,2013,9712
+64,Egypt,2014,9793
+64,Egypt,2015,10069
+64,Egypt,2016,10323
+64,Egypt,2017,10473
+64,Egypt,2018,10744
+65,El Salvador,1990,4385
+65,El Salvador,1991,4387
+65,El Salvador,1992,4674
+65,El Salvador,1993,4887
+65,El Salvador,1994,5076
+65,El Salvador,1995,5260
+65,El Salvador,1996,5235
+65,El Salvador,1997,5326
+65,El Salvador,1998,5424
+65,El Salvador,1999,5435
+65,El Salvador,2000,5480
+65,El Salvador,2001,5490
+65,El Salvador,2002,5520
+65,El Salvador,2003,5538
+65,El Salvador,2004,5553
+65,El Salvador,2005,5676
+65,El Salvador,2006,5937
+65,El Salvador,2007,6026
+65,El Salvador,2008,6168
+65,El Salvador,2009,5951
+65,El Salvador,2010,6096
+65,El Salvador,2011,6295
+65,El Salvador,2012,6373
+65,El Salvador,2013,6454
+65,El Salvador,2014,6534
+65,El Salvador,2015,6645
+65,El Salvador,2016,6745
+65,El Salvador,2017,6832
+65,El Salvador,2018,6973
+66,Equatorial Guinea,1990,1424
+66,Equatorial Guinea,1991,1399
+66,Equatorial Guinea,1992,1855
+66,Equatorial Guinea,1993,1956
+66,Equatorial Guinea,1994,1849
+66,Equatorial Guinea,1995,1902
+66,Equatorial Guinea,1996,2958
+66,Equatorial Guinea,1997,7721
+66,Equatorial Guinea,1998,8211
+66,Equatorial Guinea,1999,10591
+66,Equatorial Guinea,2000,9269
+66,Equatorial Guinea,2001,9046
+66,Equatorial Guinea,2002,11720
+66,Equatorial Guinea,2003,10477
+66,Equatorial Guinea,2004,12505
+66,Equatorial Guinea,2005,21113
+66,Equatorial Guinea,2006,26834
+66,Equatorial Guinea,2007,30141
+66,Equatorial Guinea,2008,29473
+66,Equatorial Guinea,2009,29598
+66,Equatorial Guinea,2010,21716
+66,Equatorial Guinea,2011,22402
+66,Equatorial Guinea,2012,23988
+66,Equatorial Guinea,2013,23247
+66,Equatorial Guinea,2014,22773
+66,Equatorial Guinea,2015,23456
+66,Equatorial Guinea,2016,21365
+66,Equatorial Guinea,2017,19494
+66,Equatorial Guinea,2018,17796
+67,Eritrea,1990,895
+67,Eritrea,1991,996
+67,Eritrea,1992,1533
+67,Eritrea,1993,1754
+67,Eritrea,1994,2146
+67,Eritrea,1995,2250
+67,Eritrea,1996,2408
+67,Eritrea,1997,2617
+67,Eritrea,1998,2678
+67,Eritrea,1999,2648
+67,Eritrea,2000,2484
+67,Eritrea,2001,2598
+67,Eritrea,2002,2548
+67,Eritrea,2003,2359
+67,Eritrea,2004,2281
+67,Eritrea,2005,2265
+67,Eritrea,2006,2177
+67,Eritrea,2007,2153
+67,Eritrea,2008,1895
+67,Eritrea,2009,1932
+67,Eritrea,2010,1941
+67,Eritrea,2011,2084
+67,Eritrea,2012,1572
+67,Eritrea,2013,1613
+67,Eritrea,2014,1626
+67,Eritrea,2015,1633
+67,Eritrea,2016,1627
+67,Eritrea,2017,1670
+67,Eritrea,2018,1708
+68,Estonia,1990,15020
+68,Estonia,1991,13965
+68,Estonia,1992,11494
+68,Estonia,1993,10529
+68,Estonia,1994,10535
+68,Estonia,1995,11443
+68,Estonia,1996,12174
+68,Estonia,1997,13292
+68,Estonia,1998,14075
+68,Estonia,1999,13934
+68,Estonia,2000,15180
+68,Estonia,2001,16115
+68,Estonia,2002,17204
+68,Estonia,2003,18442
+68,Estonia,2004,19785
+68,Estonia,2005,21972
+68,Estonia,2006,24054
+68,Estonia,2007,25555
+68,Estonia,2008,24619
+68,Estonia,2009,21516
+68,Estonia,2010,21539
+68,Estonia,2011,23313
+68,Estonia,2012,24661
+68,Estonia,2013,25678
+68,Estonia,2014,26334
+68,Estonia,2015,27001
+68,Estonia,2016,27915
+68,Estonia,2017,29320
+68,Estonia,2018,30379
+69,Ethiopia,1990,651
+69,Ethiopia,1991,584
+69,Ethiopia,1992,514
+69,Ethiopia,1993,558
+69,Ethiopia,1994,556
+69,Ethiopia,1995,573
+69,Ethiopia,1996,626
+69,Ethiopia,1997,622
+69,Ethiopia,1998,585
+69,Ethiopia,1999,599
+69,Ethiopia,2000,617
+69,Ethiopia,2001,650
+69,Ethiopia,2002,640
+69,Ethiopia,2003,608
+69,Ethiopia,2004,673
+69,Ethiopia,2005,734
+69,Ethiopia,2006,792
+69,Ethiopia,2007,861
+69,Ethiopia,2008,928
+69,Ethiopia,2009,980
+69,Ethiopia,2010,1071
+69,Ethiopia,2011,1159
+69,Ethiopia,2012,1224
+69,Ethiopia,2013,1316
+69,Ethiopia,2014,1410
+69,Ethiopia,2015,1512
+69,Ethiopia,2016,1612
+69,Ethiopia,2017,1714
+69,Ethiopia,2018,1782
+72,Fiji,1990,5683
+72,Fiji,1991,5517
+72,Fiji,1992,5758
+72,Fiji,1993,5796
+72,Fiji,1994,5920
+72,Fiji,1995,6162
+72,Fiji,1996,6429
+72,Fiji,1997,6191
+72,Fiji,1998,6114
+72,Fiji,1999,6603
+72,Fiji,2000,6807
+72,Fiji,2001,6728
+72,Fiji,2002,7047
+72,Fiji,2003,7056
+72,Fiji,2004,7412
+72,Fiji,2005,7536
+72,Fiji,2006,7216
+72,Fiji,2007,7208
+72,Fiji,2008,7184
+72,Fiji,2009,7165
+72,Fiji,2010,7125
+72,Fiji,2011,7293
+72,Fiji,2012,7331
+72,Fiji,2013,7812
+72,Fiji,2014,8016
+72,Fiji,2015,8391
+72,Fiji,2016,8588
+72,Fiji,2017,8799
+72,Fiji,2018,9110
+73,Finland,1990,28133
+73,Finland,1991,26110
+73,Finland,1992,24833
+73,Finland,1993,24381
+73,Finland,1994,25523
+73,Finland,1995,26722
+73,Finland,1996,27824
+73,Finland,1997,29720
+73,Finland,1998,31096
+73,Finland,1999,32739
+73,Finland,2000,34658
+73,Finland,2001,35692
+73,Finland,2002,36333
+73,Finland,2003,36626
+73,Finland,2004,38468
+73,Finland,2005,39285
+73,Finland,2006,40934
+73,Finland,2007,42604
+73,Finland,2008,42656
+73,Finland,2009,39370
+73,Finland,2010,40389
+73,Finland,2011,40868
+73,Finland,2012,40120
+73,Finland,2013,39563
+73,Finland,2014,39372
+73,Finland,2015,39473
+73,Finland,2016,40609
+73,Finland,2017,41142
+73,Finland,2018,41779
+74,France,1990,29573
+74,France,1991,29692
+74,France,1992,30056
+74,France,1993,29766
+74,France,1994,30307
+74,France,1995,30836
+74,France,1996,31323
+74,France,1997,32057
+74,France,1998,33115
+74,France,1999,34307
+74,France,2000,35261
+74,France,2001,35779
+74,France,2002,35655
+74,France,2003,35796
+74,France,2004,36558
+74,France,2005,37005
+74,France,2006,37751
+74,France,2007,38425
+74,France,2008,38379
+74,France,2009,37135
+74,France,2010,37674
+74,France,2011,38436
+74,France,2012,38194
+74,France,2013,38240
+74,France,2014,38397
+74,France,2015,38668
+74,France,2016,38926
+74,France,2017,39935
+74,France,2018,40511
+78,Gabon,1990,19368
+78,Gabon,1991,20053
+78,Gabon,1992,18489
+78,Gabon,1993,18512
+78,Gabon,1994,19119
+78,Gabon,1995,19311
+78,Gabon,1996,19454
+78,Gabon,1997,19913
+78,Gabon,1998,20875
+78,Gabon,1999,18165
+78,Gabon,2000,16125
+78,Gabon,2001,17023
+78,Gabon,2002,17194
+78,Gabon,2003,16870
+78,Gabon,2004,15552
+78,Gabon,2005,16335
+78,Gabon,2006,14626
+78,Gabon,2007,14715
+78,Gabon,2008,13543
+78,Gabon,2009,14200
+78,Gabon,2010,13960
+78,Gabon,2011,13814
+78,Gabon,2012,15005
+78,Gabon,2013,15519
+78,Gabon,2014,16906
+78,Gabon,2015,16336
+78,Gabon,2016,16339
+78,Gabon,2017,16213
+78,Gabon,2018,15794
+79,Gambia,1990,1329
+79,Gambia,1991,1393
+79,Gambia,1992,1395
+79,Gambia,1993,1394
+79,Gambia,1994,1354
+79,Gambia,1995,1331
+79,Gambia,1996,1320
+79,Gambia,1997,1328
+79,Gambia,1998,1332
+79,Gambia,1999,1366
+79,Gambia,2000,1393
+79,Gambia,2001,1417
+79,Gambia,2002,1312
+79,Gambia,2003,1373
+79,Gambia,2004,1440
+79,Gambia,2005,1383
+79,Gambia,2006,1353
+79,Gambia,2007,1369
+79,Gambia,2008,1414
+79,Gambia,2009,1454
+79,Gambia,2010,1503
+79,Gambia,2011,1390
+79,Gambia,2012,1429
+79,Gambia,2013,1468
+79,Gambia,2014,1409
+79,Gambia,2015,1446
+79,Gambia,2016,1416
+79,Gambia,2017,1437
+79,Gambia,2018,1490
+81,Georgia,1990,7988
+81,Georgia,1991,6258
+81,Georgia,1992,3399
+81,Georgia,1993,2360
+81,Georgia,1994,2146
+81,Georgia,1995,2224
+81,Georgia,1996,2622
+81,Georgia,1997,3173
+81,Georgia,1998,3406
+81,Georgia,1999,3576
+81,Georgia,2000,3664
+81,Georgia,2001,3794
+81,Georgia,2002,4011
+81,Georgia,2003,4485
+81,Georgia,2004,4831
+81,Georgia,2005,5299
+81,Georgia,2006,5896
+81,Georgia,2007,6561
+81,Georgia,2008,6623
+81,Georgia,2009,6455
+81,Georgia,2010,6769
+81,Georgia,2011,7325
+81,Georgia,2012,8012
+81,Georgia,2013,8225
+81,Georgia,2014,8688
+81,Georgia,2015,8748
+81,Georgia,2016,8768
+81,Georgia,2017,9146
+81,Georgia,2018,9570
+82,Germany,1990,31793
+82,Germany,1991,32995
+82,Germany,1992,33325
+82,Germany,1993,32732
+82,Germany,1994,33196
+82,Germany,1995,33594
+82,Germany,1996,33807
+82,Germany,1997,34311
+82,Germany,1998,34853
+82,Germany,1999,35458
+82,Germany,2000,36529
+82,Germany,2001,37019
+82,Germany,2002,36821
+82,Germany,2003,36649
+82,Germany,2004,37694
+82,Germany,2005,38051
+82,Germany,2006,39828
+82,Germany,2007,41080
+82,Germany,2008,41393
+82,Germany,2009,39673
+82,Germany,2010,41236
+82,Germany,2011,43770
+82,Germany,2012,43827
+82,Germany,2013,43888
+82,Germany,2014,44529
+82,Germany,2015,45012
+82,Germany,2016,45577
+82,Germany,2017,46438
+82,Germany,2018,46946
+83,Ghana,1990,1863
+83,Ghana,1991,1907
+83,Ghana,1992,1928
+83,Ghana,1993,1960
+83,Ghana,1994,1966
+83,Ghana,1995,1992
+83,Ghana,1996,2030
+83,Ghana,1997,2065
+83,Ghana,1998,2108
+83,Ghana,1999,2145
+83,Ghana,2000,2152
+83,Ghana,2001,2205
+83,Ghana,2002,2247
+83,Ghana,2003,2305
+83,Ghana,2004,2372
+83,Ghana,2005,2475
+83,Ghana,2006,2583
+83,Ghana,2007,2627
+83,Ghana,2008,2799
+83,Ghana,2009,2863
+83,Ghana,2010,2977
+83,Ghana,2011,3264
+83,Ghana,2012,3408
+83,Ghana,2013,3687
+83,Ghana,2014,3663
+83,Ghana,2015,3735
+83,Ghana,2016,3756
+83,Ghana,2017,3943
+83,Ghana,2018,4099
+85,Greece,1990,21080
+85,Greece,1991,21554
+85,Greece,1992,21596
+85,Greece,1993,21073
+85,Greece,1994,21404
+85,Greece,1995,21752
+85,Greece,1996,22203
+85,Greece,1997,23101
+85,Greece,1998,23840
+85,Greece,1999,24194
+85,Greece,2000,24924
+85,Greece,2001,25891
+85,Greece,2002,26724
+85,Greece,2003,28009
+85,Greece,2004,29326
+85,Greece,2005,29203
+85,Greece,2006,30556
+85,Greece,2007,31243
+85,Greece,2008,30930
+85,Greece,2009,29749
+85,Greece,2010,28134
+85,Greece,2011,25428
+85,Greece,2012,24521
+85,Greece,2013,23714
+85,Greece,2014,24242
+85,Greece,2015,24165
+85,Greece,2016,24187
+85,Greece,2017,24647
+85,Greece,2018,24909
+87,Grenada,1990,6929
+87,Grenada,1991,7161
+87,Grenada,1992,7089
+87,Grenada,1993,6804
+87,Grenada,1994,6843
+87,Grenada,1995,6837
+87,Grenada,1996,7070
+87,Grenada,1997,7374
+87,Grenada,1998,8127
+87,Grenada,1999,8631
+87,Grenada,2000,8919
+87,Grenada,2001,8566
+87,Grenada,2002,8746
+87,Grenada,2003,9568
+87,Grenada,2004,9232
+87,Grenada,2005,11224
+87,Grenada,2006,10740
+87,Grenada,2007,11218
+87,Grenada,2008,11325
+87,Grenada,2009,10209
+87,Grenada,2010,10445
+87,Grenada,2011,10590
+87,Grenada,2012,10382
+87,Grenada,2013,10640
+87,Grenada,2014,10689
+87,Grenada,2015,11011
+87,Grenada,2016,11650
+87,Grenada,2017,12155
+87,Grenada,2018,12684
+90,Guatemala,1990,4969
+90,Guatemala,1991,5107
+90,Guatemala,1992,5217
+90,Guatemala,1993,5313
+90,Guatemala,1994,5402
+90,Guatemala,1995,5535
+90,Guatemala,1996,5550
+90,Guatemala,1997,5670
+90,Guatemala,1998,5845
+90,Guatemala,1999,5925
+90,Guatemala,2000,6002
+90,Guatemala,2001,6041
+90,Guatemala,2002,6063
+90,Guatemala,2003,6077
+90,Guatemala,2004,6108
+90,Guatemala,2005,6160
+90,Guatemala,2006,6316
+90,Guatemala,2007,6552
+90,Guatemala,2008,6641
+90,Guatemala,2009,6501
+90,Guatemala,2010,6537
+90,Guatemala,2011,6630
+90,Guatemala,2012,6747
+90,Guatemala,2013,6867
+90,Guatemala,2014,6976
+90,Guatemala,2015,7128
+90,Guatemala,2016,7199
+90,Guatemala,2017,7283
+90,Guatemala,2018,7378
+92,Guinea,1990,1272
+92,Guinea,1991,1270
+92,Guinea,1992,1292
+92,Guinea,1993,1346
+92,Guinea,1994,1368
+92,Guinea,1995,1394
+92,Guinea,1996,1416
+92,Guinea,1997,1442
+92,Guinea,1998,1451
+92,Guinea,1999,1486
+92,Guinea,2000,1486
+92,Guinea,2001,1498
+92,Guinea,2002,1576
+92,Guinea,2003,1470
+92,Guinea,2004,1471
+92,Guinea,2005,1451
+92,Guinea,2006,1491
+92,Guinea,2007,1570
+92,Guinea,2008,1564
+92,Guinea,2009,1511
+92,Guinea,2010,1559
+92,Guinea,2011,1604
+92,Guinea,2012,1676
+92,Guinea,2013,1714
+92,Guinea,2014,1775
+92,Guinea,2015,1805
+92,Guinea,2016,1971
+92,Guinea,2017,2201
+92,Guinea,2018,2211
+93,Guinea-Bissau,1990,1565
+93,Guinea-Bissau,1991,1570
+93,Guinea-Bissau,1992,1563
+93,Guinea-Bissau,1993,1552
+93,Guinea-Bissau,1994,1575
+93,Guinea-Bissau,1995,1592
+93,Guinea-Bissau,1996,1745
+93,Guinea-Bissau,1997,1850
+93,Guinea-Bissau,1998,1287
+93,Guinea-Bissau,1999,1281
+93,Guinea-Bissau,2000,1366
+93,Guinea-Bissau,2001,1353
+93,Guinea-Bissau,2002,1336
+93,Guinea-Bissau,2003,1312
+93,Guinea-Bissau,2004,1322
+93,Guinea-Bissau,2005,1347
+93,Guinea-Bissau,2006,1359
+93,Guinea-Bissau,2007,1376
+93,Guinea-Bissau,2008,1369
+93,Guinea-Bissau,2009,1386
+93,Guinea-Bissau,2010,1424
+93,Guinea-Bissau,2011,1516
+93,Guinea-Bissau,2012,1449
+93,Guinea-Bissau,2013,1422
+93,Guinea-Bissau,2014,1477
+93,Guinea-Bissau,2015,1513
+93,Guinea-Bissau,2016,1570
+93,Guinea-Bissau,2017,1580
+93,Guinea-Bissau,2018,1593
+94,Guyana,1990,2097
+94,Guyana,1991,1865
+94,Guyana,1992,2299
+94,Guyana,1993,2798
+94,Guyana,1994,3199
+94,Guyana,1995,3409
+94,Guyana,1996,3958
+94,Guyana,1997,4108
+94,Guyana,1998,4151
+94,Guyana,1999,4202
+94,Guyana,2000,4332
+94,Guyana,2001,4391
+94,Guyana,2002,4425
+94,Guyana,2003,4481
+94,Guyana,2004,4631
+94,Guyana,2005,4612
+94,Guyana,2006,5120
+94,Guyana,2007,5427
+94,Guyana,2008,5462
+94,Guyana,2009,5652
+94,Guyana,2010,5793
+94,Guyana,2011,6085
+94,Guyana,2012,6398
+94,Guyana,2013,6622
+94,Guyana,2014,6846
+94,Guyana,2015,7032
+94,Guyana,2016,7294
+94,Guyana,2017,7443
+94,Guyana,2018,7615
+95,Haiti,1990,2091
+95,Haiti,1991,2093
+95,Haiti,1992,1942
+95,Haiti,1993,1807
+95,Haiti,1994,1566
+95,Haiti,1995,1697
+95,Haiti,1996,1740
+95,Haiti,1997,1752
+95,Haiti,1998,1756
+95,Haiti,1999,1770
+95,Haiti,2000,1762
+95,Haiti,2001,1705
+95,Haiti,2002,1662
+95,Haiti,2003,1638
+95,Haiti,2004,1559
+95,Haiti,2005,1549
+95,Haiti,2006,1580
+95,Haiti,2007,1607
+95,Haiti,2008,1596
+95,Haiti,2009,1623
+95,Haiti,2010,1513
+95,Haiti,2011,1577
+95,Haiti,2012,1603
+95,Haiti,2013,1639
+95,Haiti,2014,1666
+95,Haiti,2015,1661
+95,Haiti,2016,1666
+95,Haiti,2017,1664
+95,Haiti,2018,1665
+97,Honduras,1990,3027
+97,Honduras,1991,2825
+97,Honduras,1992,2893
+97,Honduras,1993,3059
+97,Honduras,1994,2973
+97,Honduras,1995,3062
+97,Honduras,1996,3034
+97,Honduras,1997,3125
+97,Honduras,1998,3159
+97,Honduras,1999,3072
+97,Honduras,2000,3188
+97,Honduras,2001,3181
+97,Honduras,2002,3203
+97,Honduras,2003,3246
+97,Honduras,2004,3344
+97,Honduras,2005,3480
+97,Honduras,2006,3618
+97,Honduras,2007,3818
+97,Honduras,2008,3878
+97,Honduras,2009,3681
+97,Honduras,2010,3731
+97,Honduras,2011,3764
+97,Honduras,2012,3799
+97,Honduras,2013,3825
+97,Honduras,2014,3836
+97,Honduras,2015,3955
+97,Honduras,2016,4032
+97,Honduras,2017,4148
+97,Honduras,2018,4258
+98,Hong Kong,1990,26175
+98,Hong Kong,1991,27273
+98,Hong Kong,1992,28669
+98,Hong Kong,1993,31307
+98,Hong Kong,1994,32332
+98,Hong Kong,1995,32678
+98,Hong Kong,1996,31988
+98,Hong Kong,1997,33624
+98,Hong Kong,1998,32084
+98,Hong Kong,1999,32598
+98,Hong Kong,2000,34330
+98,Hong Kong,2001,34822
+98,Hong Kong,2002,34629
+98,Hong Kong,2003,36489
+98,Hong Kong,2004,39142
+98,Hong Kong,2005,41166
+98,Hong Kong,2006,44578
+98,Hong Kong,2007,47452
+98,Hong Kong,2008,49409
+98,Hong Kong,2009,46785
+98,Hong Kong,2010,49139
+98,Hong Kong,2011,51454
+98,Hong Kong,2012,51114
+98,Hong Kong,2013,52725
+98,Hong Kong,2014,53886
+98,Hong Kong,2015,54608
+98,Hong Kong,2016,55816
+98,Hong Kong,2017,58553
+98,Hong Kong,2018,60221
+99,Hungary,1990,16200
+99,Hungary,1991,14059
+99,Hungary,1992,13730
+99,Hungary,1993,14255
+99,Hungary,1994,14671
+99,Hungary,1995,14829
+99,Hungary,1996,14780
+99,Hungary,1997,15057
+99,Hungary,1998,15702
+99,Hungary,1999,16222
+99,Hungary,2000,17091
+99,Hungary,2001,17768
+99,Hungary,2002,18585
+99,Hungary,2003,19471
+99,Hungary,2004,20315
+99,Hungary,2005,21235
+99,Hungary,2006,22165
+99,Hungary,2007,21944
+99,Hungary,2008,22297
+99,Hungary,2009,21195
+99,Hungary,2010,21359
+99,Hungary,2011,21784
+99,Hungary,2012,21692
+99,Hungary,2013,22515
+99,Hungary,2014,23154
+99,Hungary,2015,23965
+99,Hungary,2016,25081
+99,Hungary,2017,25774
+99,Hungary,2018,27144
+100,Iceland,1990,29373
+100,Iceland,1991,29182
+100,Iceland,1992,27957
+100,Iceland,1993,27987
+100,Iceland,1994,28551
+100,Iceland,1995,28511
+100,Iceland,1996,29864
+100,Iceland,1997,30490
+100,Iceland,1998,32247
+100,Iceland,1999,33156
+100,Iceland,2000,33726
+100,Iceland,2001,34752
+100,Iceland,2002,35906
+100,Iceland,2003,36075
+100,Iceland,2004,37491
+100,Iceland,2005,38782
+100,Iceland,2006,38860
+100,Iceland,2007,42014
+100,Iceland,2008,35114
+100,Iceland,2009,33274
+100,Iceland,2010,32619
+100,Iceland,2011,34552
+100,Iceland,2012,35944
+100,Iceland,2013,40400
+100,Iceland,2014,40701
+100,Iceland,2015,42182
+100,Iceland,2016,44809
+100,Iceland,2017,46817
+100,Iceland,2018,47566
+101,India,1990,1882
+101,India,1991,1859
+101,India,1992,1922
+101,India,1993,1977
+101,India,1994,2070
+101,India,1995,2188
+101,India,1996,2313
+101,India,1997,2364
+101,India,1998,2465
+101,India,1999,2637
+101,India,2000,2683
+101,India,2001,2769
+101,India,2002,2832
+101,India,2003,3002
+101,India,2004,3189
+101,India,2005,3387
+101,India,2006,3602
+101,India,2007,3833
+101,India,2008,3887
+101,India,2009,4134
+101,India,2010,4403
+101,India,2011,4584
+101,India,2012,4760
+101,India,2013,5001
+101,India,2014,5315
+101,India,2015,5674
+101,India,2016,6075
+101,India,2017,6446
+101,India,2018,6829
+102,Indonesia,1990,4399
+102,Indonesia,1991,4628
+102,Indonesia,1992,4847
+102,Indonesia,1993,5130
+102,Indonesia,1994,5493
+102,Indonesia,1995,5838
+102,Indonesia,1996,6217
+102,Indonesia,1997,6399
+102,Indonesia,1998,5328
+102,Indonesia,1999,5185
+102,Indonesia,2000,5422
+102,Indonesia,2001,5717
+102,Indonesia,2002,5938
+102,Indonesia,2003,6084
+102,Indonesia,2004,6256
+102,Indonesia,2005,6506
+102,Indonesia,2006,6816
+102,Indonesia,2007,7164
+102,Indonesia,2008,7539
+102,Indonesia,2009,7788
+102,Indonesia,2010,8234
+102,Indonesia,2011,8614
+102,Indonesia,2012,9011
+102,Indonesia,2013,9370
+102,Indonesia,2014,9679
+102,Indonesia,2015,10029
+102,Indonesia,2016,10419
+102,Indonesia,2017,10811
+102,Indonesia,2018,11256
+103,Iran,1990,11391
+103,Iran,1991,12497
+103,Iran,1992,12606
+103,Iran,1993,12565
+103,Iran,1994,12080
+103,Iran,1995,12362
+103,Iran,1996,12585
+103,Iran,1997,12585
+103,Iran,1998,12781
+103,Iran,1999,12584
+103,Iran,2000,13228
+103,Iran,2001,13178
+103,Iran,2002,13989
+103,Iran,2003,15013
+103,Iran,2004,15435
+103,Iran,2005,15737
+103,Iran,2006,16373
+103,Iran,2007,17554
+103,Iran,2008,17416
+103,Iran,2009,17337
+103,Iran,2010,18142
+103,Iran,2011,18402
+103,Iran,2012,16938
+103,Iran,2013,16696
+103,Iran,2014,17177
+103,Iran,2015,16720
+103,Iran,2016,18710
+103,Iran,2017,19127
+103,Iran,2018,18166
+104,Iraq,1990,11382
+104,Iraq,1991,3983
+104,Iraq,1992,5156
+104,Iraq,1993,6595
+104,Iraq,1994,6645
+104,Iraq,1995,6578
+104,Iraq,1996,7080
+104,Iraq,1997,8215
+104,Iraq,1998,10737
+104,Iraq,1999,12192
+104,Iraq,2000,12135
+104,Iraq,2001,12040
+104,Iraq,2002,10774
+104,Iraq,2003,7138
+104,Iraq,2004,10727
+104,Iraq,2005,11092
+104,Iraq,2006,11972
+104,Iraq,2007,11972
+104,Iraq,2008,13200
+104,Iraq,2009,13042
+104,Iraq,2010,13305
+104,Iraq,2011,13679
+104,Iraq,2012,15106
+104,Iraq,2013,15401
+104,Iraq,2014,15024
+104,Iraq,2015,14853
+104,Iraq,2016,16387
+104,Iraq,2017,15650
+104,Iraq,2018,15365
+105,Ireland,1990,19935
+105,Ireland,1991,20286
+105,Ireland,1992,20557
+105,Ireland,1993,21098
+105,Ireland,1994,22327
+105,Ireland,1995,23944
+105,Ireland,1996,25744
+105,Ireland,1997,27828
+105,Ireland,1998,29704
+105,Ireland,1999,31589
+105,Ireland,2000,34066
+105,Ireland,2001,34511
+105,Ireland,2002,35262
+105,Ireland,2003,36806
+105,Ireland,2004,38755
+105,Ireland,2005,40180
+105,Ireland,2006,41630
+105,Ireland,2007,42012
+105,Ireland,2008,39387
+105,Ireland,2009,35691
+105,Ireland,2010,36300
+105,Ireland,2011,36449
+105,Ireland,2012,36116
+105,Ireland,2013,38059
+105,Ireland,2014,41208
+105,Ireland,2015,45809
+105,Ireland,2016,50911
+105,Ireland,2017,52799
+105,Ireland,2018,55660
+107,Israel,1990,20001
+107,Israel,1991,20469
+107,Israel,1992,21259
+107,Israel,1993,21553
+107,Israel,1994,22535
+107,Israel,1995,23489
+107,Israel,1996,23984
+107,Israel,1997,24212
+107,Israel,1998,24526
+107,Israel,1999,24420
+107,Israel,2000,25092
+107,Israel,2001,25073
+107,Israel,2002,24713
+107,Israel,2003,24510
+107,Israel,2004,25287
+107,Israel,2005,26375
+107,Israel,2006,27494
+107,Israel,2007,28643
+107,Israel,2008,28431
+107,Israel,2009,27942
+107,Israel,2010,29110
+107,Israel,2011,30157
+107,Israel,2012,29852
+107,Israel,2013,30679
+107,Israel,2014,31728
+107,Israel,2015,31814
+107,Israel,2016,32428
+107,Israel,2017,32860
+107,Israel,2018,33650
+108,Italy,1990,30729
+108,Italy,1991,31124
+108,Italy,1992,31315
+108,Italy,1993,31104
+108,Italy,1994,31717
+108,Italy,1995,32742
+108,Italy,1996,33237
+108,Italy,1997,34007
+108,Italy,1998,34513
+108,Italy,1999,35174
+108,Italy,2000,36394
+108,Italy,2001,37046
+108,Italy,2002,37030
+108,Italy,2003,36907
+108,Italy,2004,37370
+108,Italy,2005,37661
+108,Italy,2006,38392
+108,Italy,2007,38642
+108,Italy,2008,37608
+108,Italy,2009,35688
+108,Italy,2010,36128
+108,Italy,2011,36251
+108,Italy,2012,35178
+108,Italy,2013,34161
+108,Italy,2014,33946
+108,Italy,2015,34105
+108,Italy,2016,34818
+108,Italy,2017,35573
+108,Italy,2018,36141
+109,Ivory Coast,1990,2806
+109,Ivory Coast,1991,2759
+109,Ivory Coast,1992,2686
+109,Ivory Coast,1993,2579
+109,Ivory Coast,1994,2600
+109,Ivory Coast,1995,2704
+109,Ivory Coast,1996,2865
+109,Ivory Coast,1997,2925
+109,Ivory Coast,1998,3025
+109,Ivory Coast,1999,2975
+109,Ivory Coast,2000,2713
+109,Ivory Coast,2001,2590
+109,Ivory Coast,2002,2462
+109,Ivory Coast,2003,2311
+109,Ivory Coast,2004,2402
+109,Ivory Coast,2005,2580
+109,Ivory Coast,2006,2559
+109,Ivory Coast,2007,2548
+109,Ivory Coast,2008,2562
+109,Ivory Coast,2009,2580
+109,Ivory Coast,2010,2573
+109,Ivory Coast,2011,2398
+109,Ivory Coast,2012,2609
+109,Ivory Coast,2013,2741
+109,Ivory Coast,2014,2962
+109,Ivory Coast,2015,3126
+109,Ivory Coast,2016,3387
+109,Ivory Coast,2017,3426
+109,Ivory Coast,2018,3589
+110,Jamaica,1990,6597
+110,Jamaica,1991,6804
+110,Jamaica,1992,7013
+110,Jamaica,1993,8003
+110,Jamaica,1994,7797
+110,Jamaica,1995,7963
+110,Jamaica,1996,8099
+110,Jamaica,1997,7882
+110,Jamaica,1998,7638
+110,Jamaica,1999,7630
+110,Jamaica,2000,7621
+110,Jamaica,2001,7593
+110,Jamaica,2002,7562
+110,Jamaica,2003,7826
+110,Jamaica,2004,7902
+110,Jamaica,2005,7904
+110,Jamaica,2006,8165
+110,Jamaica,2007,8243
+110,Jamaica,2008,8241
+110,Jamaica,2009,7730
+110,Jamaica,2010,7714
+110,Jamaica,2011,7821
+110,Jamaica,2012,7886
+110,Jamaica,2013,7802
+110,Jamaica,2014,7806
+110,Jamaica,2015,7751
+110,Jamaica,2016,7721
+110,Jamaica,2017,7870
+110,Jamaica,2018,7932
+111,Japan,1990,30836
+111,Japan,1991,31774
+111,Japan,1992,32015
+111,Japan,1993,31781
+111,Japan,1994,31974
+111,Japan,1995,32731
+111,Japan,1996,33768
+111,Japan,1997,34084
+111,Japan,1998,33586
+111,Japan,1999,33437
+111,Japan,2000,34386
+111,Japan,2001,34477
+111,Japan,2002,34399
+111,Japan,2003,34906
+111,Japan,2004,35770
+111,Japan,2005,36461
+111,Japan,2006,37114
+111,Japan,2007,37821
+111,Japan,2008,37233
+111,Japan,2009,35175
+111,Japan,2010,36685
+111,Japan,2011,36788
+111,Japan,2012,37341
+111,Japan,2013,38387
+111,Japan,2014,38669
+111,Japan,2015,39297
+111,Japan,2016,39407
+111,Japan,2017,40343
+111,Japan,2018,40799
+113,Jordan,1990,5880
+113,Jordan,1991,5514
+113,Jordan,1992,6319
+113,Jordan,1993,6332
+113,Jordan,1994,6354
+113,Jordan,1995,6563
+113,Jordan,1996,6489
+113,Jordan,1997,6651
+113,Jordan,1998,6804
+113,Jordan,1999,6900
+113,Jordan,2000,7312
+113,Jordan,2001,7607
+113,Jordan,2002,7804
+113,Jordan,2003,7997
+113,Jordan,2004,8514
+113,Jordan,2005,8910
+113,Jordan,2006,9303
+113,Jordan,2007,9726
+113,Jordan,2008,9827
+113,Jordan,2009,9830
+113,Jordan,2010,9306
+113,Jordan,2011,9041
+113,Jordan,2012,8759
+113,Jordan,2013,8574
+113,Jordan,2014,8432
+113,Jordan,2015,8308
+113,Jordan,2016,8253
+113,Jordan,2017,8253
+113,Jordan,2018,8268
+114,Kazakhstan,1990,13703
+114,Kazakhstan,1991,12202
+114,Kazakhstan,1992,11595
+114,Kazakhstan,1993,10600
+114,Kazakhstan,1994,9374
+114,Kazakhstan,1995,8740
+114,Kazakhstan,1996,8897
+114,Kazakhstan,1997,9164
+114,Kazakhstan,1998,9152
+114,Kazakhstan,1999,9308
+114,Kazakhstan,2000,9910
+114,Kazakhstan,2001,11427
+114,Kazakhstan,2002,12669
+114,Kazakhstan,2003,13643
+114,Kazakhstan,2004,14676
+114,Kazakhstan,2005,15417
+114,Kazakhstan,2006,16254
+114,Kazakhstan,2007,17233
+114,Kazakhstan,2008,16858
+114,Kazakhstan,2009,17686
+114,Kazakhstan,2010,17928
+114,Kazakhstan,2011,18215
+114,Kazakhstan,2012,19169
+114,Kazakhstan,2013,21010
+114,Kazakhstan,2014,21706
+114,Kazakhstan,2015,23175
+114,Kazakhstan,2016,22062
+114,Kazakhstan,2017,22025
+114,Kazakhstan,2018,22168
+115,Kenya,1990,2265
+115,Kenya,1991,2213
+115,Kenya,1992,2130
+115,Kenya,1993,2027
+115,Kenya,1994,2037
+115,Kenya,1995,2098
+115,Kenya,1996,2157
+115,Kenya,1997,2117
+115,Kenya,1998,2135
+115,Kenya,1999,2116
+115,Kenya,2000,2077
+115,Kenya,2001,2096
+115,Kenya,2002,2055
+115,Kenya,2003,2055
+115,Kenya,2004,2107
+115,Kenya,2005,2188
+115,Kenya,2006,2261
+115,Kenya,2007,2346
+115,Kenya,2008,2295
+115,Kenya,2009,2306
+115,Kenya,2010,2427
+115,Kenya,2011,2516
+115,Kenya,2012,2550
+115,Kenya,2013,2614
+115,Kenya,2014,2676
+115,Kenya,2015,2768
+115,Kenya,2016,2875
+115,Kenya,2017,2936
+115,Kenya,2018,3052
+116,Kiribati,1990,2358
+116,Kiribati,1991,3058
+116,Kiribati,1992,3075
+116,Kiribati,1993,2930
+116,Kiribati,1994,2922
+116,Kiribati,1995,3041
+116,Kiribati,1996,2620
+116,Kiribati,1997,3114
+116,Kiribati,1998,3448
+116,Kiribati,1999,3085
+116,Kiribati,2000,3234
+116,Kiribati,2001,3333
+116,Kiribati,2002,3151
+116,Kiribati,2003,2977
+116,Kiribati,2004,2880
+116,Kiribati,2005,2814
+116,Kiribati,2006,2686
+116,Kiribati,2007,2726
+116,Kiribati,2008,2661
+116,Kiribati,2009,2489
+116,Kiribati,2010,2565
+116,Kiribati,2011,2434
+116,Kiribati,2012,2730
+116,Kiribati,2013,3092
+116,Kiribati,2014,3453
+116,Kiribati,2015,4050
+116,Kiribati,2016,3985
+116,Kiribati,2017,3971
+116,Kiribati,2018,3917
+118,Kuwait,1990,52301
+118,Kuwait,1991,34139
+118,Kuwait,1992,56057
+118,Kuwait,1993,73710
+118,Kuwait,1994,82558
+118,Kuwait,1995,95142
+118,Kuwait,1996,93274
+118,Kuwait,1997,94232
+118,Kuwait,1998,92690
+118,Kuwait,1999,81480
+118,Kuwait,2000,81957
+118,Kuwait,2001,77739
+118,Kuwait,2002,75124
+118,Kuwait,2003,85776
+118,Kuwait,2004,94816
+118,Kuwait,2005,101314
+118,Kuwait,2006,106011
+118,Kuwait,2007,106529
+118,Kuwait,2008,99649
+118,Kuwait,2009,88457
+118,Kuwait,2010,80290
+118,Kuwait,2011,82672
+118,Kuwait,2012,84858
+118,Kuwait,2013,81594
+118,Kuwait,2014,79290
+118,Kuwait,2015,75582
+118,Kuwait,2016,76145
+118,Kuwait,2017,73742
+118,Kuwait,2018,71164
+119,Kyrgyzstan,1990,3420
+119,Kyrgyzstan,1991,3096
+119,Kyrgyzstan,1992,2639
+119,Kyrgyzstan,1993,2224
+119,Kyrgyzstan,1994,1758
+119,Kyrgyzstan,1995,1634
+119,Kyrgyzstan,1996,1728
+119,Kyrgyzstan,1997,1846
+119,Kyrgyzstan,1998,1843
+119,Kyrgyzstan,1999,1859
+119,Kyrgyzstan,2000,1932
+119,Kyrgyzstan,2001,2056
+119,Kyrgyzstan,2002,2043
+119,Kyrgyzstan,2003,2169
+119,Kyrgyzstan,2004,2265
+119,Kyrgyzstan,2005,2258
+119,Kyrgyzstan,2006,2343
+119,Kyrgyzstan,2007,2527
+119,Kyrgyzstan,2008,2649
+119,Kyrgyzstan,2009,2700
+119,Kyrgyzstan,2010,2601
+119,Kyrgyzstan,2011,2610
+119,Kyrgyzstan,2012,2761
+119,Kyrgyzstan,2013,2923
+119,Kyrgyzstan,2014,3021
+119,Kyrgyzstan,2015,3082
+119,Kyrgyzstan,2016,3108
+119,Kyrgyzstan,2017,3199
+119,Kyrgyzstan,2018,3317
+120,Laos,1990,1732
+120,Laos,1991,1756
+120,Laos,1992,1804
+120,Laos,1993,1861
+120,Laos,1994,1961
+120,Laos,1995,2047
+120,Laos,1996,2142
+120,Laos,1997,2198
+120,Laos,1998,2232
+120,Laos,1999,2386
+120,Laos,2000,2419
+120,Laos,2001,2515
+120,Laos,2002,2627
+120,Laos,2003,2698
+120,Laos,2004,2860
+120,Laos,2005,3060
+120,Laos,2006,3158
+120,Laos,2007,3418
+120,Laos,2008,3579
+120,Laos,2009,3856
+120,Laos,2010,3970
+120,Laos,2011,4181
+120,Laos,2012,4506
+120,Laos,2013,4826
+120,Laos,2014,5166
+120,Laos,2015,5460
+120,Laos,2016,5748
+120,Laos,2017,5985
+120,Laos,2018,6317
+121,Latvia,1990,14077
+121,Latvia,1991,12672
+121,Latvia,1992,8229
+121,Latvia,1993,7094
+121,Latvia,1994,7241
+121,Latvia,1995,8345
+121,Latvia,1996,8630
+121,Latvia,1997,9506
+121,Latvia,1998,10214
+121,Latvia,1999,10402
+121,Latvia,2000,11162
+121,Latvia,2001,12087
+121,Latvia,2002,13080
+121,Latvia,2003,14230
+121,Latvia,2004,15345
+121,Latvia,2005,17347
+121,Latvia,2006,19305
+121,Latvia,2007,21284
+121,Latvia,2008,21111
+121,Latvia,2009,19929
+121,Latvia,2010,18481
+121,Latvia,2011,19768
+121,Latvia,2012,20687
+121,Latvia,2013,21518
+121,Latvia,2014,22094
+121,Latvia,2015,22890
+121,Latvia,2016,23648
+121,Latvia,2017,24853
+121,Latvia,2018,26301
+122,Lebanon,1990,6794
+122,Lebanon,1991,8126
+122,Lebanon,1992,9163
+122,Lebanon,1993,9474
+122,Lebanon,1994,9887
+122,Lebanon,1995,10228
+122,Lebanon,1996,10997
+122,Lebanon,1997,10881
+122,Lebanon,1998,11050
+122,Lebanon,1999,10872
+122,Lebanon,2000,10817
+122,Lebanon,2001,10568
+122,Lebanon,2002,9972
+122,Lebanon,2003,8532
+122,Lebanon,2004,10099
+122,Lebanon,2005,10413
+122,Lebanon,2006,10623
+122,Lebanon,2007,11852
+122,Lebanon,2008,12767
+122,Lebanon,2009,13630
+122,Lebanon,2010,14212
+122,Lebanon,2011,13759
+122,Lebanon,2012,13291
+122,Lebanon,2013,12771
+122,Lebanon,2014,12197
+122,Lebanon,2015,11755
+122,Lebanon,2016,11547
+122,Lebanon,2017,11635
+122,Lebanon,2018,11136
+123,Lesotho,1990,2053
+123,Lesotho,1991,2051
+123,Lesotho,1992,2040
+123,Lesotho,1993,1979
+123,Lesotho,1994,2021
+123,Lesotho,1995,1989
+123,Lesotho,1996,2065
+123,Lesotho,1997,2082
+123,Lesotho,1998,2019
+123,Lesotho,1999,2046
+123,Lesotho,2000,2055
+123,Lesotho,2001,2413
+123,Lesotho,2002,2440
+123,Lesotho,2003,2533
+123,Lesotho,2004,2487
+123,Lesotho,2005,2447
+123,Lesotho,2006,2456
+123,Lesotho,2007,2868
+123,Lesotho,2008,3008
+123,Lesotho,2009,2936
+123,Lesotho,2010,3044
+123,Lesotho,2011,3046
+123,Lesotho,2012,3119
+123,Lesotho,2013,3122
+123,Lesotho,2014,3121
+123,Lesotho,2015,3217
+123,Lesotho,2016,3347
+123,Lesotho,2017,3228
+123,Lesotho,2018,3244
+124,Liberia,1990,923
+124,Liberia,1991,806
+124,Liberia,1992,533
+124,Liberia,1993,361
+124,Liberia,1994,281
+124,Liberia,1995,261
+124,Liberia,1996,277
+124,Liberia,1997,531
+124,Liberia,1998,642
+124,Liberia,1999,619
+124,Liberia,2000,1209
+124,Liberia,2001,1162
+124,Liberia,2002,1157
+124,Liberia,2003,781
+124,Liberia,2004,869
+124,Liberia,2005,889
+124,Liberia,2006,926
+124,Liberia,2007,988
+124,Liberia,2008,1016
+124,Liberia,2009,1004
+124,Liberia,2010,1020
+124,Liberia,2011,1094
+124,Liberia,2012,1108
+124,Liberia,2013,1174
+124,Liberia,2014,1152
+124,Liberia,2015,1137
+124,Liberia,2016,1091
+124,Liberia,2017,1085
+124,Liberia,2018,1040
+125,Libya,1990,20344
+125,Libya,1991,22970
+125,Libya,1992,21835
+125,Libya,1993,20561
+125,Libya,1994,20524
+125,Libya,1995,19677
+125,Libya,1996,19747
+125,Libya,1997,20462
+125,Libya,1998,19476
+125,Libya,1999,19271
+125,Libya,2000,19377
+125,Libya,2001,19208
+125,Libya,2002,18774
+125,Libya,2003,21036
+125,Libya,2004,21029
+125,Libya,2005,22871
+125,Libya,2006,24589
+125,Libya,2007,25347
+125,Libya,2008,28539
+125,Libya,2009,28040
+125,Libya,2010,28751
+125,Libya,2011,11114
+125,Libya,2012,24327
+125,Libya,2013,11856
+125,Libya,2014,9285
+125,Libya,2015,9048
+125,Libya,2016,8799
+125,Libya,2017,10997
+125,Libya,2018,11685
+126,Liechtenstein,1990,63874
+126,Liechtenstein,1991,64199
+126,Liechtenstein,1992,65629
+126,Liechtenstein,1993,67508
+126,Liechtenstein,1994,71074
+126,Liechtenstein,1995,74144
+126,Liechtenstein,1996,78080
+126,Liechtenstein,1997,82454
+126,Liechtenstein,1998,87531
+126,Liechtenstein,1999,93739
+126,Liechtenstein,2000,96864
+126,Liechtenstein,2001,87255
+126,Liechtenstein,2002,83956
+126,Liechtenstein,2003,79121
+126,Liechtenstein,2004,78206
+126,Liechtenstein,2005,84033
+126,Liechtenstein,2006,93239
+126,Liechtenstein,2007,103380
+126,Liechtenstein,2008,100278
+126,Liechtenstein,2009,85104
+126,Liechtenstein,2010,89070
+126,Liechtenstein,2011,79352
+126,Liechtenstein,2012,70267
+126,Liechtenstein,2013,92611
+126,Liechtenstein,2014,95536
+126,Liechtenstein,2015,96869
+126,Liechtenstein,2016,97351
+126,Liechtenstein,2017,98006
+126,Liechtenstein,2018,99732
+127,Lithuania,1990,15932
+127,Lithuania,1991,15044
+127,Lithuania,1992,11890
+127,Lithuania,1993,10000
+127,Lithuania,1994,9068
+127,Lithuania,1995,9340
+127,Lithuania,1996,9809
+127,Lithuania,1997,10609
+127,Lithuania,1998,11444
+127,Lithuania,1999,11378
+127,Lithuania,2000,11969
+127,Lithuania,2001,12913
+127,Lithuania,2002,13939
+127,Lithuania,2003,15310
+127,Lithuania,2004,16587
+127,Lithuania,2005,18273
+127,Lithuania,2006,19834
+127,Lithuania,2007,21881
+127,Lithuania,2008,22756
+127,Lithuania,2009,20672
+127,Lithuania,2010,20672
+127,Lithuania,2011,22015
+127,Lithuania,2012,23326
+127,Lithuania,2013,24492
+127,Lithuania,2014,25912
+127,Lithuania,2015,25924
+127,Lithuania,2016,26860
+127,Lithuania,2017,28375
+127,Lithuania,2018,29775
+128,Luxembourg,1990,60153
+128,Luxembourg,1991,65016
+128,Luxembourg,1992,64709
+128,Luxembourg,1993,65820
+128,Luxembourg,1994,65181
+128,Luxembourg,1995,67316
+128,Luxembourg,1996,67406
+128,Luxembourg,1997,72978
+128,Luxembourg,1998,73360
+128,Luxembourg,1999,76148
+128,Luxembourg,2000,79992
+128,Luxembourg,2001,83182
+128,Luxembourg,2002,77611
+128,Luxembourg,2003,71406
+128,Luxembourg,2004,82808
+128,Luxembourg,2005,84855
+128,Luxembourg,2006,77291
+128,Luxembourg,2007,91519
+128,Luxembourg,2008,86052
+128,Luxembourg,2009,62099
+128,Luxembourg,2010,66588
+128,Luxembourg,2011,63525
+128,Luxembourg,2012,62078
+128,Luxembourg,2013,60205
+128,Luxembourg,2014,60323
+128,Luxembourg,2015,62935
+128,Luxembourg,2016,62818
+128,Luxembourg,2017,65101
+128,Luxembourg,2018,65543
+130,Macedonia,1990,9526
+130,Macedonia,1991,8999
+130,Macedonia,1992,8265
+130,Macedonia,1993,7705
+130,Macedonia,1994,7630
+130,Macedonia,1995,7570
+130,Macedonia,1996,7616
+130,Macedonia,1997,7666
+130,Macedonia,1998,7874
+130,Macedonia,1999,8126
+130,Macedonia,2000,8458
+130,Macedonia,2001,8257
+130,Macedonia,2002,8322
+130,Macedonia,2003,8482
+130,Macedonia,2004,8915
+130,Macedonia,2005,9216
+130,Macedonia,2006,9808
+130,Macedonia,2007,9985
+130,Macedonia,2008,10907
+130,Macedonia,2009,10911
+130,Macedonia,2010,11192
+130,Macedonia,2011,11404
+130,Macedonia,2012,11296
+130,Macedonia,2013,11589
+130,Macedonia,2014,12057
+130,Macedonia,2015,12338
+130,Macedonia,2016,12552
+130,Macedonia,2017,12570
+130,Macedonia,2018,12874
+131,Madagascar,1990,1590
+131,Madagascar,1991,1416
+131,Madagascar,1992,1416
+131,Madagascar,1993,1409
+131,Madagascar,1994,1354
+131,Madagascar,1995,1334
+131,Madagascar,1996,1334
+131,Madagascar,1997,1358
+131,Madagascar,1998,1375
+131,Madagascar,1999,1406
+131,Madagascar,2000,1418
+131,Madagascar,2001,1464
+131,Madagascar,2002,1236
+131,Madagascar,2003,1319
+131,Madagascar,2004,1342
+131,Madagascar,2005,1368
+131,Madagascar,2006,1397
+131,Madagascar,2007,1452
+131,Madagascar,2008,1515
+131,Madagascar,2009,1407
+131,Madagascar,2010,1371
+131,Madagascar,2011,1346
+131,Madagascar,2012,1326
+131,Madagascar,2013,1320
+131,Madagascar,2014,1332
+131,Madagascar,2015,1323
+131,Madagascar,2016,1339
+131,Madagascar,2017,1374
+131,Madagascar,2018,1404
+132,Malawi,1990,730
+132,Malawi,1991,779
+132,Malawi,1992,715
+132,Malawi,1993,784
+132,Malawi,1994,689
+132,Malawi,1995,799
+132,Malawi,1996,856
+132,Malawi,1997,869
+132,Malawi,1998,871
+132,Malawi,1999,873
+132,Malawi,2000,866
+132,Malawi,2001,804
+132,Malawi,2002,803
+132,Malawi,2003,828
+132,Malawi,2004,852
+132,Malawi,2005,859
+132,Malawi,2006,876
+132,Malawi,2007,938
+132,Malawi,2008,982
+132,Malawi,2009,1028
+132,Malawi,2010,1061
+132,Malawi,2011,1082
+132,Malawi,2012,1062
+132,Malawi,2013,1078
+132,Malawi,2014,1112
+132,Malawi,2015,1110
+132,Malawi,2016,1130
+132,Malawi,2017,1149
+132,Malawi,2018,1159
+133,Malaysia,1990,10175
+133,Malaysia,1991,10775
+133,Malaysia,1992,11402
+133,Malaysia,1993,12273
+133,Malaysia,1994,13073
+133,Malaysia,1995,13997
+133,Malaysia,1996,15003
+133,Malaysia,1997,15591
+133,Malaysia,1998,14053
+133,Malaysia,1999,14330
+133,Malaysia,2000,15071
+133,Malaysia,2001,14973
+133,Malaysia,2002,15559
+133,Malaysia,2003,16296
+133,Malaysia,2004,17078
+133,Malaysia,2005,17757
+133,Malaysia,2006,18661
+133,Malaysia,2007,19606
+133,Malaysia,2008,19950
+133,Malaysia,2009,19515
+133,Malaysia,2010,20374
+133,Malaysia,2011,21290
+133,Malaysia,2012,21836
+133,Malaysia,2013,22641
+133,Malaysia,2014,23686
+133,Malaysia,2015,24703
+133,Malaysia,2016,25394
+133,Malaysia,2017,26555
+133,Malaysia,2018,27227
+134,Maldives,1990,6261
+134,Maldives,1991,6327
+134,Maldives,1992,6556
+134,Maldives,1993,6663
+134,Maldives,1994,7112
+134,Maldives,1995,7388
+134,Maldives,1996,7826
+134,Maldives,1997,8285
+134,Maldives,1998,8771
+134,Maldives,1999,9135
+134,Maldives,2000,9332
+134,Maldives,2001,8931
+134,Maldives,2002,9350
+134,Maldives,2003,10249
+134,Maldives,2004,10633
+134,Maldives,2005,9006
+134,Maldives,2006,11092
+134,Maldives,2007,10184
+134,Maldives,2008,11215
+134,Maldives,2009,10287
+134,Maldives,2010,10526
+134,Maldives,2011,11162
+134,Maldives,2012,11105
+134,Maldives,2013,11185
+134,Maldives,2014,11654
+134,Maldives,2015,11658
+134,Maldives,2016,11978
+134,Maldives,2017,12234
+134,Maldives,2018,12549
+135,Mali,1990,1271
+135,Mali,1991,1397
+135,Mali,1992,1317
+135,Mali,1993,1328
+135,Mali,1994,1327
+135,Mali,1995,1295
+135,Mali,1996,1350
+135,Mali,1997,1377
+135,Mali,1998,1445
+135,Mali,1999,1495
+135,Mali,2000,1457
+135,Mali,2001,1571
+135,Mali,2002,1551
+135,Mali,2003,1687
+135,Mali,2004,1661
+135,Mali,2005,1715
+135,Mali,2006,1726
+135,Mali,2007,1747
+135,Mali,2008,1778
+135,Mali,2009,1798
+135,Mali,2010,1804
+135,Mali,2011,1811
+135,Mali,2012,1734
+135,Mali,2013,1744
+135,Mali,2014,1813
+135,Mali,2015,1868
+135,Mali,2016,1904
+135,Mali,2017,1964
+135,Mali,2018,1965
+136,Malta,1990,17386
+136,Malta,1991,17760
+136,Malta,1992,18161
+136,Malta,1993,18609
+136,Malta,1994,19122
+136,Malta,1995,20040
+136,Malta,1996,20490
+136,Malta,1997,21394
+136,Malta,1998,21911
+136,Malta,1999,23432
+136,Malta,2000,24095
+136,Malta,2001,24782
+136,Malta,2002,25235
+136,Malta,2003,25447
+136,Malta,2004,25466
+136,Malta,2005,25498
+136,Malta,2006,25754
+136,Malta,2007,26809
+136,Malta,2008,27708
+136,Malta,2009,25659
+136,Malta,2010,26854
+136,Malta,2011,27670
+136,Malta,2012,27927
+136,Malta,2013,28688
+136,Malta,2014,30663
+136,Malta,2015,32640
+136,Malta,2016,32619
+136,Malta,2017,33461
+136,Malta,2018,34795
+137,Marshall Islands,1990,3737
+137,Marshall Islands,1991,3650
+137,Marshall Islands,1992,3839
+137,Marshall Islands,1993,4015
+137,Marshall Islands,1994,4206
+137,Marshall Islands,1995,4592
+137,Marshall Islands,1996,3947
+137,Marshall Islands,1997,3773
+137,Marshall Islands,1998,3800
+137,Marshall Islands,1999,3806
+137,Marshall Islands,2000,4015
+137,Marshall Islands,2001,4170
+137,Marshall Islands,2002,4106
+137,Marshall Islands,2003,3989
+137,Marshall Islands,2004,3938
+137,Marshall Islands,2005,3982
+137,Marshall Islands,2006,3951
+137,Marshall Islands,2007,4035
+137,Marshall Islands,2008,3926
+137,Marshall Islands,2009,3858
+137,Marshall Islands,2010,3923
+137,Marshall Islands,2011,3978
+137,Marshall Islands,2012,3956
+137,Marshall Islands,2013,4148
+137,Marshall Islands,2014,4314
+137,Marshall Islands,2015,4605
+137,Marshall Islands,2016,4506
+137,Marshall Islands,2017,4587
+137,Marshall Islands,2018,4633
+139,Mauritania,1990,2675
+139,Mauritania,1991,2699
+139,Mauritania,1992,2688
+139,Mauritania,1993,2752
+139,Mauritania,1994,2596
+139,Mauritania,1995,2779
+139,Mauritania,1996,3047
+139,Mauritania,1997,2840
+139,Mauritania,1998,2866
+139,Mauritania,1999,3015
+139,Mauritania,2000,2896
+139,Mauritania,2001,2780
+139,Mauritania,2002,2901
+139,Mauritania,2003,2978
+139,Mauritania,2004,3058
+139,Mauritania,2005,3221
+139,Mauritania,2006,3511
+139,Mauritania,2007,3536
+139,Mauritania,2008,3522
+139,Mauritania,2009,3461
+139,Mauritania,2010,3398
+139,Mauritania,2011,3379
+139,Mauritania,2012,3449
+139,Mauritania,2013,3566
+139,Mauritania,2014,3629
+139,Mauritania,2015,3622
+139,Mauritania,2016,3636
+139,Mauritania,2017,3682
+139,Mauritania,2018,3746
+140,Mauritius,1990,7503
+140,Mauritius,1991,7830
+140,Mauritius,1992,8243
+140,Mauritius,1993,8540
+140,Mauritius,1994,8703
+140,Mauritius,1995,9016
+140,Mauritius,1996,9374
+140,Mauritius,1997,9840
+140,Mauritius,1998,10306
+140,Mauritius,1999,10468
+140,Mauritius,2000,11219
+140,Mauritius,2001,11576
+140,Mauritius,2002,11680
+140,Mauritius,2003,12189
+140,Mauritius,2004,12674
+140,Mauritius,2005,12835
+140,Mauritius,2006,13506
+140,Mauritius,2007,14491
+140,Mauritius,2008,15056
+140,Mauritius,2009,15351
+140,Mauritius,2010,15783
+140,Mauritius,2011,16247
+140,Mauritius,2012,17590
+140,Mauritius,2013,18760
+140,Mauritius,2014,19421
+140,Mauritius,2015,20188
+140,Mauritius,2016,20893
+140,Mauritius,2017,21966
+140,Mauritius,2018,22724
+142,Mexico,1990,13156
+142,Mexico,1991,13535
+142,Mexico,1992,13775
+142,Mexico,1993,13836
+142,Mexico,1994,14260
+142,Mexico,1995,12963
+142,Mexico,1996,13671
+142,Mexico,1997,14502
+142,Mexico,1998,15021
+142,Mexico,1999,15264
+142,Mexico,2000,15790
+142,Mexico,2001,15554
+142,Mexico,2002,15356
+142,Mexico,2003,15362
+142,Mexico,2004,15781
+142,Mexico,2005,15814
+142,Mexico,2006,16386
+142,Mexico,2007,16488
+142,Mexico,2008,16476
+142,Mexico,2009,15334
+142,Mexico,2010,15970
+142,Mexico,2011,16258
+142,Mexico,2012,16568
+142,Mexico,2013,16411
+142,Mexico,2014,16757
+142,Mexico,2015,17074
+142,Mexico,2016,17344
+142,Mexico,2017,17533
+142,Mexico,2018,17628
+143,Micronesia,1990,3330
+143,Micronesia,1991,3390
+143,Micronesia,1992,3336
+143,Micronesia,1993,3349
+143,Micronesia,1994,3276
+143,Micronesia,1995,3299
+143,Micronesia,1996,3163
+143,Micronesia,1997,3133
+143,Micronesia,1998,3019
+143,Micronesia,1999,3056
+143,Micronesia,2000,3204
+143,Micronesia,2001,3251
+143,Micronesia,2002,3267
+143,Micronesia,2003,3321
+143,Micronesia,2004,3267
+143,Micronesia,2005,3366
+143,Micronesia,2006,3387
+143,Micronesia,2007,3372
+143,Micronesia,2008,3284
+143,Micronesia,2009,3443
+143,Micronesia,2010,3439
+143,Micronesia,2011,3519
+143,Micronesia,2012,3468
+143,Micronesia,2013,3395
+143,Micronesia,2014,3272
+143,Micronesia,2015,3728
+143,Micronesia,2016,3635
+143,Micronesia,2017,3700
+143,Micronesia,2018,3700
+144,Moldova,1990,6743
+144,Moldova,1991,5552
+144,Moldova,1992,3902
+144,Moldova,1993,3871
+144,Moldova,1994,2686
+144,Moldova,1995,3104
+144,Moldova,1996,3062
+144,Moldova,1997,3104
+144,Moldova,1998,2892
+144,Moldova,1999,2799
+144,Moldova,2000,2852
+144,Moldova,2001,3172
+144,Moldova,2002,3431
+144,Moldova,2003,3845
+144,Moldova,2004,4175
+144,Moldova,2005,4457
+144,Moldova,2006,4673
+144,Moldova,2007,4727
+144,Moldova,2008,5117
+144,Moldova,2009,4648
+144,Moldova,2010,5073
+144,Moldova,2011,5357
+144,Moldova,2012,5454
+144,Moldova,2013,5956
+144,Moldova,2014,6212
+144,Moldova,2015,6032
+144,Moldova,2016,6292
+144,Moldova,2017,6603
+144,Moldova,2018,6833
+146,Mongolia,1990,5048
+146,Mongolia,1991,4608
+146,Mongolia,1992,4058
+146,Mongolia,1993,3837
+146,Mongolia,1994,3946
+146,Mongolia,1995,4176
+146,Mongolia,1996,4269
+146,Mongolia,1997,4401
+146,Mongolia,1998,4558
+146,Mongolia,1999,4656
+146,Mongolia,2000,4646
+146,Mongolia,2001,4753
+146,Mongolia,2002,4922
+146,Mongolia,2003,5192
+146,Mongolia,2004,5689
+146,Mongolia,2005,5938
+146,Mongolia,2006,6417
+146,Mongolia,2007,6905
+146,Mongolia,2008,7351
+146,Mongolia,2009,7057
+146,Mongolia,2010,7086
+146,Mongolia,2011,8124
+146,Mongolia,2012,8981
+146,Mongolia,2013,10079
+146,Mongolia,2014,10384
+146,Mongolia,2015,10435
+146,Mongolia,2016,10324
+146,Mongolia,2017,9892
+146,Mongolia,2018,10784
+147,Montenegro,1990,\N
+147,Montenegro,1991,\N
+147,Montenegro,1992,\N
+147,Montenegro,1993,\N
+147,Montenegro,1994,\N
+147,Montenegro,1995,\N
+147,Montenegro,1996,\N
+147,Montenegro,1997,\N
+147,Montenegro,1998,\N
+147,Montenegro,1999,\N
+147,Montenegro,2000,10917
+147,Montenegro,2001,10987
+147,Montenegro,2002,11214
+147,Montenegro,2003,11472
+147,Montenegro,2004,11884
+147,Montenegro,2005,11885
+147,Montenegro,2006,12959
+147,Montenegro,2007,13767
+147,Montenegro,2008,14786
+147,Montenegro,2009,13706
+147,Montenegro,2010,13921
+147,Montenegro,2011,14589
+147,Montenegro,2012,14310
+147,Montenegro,2013,14847
+147,Montenegro,2014,15001
+147,Montenegro,2015,15647
+147,Montenegro,2016,15883
+147,Montenegro,2017,16855
+147,Montenegro,2018,17511
+149,Morocco,1990,3809
+149,Morocco,1991,4000
+149,Morocco,1992,3860
+149,Morocco,1993,3744
+149,Morocco,1994,4095
+149,Morocco,1995,3797
+149,Morocco,1996,4240
+149,Morocco,1997,4114
+149,Morocco,1998,4383
+149,Morocco,1999,4378
+149,Morocco,2000,4402
+149,Morocco,2001,4673
+149,Morocco,2002,4777
+149,Morocco,2003,5012
+149,Morocco,2004,5211
+149,Morocco,2005,5349
+149,Morocco,2006,5680
+149,Morocco,2007,5824
+149,Morocco,2008,6104
+149,Morocco,2009,6210
+149,Morocco,2010,6366
+149,Morocco,2011,6591
+149,Morocco,2012,6671
+149,Morocco,2013,6923
+149,Morocco,2014,6939
+149,Morocco,2015,7183
+149,Morocco,2016,7169
+149,Morocco,2017,7342
+149,Morocco,2018,7480
+150,Mozambique,1990,373
+150,Mozambique,1991,381
+150,Mozambique,1992,340
+150,Mozambique,1993,357
+150,Mozambique,1994,364
+150,Mozambique,1995,365
+150,Mozambique,1996,456
+150,Mozambique,1997,495
+150,Mozambique,1998,538
+150,Mozambique,1999,571
+150,Mozambique,2000,554
+150,Mozambique,2001,604
+150,Mozambique,2002,590
+150,Mozambique,2003,666
+150,Mozambique,2004,687
+150,Mozambique,2005,723
+150,Mozambique,2006,749
+150,Mozambique,2007,792
+150,Mozambique,2008,829
+150,Mozambique,2009,886
+150,Mozambique,2010,913
+150,Mozambique,2011,970
+150,Mozambique,2012,1021
+150,Mozambique,2013,1065
+150,Mozambique,2014,1103
+150,Mozambique,2015,1133
+150,Mozambique,2016,1138
+150,Mozambique,2017,1139
+150,Mozambique,2018,1154
+151,Myanmar,1990,730
+151,Myanmar,1991,715
+151,Myanmar,1992,775
+151,Myanmar,1993,812
+151,Myanmar,1994,863
+151,Myanmar,1995,912
+151,Myanmar,1996,960
+151,Myanmar,1997,1001
+151,Myanmar,1998,1046
+151,Myanmar,1999,1146
+151,Myanmar,2000,1289
+151,Myanmar,2001,1418
+151,Myanmar,2002,1574
+151,Myanmar,2003,1775
+151,Myanmar,2004,1999
+151,Myanmar,2005,2252
+151,Myanmar,2006,2529
+151,Myanmar,2007,2814
+151,Myanmar,2008,3083
+151,Myanmar,2009,3387
+151,Myanmar,2010,3688
+151,Myanmar,2011,3864
+151,Myanmar,2012,3951
+151,Myanmar,2013,4284
+151,Myanmar,2014,4547
+151,Myanmar,2015,4863
+151,Myanmar,2016,5155
+151,Myanmar,2017,5443
+151,Myanmar,2018,5764
+152,Namibia,1990,5821
+152,Namibia,1991,6213
+152,Namibia,1992,6324
+152,Namibia,1993,6105
+152,Namibia,1994,6051
+152,Namibia,1995,6289
+152,Namibia,1996,6235
+152,Namibia,1997,6352
+152,Namibia,1998,6474
+152,Namibia,1999,6402
+152,Namibia,2000,6720
+152,Namibia,2001,6641
+152,Namibia,2002,6965
+152,Namibia,2003,7379
+152,Namibia,2004,7868
+152,Namibia,2005,7732
+152,Namibia,2006,8205
+152,Namibia,2007,8246
+152,Namibia,2008,8324
+152,Namibia,2009,8176
+152,Namibia,2010,8348
+152,Namibia,2011,8718
+152,Namibia,2012,8863
+152,Namibia,2013,9534
+152,Namibia,2014,10011
+152,Namibia,2015,10402
+152,Namibia,2016,10171
+152,Namibia,2017,9779
+152,Namibia,2018,9683
+153,Nauru,1990,\N
+153,Nauru,1991,\N
+153,Nauru,1992,\N
+153,Nauru,1993,\N
+153,Nauru,1994,\N
+153,Nauru,1995,\N
+153,Nauru,1996,\N
+153,Nauru,1997,\N
+153,Nauru,1998,\N
+153,Nauru,1999,\N
+153,Nauru,2000,7832
+153,Nauru,2001,7071
+153,Nauru,2002,6427
+153,Nauru,2003,6842
+153,Nauru,2004,5656
+153,Nauru,2005,6051
+153,Nauru,2006,3631
+153,Nauru,2007,5640
+153,Nauru,2008,5824
+153,Nauru,2009,6901
+153,Nauru,2010,7694
+153,Nauru,2011,8162
+153,Nauru,2012,9474
+153,Nauru,2013,12321
+153,Nauru,2014,14991
+153,Nauru,2015,15203
+153,Nauru,2016,16239
+153,Nauru,2017,17345
+153,Nauru,2018,17313
+154,Nepal,1990,1192
+154,Nepal,1991,1235
+154,Nepal,1992,1252
+154,Nepal,1993,1263
+154,Nepal,1994,1332
+154,Nepal,1995,1342
+154,Nepal,1996,1381
+154,Nepal,1997,1419
+154,Nepal,1998,1432
+154,Nepal,1999,1467
+154,Nepal,2000,1532
+154,Nepal,2001,1579
+154,Nepal,2002,1549
+154,Nepal,2003,1587
+154,Nepal,2004,1637
+154,Nepal,2005,1682
+154,Nepal,2006,1725
+154,Nepal,2007,1767
+154,Nepal,2008,1854
+154,Nepal,2009,1926
+154,Nepal,2010,2002
+154,Nepal,2011,2064
+154,Nepal,2012,2172
+154,Nepal,2013,2267
+154,Nepal,2014,2426
+154,Nepal,2015,2496
+154,Nepal,2016,2486
+154,Nepal,2017,2639
+154,Nepal,2018,2748
+155,Netherlands,1990,32233
+155,Netherlands,1991,32868
+155,Netherlands,1992,33079
+155,Netherlands,1993,33452
+155,Netherlands,1994,34416
+155,Netherlands,1995,35534
+155,Netherlands,1996,36660
+155,Netherlands,1997,37796
+155,Netherlands,1998,38813
+155,Netherlands,1999,41174
+155,Netherlands,2000,42776
+155,Netherlands,2001,42472
+155,Netherlands,2002,42380
+155,Netherlands,2003,42816
+155,Netherlands,2004,43297
+155,Netherlands,2005,43221
+155,Netherlands,2006,45632
+155,Netherlands,2007,46861
+155,Netherlands,2008,46360
+155,Netherlands,2009,45277
+155,Netherlands,2010,46241
+155,Netherlands,2011,47251
+155,Netherlands,2012,46735
+155,Netherlands,2013,46374
+155,Netherlands,2014,46129
+155,Netherlands,2015,46976
+155,Netherlands,2016,47008
+155,Netherlands,2017,48994
+155,Netherlands,2018,50013
+158,New Zealand,1990,23099
+158,New Zealand,1991,21231
+158,New Zealand,1992,21294
+158,New Zealand,1993,22228
+158,New Zealand,1994,23146
+158,New Zealand,1995,24019
+158,New Zealand,1996,24213
+158,New Zealand,1997,24725
+158,New Zealand,1998,25064
+158,New Zealand,1999,25928
+158,New Zealand,2000,26615
+158,New Zealand,2001,27527
+158,New Zealand,2002,28332
+158,New Zealand,2003,29105
+158,New Zealand,2004,29558
+158,New Zealand,2005,29945
+158,New Zealand,2006,30358
+158,New Zealand,2007,30778
+158,New Zealand,2008,30197
+158,New Zealand,2009,30816
+158,New Zealand,2010,30643
+158,New Zealand,2011,31252
+158,New Zealand,2012,31911
+158,New Zealand,2013,32521
+158,New Zealand,2014,33193
+158,New Zealand,2015,33983
+158,New Zealand,2016,34538
+158,New Zealand,2017,34668
+158,New Zealand,2018,35108
+159,Nicaragua,1990,2860
+159,Nicaragua,1991,2221
+159,Nicaragua,1992,2027
+159,Nicaragua,1993,2058
+159,Nicaragua,1994,2421
+159,Nicaragua,1995,2618
+159,Nicaragua,1996,2786
+159,Nicaragua,1997,2898
+159,Nicaragua,1998,3024
+159,Nicaragua,1999,3186
+159,Nicaragua,2000,3272
+159,Nicaragua,2001,3300
+159,Nicaragua,2002,3299
+159,Nicaragua,2003,3346
+159,Nicaragua,2004,3494
+159,Nicaragua,2005,3631
+159,Nicaragua,2006,3703
+159,Nicaragua,2007,3859
+159,Nicaragua,2008,3937
+159,Nicaragua,2009,3733
+159,Nicaragua,2010,3855
+159,Nicaragua,2011,4047
+159,Nicaragua,2012,4245
+159,Nicaragua,2013,4397
+159,Nicaragua,2014,4561
+159,Nicaragua,2015,4709
+159,Nicaragua,2016,4859
+159,Nicaragua,2017,5025
+159,Nicaragua,2018,4790
+160,Niger,1990,872
+160,Niger,1991,871
+160,Niger,1992,791
+160,Niger,1993,775
+160,Niger,1994,775
+160,Niger,1995,762
+160,Niger,1996,771
+160,Niger,1997,764
+160,Niger,1998,818
+160,Niger,1999,786
+160,Niger,2000,748
+160,Niger,2001,774
+160,Niger,2002,765
+160,Niger,2003,778
+160,Niger,2004,755
+160,Niger,2005,761
+160,Niger,2006,778
+160,Niger,2007,772
+160,Niger,2008,812
+160,Niger,2009,774
+160,Niger,2010,806
+160,Niger,2011,793
+160,Niger,2012,843
+160,Niger,2013,849
+160,Niger,2014,884
+160,Niger,2015,884
+160,Niger,2016,892
+160,Niger,2017,901
+160,Niger,2018,912
+161,Nigeria,1990,3221
+161,Nigeria,1991,3157
+161,Nigeria,1992,3191
+161,Nigeria,1993,2995
+161,Nigeria,1994,2912
+161,Nigeria,1995,2872
+161,Nigeria,1996,2924
+161,Nigeria,1997,2946
+161,Nigeria,1998,2936
+161,Nigeria,1999,2932
+161,Nigeria,2000,2828
+161,Nigeria,2001,3011
+161,Nigeria,2002,3381
+161,Nigeria,2003,3499
+161,Nigeria,2004,3699
+161,Nigeria,2005,3819
+161,Nigeria,2006,4166
+161,Nigeria,2007,4207
+161,Nigeria,2008,4375
+161,Nigeria,2009,4573
+161,Nigeria,2010,4793
+161,Nigeria,2011,4924
+161,Nigeria,2012,5017
+161,Nigeria,2013,5220
+161,Nigeria,2014,5494
+161,Nigeria,2015,5540
+161,Nigeria,2016,5336
+161,Nigeria,2017,5203
+161,Nigeria,2018,5086
+166,Norway,1990,41798
+166,Norway,1991,42764
+166,Norway,1992,44456
+166,Norway,1993,45390
+166,Norway,1994,47653
+166,Norway,1995,49556
+166,Norway,1996,51806
+166,Norway,1997,54283
+166,Norway,1998,55359
+166,Norway,1999,56202
+166,Norway,2000,57315
+166,Norway,2001,58984
+166,Norway,2002,59620
+166,Norway,2003,59979
+166,Norway,2004,61761
+166,Norway,2005,63509
+166,Norway,2006,63879
+166,Norway,2007,64859
+166,Norway,2008,64254
+166,Norway,2009,63017
+166,Norway,2010,62994
+166,Norway,2011,62729
+166,Norway,2012,63523
+166,Norway,2013,63573
+166,Norway,2014,65438
+166,Norway,2015,66584
+166,Norway,2016,66746
+166,Norway,2017,67529
+166,Norway,2018,68059
+167,Oman,1990,34936
+167,Oman,1991,35829
+167,Oman,1992,36493
+167,Oman,1993,37076
+167,Oman,1994,37085
+167,Oman,1995,38098
+167,Oman,1996,38567
+167,Oman,1997,40569
+167,Oman,1998,41176
+167,Oman,1999,41093
+167,Oman,2000,43271
+167,Oman,2001,44795
+167,Oman,2002,43043
+167,Oman,2003,41579
+167,Oman,2004,41322
+167,Oman,2005,40620
+167,Oman,2006,38774
+167,Oman,2007,42549
+167,Oman,2008,43322
+167,Oman,2009,43636
+167,Oman,2010,42949
+167,Oman,2011,39387
+167,Oman,2012,40034
+167,Oman,2013,39832
+167,Oman,2014,37675
+167,Oman,2015,38837
+167,Oman,2016,39066
+167,Oman,2017,37379
+167,Oman,2018,37039
+168,Pakistan,1990,3195
+168,Pakistan,1991,3199
+168,Pakistan,1992,3306
+168,Pakistan,1993,3263
+168,Pakistan,1994,3276
+168,Pakistan,1995,3361
+168,Pakistan,1996,3386
+168,Pakistan,1997,3307
+168,Pakistan,1998,3291
+168,Pakistan,1999,3321
+168,Pakistan,2000,3358
+168,Pakistan,2001,3339
+168,Pakistan,2002,3430
+168,Pakistan,2003,3605
+168,Pakistan,2004,3748
+168,Pakistan,2005,3938
+168,Pakistan,2006,4075
+168,Pakistan,2007,4170
+168,Pakistan,2008,4155
+168,Pakistan,2009,4205
+168,Pakistan,2010,4227
+168,Pakistan,2011,4278
+168,Pakistan,2012,4360
+168,Pakistan,2013,4457
+168,Pakistan,2014,4590
+168,Pakistan,2015,4727
+168,Pakistan,2016,4891
+168,Pakistan,2017,5033
+168,Pakistan,2018,5190
+169,Palau,1990,11406
+169,Palau,1991,12346
+169,Palau,1992,11245
+169,Palau,1993,9967
+169,Palau,1994,10349
+169,Palau,1995,10758
+169,Palau,1996,11088
+169,Palau,1997,10885
+169,Palau,1998,10535
+169,Palau,1999,10365
+169,Palau,2000,11421
+169,Palau,2001,11973
+169,Palau,2002,12182
+169,Palau,2003,11990
+169,Palau,2004,12736
+169,Palau,2005,13786
+169,Palau,2006,13358
+169,Palau,2007,13772
+169,Palau,2008,13115
+169,Palau,2009,13342
+169,Palau,2010,13539
+169,Palau,2011,14510
+169,Palau,2012,14923
+169,Palau,2013,14267
+169,Palau,2014,15092
+169,Palau,2015,16045
+169,Palau,2016,16325
+169,Palau,2017,15981
+169,Palau,2018,16720
+170,Palestinian Territory,1990,1079
+170,Palestinian Territory,1991,984
+170,Palestinian Territory,1992,1176
+170,Palestinian Territory,1993,1241
+170,Palestinian Territory,1994,3641
+170,Palestinian Territory,1995,3749
+170,Palestinian Territory,1996,3595
+170,Palestinian Territory,1997,3987
+170,Palestinian Territory,1998,4584
+170,Palestinian Territory,1999,4834
+170,Palestinian Territory,2000,4126
+170,Palestinian Territory,2001,3521
+170,Palestinian Territory,2002,2958
+170,Palestinian Territory,2003,3287
+170,Palestinian Territory,2004,3501
+170,Palestinian Territory,2005,3849
+170,Palestinian Territory,2006,3650
+170,Palestinian Territory,2007,3831
+170,Palestinian Territory,2008,3965
+170,Palestinian Territory,2009,4092
+170,Palestinian Territory,2010,4287
+170,Palestinian Territory,2011,4721
+170,Palestinian Territory,2012,4926
+170,Palestinian Territory,2013,4980
+170,Palestinian Territory,2014,4957
+170,Palestinian Territory,2015,5103
+170,Palestinian Territory,2016,5253
+170,Palestinian Territory,2017,5284
+170,Palestinian Territory,2018,5314
+171,Panama,1990,7597
+171,Panama,1991,7914
+171,Panama,1992,8495
+171,Panama,1993,8974
+171,Panama,1994,9155
+171,Panama,1995,8958
+171,Panama,1996,9184
+171,Panama,1997,9465
+171,Panama,1998,9929
+171,Panama,1999,9990
+171,Panama,2000,10226
+171,Panama,2001,10030
+171,Panama,2002,10396
+171,Panama,2003,10288
+171,Panama,2004,10707
+171,Panama,2005,11200
+171,Panama,2006,11967
+171,Panama,2007,13036
+171,Panama,2008,14170
+171,Panama,2009,14004
+171,Panama,2010,14182
+171,Panama,2011,16086
+171,Panama,2012,17235
+171,Panama,2013,17914
+171,Panama,2014,17985
+171,Panama,2015,18636
+171,Panama,2016,19212
+171,Panama,2017,20066
+171,Panama,2018,20455
+172,Papua New Guinea,1990,2133
+172,Papua New Guinea,1991,2296
+172,Papua New Guinea,1992,2400
+172,Papua New Guinea,1993,2784
+172,Papua New Guinea,1994,2924
+172,Papua New Guinea,1995,2809
+172,Papua New Guinea,1996,2854
+172,Papua New Guinea,1997,2746
+172,Papua New Guinea,1998,2566
+172,Papua New Guinea,1999,2519
+172,Papua New Guinea,2000,2453
+172,Papua New Guinea,2001,2350
+172,Papua New Guinea,2002,2313
+172,Papua New Guinea,2003,2216
+172,Papua New Guinea,2004,2283
+172,Papua New Guinea,2005,2439
+172,Papua New Guinea,2006,2366
+172,Papua New Guinea,2007,2627
+172,Papua New Guinea,2008,2612
+172,Papua New Guinea,2009,2728
+172,Papua New Guinea,2010,2854
+172,Papua New Guinea,2011,2881
+172,Papua New Guinea,2012,2947
+172,Papua New Guinea,2013,2833
+172,Papua New Guinea,2014,3469
+172,Papua New Guinea,2015,3739
+172,Papua New Guinea,2016,3810
+172,Papua New Guinea,2017,3765
+172,Papua New Guinea,2018,3686
+173,Paraguay,1990,6484
+173,Paraguay,1991,6408
+173,Paraguay,1992,6325
+173,Paraguay,1993,6829
+173,Paraguay,1994,7403
+173,Paraguay,1995,7827
+173,Paraguay,1996,8239
+173,Paraguay,1997,8120
+173,Paraguay,1998,7939
+173,Paraguay,1999,7649
+173,Paraguay,2000,7003
+173,Paraguay,2001,6902
+173,Paraguay,2002,6928
+173,Paraguay,2003,6537
+173,Paraguay,2004,6847
+173,Paraguay,2005,6956
+173,Paraguay,2006,7459
+173,Paraguay,2007,8123
+173,Paraguay,2008,8635
+173,Paraguay,2009,8461
+173,Paraguay,2010,9275
+173,Paraguay,2011,9668
+173,Paraguay,2012,9406
+173,Paraguay,2013,10092
+173,Paraguay,2014,10477
+173,Paraguay,2015,10649
+173,Paraguay,2016,10922
+173,Paraguay,2017,11430
+173,Paraguay,2018,11720
+174,Peru,1990,4963
+174,Peru,1991,5113
+174,Peru,1992,4989
+174,Peru,1993,5112
+174,Peru,1994,5655
+174,Peru,1995,5940
+174,Peru,1996,6069
+174,Peru,1997,6363
+174,Peru,1998,6289
+174,Peru,1999,6280
+174,Peru,2000,6327
+174,Peru,2001,6322
+174,Peru,2002,6560
+174,Peru,2003,6703
+174,Peru,2004,6845
+174,Peru,2005,7127
+174,Peru,2006,7419
+174,Peru,2007,8007
+174,Peru,2008,8762
+174,Peru,2009,8847
+174,Peru,2010,9360
+174,Peru,2011,9842
+174,Peru,2012,10497
+174,Peru,2013,11163
+174,Peru,2014,11392
+174,Peru,2015,11760
+174,Peru,2016,11956
+174,Peru,2017,11987
+174,Peru,2018,12323
+175,Philippines,1990,3965
+175,Philippines,1991,3892
+175,Philippines,1992,3869
+175,Philippines,1993,3879
+175,Philippines,1994,4001
+175,Philippines,1995,4102
+175,Philippines,1996,4275
+175,Philippines,1997,4468
+175,Philippines,1998,4695
+175,Philippines,1999,4718
+175,Philippines,2000,4972
+175,Philippines,2001,5042
+175,Philippines,2002,5143
+175,Philippines,2003,5269
+175,Philippines,2004,5493
+175,Philippines,2005,5674
+175,Philippines,2006,5822
+175,Philippines,2007,6058
+175,Philippines,2008,6222
+175,Philippines,2009,6407
+175,Philippines,2010,6737
+175,Philippines,2011,6816
+175,Philippines,2012,7179
+175,Philippines,2013,7637
+175,Philippines,2014,7947
+175,Philippines,2015,8290
+175,Philippines,2016,8701
+175,Philippines,2017,9133
+175,Philippines,2018,9540
+177,Poland,1990,9946
+177,Poland,1991,9200
+177,Poland,1992,9314
+177,Poland,1993,9698
+177,Poland,1994,10480
+177,Poland,1995,11137
+177,Poland,1996,11891
+177,Poland,1997,12647
+177,Poland,1998,13230
+177,Poland,1999,13857
+177,Poland,2000,14667
+177,Poland,2001,14869
+177,Poland,2002,15178
+177,Poland,2003,15631
+177,Poland,2004,16078
+177,Poland,2005,16891
+177,Poland,2006,17880
+177,Poland,2007,18903
+177,Poland,2008,20031
+177,Poland,2009,20315
+177,Poland,2010,20986
+177,Poland,2011,22025
+177,Poland,2012,22356
+177,Poland,2013,22766
+177,Poland,2014,23447
+177,Poland,2015,24369
+177,Poland,2016,25042
+177,Poland,2017,26182
+177,Poland,2018,27626
+178,Portugal,1990,20109
+178,Portugal,1991,21079
+178,Portugal,1992,21421
+178,Portugal,1993,20976
+178,Portugal,1994,21062
+178,Portugal,1995,22018
+178,Portugal,1996,22608
+178,Portugal,1997,23334
+178,Portugal,1998,24291
+178,Portugal,1999,25095
+178,Portugal,2000,25510
+178,Portugal,2001,25795
+178,Portugal,2002,25913
+178,Portugal,2003,25701
+178,Portugal,2004,26041
+178,Portugal,2005,26182
+178,Portugal,2006,26102
+178,Portugal,2007,26694
+178,Portugal,2008,26526
+178,Portugal,2009,25753
+178,Portugal,2010,26318
+178,Portugal,2011,26264
+178,Portugal,2012,25180
+178,Portugal,2013,25305
+178,Portugal,2014,25572
+178,Portugal,2015,25860
+178,Portugal,2016,26559
+178,Portugal,2017,27404
+178,Portugal,2018,27935
+180,Qatar,1990,73168
+180,Qatar,1991,70251
+180,Qatar,1992,76947
+180,Qatar,1993,75006
+180,Qatar,1994,75236
+180,Qatar,1995,76081
+180,Qatar,1996,78027
+180,Qatar,1997,99021
+180,Qatar,1998,103043
+180,Qatar,1999,103712
+180,Qatar,2000,100344
+180,Qatar,2001,104649
+180,Qatar,2002,106944
+180,Qatar,2003,107396
+180,Qatar,2004,111551
+180,Qatar,2005,99214
+180,Qatar,2006,111972
+180,Qatar,2007,110766
+180,Qatar,2008,109401
+180,Qatar,2009,103834
+180,Qatar,2010,109354
+180,Qatar,2011,114214
+180,Qatar,2012,112528
+180,Qatar,2013,112039
+180,Qatar,2014,111753
+180,Qatar,2015,114105
+180,Qatar,2016,113965
+180,Qatar,2017,113133
+180,Qatar,2018,110489
+181,Republic of the Congo,1990,5976
+181,Republic of the Congo,1991,6060
+181,Republic of the Congo,1992,6307
+181,Republic of the Congo,1993,5676
+181,Republic of the Congo,1994,5506
+181,Republic of the Congo,1995,4001
+181,Republic of the Congo,1996,4024
+181,Republic of the Congo,1997,4484
+181,Republic of the Congo,1998,5178
+181,Republic of the Congo,1999,4034
+181,Republic of the Congo,2000,3564
+181,Republic of the Congo,2001,3998
+181,Republic of the Congo,2002,4054
+181,Republic of the Congo,2003,3940
+181,Republic of the Congo,2004,3613
+181,Republic of the Congo,2005,2975
+181,Republic of the Congo,2006,2674
+181,Republic of the Congo,2007,3131
+181,Republic of the Congo,2008,3614
+181,Republic of the Congo,2009,4068
+181,Republic of the Congo,2010,4051
+181,Republic of the Congo,2011,3976
+181,Republic of the Congo,2012,4742
+181,Republic of the Congo,2013,5108
+181,Republic of the Congo,2014,5942
+181,Republic of the Congo,2015,7631
+181,Republic of the Congo,2016,6765
+181,Republic of the Congo,2017,6068
+181,Republic of the Congo,2018,5804
+183,Romania,1990,11434
+183,Romania,1991,10077
+183,Romania,1992,9246
+183,Romania,1993,9384
+183,Romania,1994,9775
+183,Romania,1995,10385
+183,Romania,1996,10805
+183,Romania,1997,10302
+183,Romania,1998,10085
+183,Romania,1999,10058
+183,Romania,2000,10368
+183,Romania,2001,11071
+183,Romania,2002,11875
+183,Romania,2003,12083
+183,Romania,2004,13165
+183,Romania,2005,14032
+183,Romania,2006,15171
+183,Romania,2007,16494
+183,Romania,2008,18478
+183,Romania,2009,17801
+183,Romania,2010,17207
+183,Romania,2011,17608
+183,Romania,2012,18044
+183,Romania,2013,18654
+183,Romania,2014,19558
+183,Romania,2015,20157
+183,Romania,2016,21173
+183,Romania,2017,22828
+183,Romania,2018,23906
+184,Russia,1990,20898
+184,Russia,1991,19782
+184,Russia,1992,16756
+184,Russia,1993,15338
+184,Russia,1994,13507
+184,Russia,1995,12897
+184,Russia,1996,12363
+184,Russia,1997,12471
+184,Russia,1998,11592
+184,Russia,1999,12417
+184,Russia,2000,13855
+184,Russia,2001,14823
+184,Russia,2002,15516
+184,Russia,2003,16532
+184,Russia,2004,17938
+184,Russia,2005,19086
+184,Russia,2006,20592
+184,Russia,2007,22542
+184,Russia,2008,23557
+184,Russia,2009,21688
+184,Russia,2010,22647
+184,Russia,2011,23594
+184,Russia,2012,24388
+184,Russia,2013,24675
+184,Russia,2014,24465
+184,Russia,2015,24032
+184,Russia,2016,24096
+184,Russia,2017,24472
+184,Russia,2018,25036
+185,Rwanda,1990,865
+185,Rwanda,1991,866
+185,Rwanda,1992,970
+185,Rwanda,1993,952
+185,Rwanda,1994,501
+185,Rwanda,1995,694
+185,Rwanda,1996,750
+185,Rwanda,1997,801
+185,Rwanda,1998,803
+185,Rwanda,1999,779
+185,Rwanda,2000,796
+185,Rwanda,2001,829
+185,Rwanda,2002,918
+185,Rwanda,2003,920
+185,Rwanda,2004,975
+185,Rwanda,2005,1052
+185,Rwanda,2006,1125
+185,Rwanda,2007,1187
+185,Rwanda,2008,1282
+185,Rwanda,2009,1326
+185,Rwanda,2010,1386
+185,Rwanda,2011,1455
+185,Rwanda,2012,1538
+185,Rwanda,2013,1564
+185,Rwanda,2014,1634
+185,Rwanda,2015,1731
+185,Rwanda,2016,1785
+185,Rwanda,2017,1849
+185,Rwanda,2018,1959
+188,Saint Kitts and Nevis,1990,15163
+188,Saint Kitts and Nevis,1991,14666
+188,Saint Kitts and Nevis,1992,14979
+188,Saint Kitts and Nevis,1993,15811
+188,Saint Kitts and Nevis,1994,16475
+188,Saint Kitts and Nevis,1995,17337
+188,Saint Kitts and Nevis,1996,17956
+188,Saint Kitts and Nevis,1997,18899
+188,Saint Kitts and Nevis,1998,18373
+188,Saint Kitts and Nevis,1999,18717
+188,Saint Kitts and Nevis,2000,20461
+188,Saint Kitts and Nevis,2001,21260
+188,Saint Kitts and Nevis,2002,21424
+188,Saint Kitts and Nevis,2003,20126
+188,Saint Kitts and Nevis,2004,21058
+188,Saint Kitts and Nevis,2005,23149
+188,Saint Kitts and Nevis,2006,23874
+188,Saint Kitts and Nevis,2007,23803
+188,Saint Kitts and Nevis,2008,25126
+188,Saint Kitts and Nevis,2009,24043
+188,Saint Kitts and Nevis,2010,23640
+188,Saint Kitts and Nevis,2011,23898
+188,Saint Kitts and Nevis,2012,23690
+188,Saint Kitts and Nevis,2013,25084
+188,Saint Kitts and Nevis,2014,24854
+188,Saint Kitts and Nevis,2015,25298
+188,Saint Kitts and Nevis,2016,25894
+188,Saint Kitts and Nevis,2017,26287
+188,Saint Kitts and Nevis,2018,26770
+189,Saint Lucia,1990,8551
+189,Saint Lucia,1991,8445
+189,Saint Lucia,1992,9113
+189,Saint Lucia,1993,8954
+189,Saint Lucia,1994,9027
+189,Saint Lucia,1995,9013
+189,Saint Lucia,1996,9234
+189,Saint Lucia,1997,9024
+189,Saint Lucia,1998,9439
+189,Saint Lucia,1999,9609
+189,Saint Lucia,2000,9464
+189,Saint Lucia,2001,8912
+189,Saint Lucia,2002,9006
+189,Saint Lucia,2003,9219
+189,Saint Lucia,2004,9684
+189,Saint Lucia,2005,9561
+189,Saint Lucia,2006,11042
+189,Saint Lucia,2007,11059
+189,Saint Lucia,2008,11411
+189,Saint Lucia,2009,11343
+189,Saint Lucia,2010,11337
+189,Saint Lucia,2011,11881
+189,Saint Lucia,2012,11626
+189,Saint Lucia,2013,11502
+189,Saint Lucia,2014,10787
+189,Saint Lucia,2015,10480
+189,Saint Lucia,2016,11142
+189,Saint Lucia,2017,11599
+189,Saint Lucia,2018,11528
+192,Saint Vincent and the Grenadines,1990,5321
+192,Saint Vincent and the Grenadines,1991,5375
+192,Saint Vincent and the Grenadines,1992,5797
+192,Saint Vincent and the Grenadines,1993,6045
+192,Saint Vincent and the Grenadines,1994,5913
+192,Saint Vincent and the Grenadines,1995,6383
+192,Saint Vincent and the Grenadines,1996,6530
+192,Saint Vincent and the Grenadines,1997,6700
+192,Saint Vincent and the Grenadines,1998,6977
+192,Saint Vincent and the Grenadines,1999,7072
+192,Saint Vincent and the Grenadines,2000,7197
+192,Saint Vincent and the Grenadines,2001,7390
+192,Saint Vincent and the Grenadines,2002,7844
+192,Saint Vincent and the Grenadines,2003,8330
+192,Saint Vincent and the Grenadines,2004,8595
+192,Saint Vincent and the Grenadines,2005,8828
+192,Saint Vincent and the Grenadines,2006,9625
+192,Saint Vincent and the Grenadines,2007,9563
+192,Saint Vincent and the Grenadines,2008,10222
+192,Saint Vincent and the Grenadines,2009,10157
+192,Saint Vincent and the Grenadines,2010,9832
+192,Saint Vincent and the Grenadines,2011,9774
+192,Saint Vincent and the Grenadines,2012,10036
+192,Saint Vincent and the Grenadines,2013,9994
+192,Saint Vincent and the Grenadines,2014,10535
+192,Saint Vincent and the Grenadines,2015,11497
+192,Saint Vincent and the Grenadines,2016,11337
+192,Saint Vincent and the Grenadines,2017,11333
+192,Saint Vincent and the Grenadines,2018,11746
+193,Samoa,1990,4768
+193,Samoa,1991,4574
+193,Samoa,1992,4362
+193,Samoa,1993,4561
+193,Samoa,1994,2988
+193,Samoa,1995,3103
+193,Samoa,1996,3437
+193,Samoa,1997,3438
+193,Samoa,1998,3587
+193,Samoa,1999,3628
+193,Samoa,2000,3844
+193,Samoa,2001,4113
+193,Samoa,2002,4449
+193,Samoa,2003,4606
+193,Samoa,2004,4813
+193,Samoa,2005,4942
+193,Samoa,2006,5037
+193,Samoa,2007,5348
+193,Samoa,2008,5360
+193,Samoa,2009,5142
+193,Samoa,2010,5240
+193,Samoa,2011,5459
+193,Samoa,2012,5458
+193,Samoa,2013,5303
+193,Samoa,2014,5320
+193,Samoa,2015,5456
+193,Samoa,2016,5795
+193,Samoa,2017,5876
+193,Samoa,2018,5885
+195,Sao Tome and Principe,1990,1816
+195,Sao Tome and Principe,1991,1758
+195,Sao Tome and Principe,1992,1732
+195,Sao Tome and Principe,1993,1705
+195,Sao Tome and Principe,1994,1716
+195,Sao Tome and Principe,1995,1695
+195,Sao Tome and Principe,1996,1721
+195,Sao Tome and Principe,1997,1695
+195,Sao Tome and Principe,1998,1684
+195,Sao Tome and Principe,1999,1739
+195,Sao Tome and Principe,2000,1738
+195,Sao Tome and Principe,2001,1892
+195,Sao Tome and Principe,2002,1906
+195,Sao Tome and Principe,2003,2022
+195,Sao Tome and Principe,2004,2049
+195,Sao Tome and Principe,2005,2154
+195,Sao Tome and Principe,2006,2389
+195,Sao Tome and Principe,2007,2419
+195,Sao Tome and Principe,2008,2468
+195,Sao Tome and Principe,2009,2457
+195,Sao Tome and Principe,2010,2567
+195,Sao Tome and Principe,2011,2621
+195,Sao Tome and Principe,2012,2590
+195,Sao Tome and Principe,2013,2736
+195,Sao Tome and Principe,2014,2883
+195,Sao Tome and Principe,2015,2880
+195,Sao Tome and Principe,2016,2962
+195,Sao Tome and Principe,2017,3002
+195,Sao Tome and Principe,2018,3024
+196,Saudi Arabia,1990,44193
+196,Saudi Arabia,1991,48313
+196,Saudi Arabia,1992,48353
+196,Saudi Arabia,1993,46788
+196,Saudi Arabia,1994,45253
+196,Saudi Arabia,1995,44744
+196,Saudi Arabia,1996,44303
+196,Saudi Arabia,1997,43906
+196,Saudi Arabia,1998,44726
+196,Saudi Arabia,1999,42345
+196,Saudi Arabia,2000,43348
+196,Saudi Arabia,2001,41866
+196,Saudi Arabia,2002,39509
+196,Saudi Arabia,2003,42567
+196,Saudi Arabia,2004,44734
+196,Saudi Arabia,2005,45970
+196,Saudi Arabia,2006,46044
+196,Saudi Arabia,2007,45861
+196,Saudi Arabia,2008,47603
+196,Saudi Arabia,2009,45276
+196,Saudi Arabia,2010,45958
+196,Saudi Arabia,2011,49173
+196,Saudi Arabia,2012,50283
+196,Saudi Arabia,2013,50244
+196,Saudi Arabia,2014,50755
+196,Saudi Arabia,2015,51509
+196,Saudi Arabia,2016,51099
+196,Saudi Arabia,2017,49371
+196,Saudi Arabia,2018,49338
+197,Senegal,1990,2262
+197,Senegal,1991,2250
+197,Senegal,1992,2233
+197,Senegal,1993,2177
+197,Senegal,1994,2117
+197,Senegal,1995,2177
+197,Senegal,1996,2194
+197,Senegal,1997,2205
+197,Senegal,1998,2289
+197,Senegal,1999,2365
+197,Senegal,2000,2381
+197,Senegal,2001,2438
+197,Senegal,2002,2388
+197,Senegal,2003,2495
+197,Senegal,2004,2582
+197,Senegal,2005,2660
+197,Senegal,2006,2663
+197,Senegal,2007,2722
+197,Senegal,2008,2764
+197,Senegal,2009,2725
+197,Senegal,2010,2749
+197,Senegal,2011,2696
+197,Senegal,2012,2754
+197,Senegal,2013,2752
+197,Senegal,2014,2846
+197,Senegal,2015,2933
+197,Senegal,2016,3018
+197,Senegal,2017,3139
+197,Senegal,2018,3256
+198,Serbia,1990,12309
+198,Serbia,1991,10777
+198,Serbia,1992,7666
+198,Serbia,1993,6802
+198,Serbia,1994,6932
+198,Serbia,1995,7309
+198,Serbia,1996,7509
+198,Serbia,1997,8107
+198,Serbia,1998,8304
+198,Serbia,1999,7298
+198,Serbia,2000,7938
+198,Serbia,2001,8353
+198,Serbia,2002,8914
+198,Serbia,2003,9307
+198,Serbia,2004,10151
+198,Serbia,2005,10714
+198,Serbia,2006,11784
+198,Serbia,2007,12506
+198,Serbia,2008,13173
+198,Serbia,2009,13006
+198,Serbia,2010,13083
+198,Serbia,2011,13453
+198,Serbia,2012,13282
+198,Serbia,2013,13634
+198,Serbia,2014,13488
+198,Serbia,2015,13677
+198,Serbia,2016,14078
+198,Serbia,2017,14280
+198,Serbia,2018,15218
+200,Seychelles,1990,13709
+200,Seychelles,1991,14000
+200,Seychelles,1992,15048
+200,Seychelles,1993,15627
+200,Seychelles,1994,15326
+200,Seychelles,1995,14514
+200,Seychelles,1996,15143
+200,Seychelles,1997,16896
+200,Seychelles,1998,17728
+200,Seychelles,1999,17609
+200,Seychelles,2000,17504
+200,Seychelles,2001,17513
+200,Seychelles,2002,15963
+200,Seychelles,2003,15810
+200,Seychelles,2004,16601
+200,Seychelles,2005,18002
+200,Seychelles,2006,19281
+200,Seychelles,2007,19508
+200,Seychelles,2008,18353
+200,Seychelles,2009,18468
+200,Seychelles,2010,19226
+200,Seychelles,2011,20991
+200,Seychelles,2012,21340
+200,Seychelles,2013,22225
+200,Seychelles,2014,22638
+200,Seychelles,2015,23355
+200,Seychelles,2016,23671
+200,Seychelles,2017,24431
+200,Seychelles,2018,25077
+201,Sierra Leone,1990,1114
+201,Sierra Leone,1991,1171
+201,Sierra Leone,1992,915
+201,Sierra Leone,1993,987
+201,Sierra Leone,1994,903
+201,Sierra Leone,1995,893
+201,Sierra Leone,1996,931
+201,Sierra Leone,1997,885
+201,Sierra Leone,1998,862
+201,Sierra Leone,1999,843
+201,Sierra Leone,2000,880
+201,Sierra Leone,2001,800
+201,Sierra Leone,2002,970
+201,Sierra Leone,2003,1017
+201,Sierra Leone,2004,1035
+201,Sierra Leone,2005,1040
+201,Sierra Leone,2006,1053
+201,Sierra Leone,2007,1184
+201,Sierra Leone,2008,1251
+201,Sierra Leone,2009,1275
+201,Sierra Leone,2010,1222
+201,Sierra Leone,2011,1238
+201,Sierra Leone,2012,1460
+201,Sierra Leone,2013,1661
+201,Sierra Leone,2014,1673
+201,Sierra Leone,2015,1309
+201,Sierra Leone,2016,1228
+201,Sierra Leone,2017,1360
+201,Sierra Leone,2018,1381
+202,Singapore,1990,34576
+202,Singapore,1991,35663
+202,Singapore,1992,37500
+202,Singapore,1993,39878
+202,Singapore,1994,43910
+202,Singapore,1995,45938
+202,Singapore,1996,46719
+202,Singapore,1997,50261
+202,Singapore,1998,47286
+202,Singapore,1999,49422
+202,Singapore,2000,52046
+202,Singapore,2001,50091
+202,Singapore,2002,50856
+202,Singapore,2003,53580
+202,Singapore,2004,55941
+202,Singapore,2005,58890
+202,Singapore,2006,64304
+202,Singapore,2007,67296
+202,Singapore,2008,64409
+202,Singapore,2009,61565
+202,Singapore,2010,72280
+202,Singapore,2011,73422
+202,Singapore,2012,74094
+202,Singapore,2013,75742
+202,Singapore,2014,79236
+202,Singapore,2015,77686
+202,Singapore,2016,78759
+202,Singapore,2017,81500
+202,Singapore,2018,83793
+204,Slovakia,1990,14628
+204,Slovakia,1991,12404
+204,Slovakia,1992,11544
+204,Slovakia,1993,11664
+204,Slovakia,1994,12358
+204,Slovakia,1995,13245
+204,Slovakia,1996,14149
+204,Slovakia,1997,14876
+204,Slovakia,1998,15443
+204,Slovakia,1999,15298
+204,Slovakia,2000,15513
+204,Slovakia,2001,16150
+204,Slovakia,2002,16813
+204,Slovakia,2003,16874
+204,Slovakia,2004,17965
+204,Slovakia,2005,19433
+204,Slovakia,2006,21030
+204,Slovakia,2007,23310
+204,Slovakia,2008,24896
+204,Slovakia,2009,23801
+204,Slovakia,2010,24585
+204,Slovakia,2011,24896
+204,Slovakia,2012,25716
+204,Slovakia,2013,26328
+204,Slovakia,2014,26939
+204,Slovakia,2015,27693
+204,Slovakia,2016,28706
+204,Slovakia,2017,29544
+204,Slovakia,2018,30672
+205,Slovenia,1990,83449
+205,Slovenia,1991,48846
+205,Slovenia,1992,16414
+205,Slovenia,1993,13956
+205,Slovenia,1994,13684
+205,Slovenia,1995,18515
+205,Slovenia,1996,19133
+205,Slovenia,1997,20076
+205,Slovenia,1998,20759
+205,Slovenia,1999,21853
+205,Slovenia,2000,22656
+205,Slovenia,2001,23325
+205,Slovenia,2002,23999
+205,Slovenia,2003,24618
+205,Slovenia,2004,25587
+205,Slovenia,2005,26695
+205,Slovenia,2006,28026
+205,Slovenia,2007,29483
+205,Slovenia,2008,30313
+205,Slovenia,2009,27963
+205,Slovenia,2010,28291
+205,Slovenia,2011,28411
+205,Slovenia,2012,27545
+205,Slovenia,2013,27253
+205,Slovenia,2014,28149
+205,Slovenia,2015,28128
+205,Slovenia,2016,29114
+205,Slovenia,2017,30777
+205,Slovenia,2018,32143
+206,Solomon Islands,1990,1291
+206,Solomon Islands,1991,1396
+206,Solomon Islands,1992,1452
+206,Solomon Islands,1993,1335
+206,Solomon Islands,1994,1422
+206,Solomon Islands,1995,1482
+206,Solomon Islands,1996,1420
+206,Solomon Islands,1997,2241
+206,Solomon Islands,1998,2214
+206,Solomon Islands,1999,2151
+206,Solomon Islands,2000,1818
+206,Solomon Islands,2001,1637
+206,Solomon Islands,2002,1531
+206,Solomon Islands,2003,1593
+206,Solomon Islands,2004,1650
+206,Solomon Islands,2005,1687
+206,Solomon Islands,2006,1772
+206,Solomon Islands,2007,1711
+206,Solomon Islands,2008,1630
+206,Solomon Islands,2009,1300
+206,Solomon Islands,2010,1364
+206,Solomon Islands,2011,1489
+206,Solomon Islands,2012,1840
+206,Solomon Islands,2013,1961
+206,Solomon Islands,2014,1967
+206,Solomon Islands,2015,2033
+206,Solomon Islands,2016,1986
+206,Solomon Islands,2017,1970
+206,Solomon Islands,2018,2027
+208,South Africa,1990,9588
+208,South Africa,1991,9349
+208,South Africa,1992,8951
+208,South Africa,1993,8855
+208,South Africa,1994,8951
+208,South Africa,1995,9023
+208,South Africa,1996,9210
+208,South Africa,1997,9286
+208,South Africa,1998,9167
+208,South Africa,1999,9244
+208,South Africa,2000,9498
+208,South Africa,2001,9556
+208,South Africa,2002,9842
+208,South Africa,2003,9985
+208,South Africa,2004,10388
+208,South Africa,2005,10798
+208,South Africa,2006,11257
+208,South Africa,2007,11545
+208,South Africa,2008,11777
+208,South Africa,2009,11535
+208,South Africa,2010,11723
+208,South Africa,2011,11868
+208,South Africa,2012,11923
+208,South Africa,2013,12038
+208,South Africa,2014,12063
+208,South Africa,2015,12052
+208,South Africa,2016,11908
+208,South Africa,2017,11864
+208,South Africa,2018,11756
+210,South Korea,1990,11614
+210,South Korea,1991,12687
+210,South Korea,1992,13326
+210,South Korea,1993,14091
+210,South Korea,1994,15213
+210,South Korea,1995,16482
+210,South Korea,1996,17573
+210,South Korea,1997,18400
+210,South Korea,1998,17121
+210,South Korea,1999,18974
+210,South Korea,2000,20601
+210,South Korea,2001,21377
+210,South Korea,2002,22902
+210,South Korea,2003,23457
+210,South Korea,2004,24556
+210,South Korea,2005,25315
+210,South Korea,2006,26600
+210,South Korea,2007,27932
+210,South Korea,2008,28590
+210,South Korea,2009,28579
+210,South Korea,2010,30387
+210,South Korea,2011,31412
+210,South Korea,2012,32099
+210,South Korea,2013,32781
+210,South Korea,2014,33534
+210,South Korea,2015,34276
+210,South Korea,2016,35122
+210,South Korea,2017,35945
+210,South Korea,2018,36757
+211,South Sudan,1990,\N
+211,South Sudan,1991,\N
+211,South Sudan,1992,\N
+211,South Sudan,1993,\N
+211,South Sudan,1994,\N
+211,South Sudan,1995,\N
+211,South Sudan,1996,\N
+211,South Sudan,1997,\N
+211,South Sudan,1998,\N
+211,South Sudan,1999,\N
+211,South Sudan,2000,\N
+211,South Sudan,2001,\N
+211,South Sudan,2002,\N
+211,South Sudan,2003,\N
+211,South Sudan,2004,\N
+211,South Sudan,2005,\N
+211,South Sudan,2006,\N
+211,South Sudan,2007,\N
+211,South Sudan,2008,2399
+211,South Sudan,2009,2403
+211,South Sudan,2010,2421
+211,South Sudan,2011,2381
+211,South Sudan,2012,2234
+211,South Sudan,2013,2372
+211,South Sudan,2014,2310
+211,South Sudan,2015,2096
+211,South Sudan,2016,1686
+211,South Sudan,2017,1518
+211,South Sudan,2018,1455
+212,Spain,1990,23594
+212,Spain,1991,24144
+212,Spain,1992,24217
+212,Spain,1993,23975
+212,Spain,1994,23991
+212,Spain,1995,24982
+212,Spain,1996,25463
+212,Spain,1997,26307
+212,Spain,1998,27308
+212,Spain,1999,28422
+212,Spain,2000,29853
+212,Spain,2001,30624
+212,Spain,2002,31044
+212,Spain,2003,31554
+212,Spain,2004,31961
+212,Spain,2005,32422
+212,Spain,2006,33110
+212,Spain,2007,33494
+212,Spain,2008,33248
+212,Spain,2009,32044
+212,Spain,2010,32045
+212,Spain,2011,31512
+212,Spain,2012,30888
+212,Spain,2013,30516
+212,Spain,2014,31088
+212,Spain,2015,32265
+212,Spain,2016,33379
+212,Spain,2017,34226
+212,Spain,2018,35041
+213,Sri Lanka,1990,3587
+213,Sri Lanka,1991,3704
+213,Sri Lanka,1992,3845
+213,Sri Lanka,1993,4076
+213,Sri Lanka,1994,4239
+213,Sri Lanka,1995,4408
+213,Sri Lanka,1996,4540
+213,Sri Lanka,1997,4815
+213,Sri Lanka,1998,4993
+213,Sri Lanka,1999,5168
+213,Sri Lanka,2000,5441
+213,Sri Lanka,2001,5323
+213,Sri Lanka,2002,5505
+213,Sri Lanka,2003,5816
+213,Sri Lanka,2004,6077
+213,Sri Lanka,2005,6391
+213,Sri Lanka,2006,6820
+213,Sri Lanka,2007,7250
+213,Sri Lanka,2008,7537
+213,Sri Lanka,2009,7835
+213,Sri Lanka,2010,8409
+213,Sri Lanka,2011,9064
+213,Sri Lanka,2012,9804
+213,Sri Lanka,2013,9996
+213,Sri Lanka,2014,10399
+213,Sri Lanka,2015,10789
+213,Sri Lanka,2016,11124
+213,Sri Lanka,2017,11378
+213,Sri Lanka,2018,11611
+214,Sudan,1990,1614
+214,Sudan,1991,1576
+214,Sudan,1992,1689
+214,Sudan,1993,1769
+214,Sudan,1994,1781
+214,Sudan,1995,1855
+214,Sudan,1996,1967
+214,Sudan,1997,2139
+214,Sudan,1998,2164
+214,Sudan,1999,2147
+214,Sudan,2000,2178
+214,Sudan,2001,2233
+214,Sudan,2002,2325
+214,Sudan,2003,2404
+214,Sudan,2004,2412
+214,Sudan,2005,2549
+214,Sudan,2006,2757
+214,Sudan,2007,2967
+214,Sudan,2008,3118
+214,Sudan,2009,3130
+214,Sudan,2010,3128
+214,Sudan,2011,3494
+214,Sudan,2012,3758
+214,Sudan,2013,2685
+214,Sudan,2014,3772
+214,Sudan,2015,3904
+214,Sudan,2016,3994
+214,Sudan,2017,4092
+214,Sudan,2018,3962
+215,Suriname,1990,10377
+215,Suriname,1991,10448
+215,Suriname,1992,10322
+215,Suriname,1993,9321
+215,Suriname,1994,9562
+215,Suriname,1995,9463
+215,Suriname,1996,9380
+215,Suriname,1997,9585
+215,Suriname,1998,9713
+215,Suriname,1999,9311
+215,Suriname,2000,9305
+215,Suriname,2001,8804
+215,Suriname,2002,9847
+215,Suriname,2003,10356
+215,Suriname,2004,11058
+215,Suriname,2005,11656
+215,Suriname,2006,12219
+215,Suriname,2007,12952
+215,Suriname,2008,13423
+215,Suriname,2009,13608
+215,Suriname,2010,13793
+215,Suriname,2011,13912
+215,Suriname,2012,14435
+215,Suriname,2013,14896
+215,Suriname,2014,14955
+215,Suriname,2015,14448
+215,Suriname,2016,12792
+215,Suriname,2017,11607
+215,Suriname,2018,11933
+217,Swaziland,1990,5927
+217,Swaziland,1991,5914
+217,Swaziland,1992,5978
+217,Swaziland,1993,5855
+217,Swaziland,1994,5593
+217,Swaziland,1995,6092
+217,Swaziland,1996,6391
+217,Swaziland,1997,6468
+217,Swaziland,1998,6256
+217,Swaziland,1999,6458
+217,Swaziland,2000,6286
+217,Swaziland,2001,6598
+217,Swaziland,2002,6430
+217,Swaziland,2003,6513
+217,Swaziland,2004,6864
+217,Swaziland,2005,7662
+217,Swaziland,2006,7665
+217,Swaziland,2007,8015
+217,Swaziland,2008,7917
+217,Swaziland,2009,7825
+217,Swaziland,2010,7819
+217,Swaziland,2011,8317
+217,Swaziland,2012,8663
+217,Swaziland,2013,9288
+217,Swaziland,2014,9331
+217,Swaziland,2015,9362
+217,Swaziland,2016,9457
+217,Swaziland,2017,9396
+217,Swaziland,2018,9359
+218,Sweden,1990,30334
+218,Sweden,1991,29502
+218,Sweden,1992,28487
+218,Sweden,1993,27527
+218,Sweden,1994,29069
+218,Sweden,1995,30122
+218,Sweden,1996,30587
+218,Sweden,1997,31489
+218,Sweden,1998,33132
+218,Sweden,1999,35231
+218,Sweden,2000,36928
+218,Sweden,2001,37414
+218,Sweden,2002,38148
+218,Sweden,2003,39454
+218,Sweden,2004,40532
+218,Sweden,2005,41836
+218,Sweden,2006,44087
+218,Sweden,2007,45438
+218,Sweden,2008,45030
+218,Sweden,2009,41885
+218,Sweden,2010,44175
+218,Sweden,2011,44717
+218,Sweden,2012,44360
+218,Sweden,2013,44514
+218,Sweden,2014,45157
+218,Sweden,2015,46168
+218,Sweden,2016,46662
+218,Sweden,2017,47398
+218,Sweden,2018,47955
+219,Switzerland,1990,49156
+219,Switzerland,1991,48156
+219,Switzerland,1992,47492
+219,Switzerland,1993,47218
+219,Switzerland,1994,47077
+219,Switzerland,1995,47382
+219,Switzerland,1996,47545
+219,Switzerland,1997,49353
+219,Switzerland,1998,50883
+219,Switzerland,1999,51880
+219,Switzerland,2000,54127
+219,Switzerland,2001,53135
+219,Switzerland,2002,52175
+219,Switzerland,2003,53812
+219,Switzerland,2004,54719
+219,Switzerland,2005,57194
+219,Switzerland,2006,58584
+219,Switzerland,2007,56611
+219,Switzerland,2008,53101
+219,Switzerland,2009,55849
+219,Switzerland,2010,59150
+219,Switzerland,2011,56832
+219,Switzerland,2012,57403
+219,Switzerland,2013,57718
+219,Switzerland,2014,57463
+219,Switzerland,2015,58723
+219,Switzerland,2016,58138
+219,Switzerland,2017,57301
+219,Switzerland,2018,59375
+220,Syria,1990,3432
+220,Syria,1991,3589
+220,Syria,1992,3975
+220,Syria,1993,4075
+220,Syria,1994,4426
+220,Syria,1995,4608
+220,Syria,1996,4815
+220,Syria,1997,5027
+220,Syria,1998,5111
+220,Syria,1999,4814
+220,Syria,2000,4664
+220,Syria,2001,4764
+220,Syria,2002,5039
+220,Syria,2003,4997
+220,Syria,2004,5246
+220,Syria,2005,5379
+220,Syria,2006,5562
+220,Syria,2007,5725
+220,Syria,2008,5754
+220,Syria,2009,5964
+220,Syria,2010,6086
+220,Syria,2011,5752
+220,Syria,2012,4567
+220,Syria,2013,3538
+220,Syria,2014,2830
+220,Syria,2015,2658
+220,Syria,2016,2551
+220,Syria,2017,2633
+220,Syria,2018,2725
+222,Tajikistan,1990,4147
+222,Tajikistan,1991,3770
+222,Tajikistan,1992,2627
+222,Tajikistan,1993,2161
+222,Tajikistan,1994,1348
+222,Tajikistan,1995,1386
+222,Tajikistan,1996,1104
+222,Tajikistan,1997,1153
+222,Tajikistan,1998,1203
+222,Tajikistan,1999,1228
+222,Tajikistan,2000,1286
+222,Tajikistan,2001,1390
+222,Tajikistan,2002,1515
+222,Tajikistan,2003,1637
+222,Tajikistan,2004,1810
+222,Tajikistan,2005,1905
+222,Tajikistan,2006,1998
+222,Tajikistan,2007,2135
+222,Tajikistan,2008,2273
+222,Tajikistan,2009,2306
+222,Tajikistan,2010,2704
+222,Tajikistan,2011,2863
+222,Tajikistan,2012,3006
+222,Tajikistan,2013,3190
+222,Tajikistan,2014,3133
+222,Tajikistan,2015,3089
+222,Tajikistan,2016,3168
+222,Tajikistan,2017,3262
+222,Tajikistan,2018,3482
+223,Tanzania,1990,1490
+223,Tanzania,1991,1478
+223,Tanzania,1992,1434
+223,Tanzania,1993,1407
+223,Tanzania,1994,1389
+223,Tanzania,1995,1407
+223,Tanzania,1996,1449
+223,Tanzania,1997,1457
+223,Tanzania,1998,1485
+223,Tanzania,1999,1521
+223,Tanzania,2000,1549
+223,Tanzania,2001,1579
+223,Tanzania,2002,1673
+223,Tanzania,2003,1725
+223,Tanzania,2004,1802
+223,Tanzania,2005,1872
+223,Tanzania,2006,1974
+223,Tanzania,2007,2025
+223,Tanzania,2008,2085
+223,Tanzania,2009,2134
+223,Tanzania,2010,2187
+223,Tanzania,2011,2286
+223,Tanzania,2012,2328
+223,Tanzania,2013,2410
+223,Tanzania,2014,2494
+223,Tanzania,2015,2562
+223,Tanzania,2016,2648
+223,Tanzania,2017,2743
+223,Tanzania,2018,2805
+224,Thailand,1990,6562
+224,Thailand,1991,7023
+224,Thailand,1992,7452
+224,Thailand,1993,8039
+224,Thailand,1994,8592
+224,Thailand,1995,9180
+224,Thailand,1996,9530
+224,Thailand,1997,9117
+224,Thailand,1998,8244
+224,Thailand,1999,8608
+224,Thailand,2000,9004
+224,Thailand,2001,9155
+224,Thailand,2002,9564
+224,Thailand,2003,10114
+224,Thailand,2004,10647
+224,Thailand,2005,11008
+224,Thailand,2006,11576
+224,Thailand,2007,12176
+224,Thailand,2008,12297
+224,Thailand,2009,12164
+224,Thailand,2010,12921
+224,Thailand,2011,13211
+224,Thailand,2012,13797
+224,Thailand,2013,13840
+224,Thailand,2014,14101
+224,Thailand,2015,14466
+224,Thailand,2016,14966
+224,Thailand,2017,15548
+224,Thailand,2018,16129
+225,Timor Leste,1990,4069
+225,Timor Leste,1991,4362
+225,Timor Leste,1992,4684
+225,Timor Leste,1993,5021
+225,Timor Leste,1994,5185
+225,Timor Leste,1995,5669
+225,Timor Leste,1996,6302
+225,Timor Leste,1997,6872
+225,Timor Leste,1998,6791
+225,Timor Leste,1999,3371
+225,Timor Leste,2000,4993
+225,Timor Leste,2001,5262
+225,Timor Leste,2002,5668
+225,Timor Leste,2003,4735
+225,Timor Leste,2004,3385
+225,Timor Leste,2005,1818
+225,Timor Leste,2006,3199
+225,Timor Leste,2007,6646
+225,Timor Leste,2008,7176
+225,Timor Leste,2009,8220
+225,Timor Leste,2010,8155
+225,Timor Leste,2011,7974
+225,Timor Leste,2012,4717
+225,Timor Leste,2013,6233
+225,Timor Leste,2014,5666
+225,Timor Leste,2015,8284
+225,Timor Leste,2016,8350
+225,Timor Leste,2017,7434
+225,Timor Leste,2018,7527
+226,Togo,1990,1302
+226,Togo,1991,1262
+226,Togo,1992,1189
+226,Togo,1993,987
+226,Togo,1994,1082
+226,Togo,1995,1155
+226,Togo,1996,1236
+226,Togo,1997,1371
+226,Togo,1998,1300
+226,Togo,1999,1280
+226,Togo,2000,1236
+226,Togo,2001,1182
+226,Togo,2002,1148
+226,Togo,2003,1176
+226,Togo,2004,1168
+226,Togo,2005,1153
+226,Togo,2006,1169
+226,Togo,2007,1164
+226,Togo,2008,1189
+226,Togo,2009,1220
+226,Togo,2010,1259
+226,Togo,2011,1364
+226,Togo,2012,1361
+226,Togo,2013,1413
+226,Togo,2014,1463
+226,Togo,2015,1539
+226,Togo,2016,1545
+226,Togo,2017,1560
+226,Togo,2018,1593
+228,Tonga,1990,3670
+228,Tonga,1991,3866
+228,Tonga,1992,3845
+228,Tonga,1993,3969
+228,Tonga,1994,4314
+228,Tonga,1995,4346
+228,Tonga,1996,4353
+228,Tonga,1997,4336
+228,Tonga,1998,4513
+228,Tonga,1999,4546
+228,Tonga,2000,4589
+228,Tonga,2001,4718
+228,Tonga,2002,4975
+228,Tonga,2003,5004
+228,Tonga,2004,4974
+228,Tonga,2005,4952
+228,Tonga,2006,4960
+228,Tonga,2007,4742
+228,Tonga,2008,4834
+228,Tonga,2009,4971
+228,Tonga,2010,5153
+228,Tonga,2011,5298
+228,Tonga,2012,5393
+228,Tonga,2013,5252
+228,Tonga,2014,5306
+228,Tonga,2015,5534
+228,Tonga,2016,5678
+228,Tonga,2017,5836
+228,Tonga,2018,5783
+229,Trinidad and Tobago,1990,10058
+229,Trinidad and Tobago,1991,10247
+229,Trinidad and Tobago,1992,11224
+229,Trinidad and Tobago,1993,11239
+229,Trinidad and Tobago,1994,11416
+229,Trinidad and Tobago,1995,11937
+229,Trinidad and Tobago,1996,12534
+229,Trinidad and Tobago,1997,13789
+229,Trinidad and Tobago,1998,15046
+229,Trinidad and Tobago,1999,16186
+229,Trinidad and Tobago,2000,16923
+229,Trinidad and Tobago,2001,17870
+229,Trinidad and Tobago,2002,19364
+229,Trinidad and Tobago,2003,21889
+229,Trinidad and Tobago,2004,24267
+229,Trinidad and Tobago,2005,25126
+229,Trinidad and Tobago,2006,28240
+229,Trinidad and Tobago,2007,29676
+229,Trinidad and Tobago,2008,30565
+229,Trinidad and Tobago,2009,28806
+229,Trinidad and Tobago,2010,29737
+229,Trinidad and Tobago,2011,27546
+229,Trinidad and Tobago,2012,28402
+229,Trinidad and Tobago,2013,29770
+229,Trinidad and Tobago,2014,29142
+229,Trinidad and Tobago,2015,31160
+229,Trinidad and Tobago,2016,28854
+229,Trinidad and Tobago,2017,28786
+229,Trinidad and Tobago,2018,28497
+230,Tunisia,1990,5462
+230,Tunisia,1991,5505
+230,Tunisia,1992,5784
+230,Tunisia,1993,5707
+230,Tunisia,1994,5810
+230,Tunisia,1995,5891
+230,Tunisia,1996,6182
+230,Tunisia,1997,6487
+230,Tunisia,1998,6739
+230,Tunisia,1999,7073
+230,Tunisia,2000,7309
+230,Tunisia,2001,7533
+230,Tunisia,2002,7573
+230,Tunisia,2003,7889
+230,Tunisia,2004,8303
+230,Tunisia,2005,8438
+230,Tunisia,2006,8829
+230,Tunisia,2007,9248
+230,Tunisia,2008,9486
+230,Tunisia,2009,9740
+230,Tunisia,2010,9977
+230,Tunisia,2011,9661
+230,Tunisia,2012,9991
+230,Tunisia,2013,10126
+230,Tunisia,2014,10419
+230,Tunisia,2015,10484
+230,Tunisia,2016,10531
+230,Tunisia,2017,10564
+230,Tunisia,2018,10677
+231,Turkey,1990,11214
+231,Turkey,1991,11099
+231,Turkey,1992,11482
+231,Turkey,1993,12174
+231,Turkey,1994,11317
+231,Turkey,1995,12089
+231,Turkey,1996,12804
+231,Turkey,1997,13562
+231,Turkey,1998,13719
+231,Turkey,1999,13010
+231,Turkey,2000,13656
+231,Turkey,2001,12518
+231,Turkey,2002,13208
+231,Turkey,2003,13766
+231,Turkey,2004,14945
+231,Turkey,2005,16129
+231,Turkey,2006,17062
+231,Turkey,2007,17734
+231,Turkey,2008,17662
+231,Turkey,2009,16584
+231,Turkey,2010,17804
+231,Turkey,2011,19481
+231,Turkey,2012,20106
+231,Turkey,2013,21414
+231,Turkey,2014,22146
+231,Turkey,2015,23048
+231,Turkey,2016,23409
+231,Turkey,2017,24702
+231,Turkey,2018,24905
+232,Turkmenistan,1990,8375
+232,Turkmenistan,1991,7768
+232,Turkmenistan,1992,6418
+232,Turkmenistan,1993,6334
+232,Turkmenistan,1994,5251
+232,Turkmenistan,1995,4635
+232,Turkmenistan,1996,4853
+232,Turkmenistan,1997,4347
+232,Turkmenistan,1998,4497
+232,Turkmenistan,1999,5102
+232,Turkmenistan,2000,5008
+232,Turkmenistan,2001,5343
+232,Turkmenistan,2002,5316
+232,Turkmenistan,2003,5516
+232,Turkmenistan,2004,5718
+232,Turkmenistan,2005,6044
+232,Turkmenistan,2006,6691
+232,Turkmenistan,2007,7590
+232,Turkmenistan,2008,8369
+232,Turkmenistan,2009,8674
+232,Turkmenistan,2010,9109
+232,Turkmenistan,2011,10128
+232,Turkmenistan,2012,11077
+232,Turkmenistan,2013,12083
+232,Turkmenistan,2014,13041
+232,Turkmenistan,2015,14115
+232,Turkmenistan,2016,15236
+232,Turkmenistan,2017,15710
+232,Turkmenistan,2018,16407
+234,Tuvalu,1990,4713
+234,Tuvalu,1991,4866
+234,Tuvalu,1992,5066
+234,Tuvalu,1993,4740
+234,Tuvalu,1994,5477
+234,Tuvalu,1995,5241
+234,Tuvalu,1996,4687
+234,Tuvalu,1997,5505
+234,Tuvalu,1998,5922
+234,Tuvalu,1999,5670
+234,Tuvalu,2000,4889
+234,Tuvalu,2001,5811
+234,Tuvalu,2002,7063
+234,Tuvalu,2003,4817
+234,Tuvalu,2004,5161
+234,Tuvalu,2005,4940
+234,Tuvalu,2006,4809
+234,Tuvalu,2007,5463
+234,Tuvalu,2008,5333
+234,Tuvalu,2009,5423
+234,Tuvalu,2010,4779
+234,Tuvalu,2011,4743
+234,Tuvalu,2012,3971
+234,Tuvalu,2013,4845
+234,Tuvalu,2014,4186
+234,Tuvalu,2015,5315
+234,Tuvalu,2016,5239
+234,Tuvalu,2017,5075
+234,Tuvalu,2018,5409
+236,Uganda,1990,758
+236,Uganda,1991,775
+236,Uganda,1992,765
+236,Uganda,1993,814
+236,Uganda,1994,839
+236,Uganda,1995,912
+236,Uganda,1996,968
+236,Uganda,1997,994
+236,Uganda,1998,1014
+236,Uganda,1999,1063
+236,Uganda,2000,1048
+236,Uganda,2001,1055
+236,Uganda,2002,1122
+236,Uganda,2003,1159
+236,Uganda,2004,1191
+236,Uganda,2005,1224
+236,Uganda,2006,1320
+236,Uganda,2007,1394
+236,Uganda,2008,1471
+236,Uganda,2009,1523
+236,Uganda,2010,1559
+236,Uganda,2011,1654
+236,Uganda,2012,1656
+236,Uganda,2013,1658
+236,Uganda,2014,1684
+236,Uganda,2015,1717
+236,Uganda,2016,1733
+236,Uganda,2017,1727
+236,Uganda,2018,1752
+237,Ukraine,1990,10744
+237,Ukraine,1991,9801
+237,Ukraine,1992,8609
+237,Ukraine,1993,7216
+237,Ukraine,1994,5689
+237,Ukraine,1995,4993
+237,Ukraine,1996,4548
+237,Ukraine,1997,4451
+237,Ukraine,1998,4374
+237,Ukraine,1999,4371
+237,Ukraine,2000,4665
+237,Ukraine,2001,5210
+237,Ukraine,2002,5555
+237,Ukraine,2003,6149
+237,Ukraine,2004,6940
+237,Ukraine,2005,7207
+237,Ukraine,2006,7759
+237,Ukraine,2007,8400
+237,Ukraine,2008,8694
+237,Ukraine,2009,7359
+237,Ukraine,2010,7715
+237,Ukraine,2011,8089
+237,Ukraine,2012,8179
+237,Ukraine,2013,8194
+237,Ukraine,2014,8145
+237,Ukraine,2015,7373
+237,Ukraine,2016,7601
+237,Ukraine,2017,7670
+237,Ukraine,2018,7994
+238,United Arab Emirates,1990,110756
+238,United Arab Emirates,1991,104110
+238,United Arab Emirates,1992,100694
+238,United Arab Emirates,1993,100178
+238,United Arab Emirates,1994,103248
+238,United Arab Emirates,1995,106644
+238,United Arab Emirates,1996,106927
+238,United Arab Emirates,1997,108850
+238,United Arab Emirates,1998,103821
+238,United Arab Emirates,1999,101107
+238,United Arab Emirates,2000,108412
+238,United Arab Emirates,2001,104337
+238,United Arab Emirates,2002,97501
+238,United Arab Emirates,2003,98534
+238,United Arab Emirates,2004,99013
+238,United Arab Emirates,2005,93174
+238,United Arab Emirates,2006,89202
+238,United Arab Emirates,2007,80087
+238,United Arab Emirates,2008,70366
+238,United Arab Emirates,2009,59484
+238,United Arab Emirates,2010,55342
+238,United Arab Emirates,2011,56592
+238,United Arab Emirates,2012,57900
+238,United Arab Emirates,2013,60675
+238,United Arab Emirates,2014,63062
+238,United Arab Emirates,2015,66093
+238,United Arab Emirates,2016,67410
+238,United Arab Emirates,2017,67136
+238,United Arab Emirates,2018,66912
+239,United Kingdom,1990,26485
+239,United Kingdom,1991,26133
+239,United Kingdom,1992,26228
+239,United Kingdom,1993,26800
+239,United Kingdom,1994,27864
+239,United Kingdom,1995,28410
+239,United Kingdom,1996,29072
+239,United Kingdom,1997,30283
+239,United Kingdom,1998,31365
+239,United Kingdom,1999,32056
+239,United Kingdom,2000,33278
+239,United Kingdom,2001,34209
+239,United Kingdom,2002,35116
+239,United Kingdom,2003,36116
+239,United Kingdom,2004,36670
+239,United Kingdom,2005,37682
+239,United Kingdom,2006,37882
+239,United Kingdom,2007,38325
+239,United Kingdom,2008,37721
+239,United Kingdom,2009,35907
+239,United Kingdom,2010,36534
+239,United Kingdom,2011,36966
+239,United Kingdom,2012,36707
+239,United Kingdom,2013,36825
+239,United Kingdom,2014,37627
+239,United Kingdom,2015,38116
+239,United Kingdom,2016,38421
+239,United Kingdom,2017,39216
+239,United Kingdom,2018,39507
+240,United States,1990,37154
+240,United States,1991,36597
+240,United States,1992,37350
+240,United States,1993,37867
+240,United States,1994,38858
+240,United States,1995,39449
+240,United States,1996,40470
+240,United States,1997,41718
+240,United States,1998,43049
+240,United States,1999,44612
+240,United States,2000,45974
+240,United States,2001,46032
+240,United States,2002,46379
+240,United States,2003,47343
+240,United States,2004,48752
+240,United States,2005,49980
+240,United States,2006,50795
+240,United States,2007,51457
+240,United States,2008,51048
+240,United States,2009,49292
+240,United States,2010,50297
+240,United States,2011,50813
+240,United States,2012,51533
+240,United States,2013,52092
+240,United States,2014,52982
+240,United States,2015,54039
+240,United States,2016,54443
+240,United States,2017,55351
+240,United States,2018,56140
+242,Uruguay,1990,9499
+242,Uruguay,1991,9892
+242,Uruguay,1992,10656
+242,Uruguay,1993,10876
+242,Uruguay,1994,11553
+242,Uruguay,1995,11336
+242,Uruguay,1996,11907
+242,Uruguay,1997,12923
+242,Uruguay,1998,13417
+242,Uruguay,1999,13177
+242,Uruguay,2000,12864
+242,Uruguay,2001,12344
+242,Uruguay,2002,11493
+242,Uruguay,2003,11044
+242,Uruguay,2004,11576
+242,Uruguay,2005,12638
+242,Uruguay,2006,13231
+242,Uruguay,2007,14070
+242,Uruguay,2008,14919
+242,Uruguay,2009,15455
+242,Uruguay,2010,16521
+242,Uruguay,2011,17382
+242,Uruguay,2012,17192
+242,Uruguay,2013,18306
+242,Uruguay,2014,18632
+242,Uruguay,2015,19036
+242,Uruguay,2016,19196
+242,Uruguay,2017,19400
+242,Uruguay,2018,19435
+243,Uzbekistan,1990,3089
+243,Uzbekistan,1991,3002
+243,Uzbekistan,1992,2604
+243,Uzbekistan,1993,2492
+243,Uzbekistan,1994,2317
+243,Uzbekistan,1995,2257
+243,Uzbekistan,1996,2246
+243,Uzbekistan,1997,2303
+243,Uzbekistan,1998,2376
+243,Uzbekistan,1999,2444
+243,Uzbekistan,2000,2487
+243,Uzbekistan,2001,2553
+243,Uzbekistan,2002,2630
+243,Uzbekistan,2003,2719
+243,Uzbekistan,2004,2910
+243,Uzbekistan,2005,3084
+243,Uzbekistan,2006,3262
+243,Uzbekistan,2007,3685
+243,Uzbekistan,2008,4005
+243,Uzbekistan,2009,4134
+243,Uzbekistan,2010,4373
+243,Uzbekistan,2011,4645
+243,Uzbekistan,2012,4980
+243,Uzbekistan,2013,5351
+243,Uzbekistan,2014,5573
+243,Uzbekistan,2015,5759
+243,Uzbekistan,2016,5968
+243,Uzbekistan,2017,6190
+243,Uzbekistan,2018,6462
+244,Vanuatu,1990,2619
+244,Vanuatu,1991,2339
+244,Vanuatu,1992,2269
+244,Vanuatu,1993,2402
+244,Vanuatu,1994,2304
+244,Vanuatu,1995,2421
+244,Vanuatu,1996,2358
+244,Vanuatu,1997,2402
+244,Vanuatu,1998,2675
+244,Vanuatu,1999,2670
+244,Vanuatu,2000,2690
+244,Vanuatu,2001,2624
+244,Vanuatu,2002,2360
+244,Vanuatu,2003,2388
+244,Vanuatu,2004,2413
+244,Vanuatu,2005,2441
+244,Vanuatu,2006,2639
+244,Vanuatu,2007,2692
+244,Vanuatu,2008,2955
+244,Vanuatu,2009,2888
+244,Vanuatu,2010,2846
+244,Vanuatu,2011,2820
+244,Vanuatu,2012,2700
+244,Vanuatu,2013,2835
+244,Vanuatu,2014,2840
+244,Vanuatu,2015,2680
+244,Vanuatu,2016,2751
+244,Vanuatu,2017,2799
+244,Vanuatu,2018,2808
+246,Venezuela,1990,14529
+246,Venezuela,1991,15667
+246,Venezuela,1992,15945
+246,Venezuela,1993,15666
+246,Venezuela,1994,14919
+246,Venezuela,1995,15290
+246,Venezuela,1996,14943
+246,Venezuela,1997,15524
+246,Venezuela,1998,15322
+246,Venezuela,1999,14286
+246,Venezuela,2000,14562
+246,Venezuela,2001,14715
+246,Venezuela,2002,12974
+246,Venezuela,2003,11790
+246,Venezuela,2004,13592
+246,Venezuela,2005,15010
+246,Venezuela,2006,16443
+246,Venezuela,2007,18014
+246,Venezuela,2008,18486
+246,Venezuela,2009,17417
+246,Venezuela,2010,16783
+246,Venezuela,2011,16882
+246,Venezuela,2012,17532
+246,Venezuela,2013,17459
+246,Venezuela,2014,17111
+246,Venezuela,2015,15101
+246,Venezuela,2016,12570
+246,Venezuela,2017,10670
+246,Venezuela,2018,9070
+247,Vietnam,1990,1369
+247,Vietnam,1991,1436
+247,Vietnam,1992,1559
+247,Vietnam,1993,1645
+247,Vietnam,1994,1781
+247,Vietnam,1995,1944
+247,Vietnam,1996,2084
+247,Vietnam,1997,2217
+247,Vietnam,1998,2315
+247,Vietnam,1999,2408
+247,Vietnam,2000,2725
+247,Vietnam,2001,2868
+247,Vietnam,2002,3020
+247,Vietnam,2003,3190
+247,Vietnam,2004,3416
+247,Vietnam,2005,3367
+247,Vietnam,2006,3557
+247,Vietnam,2007,3752
+247,Vietnam,2008,3918
+247,Vietnam,2009,3705
+247,Vietnam,2010,4266
+247,Vietnam,2011,4461
+247,Vietnam,2012,4655
+247,Vietnam,2013,4843
+247,Vietnam,2014,5052
+247,Vietnam,2015,5314
+247,Vietnam,2016,5638
+247,Vietnam,2017,5916
+247,Vietnam,2018,6220
+251,Yemen,1990,2382
+251,Yemen,1991,2423
+251,Yemen,1992,2258
+251,Yemen,1993,2237
+251,Yemen,1994,2112
+251,Yemen,1995,1796
+251,Yemen,1996,2364
+251,Yemen,1997,2760
+251,Yemen,1998,3447
+251,Yemen,1999,2579
+251,Yemen,2000,2748
+251,Yemen,2001,3431
+251,Yemen,2002,3366
+251,Yemen,2003,3375
+251,Yemen,2004,3386
+251,Yemen,2005,3141
+251,Yemen,2006,3279
+251,Yemen,2007,3703
+251,Yemen,2008,3575
+251,Yemen,2009,4490
+251,Yemen,2010,3688
+251,Yemen,2011,3876
+251,Yemen,2012,3365
+251,Yemen,2013,3351
+251,Yemen,2014,3296
+251,Yemen,2015,2668
+251,Yemen,2016,1966
+251,Yemen,2017,1508
+251,Yemen,2018,1433
+252,Zambia,1990,2140
+252,Zambia,1991,2020
+252,Zambia,1992,1969
+252,Zambia,1993,2101
+252,Zambia,1994,1900
+252,Zambia,1995,1909
+252,Zambia,1996,1988
+252,Zambia,1997,2006
+252,Zambia,1998,1935
+252,Zambia,1999,2001
+252,Zambia,2000,2034
+252,Zambia,2001,2094
+252,Zambia,2002,2142
+252,Zambia,2003,2248
+252,Zambia,2004,2261
+252,Zambia,2005,2332
+252,Zambia,2006,2409
+252,Zambia,2007,2490
+252,Zambia,2008,2705
+252,Zambia,2009,3031
+252,Zambia,2010,3114
+252,Zambia,2011,3251
+252,Zambia,2012,3520
+252,Zambia,2013,3482
+252,Zambia,2014,3615
+252,Zambia,2015,3617
+252,Zambia,2016,3622
+252,Zambia,2017,3553
+252,Zambia,2018,3582
+253,Zimbabwe,1990,2693
+253,Zimbabwe,1991,2764
+253,Zimbabwe,1992,2448
+253,Zimbabwe,1993,2440
+253,Zimbabwe,1994,2611
+253,Zimbabwe,1995,2574
+253,Zimbabwe,1996,2833
+253,Zimbabwe,1997,2851
+253,Zimbabwe,1998,2871
+253,Zimbabwe,1999,2854
+253,Zimbabwe,2000,2747
+253,Zimbabwe,2001,2792
+253,Zimbabwe,2002,2554
+253,Zimbabwe,2003,2124
+253,Zimbabwe,2004,1973
+253,Zimbabwe,2005,1853
+253,Zimbabwe,2006,1759
+253,Zimbabwe,2007,1662
+253,Zimbabwe,2008,1308
+253,Zimbabwe,2009,1399
+253,Zimbabwe,2010,1689
+253,Zimbabwe,2011,1861
+253,Zimbabwe,2012,2158
+253,Zimbabwe,2013,2239
+253,Zimbabwe,2014,2259
+253,Zimbabwe,2015,2226
+253,Zimbabwe,2016,2246
+253,Zimbabwe,2017,2318
+253,Zimbabwe,2018,2661
