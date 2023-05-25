@@ -53,7 +53,7 @@ class IncomeHandler(DataHandler):
         None.
 
         """
-        incomeByCountryFile = "../../Data/income/Income by Country.xlsx"
+        incomeByCountryFile = "../Data/original/income/Income by Country.xlsx"
         incomeByCountry = pd.ExcelFile(incomeByCountryFile)
         
         self.incomeIndex = incomeByCountry.parse("Income Index")
@@ -188,17 +188,18 @@ class IncomeHandler(DataHandler):
         self._setNullForSQL()
         self._renameColumns()
         
-        incomeIndexFile = "../../Data/income/income_index_final.csv"
-        gdpLabourShareFile = "../../Data/income/labour_share_of_gdp_final.csv"
-        grossFixedCapitalFormationFile = "../../Data/income/" \
+        path = "../Data/processed/income/"
+        
+        incomeIndexFile = path + "income_index_final.csv"
+        gdpLabourShareFile = path + "labour_share_of_gdp_final.csv"
+        grossFixedCapitalFormationFile = path + \
             "gross_fixed_capital_formation_final.csv"
-        gdpTotalFile = "../../Data/income/gdp_total_final.csv"
-        gdpPerCapitaFile = "../../Data/income/gdp_per_capita_final.csv"
-        gniPerCapitaFile = "../../Data/income/gni_per_capita_final.csv"
-        estimatedGniMaleFile = "../../Data/income/estimated_gni_male_final.csv"
-        estimatedGniFemaleFile = "../../Data/income/" \
-            "estimated_gni_female_final.csv"
-        domesticCreditsFile = "../../Data/income/domestic_credits_final.csv"
+        gdpTotalFile = path + "gdp_total_final.csv"
+        gdpPerCapitaFile = path + "gdp_per_capita_final.csv"
+        gniPerCapitaFile = path + "gni_per_capita_final.csv"
+        estimatedGniMaleFile = path + "estimated_gni_male_final.csv"
+        estimatedGniFemaleFile = path + "estimated_gni_female_final.csv"
+        domesticCreditsFile = path + "domestic_credits_final.csv"
             
         self.incomeIndexFinal.to_csv(incomeIndexFile, index=False)
         self.gdpLabourShareFinal.to_csv(gdpLabourShareFile, index=False)

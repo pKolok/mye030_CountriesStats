@@ -23,7 +23,7 @@ class CountriesHandler(DataHandler):
         None.
 
         """
-        countriesFile = "../../Data/countries/countries.csv"
+        countriesFile = "../Data/original/countries/countries.csv"
         
         self.countries = pd.read_csv(countriesFile, encoding='latin-1')
     
@@ -67,7 +67,7 @@ class CountriesHandler(DataHandler):
         self._setNullForSQL()
         self._renameColumns()
         
-        countriesFile = "../../Data/countries/countriesFinal.csv"
+        countriesFile = "../Data/processed/countries/countriesFinal.csv"
         self.countries.to_csv(countriesFile, index=False)
         
     def _addPrimaryKey(self, uniqueCountries):

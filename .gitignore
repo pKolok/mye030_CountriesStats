@@ -6,6 +6,11 @@ API/node_modules
 
 # Angular
 
+# Data
+Data/original/international/midyear_population_age_country_code.csv
+Data/original/income/Income by Country_annotated.xlsx
+Data/processed
+
 # General
 *.pdf
 *.png
